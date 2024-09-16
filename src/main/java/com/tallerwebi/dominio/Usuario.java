@@ -16,6 +16,55 @@ public class Usuario {
     private String rol;
     private Boolean activo = false;
 
+
+    private String nombre;
+    private String apellido;
+    private String objetivoSalud;
+    private String preferenciaAlimenticia;
+    private String restrincionesAlimentarias;
+    private String informacionAdicional;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getObjetivoSalud() {
+        return objetivoSalud;
+    }
+
+    public void setObjetivoSalud(String objetivoSalud) {
+        this.objetivoSalud = objetivoSalud;
+    }
+
+    public String getPreferenciaAlimenticia() {
+        return preferenciaAlimenticia;
+    }
+
+    public void setPreferenciaAlimenticia(String preferenciaAlimenticia) {
+        this.preferenciaAlimenticia = preferenciaAlimenticia;
+    }
+
+    public String getRestrincionesAlimentarias() {
+        return restrincionesAlimentarias;
+    }
+
+    public void setRestrincionesAlimentarias(String restrincionesAlimentarias) {
+        this.restrincionesAlimentarias = restrincionesAlimentarias;
+    }
+
+
     public Long getId() {
         return id;
     }
@@ -53,5 +102,13 @@ public class Usuario {
 
     public void activar() {
         activo = true;
+    }
+
+    public String getInformacionAdicional() {
+        return informacionAdicional;
+    }
+
+    public void setInformacionAdicional(String informacionAdicional) {
+        this.informacionAdicional = informacionAdicional;
     }
 }

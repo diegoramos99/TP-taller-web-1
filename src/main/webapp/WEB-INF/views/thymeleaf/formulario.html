@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Perfil de Usuario - Salud</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Perfil de Salud</h1>
+    <form action="" th:action="@{/enviarDatos}" method="POST" th:object="${usuario}">
+        <!-- Objetivos de Salud -->
+        <label for="objetivos">Objetivos de Salud</label>
+        <select th:field="*{objetivoSalud}" id="objetivos" name="objetivos">
+            <option value="perdida_grasa">Pérdida de Grasa</option>
+            <option value="ganancia_masa">Ganancia de Masa Muscular</option>
+            <option value="mantener_peso">Mantener Peso</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <!-- Preferencias Alimenticias -->
+        <label for="preferencias">Preferencias Alimenticias</label>
+        <select th:field="*{preferenciaAlimenticia}" id="preferencias" name="preferencias">
+            <option value="omnivoro">Omnívoro</option>
+            <option value="vegetariano">Vegetariano</option>
+            <option value="vegano">Vegano</option>
+            <option value="paleo">Paleo</option>
+            <option value="keto">Keto</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <!-- Restricciones por Enfermedades o Gustos -->
+        <label for="restricciones">Restricciones Alimentarias (por enfermedades o gustos)</label>
+        <textarea th:field="*{restrincionesAlimentarias}" id="restricciones" name="restricciones" rows="4" placeholder="Ej: Sin gluten, intolerante a la lactosa, alergia a frutos secos, etc."></textarea>
+
+        <!-- Información Adicional -->
+        <label for="info_adicional">Información Adicional (opcional)</label>
+        <textarea  th:field="*{informacionAdicional}"id="info_adicional" name="info_adicional" rows="4" placeholder="Ej: Instrucciones especiales, detalles sobre estilo de vida, etc."></textarea>
+
+        <!-- Botón de envío -->
+        <button type="submit" class="submit-btn">Guardar Perfil</button>
+    </form>
+</div>
+
+</body>
+</html>
