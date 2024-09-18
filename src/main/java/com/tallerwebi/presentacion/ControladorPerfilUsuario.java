@@ -72,9 +72,9 @@ public class ControladorPerfilUsuario {
 
     }
 
-    @RequestMapping(path = "/calcularMacro", method = RequestMethod.GET)
-     public ModelAndView mostrarVistaCorrecta() {
-       ModelAndView model=new ModelAndView("formulario");
-         return model;
-    }
+   // @RequestMapping(path = "/calcularMacro", method = RequestMethod.GET)
+    // public ModelAndView mostrarVistaCorrecta() {
+     //  ModelAndView model=new ModelAndView("formulario");
+      //   return model;
+   // }
 }
