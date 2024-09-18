@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Calculo del Indice de Masa Corporal (IMC)</h2>
+    <form th:action="@{/calcularIMC}" method="post">
+        <div class="mb-3">
+            <label for="genero" class="form-label">Género</label>
+            <select id="genero" name="genero" class="form-select" required>
+                <option value="" disabled selected>Seleccione...</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="altura" class="form-label">Altura (cm)</label>
+            <input type="number" id="altura" name="altura" class="form-control" placeholder="Ingrese su altura en cm" required>
+        </div>
+        <div class="mb-3">
+            <label for="peso" class="form-label">Peso (kg)</label>
+            <input type="number" id="peso" name="peso" class="form-control" placeholder="Ingrese su peso en kg" required>
+        </div>
+        <div class="mb-3">
+            <label for="edad" class="form-label">Edad (años)</label>
+            <input type="number" id="edad" name="edad" class="form-control" placeholder="Ingrese su edad en años" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Calcular IMC</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+</body>
+</html>
