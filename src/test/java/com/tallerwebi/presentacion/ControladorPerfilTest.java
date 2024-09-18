@@ -51,13 +51,13 @@ public class ControladorPerfilTest {
     model.put("objetivoSalud",null);
     model.put("preferenciaAlimenticia",null);
     model.put("restrincionesAlimentarias",null);
-
+    model.put("informacionAdicional",null);
     ModelAndView mav=new ModelAndView("perfilusuario",model);
-    when(controladorPerfilUsuarioMock.mostrarDatosDelUsuario()).thenReturn(model);
+    when(controladorPerfilUsuarioMock.mostrarDatosDelUsuario()).thenReturn(mav);
     givenNoexisteUsuario();
 
 
-   ModelMap mav1= whenMuestraLosDatosDelUsuario();
+    ModelAndView mav1= whenMuestraLosDatosDelUsuario();
 
 
     thenLosDatosSonCorrectos(mav1);
@@ -65,25 +65,26 @@ public class ControladorPerfilTest {
 
 }
 
-    private void thenLosDatosSonCorrectos(ModelMap mav) {
-        assertThat( mav.get("nombre"),nullValue());
-        assertThat( mav.get("apellido"), nullValue());
-        assertThat( mav.get("objetivoSalud"), nullValue());
-        assertThat( mav.get("preferenciaAlimenticia"), nullValue());
-        assertThat( mav.get("restrincionesAlimentarias"), nullValue());
+    private void thenLosDatosSonCorrectos(ModelAndView mav) {
+        assertThat( mav.getModel().get("nombre"),nullValue());
+        assertThat( mav.getModel().get("apellido"), nullValue());
+        assertThat( mav.getModel().get("objetivoSalud"), nullValue());
+        assertThat( mav.getModel().get("preferenciaAlimenticia"), nullValue());
+        assertThat( mav.getModel().get("restrincionesAlimentarias"), nullValue());
+        assertThat( mav.getModel().get("informacionAdicional"), nullValue());
+
     }
 
-    private ModelMap whenMuestraLosDatosDelUsuario() {
+    private ModelAndView whenMuestraLosDatosDelUsuario() {
     return  controladorPerfilUsuarioMock.mostrarDatosDelUsuario();
     }
 
     private void givenNoexisteUsuario() {
     }
 
-
     @Test
-    public void queAlHacerClickAlFormularioMeLleveAlFormulario(){
-        when(controladorPerfilUsuarioMock.mostrarVista()).thenReturn(new ModelAndView("formulario"));
+    public void queAlHacerClickAlEditarPerfilMeLleveAlFormulario(){
+        when(controladorPerfilUsuarioMock.mostrarFormulario()).thenReturn(new ModelAndView("formulario"));
         givenExistePerfil();
 
         ModelAndView mav= whenRecibaLaVista();
@@ -93,10 +94,10 @@ public class ControladorPerfilTest {
     }
 
     private void thenLaVistaEsCorrecta(ModelAndView mav ,String vistaEsperada) {
-    assertThat(mav.getViewName(),equalToIgnoringCase(vistaEsperada));
+        assertThat(mav.getViewName(),equalToIgnoringCase(vistaEsperada));
     }
     private ModelAndView whenRecibaLaVista() {
-    return  controladorPerfilUsuarioMock.mostrarVista();
+        return  controladorPerfilUsuarioMock.mostrarFormulario();
     }
     private void givenExistePerfil() {
     }
@@ -104,19 +105,19 @@ public class ControladorPerfilTest {
 
 
     @Test
-     public void queAlCompletarElFormularioVayaALaVistaPerfilUsuario(){
-        when(controladorPerfilUsuarioMock.irAlPerfil()).thenReturn(new ModelAndView("perfilusuario"));
+    public void queAlCompletarElFormularioVayaALaVistaPerfilUsuario(){
+        when(controladorPerfilUsuarioMock.enviarDatosDelFormulario(usuarioMock,requestMock)).thenReturn(new ModelAndView("perfilusuario"));
         givenExistePerfil();
 
-        ModelAndView mavs= whenVayaALaVistaCorrecta();
+        ModelAndView mav= whenVayaALaVistaCorrecta();
 
         String vistaEsperada="perfilusuario";
-        thenLaVistaEsCorrecta(mavs,vistaEsperada);
+        thenLaVistaEsCorrecta(mav,vistaEsperada);
 
     }
 
     private ModelAndView whenVayaALaVistaCorrecta() {
-    return controladorPerfilUsuarioMock.irAlPerfil();
+        return controladorPerfilUsuarioMock.enviarDatosDelFormulario(usuarioMock,requestMock);
 
     }
 
@@ -133,7 +134,7 @@ public class ControladorPerfilTest {
         givenExistePerfil();
 
 
-      ModelAndView mav1= whenEnvieLosDatosAlaVistaPerfilUsuario();
+        ModelAndView mav1= whenEnvieLosDatosAlaVistaPerfilUsuario();
 
 
         String valor1Esperado="perdida_grasa";
@@ -141,9 +142,7 @@ public class ControladorPerfilTest {
         String valor3Esperado="relleno de variable";
         String valor4Esperado="otroRelleno";
 
-
         thenLosDatosSeanLosMismoDelFormulario(mav1 ,valor1Esperado,valor2Esperado,valor3Esperado,valor4Esperado);
-
     }
 
     private void thenLosDatosSeanLosMismoDelFormulario(ModelAndView mav,String valor1 , String valor2 , String valor3 , String valor4) {
@@ -151,12 +150,27 @@ public class ControladorPerfilTest {
         assertThat(mav.getModel().get("preferenciaAlimenticia").toString(),equalToIgnoringCase(valor2));
         assertThat(mav.getModel().get("restrincionesAlimentarias").toString(),equalToIgnoringCase(valor3));
         assertThat(mav.getModel().get("informacionAdicional").toString(),equalToIgnoringCase(valor4));
-
     }
 
     private ModelAndView whenEnvieLosDatosAlaVistaPerfilUsuario() {
         return  controladorPerfilUsuarioMock.enviarDatosDelFormulario(usuarioMock,requestMock);
 
+    }
+@Test
+    public void queAlHacerClickEnCalcuLarMacroTeLleveALaVistaCalcularMacro() {
+    when(controladorPerfilUsuarioMock.mostrarVistaCorrecta()).thenReturn(new ModelAndView("calcularMacro"));
+    givenExistePerfil();
+
+    ModelAndView mav= whenRecibaLaVistaCalcularMacro();
+
+    String vistaEsperada="calcularMacro";
+    thenLaVistaEsCorrecta(mav , vistaEsperada);
+
+
+}
+
+    private ModelAndView whenRecibaLaVistaCalcularMacro() {
+        return  controladorPerfilUsuarioMock.mostrarVistaCorrecta();
     }
 
 

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-@Service("servicioLogin")
+@Service("servicioPerfilUsuario")
 @Transactional
 public class ServicioPerfilUsuarioImpl implements ServicioPerfilUsuario {
 

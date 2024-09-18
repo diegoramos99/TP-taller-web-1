@@ -63,14 +63,17 @@
 
 <div class="profile-container">
     <h1>Perfil del Usuario</h1>
-    <p th:text="'Nombre:'+ ${nombre}" >  </p>
-    <p th:text= "'Apellido:'+${apellido}">  </p>
+    <p th:text="'Nombre:'+ ${nombre}" > </p>
+    <p th:text="'Apellido:'+${apellido}"> </p>
     <p th:text="'Objetivo de salud:'+${objetivoSalud}"></p>
     <p th:text="'Preferencia alimenticia:'+${preferenciaAlimenticia}"></p>
     <p th:text="'Restrinciones alimentarias:'+${restrincionesAlimentarias}"></p>
+    <p th:text="'Informacion Adicional:'+${informacionAdicional}"></p>
 
     <!-- Botón para editar el perfil (redirige al formulario) -->
-    <a href="formulario.html" class="edit-btn">Editar Perfil</a>
+    <a href="mostrarFormulario" class="edit-btn">Editar Perfil</a>
+    <a href="calcularMacro" class="edit-btn">Calcular Macro</a>
+
 </div>
 
 </body>

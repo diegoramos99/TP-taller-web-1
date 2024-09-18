@@ -1,9 +1,11 @@
 package com.tallerwebi.presentacion;
 
+import com.tallerwebi.dominio.ServicioPerfilUsuario;
 import com.tallerwebi.dominio.ServicioPerfilUsuarioImpl;
 import com.tallerwebi.dominio.Usuario;
 import com.tallerwebi.infraestructura.RepositorioUsuario;
 import com.tallerwebi.infraestructura.RepositorioUsuarioImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,21 +18,17 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class ControladorPerfilUsuario {
-
-    private ServicioPerfilUsuarioImpl servicioPerfilUsuario;
-    public void ControladorPerfilUsuario(){
-
+    
+    private ServicioPerfilUsuario servicioPerfilUsuario;
+    
+    @Autowired
+    
+    public void ControladorPerfilUsuario(ServicioPerfilUsuario servicioPerfilUsuario){
+    this.servicioPerfilUsuario=servicioPerfilUsuario;
     }
 
     @RequestMapping(path = "/perfilusuario", method = RequestMethod.GET)
-    public ModelAndView irAlPerfil() {
-        return new ModelAndView("perfilusuario");
-    }
-
-
-
-    @RequestMapping(path = "/perfilusuario", method = RequestMethod.GET)
-    public ModelMap mostrarDatosDelUsuario() {
+    public ModelAndView mostrarDatosDelUsuario() {
         ModelMap mavUsuario=new ModelMap();
         Usuario usuario=new Usuario();
         mavUsuario.put("nombre",usuario.getNombre());
@@ -38,29 +36,25 @@ public class ControladorPerfilUsuario {
         mavUsuario.put("objetivoSalud",usuario.getObjetivoSalud());
         mavUsuario.put("preferenciaAlimenticia",usuario.getPreferenciaAlimenticia());
         mavUsuario.put("restrincionesAlimentarias",usuario.getRestrincionesAlimentarias());
-        return mavUsuario;
+        mavUsuario.put("informacionAdicional",usuario.getInformacionAdicional());
+
+        return new ModelAndView( "perfilusuario",mavUsuario);
     }
 
 
-    @RequestMapping(path = "/formulario", method = RequestMethod.GET)
-    public ModelAndView irAlFormulario() {
-        return new ModelAndView("formulario");
+    @RequestMapping(path = "/mostrarFormulario", method = RequestMethod.GET)
+    public ModelAndView mostrarFormulario() {
+
+        ModelMap map=new ModelMap();
+        map.put("usuario",new Usuario());
+        return new ModelAndView("formulario",map);
     }
 
 
 
-    @RequestMapping(path = "/formulario", method = RequestMethod.GET)
-    public ModelAndView mostrarVista() {
-        ModelAndView mav=new ModelAndView("formulario");
-        return mav;
-    }
 
 
-    @RequestMapping(path = "/formulario", method = RequestMethod.GET)
-    public ModelAndView IrAlPerfil() {
-        ModelAndView model=new ModelAndView("perfilusuario");
-        return model;
-    }
+
 
 
     @RequestMapping(path = "/enviarDatos", method = RequestMethod.POST)
@@ -70,11 +64,17 @@ public class ControladorPerfilUsuario {
         model.put("nombre",usuario.getNombre());
         model.put("apellido",usuario.getApellido());
         model.put("objetivoSalud",usuario.getObjetivoSalud());
-        model.put("preferenciaAlimenticia",usuario.getInformacionAdicional());
+        model.put("preferenciaAlimenticia",usuario.getPreferenciaAlimenticia());
         model.put("restrincionesAlimentarias",usuario.getRestrincionesAlimentarias());
         model.put("informacionAdicional",usuario.getInformacionAdicional());
 
         return new ModelAndView("perfilusuario",model);
 
+    }
+
+    @RequestMapping(path = "/calcularMacro", method = RequestMethod.GET)
+     public ModelAndView mostrarVistaCorrecta() {
+       ModelAndView model=new ModelAndView("formulario");
+         return model;
     }
 }
