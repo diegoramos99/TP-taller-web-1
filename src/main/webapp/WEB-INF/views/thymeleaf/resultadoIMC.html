@@ -43,7 +43,7 @@
         <li class="dropdown">
             <a href="#">Alimentos</a>
             <ul class="submenu">
-                <li><a href="#">Registrar Alimentos</a></li>
+                <li><a th:href="@{/ver-Buscar-Alimento}">Registrar Alimentos</a></li>
             </ul>
         </li>
         <li class="dropdown">
@@ -57,9 +57,10 @@
                 <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
             </ul>
         </li>
+        <!-- Nuevo ítem para el perfil de usuario -->
         <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
     </ul>
-    </nav>
+</nav>
 
 <div class="container mt-5">
 
