@@ -6,8 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-@Service("servicioPerfilUsuario")
-@Transactional
+@Service("servicioPerfilUsuario")@Transactional
 public class ServicioPerfilUsuarioImpl implements ServicioPerfilUsuario {
 
     private RepositorioUsuario repositorioUsuario;
@@ -18,4 +17,21 @@ public class ServicioPerfilUsuarioImpl implements ServicioPerfilUsuario {
     }
 
 
+    @Override
+    public Usuario buscarUsuario(String email,String password) {
+        Usuario usuario =repositorioUsuario.buscarUsuario(email,password);
+        return usuario;
+    }
+
+    @Override
+    public Usuario buscarUsuarioPoreEmail(String email) {
+        Usuario usuario=repositorioUsuario.buscar(email);
+        return usuario;
+    }
+    @Override
+    public Usuario modificarUsuario(Usuario usuarioAModificar){
+                repositorioUsuario.modificar(usuarioAModificar);
+        Usuario usuarioModificado=repositorioUsuario.buscarUsuario(usuarioAModificar.getEmail(),usuarioAModificar.getPassword());
+        return usuarioModificado;
+    }
 }

@@ -41,19 +41,19 @@ public class ControladorPerfilTest {
         controladorPerfilUsuarioMock=mock(ControladorPerfilUsuario.class);
     }
 @Test
-    public void queSeCargueLosDatosDelUsuarioNullAlIngresarPorPrimeraVez(){
+    public void queSeCargueLosDatosDelUsuarioNullAlIngresarPorPrimeraVezExceptoNombreYApellido(){
     // given
     //when
     //then
     ModelMap model=new ModelMap();
-    model.put("nombre",null);
-    model.put("apellido",null);
+    model.put("nombre","diego");
+    model.put("apellido","ramos");
     model.put("objetivoSalud",null);
     model.put("preferenciaAlimenticia",null);
     model.put("restrincionesAlimentarias",null);
     model.put("informacionAdicional",null);
     ModelAndView mav=new ModelAndView("perfilusuario",model);
-    when(controladorPerfilUsuarioMock.mostrarDatosDelUsuario()).thenReturn(mav);
+    when(controladorPerfilUsuarioMock.mostrarDatosDelUsuario(requestMock)).thenReturn(mav);
     givenNoexisteUsuario();
 
 
@@ -66,8 +66,8 @@ public class ControladorPerfilTest {
 }
 
     private void thenLosDatosSonCorrectos(ModelAndView mav) {
-        assertThat( mav.getModel().get("nombre"),nullValue());
-        assertThat( mav.getModel().get("apellido"), nullValue());
+        assertThat( mav.getModel().get("nombre").toString(),equalToIgnoringCase("diego"));
+        assertThat( mav.getModel().get("apellido").toString(),equalToIgnoringCase("ramos"));
         assertThat( mav.getModel().get("objetivoSalud"), nullValue());
         assertThat( mav.getModel().get("preferenciaAlimenticia"), nullValue());
         assertThat( mav.getModel().get("restrincionesAlimentarias"), nullValue());
@@ -76,7 +76,7 @@ public class ControladorPerfilTest {
     }
 
     private ModelAndView whenMuestraLosDatosDelUsuario() {
-    return  controladorPerfilUsuarioMock.mostrarDatosDelUsuario();
+    return  controladorPerfilUsuarioMock.mostrarDatosDelUsuario(requestMock);
     }
 
     private void givenNoexisteUsuario() {
