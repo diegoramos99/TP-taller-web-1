@@ -84,7 +84,7 @@ public class ControladorRegistrarAlimento {
 
         Alimento alimentoSeleccionado = servicioAlimento.obtenerAlimentoPorId(id);
 
-        String nombreUsuario = (String) request.getSession().getAttribute("userEmail");
+        String nombreUsuario = (String) request.getSession().getAttribute("EMAIL");
         Usuario usuario = servicioLogin.consultarUsuarioPorEmail(nombreUsuario);
         if (usuario == null) {
             model.addAttribute("mensaje", "Usuario no encontrado.");
