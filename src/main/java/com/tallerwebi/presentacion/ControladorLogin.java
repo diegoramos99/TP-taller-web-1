@@ -27,18 +27,18 @@ public class ControladorLogin {
     public ModelAndView irALogin() {
 
         ModelMap modelo = new ModelMap();
-        modelo.put("datosLogin", new DatosLogin());
+        modelo.put("usuario", new Usuario());
         return new ModelAndView("login", modelo);
     }
 
     @RequestMapping(path = "/validar-login", method = RequestMethod.POST)
-    public ModelAndView validarLogin(@ModelAttribute("datosLogin") DatosLogin datosLogin, HttpServletRequest request) {
+    public ModelAndView validarLogin(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
         ModelMap model = new ModelMap();
 
-        Usuario usuarioBuscado = servicioLogin.consultarUsuario(datosLogin.getEmail(), datosLogin.getPassword());
+        Usuario usuarioBuscado = servicioLogin.consultarUsuario(usuario.getEmail(), usuario.getPassword());
         if (usuarioBuscado != null) {
+            request.getSession().setAttribute("EMAIL", usuarioBuscado.getEmail()); // Guardar el email en la sesión
             request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
-            request.getSession().setAttribute("userEmail", usuarioBuscado.getEmail());
             return new ModelAndView("redirect:/home");
         } else {
             model.put("error", "Usuario o clave incorrecta");
@@ -74,17 +74,10 @@ public class ControladorLogin {
     }
 
 
-     @RequestMapping("/ver-home")
-    public ModelAndView irAlHome() {
-
-         return new ModelAndView("home");
-
-    }
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public ModelAndView inicio() {
         return new ModelAndView("redirect:/login");
     }
 }
-
 
