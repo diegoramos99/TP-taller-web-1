@@ -12,10 +12,10 @@ public class Alimento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private double calorias;
-    private double proteinas;
-    private double grasas;
-    private double carbohidratos;
+    private Double calorias;
+    private Double proteinas;
+    private Double grasas;
+    private Double carbohidratos;
     private String categoria;
     private String cantidad; // Nuevo atributo
 
@@ -28,36 +28,36 @@ public class Alimento {
         this.nombre = nombre;
     }
 
-    public double getCalorias() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Double getCalorias() {
         return calorias;
     }
 
-    public void setCalorias(double calorias) {
+    public void setCalorias(Double calorias) {
         this.calorias = calorias;
     }
 
-    public double getProteinas() {
+    public Double getProteinas() {
         return proteinas;
     }
 
-    public void setProteinas(double proteinas) {
+    public void setProteinas(Double proteinas) {
         this.proteinas = proteinas;
     }
 
-    public double getGrasas() {
+    public Double getGrasas() {
         return grasas;
     }
 
-    public void setGrasas(double grasas) {
+    public void setGrasas(Double grasas) {
         this.grasas = grasas;
-    }
-
-    public double getCarbohidratos() {
-        return carbohidratos;
-    }
-
-    public void setCarbohidratos(double carbohidratos) {
-        this.carbohidratos = carbohidratos;
     }
 
     public String getCategoria() {
@@ -76,5 +76,11 @@ public class Alimento {
         this.cantidad = cantidad;
     }
 
+    public Double getCarbohidratos() {
+        return carbohidratos;
+    }
 
+    public void setCarbohidratos(Double carbohidratos) {
+        this.carbohidratos = carbohidratos;
+    }
 }

@@ -13,13 +13,13 @@
 
 </head>
 <body>
-    <nav>
+<nav>
     <ul>
         <li><a th:href="@{/ver-home}">Home</a></li>
         <li class="dropdown">
             <a href="#">Alimentos</a>
             <ul class="submenu">
-                <li><a th:href="@{/ver-Buscar-Alimento}">Registrar Alimentos</a></li>
+                <li><a id="url-RegistrarAlimento" th:href="@{/ver-Registrar-alimentos}">Registrar Alimentos</a></li>
             </ul>
         </li>
         <li class="dropdown">
@@ -33,11 +33,13 @@
                 <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
             </ul>
         </li>
-        <!-- Nuevo ítem para el perfil de usuario -->
         <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
     </ul>
 </nav>
 
 
 </body>
+
+<script th:src="@{/js/nav-link.js}"></script>
+
 </html>

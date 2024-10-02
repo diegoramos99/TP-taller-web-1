@@ -17,7 +17,7 @@ public class RepositorioAlimentoImpl implements RepositorioAlimento {
     private SessionFactory sessionFactory;
 
     @Autowired
-    public void RepositorioUsuarioImpl(SessionFactory sessionFactory){
+    public void RepositorioAlimentoImpl(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
     }
 
@@ -27,5 +27,13 @@ public class RepositorioAlimentoImpl implements RepositorioAlimento {
         return (List<Alimento>) session.createCriteria(Alimento.class)
                .add(Restrictions.ilike("nombre", "%" + nombre + "%"))
                .list();
+    }
+
+    @Override
+    public Alimento obtenerAlimento(Long id) {
+         final Session session = sessionFactory.getCurrentSession();
+        return (Alimento) session.createCriteria(Alimento.class)
+                .add(Restrictions.eq("id", id))
+                .uniqueResult();
     }
 }

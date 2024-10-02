@@ -19,7 +19,6 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -28,7 +27,7 @@ import static org.hamcrest.text.IsEqualIgnoringCase.equalToIgnoringCase;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
 @WebAppConfiguration
@@ -59,41 +58,49 @@ public class ControladorAlimentoTest {
         assertThat(modelAndView.getViewName(), equalToIgnoringCase("buscarAlimento"));
     }
 
+    @Test
+    public void debeMostrarAlimentosBuscados() throws Exception {
+        String termino = "manzana";
+        String comida = "fruta";
+        String fecha = "2024-10-01";
+        List<Alimento> resultados = new ArrayList<>();
+        resultados.add(new Alimento());
+
+        when(servicioAlimentoMock.BuscarAlimentoPorNombre(termino)).thenReturn(resultados);
+
+        MvcResult result = this.mockMvc.perform(get("/buscarAlimentos")
+                .param("termino", termino)
+                .param("comida", comida)
+                .param("fecha", fecha))
+                .andExpect(status().isOk())
+                .andExpect(view().name("buscarAlimento"))
+                .andReturn();
+
+        ModelAndView modelAndView = result.getModelAndView();
+        assert modelAndView != null;
+        assertThat(modelAndView.getModel().get("alimentos"), is(resultados));
+        assertThat(modelAndView.getModel().get("termino"), is(termino));
+        assertThat(modelAndView.getModel().get("comida"), is(comida));
+        assertThat(modelAndView.getModel().get("fecha"), is(fecha));
+
+        assertThat(servicioAlimentoMock.BuscarAlimentoPorNombre(termino), is(resultados));
+    }
 
     @Test
-    public void debeRetornarLosAlimentosCuandoSeBuscaUnTermino() throws Exception {
-         Alimento huevo = new Alimento();
-         huevo.setNombre("Huevo");
-         huevo.setCalorias(155);
-         huevo.setProteinas(13);
-         huevo.setGrasas(11);
-         huevo.setCarbohidratos(1);
-         huevo.setCategoria("Proteínas");
+    public void debeRetornarLaPaginaConParametrosComidaYFecha() throws Exception {
+        String comida = "verdura";
+        String fecha = "2024-10-01";
 
-         List<Alimento> alimentosMock = new ArrayList<>();
-         alimentosMock.add(huevo);
-
-         when(servicioAlimentoMock.BuscarAlimentoPorNombre("Huevo")).thenReturn(alimentosMock);
-
-         MvcResult result = mockMvc.perform(get("/buscarAlimentos")
-                .param("termino", "Huevo"))
+        MvcResult result = this.mockMvc.perform(get("/ver-Buscar-Alimento")
+                .param("comida", comida)
+                .param("fecha", fecha))
                 .andExpect(status().isOk())
                 .andReturn();
 
-         ModelAndView modelAndView = result.getModelAndView();
-         assert modelAndView != null;
-         assertThat(modelAndView.getViewName(), equalToIgnoringCase("buscarAlimento"));
-
-
-         List<Alimento> alimentosRetornados = (List<Alimento>) modelAndView.getModel().get("alimentos");
-         assertThat(alimentosRetornados, hasSize(1));
-         assertThat(alimentosRetornados, hasItem(huevo));
-
-         String terminoBusqueda = (String) modelAndView.getModel().get("termino");
-         assertThat(terminoBusqueda, equalTo("Huevo"));
-
-
-}
-
-
+        ModelAndView modelAndView = result.getModelAndView();
+        assert modelAndView != null;
+        assertThat(modelAndView.getViewName(), equalToIgnoringCase("buscarAlimento"));
+        assertThat(modelAndView.getModel().get("comida"), is(comida));
+        assertThat(modelAndView.getModel().get("fecha"), is(fecha));
+    }
 }

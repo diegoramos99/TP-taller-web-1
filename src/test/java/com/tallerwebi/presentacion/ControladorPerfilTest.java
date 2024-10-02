@@ -1,21 +1,13 @@
 package com.tallerwebi.presentacion;
 
-import com.tallerwebi.dominio.ServicioLogin;
-import com.tallerwebi.dominio.ServicioLoginImpl;
 import com.tallerwebi.dominio.ServicioPerfilUsuario;
 import com.tallerwebi.dominio.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.springframework.cache.support.NullValue;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.text.IsEqualIgnoringCase.equalToIgnoringCase;

@@ -7,14 +7,13 @@
     <link rel="stylesheet" th:href="@{/css/nav.css}"/>
 </head>
 <body>
-
-  <nav>
+<nav>
     <ul>
         <li><a th:href="@{/ver-home}">Home</a></li>
         <li class="dropdown">
             <a href="#">Alimentos</a>
             <ul class="submenu">
-                <li><a th:href="@{/ver-Buscar-Alimento}">Registrar Alimentos</a></li>
+                <li><a id="url-RegistrarAlimento" th:href="@{/ver-Registrar-alimentos}">Registrar Alimentos</a></li>
             </ul>
         </li>
         <li class="dropdown">
@@ -28,33 +27,46 @@
                 <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
             </ul>
         </li>
-        <!-- Nuevo ítem para el perfil de usuario -->
         <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
     </ul>
 </nav>
 
-  <div class="container mt-5">
+
+<div class="container mt-5">
     <h2>Buscar Alimentos</h2>
 
     <form th:action="@{/buscarAlimentos}" method="get">
+        <input type="hidden" name="comida" th:value="${comida}"/>
+        <input type="hidden" name="fecha" th:value="${fecha}"/>
         <div class="input-group">
-            <input type="text" name="termino" class="form-control" placeholder="Buscar alimentos..." th:value="${termino}">
+            <input type="text" name="termino" class="form-control" placeholder="Buscar alimentos..."
+                   th:value="${termino}"/>
             <button type="submit" class="btn btn-primary">Buscar</button>
         </div>
     </form>
+</div>
 
-    <ul class="list-group mt-3">
+
+<ul class="list-group mt-3">
     <li class="list-group-item active">Resultados de búsqueda</li>
     <th:block th:if="${alimentos != null and #lists.isEmpty(alimentos) == false}">
         <th:block th:each="alimento : ${alimentos}">
-            <li class="list-group-item" th:text="${alimento.nombre} + ', ' + ${alimento.cantidad} + ', ' + ${alimento.calorias} + ' calorias'"></li>
+            <li class="list-group-item">
+                <a th:href="@{/registrarAlimentoSelecionado/{id}(id=${alimento.id}, comida=${comida}, fecha=${fecha})}"
+                   th:text="${alimento.nombre} + ', ' + ${alimento.cantidad} + ', ' + ${alimento.calorias} + ' calorias'">
+                </a>
+            </li>
         </th:block>
     </th:block>
-    <li class="list-group-item" th:if="${alimentos == null or #lists.isEmpty(alimentos)}">No se encontraron resultados</li>
+
+    <li class="list-group-item" th:if="${alimentos == null or #lists.isEmpty(alimentos)}">No se encontraron
+        resultados
+    </li>
 </ul>
 </div>
 
 
-
 </body>
+<script th:src="@{/js/nav-link.js}"></script>
+
 </html>

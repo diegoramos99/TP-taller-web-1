@@ -1,4 +1,3 @@
-INSERT INTO Usuario(id, email, password, rol, activo) VALUES(null, 'test@unlam.edu.ar', 'test', 'ADMIN', true);
 
 INSERT INTO Alimento (nombre, calorias, cantidad, proteinas, grasas, carbohidratos, categoria)
 VALUES
@@ -22,3 +21,11 @@ VALUES
 ('Avena instantánea', 367, '100g', 12.6, 6.2, 64, 'Carbohidrato'),
 ('Avena con leche', 150, '1 taza', 5, 3.0, 27, 'Carbohidrato'),
 ('Batido de avena', 250, '1 vaso', 10, 5, 45, 'Carbohidrato');
+
+
+
+INSERT INTO Usuario (activo, apellido, email, informacionAdicional, nombre, objetivoSalud, password, preferenciaAlimenticia, restrincionesAlimentarias, rol)
+VALUES
+(true, 'García', 'juan.garcia@mail.com', 'Ninguna', 'Juan', 'Perder peso', '1234', 'Vegetariano', 'Sin gluten', 'USER'),
+(true, 'Pérez', 'test@unlam.edu.ar', 'Ninguna', 'María', 'Ganar músculo', 'test', 'Omnívora', '', 'USER');
+

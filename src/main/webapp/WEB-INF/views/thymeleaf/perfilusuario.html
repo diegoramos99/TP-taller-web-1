@@ -6,9 +6,7 @@
 
     <title>Taller Web I</title>
 
-    <!-- Boostrap core css -->
-    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <!-- custom style -->
     <link rel="stylesheet" th:href="@{/css/main.css}"/>
 
@@ -68,7 +66,7 @@
         <li class="dropdown">
             <a href="#">Alimentos</a>
             <ul class="submenu">
-                <li><a th:href="@{/ver-Buscar-Alimento}">Registrar Alimentos</a></li>
+                <li><a id="url-RegistrarAlimento" th:href="@{/ver-Registrar-alimentos}">Registrar Alimentos</a></li>
             </ul>
         </li>
         <li class="dropdown">
@@ -82,7 +80,6 @@
                 <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
             </ul>
         </li>
-        <!-- Nuevo ítem para el perfil de usuario -->
         <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
     </ul>
 </nav>
@@ -105,4 +102,6 @@
 </div>
 
 </body>
+<script th:src="@{/js/nav-link.js}"></script>
+
 </html>
