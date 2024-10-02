@@ -1,13 +1,8 @@
 package com.tallerwebi.presentacion;
-
-import com.tallerwebi.dominio.ServicioLogin;
-import org.hamcrest.text.IsEqualIgnoringCase;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.servlet.ModelAndView;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.text.IsEqualIgnoringCase.equalToIgnoringCase;
-import static org.thymeleaf.util.StringUtils.equalsIgnoreCase;
 
 public class controladorRegistroTest {
 

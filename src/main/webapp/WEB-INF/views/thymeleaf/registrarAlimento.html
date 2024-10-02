@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Comidas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/nav.css}"/>
+
+    <style>
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .date-picker {
+            display: flex;
+            align-items: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+
+
+        .date-picker button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .date-picker input[type="date"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        .meal-section {
+            margin-top: 20px;
+        }
+
+        .meal-section h3 {
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .meal-section .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .meal-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #f8f8f8;
+        }
+
+        .totals {
+            margin-top: 20px;
+        }
+
+        .totals table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .totals table th, .totals table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .totals table th {
+            background-color: #f8f8f8;
+        }
+
+        .totals table td.green {
+            color: green;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a th:href="@{/ver-home}">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Alimentos</a>
+            <ul class="submenu">
+                <li><a id="url-RegistrarAlimento" th:href="@{/ver-Registrar-alimentos}">Registrar Alimentos</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Ejercicio</a>
+            <ul class="submenu"></ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Calculadora</a>
+            <ul class="submenu">
+                <li><a href="#">Calcular calorias</a></li>
+                <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
+            </ul>
+        </li>
+        <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
+    </ul>
+</nav>
+
+
+<div class="container">
+
+    <div th:if="${mensaje != null}" class="alert"
+         th:class="${mensaje.contains('Error') ? 'alert-danger' : 'alert-success'}">
+        <p th:text="${mensaje}"></p>
+    </div>
+
+    <div class="header">
+        <h2>Tu registro de comidas para:</h2>
+        <div class="date-picker">
+            <input type="date" id="fechaInput" required>
+        </div>
+    </div>
+    <div class="meal-section">
+        <h3>Desayuno</h3>
+        <div class="actions">
+            <a id="añadirAlimentoDesayuno">Añadir alimento</a>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Calorías (kcal)</th>
+                <th>Carbohidratos (g)</th>
+                <th>Grasas (g)</th>
+                <th>Proteínas (g)</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="alimento : ${alimentos}" th:if="${alimento.getTipoComida() == 'Desayuno'}">
+                <td th:text="${alimento.getAlimento().nombre}"></td>
+                <td th:text="${alimento.getAlimento().getCantidad()}"></td>
+                <td th:text="${alimento.getAlimento().getCalorias()}"></td>
+                <td th:text="${alimento.getAlimento().getCarbohidratos()}"></td>
+                <td th:text="${alimento.getAlimento().getGrasas()}"></td>
+                <td th:text="${alimento.getAlimento().getProteinas()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="meal-section">
+        <h3>Almuerzo</h3>
+        <div class="actions">
+            <a id="añadirAlimentoAlmuerzo">Añadir alimento</a>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Calorías (kcal)</th>
+                <th>Carbohidratos (g)</th>
+                <th>Grasas (g)</th>
+                <th>Proteínas (g)</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="alimento : ${alimentos}" th:if="${alimento.getTipoComida() == 'Almuerzo'}">
+                <td th:text="${alimento.getAlimento().getNombre()}"></td>
+                <td th:text="${alimento.getAlimento().getCantidad()}"></td>
+                <td th:text="${alimento.getAlimento().getCalorias()}"></td>
+                <td th:text="${alimento.getAlimento().getCarbohidratos()}"></td>
+                <td th:text="${alimento.getAlimento().getGrasas()}"></td>
+                <td th:text="${alimento.getAlimento().getProteinas()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="meal-section">
+        <h3>Merienda</h3>
+        <div class="actions">
+            <a id="añadirAlimentoMerienda">Añadir alimento</a>
+
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Calorías (kcal)</th>
+                <th>Carbohidratos (g)</th>
+                <th>Grasas (g)</th>
+                <th>Proteínas (g)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="alimento : ${alimentos}" th:if="${alimento.getTipoComida() == 'Merienda'}">
+                <td th:text="${alimento.getAlimento().getNombre()}"></td>
+                <td th:text="${alimento.getAlimento().getCantidad()}"></td>
+                <td th:text="${alimento.getAlimento().getCalorias()}"></td>
+                <td th:text="${alimento.getAlimento().getCarbohidratos()}"></td>
+                <td th:text="${alimento.getAlimento().getGrasas()}"></td>
+                <td th:text="${alimento.getAlimento().getProteinas()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="meal-section">
+        <h3>Cena</h3>
+        <div class="actions">
+            <a id="añadirAlimentoCena">Añadir alimento</a>
+
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Calorías (kcal)</th>
+                <th>Carbohidratos (g)</th>
+                <th>Grasas (g)</th>
+                <th>Proteínas (g)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="alimento : ${alimentos}" th:if="${alimento.getTipoComida() == 'Cena'}">
+                <td th:text="${alimento.getAlimento().getNombre()}"></td>
+                <td th:text="${alimento.getAlimento().getCantidad()}"></td>
+                <td th:text="${alimento.getAlimento().getCalorias()}"></td>
+                <td th:text="${alimento.getAlimento().getCarbohidratos()}"></td>
+                <td th:text="${alimento.getAlimento().getGrasas()}"></td>
+                <td th:text="${alimento.getAlimento().getProteinas()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="totals">
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>Calorías (kcal)</th>
+                <th>Carbohidratos (g)</th>
+                <th>Grasas (g)</th>
+                <th>Proteínas (g)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Totales</td>
+                <td th:text="${totalCalorias}">0</td>
+                <td th:text="${totalCarbohidratos}">0</td>
+                <td th:text="${totalGrasas}">0</td>
+                <td th:text="${totalProteinas}">0</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+
+
+<script>
+     window.onload = function() {
+        let storedDate = localStorage.getItem('selectedDate');
+
+        document.getElementById('fechaInput').value = storedDate || '';
+
+        updateFoodLinks(storedDate || '');
+    };
+
+    function updateFoodLinks(selectedDate) {
+        document.getElementById('añadirAlimentoDesayuno').href = `/spring/ver-Buscar-Alimento?comida=Desayuno&fecha=` + selectedDate;
+        document.getElementById('añadirAlimentoAlmuerzo').href = `/spring/ver-Buscar-Alimento?comida=Almuerzo&fecha=` + selectedDate;
+        document.getElementById('añadirAlimentoMerienda').href = `/spring/ver-Buscar-Alimento?comida=Merienda&fecha=` + selectedDate;
+        document.getElementById('añadirAlimentoCena').href = `/spring/ver-Buscar-Alimento?comida=Cena&fecha=` + selectedDate;
+        document.getElementById('url-RegistrarAlimento').href = `/spring/ver-Registrar-alimentos?fecha=` + selectedDate;
+    }
+
+    document.getElementById('fechaInput').addEventListener('change', function () {
+        let selectedDate = this.value;
+        if (selectedDate) {
+            localStorage.setItem('selectedDate', selectedDate);
+            updateFoodLinks(selectedDate);
+
+            window.location.href = `/spring/ver-Registrar-alimentos?fecha=` + selectedDate;
+        }
+    });
+
+</script>
+
+</html>

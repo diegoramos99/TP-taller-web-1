@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/nav.css}"/>
+    <style>
+
+        .list-group-item {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .list-group-item:hover {
+            background-color: #f0f0f0;
+        }
+
+
+        .list-group-item a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+            padding: 10px;
+        }
+
+        .list-group-item a:hover {
+            color: #0056b3;
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a th:href="@{/ver-home}">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Alimentos</a>
+            <ul class="submenu">
+                <li><a id="url-RegistrarAlimento" th:href="@{/ver-Registrar-alimentos}">Registrar Alimentos</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Ejercicio</a>
+            <ul class="submenu"></ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Calculadora</a>
+            <ul class="submenu">
+                <li><a href="#">Calcular calorias</a></li>
+                <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
+            </ul>
+        </li>
+        <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
+    </ul>
+</nav>
+
+<div class="container mt-5">
+    <h2>Buscar Alimentos</h2>
+
+    <form th:action="@{/buscarAlimentos}" method="get">
+        <input type="hidden" name="comida" th:value="${comida}"/>
+        <input type="hidden" name="fecha" th:value="${fecha}"/>
+        <div class="input-group">
+            <input type="text" name="termino" class="form-control" placeholder="Buscar alimentos..."
+                   th:value="${termino}"/>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+    </form>
+</div>
+
+<ul class="container list-group mt-3">
+    <li class="list-group-item active">Resultados de búsqueda</li>
+    <th:block th:if="${alimentos != null and #lists.isEmpty(alimentos) == false}">
+        <th:block th:each="alimento : ${alimentos}">
+            <li class="list-group-item">
+                <a th:href="@{/registrarAlimentoSelecionado/{id}(id=${alimento.id}, comida=${comida}, fecha=${fecha})}"
+                   th:text="${alimento.nombre} + ', ' + ${alimento.cantidad} + ', ' + ${alimento.calorias} + ' calorias'">
+                </a>
+            </li>
+        </th:block>
+    </th:block>
+
+    <li class="list-group-item" th:if="${alimentos == null or #lists.isEmpty(alimentos)}">No se encontraron resultados
+    </li>
+</ul>
+
+<script th:src="@{/js/nav-link.js}"></script>
+</body>
+</html>

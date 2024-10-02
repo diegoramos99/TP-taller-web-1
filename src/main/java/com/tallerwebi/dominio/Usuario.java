@@ -15,8 +15,6 @@ public class Usuario {
     private String password;
     private String rol;
     private Boolean activo = false;
-
-
     private String nombre;
     private String apellido;
     private String objetivoSalud;
@@ -24,12 +22,44 @@ public class Usuario {
     private String restrincionesAlimentarias;
     private String informacionAdicional;
 
-    public String getNombre() {
-        return nombre;
+    public Long getId() {
+        return id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
     public String getApellido() {
@@ -38,6 +68,22 @@ public class Usuario {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public String getRestrincionesAlimentarias() {
+        return restrincionesAlimentarias;
+    }
+
+    public void setRestrincionesAlimentarias(String restrincionesAlimentarias) {
+        this.restrincionesAlimentarias = restrincionesAlimentarias;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getObjetivoSalud() {
@@ -54,54 +100,6 @@ public class Usuario {
 
     public void setPreferenciaAlimenticia(String preferenciaAlimenticia) {
         this.preferenciaAlimenticia = preferenciaAlimenticia;
-    }
-
-    public String getRestrincionesAlimentarias() {
-        return restrincionesAlimentarias;
-    }
-
-    public void setRestrincionesAlimentarias(String restrincionesAlimentarias) {
-        this.restrincionesAlimentarias = restrincionesAlimentarias;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public String getPassword() {
-        return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    public String getRol() {
-        return rol;
-    }
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
-    public Boolean getActivo() {
-        return activo;
-    }
-    public void setActivo(Boolean activo) {
-        this.activo = activo;
-    }
-
-    public boolean activo() {
-        return activo;
-    }
-
-    public void activar() {
-        activo = true;
     }
 
     public String getInformacionAdicional() {
