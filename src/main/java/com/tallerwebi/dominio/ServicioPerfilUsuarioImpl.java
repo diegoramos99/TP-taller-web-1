@@ -29,9 +29,18 @@ public class ServicioPerfilUsuarioImpl implements ServicioPerfilUsuario {
         return usuario;
     }
     @Override
-    public Usuario modificarUsuario(Usuario usuarioAModificar){
-                repositorioUsuario.modificar(usuarioAModificar);
-        Usuario usuarioModificado=repositorioUsuario.buscarUsuario(usuarioAModificar.getEmail(),usuarioAModificar.getPassword());
-        return usuarioModificado;
+    public Usuario modificarUsuario(Usuario usuario,Usuario usuarioConDatos){
+                Long idDeUsuario=usuario.getId();
+                String nombre=usuario.getNombre();
+                 String apellido=usuario.getApellido();
+                 String email= usuario.getEmail();
+                 String password= usuario.getPassword();
+                usuarioConDatos.setId(idDeUsuario);
+                usuarioConDatos.setNombre(nombre);
+                usuarioConDatos.setApellido(apellido);
+                usuarioConDatos.setEmail(email);
+                usuarioConDatos.setPassword(password);
+                repositorioUsuario.modificar(usuarioConDatos);
+        return usuarioConDatos;
     }
 }

@@ -69,7 +69,7 @@
 <div class="form-container">
     <h1>Perfil de Salud</h1>
     <form action="" th:action="@{/enviarDatos}" method="POST" th:object="${usuario}">
-        <!-- Objetivos de Salud -->
+        <input type="hidden" th:field="*{id}" />
         <label for="objetivos">Objetivos de Salud</label>
         <select th:field="*{objetivoSalud}" id="objetivos" name="objetivos">
             <option value="perdida_grasa">Pérdida de Grasa</option>
@@ -78,7 +78,7 @@
             <option value="otro">Otro</option>
         </select>
 
-        <!-- Preferencias Alimenticias -->
+
         <label for="preferencias">Preferencias Alimenticias</label>
         <select th:field="*{preferenciaAlimenticia}" id="preferencias" name="preferencias">
             <option value="omnivoro">Omnívoro</option>
@@ -89,15 +89,15 @@
             <option value="otro">Otro</option>
         </select>
 
-        <!-- Restricciones por Enfermedades o Gustos -->
+
         <label for="restricciones">Restricciones Alimentarias (por enfermedades o gustos)</label>
         <textarea th:field="*{restrincionesAlimentarias}" id="restricciones" name="restricciones" rows="4" placeholder="Ej: Sin gluten, intolerante a la lactosa, alergia a frutos secos, etc."></textarea>
 
-        <!-- Información Adicional -->
+
         <label for="info_adicional">Información Adicional (opcional)</label>
         <textarea  th:field="*{informacionAdicional}"id="info_adicional" name="info_adicional" rows="4" placeholder="Ej: Instrucciones especiales, detalles sobre estilo de vida, etc."></textarea>
 
-        <!-- Botón de envío -->
+
         <button type="submit" class="submit-btn">Guardar Perfil</button>
     </form>
 </div>

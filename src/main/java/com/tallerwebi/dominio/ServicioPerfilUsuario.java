@@ -5,6 +5,6 @@ public interface ServicioPerfilUsuario {
 
     Usuario buscarUsuarioPoreEmail(String email);
 
-    Usuario modificarUsuario(Usuario usuarioAModificar);
+    Usuario modificarUsuario(Usuario usuario,Usuario usuarioConDatos);
 }
 
