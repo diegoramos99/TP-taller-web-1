@@ -1,6 +1,6 @@
 package com.tallerwebi.infraestructura;
 
-import com.tallerwebi.model.Usuario;
+import com.tallerwebi.dominio.Usuario;
 
 public interface RepositorioUsuario {
 

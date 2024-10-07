@@ -1,4 +1,4 @@
-package com.tallerwebi.model;
+package com.tallerwebi.dominio;
 
 import javax.persistence.*;
 import java.util.ArrayList;

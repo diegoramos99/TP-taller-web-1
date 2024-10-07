@@ -1,6 +1,6 @@
 package com.tallerwebi.infraestructura;
 
-import com.tallerwebi.model.RegistroComida;
+import com.tallerwebi.dominio.RegistroComida;
 
 import java.util.List;
 

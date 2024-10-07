@@ -1,7 +1,7 @@
 package com.tallerwebi.infraestructura;
 
 
-import com.tallerwebi.model.Alimento;
+import com.tallerwebi.dominio.Alimento;
 
 import java.util.List;
 

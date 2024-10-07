@@ -1,7 +1,7 @@
 package com.tallerwebi.infraestructura;
 
 
-import com.tallerwebi.model.Alimento;
+import com.tallerwebi.dominio.Alimento;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;

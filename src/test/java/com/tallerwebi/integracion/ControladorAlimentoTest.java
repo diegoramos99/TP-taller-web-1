@@ -1,6 +1,6 @@
 package com.tallerwebi.integracion;
 
-import com.tallerwebi.model.Alimento;
+import com.tallerwebi.dominio.Alimento;
 import com.tallerwebi.dominio.ServicioAlimento;
 import com.tallerwebi.integracion.config.HibernateTestConfig;
 import com.tallerwebi.integracion.config.SpringWebTestConfig;

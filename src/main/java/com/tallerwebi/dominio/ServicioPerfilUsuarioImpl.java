@@ -1,6 +1,5 @@
 package com.tallerwebi.dominio;
 
-import com.tallerwebi.model.Usuario;
 import com.tallerwebi.infraestructura.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 package com.tallerwebi.presentacion;
 import com.tallerwebi.dominio.*;
-import com.tallerwebi.model.Alimento;
-import com.tallerwebi.model.RegistroComida;
-import com.tallerwebi.model.Usuario;
+import com.tallerwebi.dominio.Alimento;
+import com.tallerwebi.dominio.RegistroComida;
+import com.tallerwebi.dominio.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
