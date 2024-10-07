@@ -1,9 +1,8 @@
 package com.tallerwebi.dominio;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Usuario {
@@ -21,6 +20,19 @@ public class Usuario {
     private String preferenciaAlimenticia;
     private String restrincionesAlimentarias;
     private String informacionAdicional;
+
+
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RegistroComida> registrosComida = new ArrayList<>();
+
+    public List<RegistroComida> getRegistrosComida() {
+        return registrosComida;
+    }
+
+    public void setRegistrosComida(List<RegistroComida> registrosComida) {
+        this.registrosComida = registrosComida;
+    }
 
     public Long getId() {
         return id;
