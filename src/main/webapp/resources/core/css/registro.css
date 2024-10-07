@@ -1,0 +1,211 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.breadcrumbs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    color: #999;
+    padding: 10px 0;
+}
+
+.breadcrumb.active {
+    color: #28a745;
+}
+
+.breadcrumb::after {
+    content: '';
+    position: absolute;
+    right: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    z-index: -1;
+}
+
+.breadcrumb:last-child::after {
+    display: none;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.wpcc-formula-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.wpcc-formula-grid-item {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.wpcc-formula-grid-item:hover {
+    background-color: #e9ecef;
+    border-color: #28a745;
+}
+
+.wpcc-formula-grid-item input[type="radio"] {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.wpcc-formula-grid-item-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.wpcc-formula-grid-item-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.wpcc-formula-grid-item-description {
+    font-size: 14px;
+    color: #555;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.next-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.next-button:hover {
+    background-color: #0056b3;
+}
+
+.prev-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+.prev-button:hover {
+    background-color: #5a6268;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .breadcrumbs {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .breadcrumb {
+        text-align: left;
+        margin-bottom: 10px;
+        padding: 8px 0;
+    }
+
+    .form-navigation {
+        flex-direction: column;
+    }
+
+    .form-navigation button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .form-navigation button:last-child {
+        margin-bottom: 0;
+    }
+}

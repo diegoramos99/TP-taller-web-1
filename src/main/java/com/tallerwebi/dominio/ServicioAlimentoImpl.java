@@ -1,12 +1,13 @@
 package com.tallerwebi.dominio;
 
+import com.tallerwebi.model.Alimento;
+import com.tallerwebi.model.RegistroComida;
 import com.tallerwebi.infraestructura.RepositorioAlimento;
 import com.tallerwebi.infraestructura.RepositorioRegistroComida;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.LocalDate;
 import java.util.List;
 
 @Service("servicioAlimento")

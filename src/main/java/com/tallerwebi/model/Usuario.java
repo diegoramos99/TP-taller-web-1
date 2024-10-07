@@ -1,9 +1,8 @@
-package com.tallerwebi.dominio;
+package com.tallerwebi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Usuario {
@@ -17,10 +16,77 @@ public class Usuario {
     private Boolean activo = false;
     private String nombre;
     private String apellido;
+    private String sexo;
+    private String formula;
+    private Integer edad;
+    private Float peso;
+    private Float altura;
+    private String actividad;
     private String objetivoSalud;
     private String preferenciaAlimenticia;
     private String restrincionesAlimentarias;
     private String informacionAdicional;
+
+
+
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RegistroComida> registrosComida = new ArrayList<>();
+
+    public Float getAltura() {
+        return altura;
+    }
+
+    public void setAltura(Float altura) {
+        this.altura = altura;
+    }
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getFormula() {
+        return formula;
+    }
+
+    public void setFormula(String formula) {
+        this.formula = formula;
+    }
+
+    public Integer getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
+    }
+
+    public Float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Float peso) {
+        this.peso = peso;
+    }
+
+    public String getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(String actividad) {
+        this.actividad = actividad;
+    }
+
+    public List<RegistroComida> getRegistrosComida() {
+        return registrosComida;
+    }
+
+    public void setRegistrosComida(List<RegistroComida> registrosComida) {
+        this.registrosComida = registrosComida;
+    }
 
     public Long getId() {
         return id;

@@ -1,7 +1,6 @@
-package com.tallerwebi.dominio;
+package com.tallerwebi.model;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 public class RegistroComida {

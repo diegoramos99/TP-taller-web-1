@@ -1,10 +1,7 @@
 package com.tallerwebi.presentacion;
 
 import com.tallerwebi.dominio.ServicioPerfilUsuario;
-import com.tallerwebi.dominio.ServicioPerfilUsuarioImpl;
-import com.tallerwebi.dominio.Usuario;
-import com.tallerwebi.infraestructura.RepositorioUsuario;
-import com.tallerwebi.infraestructura.RepositorioUsuarioImpl;
+import com.tallerwebi.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -28,15 +25,18 @@ public class ControladorPerfilUsuario {
     }
 
     @RequestMapping(path = "/perfilusuario", method = RequestMethod.GET)
-    public ModelAndView mostrarDatosDelUsuario() {
+    public ModelAndView mostrarDatosDelUsuario(HttpServletRequest request) {
+        String email = (String) request.getSession().getAttribute("EMAIL");
+        Usuario usuarioBuscado=servicioPerfilUsuario.buscarUsuarioPoreEmail(email);
+
         ModelMap mavUsuario=new ModelMap();
-        Usuario usuario=new Usuario();
-        mavUsuario.put("nombre",usuario.getNombre());
-        mavUsuario.put("apellido",usuario.getApellido());
-        mavUsuario.put("objetivoSalud",usuario.getObjetivoSalud());
-        mavUsuario.put("preferenciaAlimenticia",usuario.getPreferenciaAlimenticia());
-        mavUsuario.put("restrincionesAlimentarias",usuario.getRestrincionesAlimentarias());
-        mavUsuario.put("informacionAdicional",usuario.getInformacionAdicional());
+
+        mavUsuario.put("nombre",usuarioBuscado.getNombre());
+        mavUsuario.put("apellido",usuarioBuscado.getApellido());
+        mavUsuario.put("objetivoSalud",usuarioBuscado.getObjetivoSalud());
+        mavUsuario.put("preferenciaAlimenticia",usuarioBuscado.getPreferenciaAlimenticia());
+        mavUsuario.put("restrincionesAlimentarias",usuarioBuscado.getRestrincionesAlimentarias());
+        mavUsuario.put("informacionAdicional",usuarioBuscado.getInformacionAdicional());
 
         return new ModelAndView( "perfilusuario",mavUsuario);
     }
@@ -60,13 +60,17 @@ public class ControladorPerfilUsuario {
     @RequestMapping(path = "/enviarDatos", method = RequestMethod.POST)
     public ModelAndView enviarDatosDelFormulario(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 
+        String email = (String) request.getSession().getAttribute("EMAIL");
+        Usuario usuarioActivo=servicioPerfilUsuario.buscarUsuarioPoreEmail(email);
+
+         Usuario usuarioActualizado=servicioPerfilUsuario.modificarUsuario(usuarioActivo , usuario);
         ModelMap model = new ModelMap();
-        model.put("nombre",usuario.getNombre());
-        model.put("apellido",usuario.getApellido());
-        model.put("objetivoSalud",usuario.getObjetivoSalud());
-        model.put("preferenciaAlimenticia",usuario.getPreferenciaAlimenticia());
-        model.put("restrincionesAlimentarias",usuario.getRestrincionesAlimentarias());
-        model.put("informacionAdicional",usuario.getInformacionAdicional());
+        model.put("nombre",usuarioActualizado.getNombre());
+        model.put("apellido",usuarioActualizado.getApellido());
+        model.put("objetivoSalud",usuarioActualizado.getObjetivoSalud());
+        model.put("preferenciaAlimenticia",usuarioActualizado.getPreferenciaAlimenticia());
+        model.put("restrincionesAlimentarias",usuarioActualizado.getRestrincionesAlimentarias());
+        model.put("informacionAdicional",usuarioActualizado.getInformacionAdicional());
 
         return new ModelAndView("perfilusuario",model);
 

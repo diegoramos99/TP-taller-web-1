@@ -1,5 +1,8 @@
 package com.tallerwebi.presentacion;
 import com.tallerwebi.dominio.*;
+import com.tallerwebi.model.Alimento;
+import com.tallerwebi.model.RegistroComida;
+import com.tallerwebi.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -84,7 +87,7 @@ public class ControladorRegistrarAlimento {
 
         Alimento alimentoSeleccionado = servicioAlimento.obtenerAlimentoPorId(id);
 
-        String nombreUsuario = (String) request.getSession().getAttribute("userEmail");
+        String nombreUsuario = (String) request.getSession().getAttribute("EMAIL");
         Usuario usuario = servicioLogin.consultarUsuarioPorEmail(nombreUsuario);
         if (usuario == null) {
             model.addAttribute("mensaje", "Usuario no encontrado.");

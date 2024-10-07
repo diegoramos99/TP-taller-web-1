@@ -1,6 +1,6 @@
 package com.tallerwebi.infraestructura;
 
-import com.tallerwebi.dominio.Usuario;
+import com.tallerwebi.model.Usuario;
 
 public interface RepositorioUsuario {
 
@@ -8,5 +8,6 @@ public interface RepositorioUsuario {
     void guardar(Usuario usuario);
     Usuario buscar(String email);
     void modificar(Usuario usuario);
+
 }
 
