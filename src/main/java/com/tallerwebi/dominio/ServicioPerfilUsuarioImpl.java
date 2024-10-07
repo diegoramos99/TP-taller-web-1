@@ -1,5 +1,6 @@
 package com.tallerwebi.dominio;
 
+import com.tallerwebi.model.Usuario;
 import com.tallerwebi.infraestructura.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class ServicioPerfilUsuarioImpl implements ServicioPerfilUsuario {
 
 
     @Override
-    public Usuario buscarUsuario(String email,String password) {
+    public Usuario buscarUsuario(String email, String password) {
         Usuario usuario =repositorioUsuario.buscarUsuario(email,password);
         return usuario;
     }

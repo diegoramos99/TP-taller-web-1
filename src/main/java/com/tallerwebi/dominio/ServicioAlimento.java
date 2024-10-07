@@ -1,6 +1,8 @@
 package com.tallerwebi.dominio;
 
-import java.time.LocalDate;
+import com.tallerwebi.model.Alimento;
+import com.tallerwebi.model.RegistroComida;
+
 import java.util.List;
 
 public interface ServicioAlimento {
