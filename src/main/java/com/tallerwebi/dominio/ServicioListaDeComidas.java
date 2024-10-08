@@ -1,24 +1,15 @@
 package com.tallerwebi.dominio;
 
-import com.tallerwebi.infraestructura.RepositorioListaDeComidas;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 import java.util.List;
 
-@Service
-@Transactional
-public class ServicioListaDeComidas {
-    private RepositorioListaDeComidas repositorioListaDeComidas;
-    @Autowired
-    public void ServicioListaDeComidas(RepositorioListaDeComidas listaDeComidas){
-        this.repositorioListaDeComidas=listaDeComidas;
-    }
+public interface ServicioListaDeComidas {
+  List<Alimento> buscarAlimentos(Usuario usuarioMock);
 
-    public List<Alimento> buscarAlimentos(Usuario usuarioMock) {
-        List <Alimento> alimentos= repositorioListaDeComidas.buscarAlimentos();
+  List<List<Alimento>> separarLosAlimentosPorTipo(List<Alimento> alimentosList);
 
-        return alimentos;
-    }
+  List<List<Alimento>> buscarAlimentosParaLaSemana(Usuario usuarioMock);
+
+  List<List<Alimento>> comidasParaElDiaRespetandoLaDieta(Usuario usuarioMock, List<List<Alimento>> alimentosSeparadosPorTipo);
+
+  List<Alimento> comidasParaEldia(Usuario usuarioMock, List<List<Alimento>> alimentosSeparadosPorTipoYDieta);
 }

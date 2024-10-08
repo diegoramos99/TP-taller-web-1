@@ -8,176 +8,33 @@
 </head>
 <body>
 <div class="calendario">
-
-
-
-        <div th:each="alimento : ${alimentos}" >
-            <div class="calendario">
+    <div th:each="listaAlimentos, iterStat : ${alimentos}">
+        <div class="calendario">
             <div class="dia">
-                <h3>Lunes</h3>
+                <!-- Usar iterStat.index con el título dinámico -->
+                <h3 th:text="'Día ' + (${iterStat.count})"></h3>
+
                 <div class="comida">
                     <strong>Desayuno:</strong>
-                    <p th:text="${alimento.getNombre()}" ></p>
+                    <p th:text="${listaAlimentos[0].getNombre()}" ></p>
                 </div>
                 <div class="comida">
                     <strong>Almuerzo:</strong>
-                    <p th:text="${alimento.getNombre()}" ></p>
+                    <p th:text="${listaAlimentos[1].getNombre()}" ></p>
                 </div>
                 <div class="comida">
                     <strong>Merienda:</strong>
-                    <p th:text="${alimento.getNombre()}" ></p>
+                    <p th:text="${listaAlimentos[2].getNombre()}" ></p>
                 </div>
                 <div class="comida">
                     <strong>Cena:</strong>
-                    <p th:text="${alimento.getNombre()}" ></p>
+                    <p th:text="${listaAlimentos[3].getNombre()}" ></p>
                 </div>
             </div>
-
-            </div>
         </div>
-
-
-
-
-
-        <div class="dia">
-            <h3>Lunes</h3>
-            <div class="comida">
-                <strong>Desayuno:</strong>
-                <p>Ejemplo: Avena con frutas</p>
-            </div>
-            <div class="comida">
-                <strong>Almuerzo:</strong>
-                <p>Ejemplo: Pollo a la parrilla con ensalada</p>
-            </div>
-            <div class="comida">
-                <strong>Merienda:</strong>
-                <p>Ejemplo: Yogur con nueces</p>
-            </div>
-            <div class="comida">
-                <strong>Cena:</strong>
-                <p>Ejemplo: Sopa de verduras</p>
-            </div>
-        </div>
-        <!-- Repite el bloque .dia para cada día de la semana -->
-        <div class="dia">
-            <h3>Martes</h3>
-            <div class="comida">
-                <strong>Desayuno:</strong>
-                <p>Ejemplo: Tostadas integrales con aguacate</p>
-            </div>
-            <div class="comida">
-                <strong>Almuerzo:</strong>
-                <p>Ejemplo: Pasta con salsa de tomate</p>
-            </div>
-            <div class="comida">
-                <strong>Merienda:</strong>
-                <p>Ejemplo: Fruta fresca</p>
-            </div>
-            <div class="comida">
-                <strong>Cena:</strong>
-                <p>Ejemplo: Pescado al horno con vegetales</p>
-            </div>
-        </div>
-        <div class="dia">
-            <h3>Miercoles</h3>
-            <div class="comida">
-                <strong>Desayuno:</strong>
-                <p>Ejemplo: Tostadas integrales con aguacate</p>
-            </div>
-            <div class="comida">
-                <strong>Almuerzo:</strong>
-                <p>Ejemplo: Pasta con salsa de tomate</p>
-            </div>
-            <div class="comida">
-                <strong>Merienda:</strong>
-                <p>Ejemplo: Fruta fresca</p>
-            </div>
-            <div class="comida">
-                <strong>Cena:</strong>
-                <p>Ejemplo: Pescado al horno con vegetales</p>
-            </div>
-        </div>
-        <div class="dia">
-            <h3>Jueves</h3>
-            <div class="comida">
-                <strong>Desayuno:</strong>
-                <p>Ejemplo: Tostadas integrales con aguacate</p>
-            </div>
-            <div class="comida">
-                <strong>Almuerzo:</strong>
-                <p>Ejemplo: Pasta con salsa de tomate</p>
-            </div>
-            <div class="comida">
-                <strong>Merienda:</strong>
-                <p>Ejemplo: Fruta fresca</p>
-            </div>
-            <div class="comida">
-                <strong>Cena:</strong>
-                <p>Ejemplo: Pescado al horno con vegetales</p>
-            </div>
-        </div>
-        <div class="dia">
-            <h3>Viernes</h3>
-            <div class="comida">
-                <strong>Desayuno:</strong>
-                <p>Ejemplo: Tostadas integrales con aguacate</p>
-            </div>
-            <div class="comida">
-                <strong>Almuerzo:</strong>
-                <p>Ejemplo: Pasta con salsa de tomate</p>
-            </div>
-            <div class="comida">
-                <strong>Merienda:</strong>
-                <p>Ejemplo: Fruta fresca</p>
-            </div>
-            <div class="comida">
-                <strong>Cena:</strong>
-                <p>Ejemplo: Pescado al horno con vegetales</p>
-            </div>
-        </div>
-        <div class="dia">
-            <h3>Sabado</h3>
-            <div class="comida">
-                <strong>Desayuno:</strong>
-                <p>Ejemplo: Tostadas integrales con aguacate</p>
-            </div>
-            <div class="comida">
-                <strong>Almuerzo:</strong>
-                <p>Ejemplo: Pasta con salsa de tomate</p>
-            </div>
-            <div class="comida">
-                <strong>Merienda:</strong>
-                <p>Ejemplo: Fruta fresca</p>
-            </div>
-            <div class="comida">
-                <strong>Cena:</strong>
-                <p>Ejemplo: Pescado al horno con vegetales</p>
-            </div>
-        </div>
-        <div class="dia">
-            <h3>Domingo</h3>
-            <div class="comida">
-                <strong>Desayuno:</strong>
-                <p>Ejemplo: Tostadas integrales con aguacate</p>
-            </div>
-            <div class="comida">
-                <strong>Almuerzo:</strong>
-                <p>Ejemplo: Pasta con salsa de tomate</p>
-            </div>
-            <div class="comida">
-                <strong>Merienda:</strong>
-                <p>Ejemplo: Fruta fresca</p>
-            </div>
-            <div class="comida">
-                <strong>Cena:</strong>
-                <p>Ejemplo: Pescado al horno con vegetales</p>
-            </div>
-        </div>
-
-        <!-- Continúa con miércoles, jueves, viernes, sábado y domingo -->
-        <!-- ... -->
     </div>
+
+
 </div>
 </body>
 </html>

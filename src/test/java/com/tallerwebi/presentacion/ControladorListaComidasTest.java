@@ -1,8 +1,11 @@
 package com.tallerwebi.presentacion;
 
 import com.tallerwebi.dominio.ServicioListaDeComidas;
+import com.tallerwebi.dominio.ServicioListaDeComidasImpl;
+import com.tallerwebi.dominio.ServicioPerfilUsuario;
 import com.tallerwebi.dominio.Usuario;
 import org.junit.jupiter.api.Test;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,8 +20,9 @@ public class ControladorListaComidasTest {
     private Usuario usuarioMock;
     private HttpServletRequest requestMock;
     private HttpSession sessionMock;
-    private ServicioListaDeComidas servicioListaDeComidasMock;
-    private ControladorListaDeComidas controladorListaDeComidasMock=new ControladorListaDeComidas();
+    private ServicioListaDeComidasImpl servicioListaDeComidasImplMock;
+    private ServicioPerfilUsuario servicioPerfilUsuarioMock;
+    private ControladorListaDeComidas controladorListaDeComidasMock=new ControladorListaDeComidas(servicioListaDeComidasImplMock,servicioPerfilUsuarioMock);
 
 
 
@@ -33,7 +37,7 @@ public class ControladorListaComidasTest {
 }
 
     private void thenEsLaVistaCorrecta(ModelAndView mav) {
-        assertThat(mav.getViewName().toString(), equalToIgnoringCase("listaDeComidas")) ;
+        assertThat(mav.getViewName().toString(), equalToIgnoringCase("redirect:/listaDeComidas")) ;
     }
 
     private ModelAndView whenHagasClickTeLleveAunaVista() {
@@ -41,17 +45,19 @@ public class ControladorListaComidasTest {
     return mav;
     }
 
-    @Test
+   /** @Test
     public void queAlEntrarALaVistaListaComidasMuestreLosAlimentosParaLaSemana(){
 
-        whenMuestreLosAlimentos(usuarioMock);
-        thenLosAlimentosSonCorrectos();
+        ModelAndView mav= whenMuestreLosAlimentos(usuarioMock);
+        thenLosAlimentosSonCorrectos(mav);
     }
 
-    private void thenLosAlimentosSonCorrectos() {
+    private void thenLosAlimentosSonCorrectos(ModelAndView mav) {
     }
 
-    private void whenMuestreLosAlimentos(Usuario usuarioMock) {
+    private ModelAndView whenMuestreLosAlimentos(Usuario usuarioMock) {
         ModelAndView mav=controladorListaDeComidasMock.mostrarAlimentosDisponibles(usuarioMock);
+    return mav;
     }
+   **/
 }

@@ -1,8 +1,6 @@
 package com.tallerwebi.presentacion;
 
-import com.tallerwebi.dominio.Alimento;
-import com.tallerwebi.dominio.ServicioListaDeComidas;
-import com.tallerwebi.dominio.Usuario;
+import com.tallerwebi.dominio.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,15 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
 public class ControladorListaDeComidas {
 
     private ServicioListaDeComidas servicioListaDeComidas;
+    private ServicioPerfilUsuario servicioPerfilUsuario;
     @Autowired
-    public void ControladorListaDeComidas(ServicioListaDeComidas servicioListaDeComidas){
-        this.servicioListaDeComidas=servicioListaDeComidas;
+    public  ControladorListaDeComidas(ServicioListaDeComidas servicioListaDeComidas ,ServicioPerfilUsuario servicioPerfilUsuario){
+        this.servicioListaDeComidas = servicioListaDeComidas;
+        this.servicioPerfilUsuario=servicioPerfilUsuario;
     }
     @RequestMapping(path = "/listaComidas", method = RequestMethod.GET)
     public ModelAndView irAListaDeComidas() {
@@ -27,8 +28,10 @@ public class ControladorListaDeComidas {
     }
 
     @RequestMapping("/listaDeComidas")
-    public ModelAndView mostrarAlimentosDisponibles(Usuario usuarioMock) {
-        List <Alimento> alimento=servicioListaDeComidas.buscarAlimentos(usuarioMock);
+    public ModelAndView mostrarAlimentosDisponibles(HttpServletRequest request) {
+        String email = (String) request.getSession().getAttribute("EMAIL");
+        Usuario usuarioBuscado=servicioPerfilUsuario.buscarUsuarioPoreEmail(email);
+        List <List<Alimento>> alimento= servicioListaDeComidas.buscarAlimentosParaLaSemana(usuarioBuscado);
         ModelMap map=new ModelMap();
         map.put("alimentos",alimento);
         ModelAndView mav=new ModelAndView("listaDeComidas",map);
