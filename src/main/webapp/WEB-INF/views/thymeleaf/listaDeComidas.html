@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/calendario.css}"/>
+
+    <title>Title</title>
+</head>
+<body>
+<div class="calendario">
+
+
+
+        <div th:each="alimento : ${alimentos}" >
+            <div class="calendario">
+            <div class="dia">
+                <h3>Lunes</h3>
+                <div class="comida">
+                    <strong>Desayuno:</strong>
+                    <p th:text="${alimento.getNombre()}" ></p>
+                </div>
+                <div class="comida">
+                    <strong>Almuerzo:</strong>
+                    <p th:text="${alimento.getNombre()}" ></p>
+                </div>
+                <div class="comida">
+                    <strong>Merienda:</strong>
+                    <p th:text="${alimento.getNombre()}" ></p>
+                </div>
+                <div class="comida">
+                    <strong>Cena:</strong>
+                    <p th:text="${alimento.getNombre()}" ></p>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="dia">
+            <h3>Lunes</h3>
+            <div class="comida">
+                <strong>Desayuno:</strong>
+                <p>Ejemplo: Avena con frutas</p>
+            </div>
+            <div class="comida">
+                <strong>Almuerzo:</strong>
+                <p>Ejemplo: Pollo a la parrilla con ensalada</p>
+            </div>
+            <div class="comida">
+                <strong>Merienda:</strong>
+                <p>Ejemplo: Yogur con nueces</p>
+            </div>
+            <div class="comida">
+                <strong>Cena:</strong>
+                <p>Ejemplo: Sopa de verduras</p>
+            </div>
+        </div>
+        <!-- Repite el bloque .dia para cada día de la semana -->
+        <div class="dia">
+            <h3>Martes</h3>
+            <div class="comida">
+                <strong>Desayuno:</strong>
+                <p>Ejemplo: Tostadas integrales con aguacate</p>
+            </div>
+            <div class="comida">
+                <strong>Almuerzo:</strong>
+                <p>Ejemplo: Pasta con salsa de tomate</p>
+            </div>
+            <div class="comida">
+                <strong>Merienda:</strong>
+                <p>Ejemplo: Fruta fresca</p>
+            </div>
+            <div class="comida">
+                <strong>Cena:</strong>
+                <p>Ejemplo: Pescado al horno con vegetales</p>
+            </div>
+        </div>
+        <div class="dia">
+            <h3>Miercoles</h3>
+            <div class="comida">
+                <strong>Desayuno:</strong>
+                <p>Ejemplo: Tostadas integrales con aguacate</p>
+            </div>
+            <div class="comida">
+                <strong>Almuerzo:</strong>
+                <p>Ejemplo: Pasta con salsa de tomate</p>
+            </div>
+            <div class="comida">
+                <strong>Merienda:</strong>
+                <p>Ejemplo: Fruta fresca</p>
+            </div>
+            <div class="comida">
+                <strong>Cena:</strong>
+                <p>Ejemplo: Pescado al horno con vegetales</p>
+            </div>
+        </div>
+        <div class="dia">
+            <h3>Jueves</h3>
+            <div class="comida">
+                <strong>Desayuno:</strong>
+                <p>Ejemplo: Tostadas integrales con aguacate</p>
+            </div>
+            <div class="comida">
+                <strong>Almuerzo:</strong>
+                <p>Ejemplo: Pasta con salsa de tomate</p>
+            </div>
+            <div class="comida">
+                <strong>Merienda:</strong>
+                <p>Ejemplo: Fruta fresca</p>
+            </div>
+            <div class="comida">
+                <strong>Cena:</strong>
+                <p>Ejemplo: Pescado al horno con vegetales</p>
+            </div>
+        </div>
+        <div class="dia">
+            <h3>Viernes</h3>
+            <div class="comida">
+                <strong>Desayuno:</strong>
+                <p>Ejemplo: Tostadas integrales con aguacate</p>
+            </div>
+            <div class="comida">
+                <strong>Almuerzo:</strong>
+                <p>Ejemplo: Pasta con salsa de tomate</p>
+            </div>
+            <div class="comida">
+                <strong>Merienda:</strong>
+                <p>Ejemplo: Fruta fresca</p>
+            </div>
+            <div class="comida">
+                <strong>Cena:</strong>
+                <p>Ejemplo: Pescado al horno con vegetales</p>
+            </div>
+        </div>
+        <div class="dia">
+            <h3>Sabado</h3>
+            <div class="comida">
+                <strong>Desayuno:</strong>
+                <p>Ejemplo: Tostadas integrales con aguacate</p>
+            </div>
+            <div class="comida">
+                <strong>Almuerzo:</strong>
+                <p>Ejemplo: Pasta con salsa de tomate</p>
+            </div>
+            <div class="comida">
+                <strong>Merienda:</strong>
+                <p>Ejemplo: Fruta fresca</p>
+            </div>
+            <div class="comida">
+                <strong>Cena:</strong>
+                <p>Ejemplo: Pescado al horno con vegetales</p>
+            </div>
+        </div>
+        <div class="dia">
+            <h3>Domingo</h3>
+            <div class="comida">
+                <strong>Desayuno:</strong>
+                <p>Ejemplo: Tostadas integrales con aguacate</p>
+            </div>
+            <div class="comida">
+                <strong>Almuerzo:</strong>
+                <p>Ejemplo: Pasta con salsa de tomate</p>
+            </div>
+            <div class="comida">
+                <strong>Merienda:</strong>
+                <p>Ejemplo: Fruta fresca</p>
+            </div>
+            <div class="comida">
+                <strong>Cena:</strong>
+                <p>Ejemplo: Pescado al horno con vegetales</p>
+            </div>
+        </div>
+
+        <!-- Continúa con miércoles, jueves, viernes, sábado y domingo -->
+        <!-- ... -->
+    </div>
+</div>
+</body>
+</html>
