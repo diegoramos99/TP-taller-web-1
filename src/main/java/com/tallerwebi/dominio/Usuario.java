@@ -1,8 +1,9 @@
-package com.tallerwebi.model;
+package com.tallerwebi.dominio;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Usuario {
@@ -27,11 +28,6 @@ public class Usuario {
     private String restrincionesAlimentarias;
     private String informacionAdicional;
 
-
-
-
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RegistroComida> registrosComida = new ArrayList<>();
 
     public Float getAltura() {
         return altura;
@@ -78,14 +74,6 @@ public class Usuario {
 
     public void setActividad(String actividad) {
         this.actividad = actividad;
-    }
-
-    public List<RegistroComida> getRegistrosComida() {
-        return registrosComida;
-    }
-
-    public void setRegistrosComida(List<RegistroComida> registrosComida) {
-        this.registrosComida = registrosComida;
     }
 
     public Long getId() {
@@ -175,4 +163,5 @@ public class Usuario {
     public void setInformacionAdicional(String informacionAdicional) {
         this.informacionAdicional = informacionAdicional;
     }
+
 }

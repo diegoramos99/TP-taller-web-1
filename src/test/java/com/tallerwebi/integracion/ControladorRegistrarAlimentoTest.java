@@ -1,8 +1,6 @@
 package com.tallerwebi.integracion;
-import com.tallerwebi.model.Alimento;
-import com.tallerwebi.model.RegistroComida;
-import com.tallerwebi.dominio.ServicioAlimento;
-import com.tallerwebi.dominio.ServicioLogin;
+import com.tallerwebi.dominio.*;
+import com.tallerwebi.dominio.Alimento;
 import com.tallerwebi.integracion.config.HibernateTestConfig;
 import com.tallerwebi.integracion.config.SpringWebTestConfig;
 import com.tallerwebi.presentacion.ControladorRegistrarAlimento;
@@ -42,12 +40,13 @@ public class ControladorRegistrarAlimentoTest {
 
     private ServicioAlimento servicioAlimentoMock;
     private ServicioLogin servicioLoginMock;
+    private ServicioCalculoNutricional servicioCalculoNutricionalMock;
 
     @BeforeEach
     public void init() {
         servicioAlimentoMock = mock(ServicioAlimento.class);
         servicioLoginMock = mock(ServicioLogin.class);
-        ControladorRegistrarAlimento controladorRegistrarAlimento = new ControladorRegistrarAlimento(servicioAlimentoMock, servicioLoginMock);
+        ControladorRegistrarAlimento controladorRegistrarAlimento = new ControladorRegistrarAlimento(servicioAlimentoMock, servicioLoginMock,servicioCalculoNutricionalMock);
         this.mockMvc = MockMvcBuilders.standaloneSetup(controladorRegistrarAlimento).build();
     }
 

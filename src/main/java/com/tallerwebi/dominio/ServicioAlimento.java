@@ -1,8 +1,5 @@
 package com.tallerwebi.dominio;
 
-import com.tallerwebi.model.Alimento;
-import com.tallerwebi.model.RegistroComida;
-
 import java.util.List;
 
 public interface ServicioAlimento {

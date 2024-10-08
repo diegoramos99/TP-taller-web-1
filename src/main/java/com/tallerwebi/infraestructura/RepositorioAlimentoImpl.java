@@ -1,7 +1,7 @@
 package com.tallerwebi.infraestructura;
 
 
-import com.tallerwebi.model.Alimento;
+import com.tallerwebi.dominio.Alimento;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -13,11 +13,10 @@ import java.util.List;
 @Repository("repositorioAlimento")
 public class RepositorioAlimentoImpl implements RepositorioAlimento {
 
-
     private SessionFactory sessionFactory;
 
     @Autowired
-    public void RepositorioAlimentoImpl(SessionFactory sessionFactory){
+    public RepositorioAlimentoImpl(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
     }
 
@@ -25,15 +24,23 @@ public class RepositorioAlimentoImpl implements RepositorioAlimento {
     public List<Alimento> buscarAlimento(String nombre) {
         final Session session = sessionFactory.getCurrentSession();
         return (List<Alimento>) session.createCriteria(Alimento.class)
-               .add(Restrictions.ilike("nombre", "%" + nombre + "%"))
-               .list();
+                .add(Restrictions.ilike("nombre", "%" + nombre + "%"))
+                .list();
     }
 
     @Override
     public Alimento obtenerAlimento(Long id) {
-         final Session session = sessionFactory.getCurrentSession();
+        final Session session = sessionFactory.getCurrentSession();
         return (Alimento) session.createCriteria(Alimento.class)
                 .add(Restrictions.eq("id", id))
                 .uniqueResult();
     }
+
+    @Override
+    public List<Alimento> traerTodosLosAlimentos() {
+        final Session session = sessionFactory.getCurrentSession();
+        return (List<Alimento>) session.createCriteria(Alimento.class)
+                .list();
+    }
 }
+

@@ -1,7 +1,5 @@
 package com.tallerwebi.dominio;
 
-import com.tallerwebi.model.Alimento;
-import com.tallerwebi.model.RegistroComida;
 import com.tallerwebi.infraestructura.RepositorioAlimento;
 import com.tallerwebi.infraestructura.RepositorioRegistroComida;
 import org.springframework.beans.factory.annotation.Autowired;
