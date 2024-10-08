@@ -293,7 +293,25 @@
                 <td th:text="${totalGrasas}">0</td>
                 <td th:text="${totalProteinas}">0</td>
             </tr>
+            <tr>
+                <td>Tu objetivo diario</td>
+                <td th:text="${totalCaloriasDiarias}">0</td>
+                <td th:text="${totalCarbohidratosDiarios}">0</td>
+                <td th:text="${totalGrasasDiarias}">0</td>
+                <td th:text="${totalProteinasDiarias}">0</td>
+            </tr>
+            <tr>
+                <td>Restantes</td>
+                <td th:text="${totalCaloriasRestantes}">0</td>
+                <td th:text="${totalCarbohidratosRestantes}">0</td>
+                <td th:text="${totalGrasasRestantes}">0</td>
+                <td th:text="${totalProteinasRestantes}">0</td>
+            </tr>
+
+
             </tbody>
+
+
         </table>
     </div>
 </div>
@@ -302,7 +320,7 @@
 
 
 <script>
-     window.onload = function() {
+    window.onload = function () {
         let storedDate = localStorage.getItem('selectedDate');
 
         document.getElementById('fechaInput').value = storedDate || '';
