@@ -1,14 +1,15 @@
 package com.tallerwebi.integracion;
+
 import com.tallerwebi.dominio.*;
 import com.tallerwebi.dominio.Alimento;
 import com.tallerwebi.integracion.config.HibernateTestConfig;
 import com.tallerwebi.integracion.config.SpringWebTestConfig;
 import com.tallerwebi.presentacion.ControladorRegistrarAlimento;
+import com.tallerwebi.presentacion.Macronutrientes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -42,11 +43,14 @@ public class ControladorRegistrarAlimentoTest {
     private ServicioLogin servicioLoginMock;
     private ServicioCalculoNutricional servicioCalculoNutricionalMock;
 
+
     @BeforeEach
     public void init() {
         servicioAlimentoMock = mock(ServicioAlimento.class);
         servicioLoginMock = mock(ServicioLogin.class);
-        ControladorRegistrarAlimento controladorRegistrarAlimento = new ControladorRegistrarAlimento(servicioAlimentoMock, servicioLoginMock,servicioCalculoNutricionalMock);
+        servicioCalculoNutricionalMock = mock(ServicioCalculoNutricional.class);
+
+        ControladorRegistrarAlimento controladorRegistrarAlimento = new ControladorRegistrarAlimento(servicioAlimentoMock, servicioLoginMock, servicioCalculoNutricionalMock);
         this.mockMvc = MockMvcBuilders.standaloneSetup(controladorRegistrarAlimento).build();
     }
 
@@ -57,8 +61,26 @@ public class ControladorRegistrarAlimentoTest {
 
         when(servicioAlimentoMock.obtenerRegistrosPorFecha(fecha)).thenReturn(alimentos);
 
+        Usuario mockUsuario = new Usuario();
+        mockUsuario.setEmail("usuario@example.com");
+
+        when(servicioLoginMock.consultarUsuarioPorEmail("usuario@example.com")).thenReturn(mockUsuario);
+
+
+        Double caloriasDiariasEsperadas = 2500.0;
+        when(servicioCalculoNutricionalMock.calcularCaloriasDiarias(mockUsuario)).thenReturn(caloriasDiariasEsperadas);
+
+
+        Macronutrientes macronutrientesEsperados = new Macronutrientes();
+        macronutrientesEsperados.setCarbohidratos(caloriasDiariasEsperadas * 0.50 / 4);
+        macronutrientesEsperados.setProteinas(caloriasDiariasEsperadas * 0.30 / 4);
+        macronutrientesEsperados.setGrasas(caloriasDiariasEsperadas * 0.20 / 9);
+        when(servicioCalculoNutricionalMock.calcularMacronutrientes(caloriasDiariasEsperadas)).thenReturn(macronutrientesEsperados);
+
+
         MvcResult result = this.mockMvc.perform(get("/ver-Registrar-alimentos")
-                .param("fecha", fecha))
+                        .param("fecha", fecha)
+                        .sessionAttr("EMAIL", "usuario@example.com"))
                 .andExpect(status().isOk())
                 .andReturn();
 
@@ -66,6 +88,10 @@ public class ControladorRegistrarAlimentoTest {
         assert modelAndView != null;
         assertThat(modelAndView.getViewName(), equalToIgnoringCase("registrarAlimento"));
         assertThat(modelAndView.getModel().get("alimentos"), is(alimentos));
+
+        assertThat(modelAndView.getModel().get("totalCaloriasDiarias"), is(Math.round(caloriasDiariasEsperadas)));
+        assertThat(modelAndView.getModel().get("macronutrientes"), is(macronutrientesEsperados));
+
     }
 
 
@@ -73,13 +99,11 @@ public class ControladorRegistrarAlimentoTest {
     public void debeRetornarMensajeCuandoTipoComidaEsNulo() throws Exception {
         Long id = 1L;
         String fechaStr = "2024-10-01";
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        request.getSession().setAttribute("userEmail", "usuario@example.com");
 
         MvcResult result = this.mockMvc.perform(post("/registrarAlimentoSelecionado/{id}", id)
-                .param("comida", "")
-                .param("fecha", fechaStr)
-                .requestAttr("request", request))
+                        .param("comida", "")
+                        .param("fecha", fechaStr)
+                        .sessionAttr("EMAIL", "usuario@example.com")) // Establecer el atributo en la sesión
                 .andExpect(status().isOk())
                 .andReturn();
 
@@ -92,13 +116,11 @@ public class ControladorRegistrarAlimentoTest {
     public void debeRetornarMensajeCuandoFechaEsNula() throws Exception {
         Long id = 1L;
         String tipoDeComida = "desayuno";
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        request.getSession().setAttribute("userEmail", "usuario@example.com");
 
         MvcResult result = this.mockMvc.perform(post("/registrarAlimentoSelecionado/{id}", id)
-                .param("comida", tipoDeComida)
-                .param("fecha", "")
-                .requestAttr("request", request))
+                        .param("comida", tipoDeComida)
+                        .param("fecha", "")
+                        .sessionAttr("EMAIL", "usuario@example.com")) // Establecer el atributo en la sesión
                 .andExpect(status().isOk())
                 .andReturn();
 
@@ -116,16 +138,12 @@ public class ControladorRegistrarAlimentoTest {
         Alimento alimentoMock = new Alimento();
 
         when(servicioAlimentoMock.obtenerAlimentoPorId(id)).thenReturn(alimentoMock);
-
         when(servicioLoginMock.consultarUsuarioPorEmail("usuario@example.com")).thenReturn(null);
 
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        request.getSession().setAttribute("userEmail", "usuario@example.com");
-
         MvcResult result = this.mockMvc.perform(post("/registrarAlimentoSelecionado/{id}", id)
-                .param("comida", tipoDeComida)
-                .param("fecha", fechaStr)
-                .requestAttr("request", request))
+                        .param("comida", tipoDeComida)
+                        .param("fecha", fechaStr)
+                        .sessionAttr("EMAIL", "usuario@example.com")) // Establecer el atributo en la sesión
                 .andExpect(status().isOk())
                 .andReturn();
 

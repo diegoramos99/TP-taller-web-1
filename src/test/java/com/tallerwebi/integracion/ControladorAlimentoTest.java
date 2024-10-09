@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -49,8 +50,15 @@ public class ControladorAlimentoTest {
 
     @Test
     public void debeRetornarLaPaginaDeBuscarAlimentos() throws Exception {
-        MvcResult result = this.mockMvc.perform(get("/ver-Buscar-Alimento"))
+        // Crea un mock del HttpServletRequest
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "usuario@example.com");
+
+        // Realiza la solicitud con el mock del request
+        MvcResult result = this.mockMvc.perform(get("/ver-Buscar-Alimento")
+                        .sessionAttr("EMAIL", "usuario@example.com"))
                 .andExpect(status().isOk())
+                .andExpect(view().name("buscarAlimento"))
                 .andReturn();
 
         ModelAndView modelAndView = result.getModelAndView();
@@ -69,9 +77,9 @@ public class ControladorAlimentoTest {
         when(servicioAlimentoMock.BuscarAlimentoPorNombre(termino)).thenReturn(resultados);
 
         MvcResult result = this.mockMvc.perform(get("/buscarAlimentos")
-                .param("termino", termino)
-                .param("comida", comida)
-                .param("fecha", fecha))
+                        .param("termino", termino)
+                        .param("comida", comida)
+                        .param("fecha", fecha))
                 .andExpect(status().isOk())
                 .andExpect(view().name("buscarAlimento"))
                 .andReturn();
@@ -91,16 +99,14 @@ public class ControladorAlimentoTest {
         String comida = "verdura";
         String fecha = "2024-10-01";
 
-        MvcResult result = this.mockMvc.perform(get("/ver-Buscar-Alimento")
-                .param("comida", comida)
-                .param("fecha", fecha))
+        // Establece el atributo EMAIL en la sesión
+        this.mockMvc.perform(get("/ver-Buscar-Alimento")
+                        .param("comida", comida)
+                        .param("fecha", fecha)
+                        .sessionAttr("EMAIL", "usuario@example.com"))
                 .andExpect(status().isOk())
-                .andReturn();
-
-        ModelAndView modelAndView = result.getModelAndView();
-        assert modelAndView != null;
-        assertThat(modelAndView.getViewName(), equalToIgnoringCase("buscarAlimento"));
-        assertThat(modelAndView.getModel().get("comida"), is(comida));
-        assertThat(modelAndView.getModel().get("fecha"), is(fecha));
+                .andExpect(view().name("buscarAlimento"))
+                .andExpect(model().attribute("comida", comida))
+                .andExpect(model().attribute("fecha", fecha));
     }
 }
