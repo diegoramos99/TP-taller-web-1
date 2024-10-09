@@ -1,6 +1,7 @@
 package com.tallerwebi.dominio;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -24,8 +25,7 @@ public class Receta {
     public void setId(Long id) {this.id = id;}
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre = nombre;}
-    public String getIngredientes() {return ingredientes;}
-    public void setIngredientes(String ingredientes) {this.ingredientes = ingredientes;}
+
 
 
     public String getPreparacion() {
@@ -48,5 +48,13 @@ public class Receta {
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+
+    public String getIngredientes() {
+        return ingredientes;
+    }
+
+    public void setIngredientes(String ingredientes) {
+        this.ingredientes = ingredientes;
     }
 }
