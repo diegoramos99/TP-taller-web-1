@@ -12,6 +12,7 @@ public class Receta {
     private String ingredientes;
     private Long tiempo;
     private Long calorias;
+    private String imagen;
     @Column(length = 300)
     private String preparacion;
 
@@ -40,4 +41,12 @@ public class Receta {
     public Long getCalorias() {return calorias;}
 
     public void setCalorias(Long calorias) {this.calorias = calorias;}
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
 }

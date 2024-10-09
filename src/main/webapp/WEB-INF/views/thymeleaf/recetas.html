@@ -6,24 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/nav.css}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 <style>
     body {
         background-color: #f8f9fa;
+        font-family: 'Arial', sans-serif;
     }
     .container {
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
+        text-align: center;
     }
     .row {
         margin-top: 20px;
+    }
+    h1, h2 {
+        color: #343a40;
+    }
+    .instructions {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
     }
     .card {
         border: 1px solid #dee2e6;
         border-radius: 10px;
         overflow: hidden;
+        background-color: #f8f9fa;
     }
     .card-header {
         background-color: #007bff;
@@ -31,7 +42,26 @@
         font-weight: bold;
     }
     .card-body {
-        background-color: #ffffff;
+        background-color: #f8f9fa;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+    .card-text {
+        font-family: 'Roboto', sans-serif;
+        color: #495057;
+    }
+    .bold-text {
+        font-weight: bold;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
     }
 </style>
 <body>
@@ -52,9 +82,8 @@
         <li class="dropdown">
             <a href="#">Calculadora</a>
             <ul class="submenu">
-                <li><a href="#">Calcular calorias</a></li>
-                <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a>
-                </li>
+                <li><a href="#">Calcular calorías</a></li>
+                <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
             </ul>
         </li>
         <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
@@ -63,20 +92,21 @@
 
 <div class="container mt-5">
     <h1>Buscar Recetas</h1>
-    <p>Ingrese el ingrediente y encuentre alguna opcion saludable!</p>
-    <form action="#" th:action="@{/buscar}" method="get" class="d-flex mb-4">
+    <p class="instructions">Ingrese el ingrediente y encuentre alguna opción saludable!</p>
+    <form action="#" th:action="@{/buscar}" method="get" class="d-flex mb-4 justify-content-center">
         <input type="text" class="form-control me-2" name="nombre" placeholder="Nombre de la receta" th:value="${nombre}" aria-label="Buscar receta">
         <button class="btn btn-primary" type="submit">Buscar</button>
     </form>
 
     <h2>Resultados:</h2>
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-md-3" th:each="receta : ${recetas}">
             <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${receta.nombre}"></h5>
-                    <p class="card-text"><span>Tiempo de cocción:</span> <span th:text="${receta.tiempo}"></span><span>min.</span></p>
-                    <p class="card-text"><span>Calorias del plato:</span> <span th:text="${receta.calorias}"></span><span>cal.</span></p>
+                    <img th:src="@{${receta.imagen}}" alt="Imagen de ${receta.nombre}" />
+                    <p class="card-text"><span class="bold-text">Tiempo de cocción:</span> <span th:text="${receta.tiempo}"></span><span> min.</span></p>
+                    <p class="card-text"><span class="bold-text">Calorías del plato:</span> <span th:text="${receta.calorias}"></span><span> cal.</span></p>
                     <p class="card-text" th:text="${receta.preparacion}">Descripción de la receta.</p>
                     <a href="#" class="btn btn-primary">Ver Receta</a>
                 </div>
