@@ -13,6 +13,7 @@ import com.tallerwebi.dominio.ServicioReceta;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,29 +28,31 @@ public class ControladorReceta {
     }
 
     @RequestMapping(path = "/recetas", method = RequestMethod.GET)
-    public ModelAndView mostrarRecetas() { return new ModelAndView("recetas.html");}
-
-
-    @RequestMapping(path = "/buscar")
-    public ModelAndView buscarRecetas(@RequestParam String nombre) {
-        ModelMap model = new ModelMap();
-
-        if (nombre != null && !nombre.isEmpty()) {
-            List<Receta> resultados = servicioReceta.BuscarRecetaPorNombre(nombre);
-            model.addAttribute("recetas", resultados);
+    public ModelAndView mostrarRecetas(HttpServletRequest request) {
+        if(request.getSession().getAttribute("EMAIL") == null){
+            return new ModelAndView("redirect:/login");
         }
+        return new ModelAndView("recetas.html");}
 
 
-        return new ModelAndView("recetas", model);
-    }
-
-    /*
     @RequestMapping(path = "/buscar")
     public ModelAndView buscarRecetas(@RequestParam String nombre) {
         ModelMap model = new ModelMap();
         model.addAttribute("nombre", nombre);
-        return new ModelAndView();
-    }
-    */
+        if (nombre != null && !nombre.isEmpty()) {
+            List<Receta> resultados = servicioReceta.BuscarRecetaPorNombre(nombre);
+            model.addAttribute("recetas", resultados);
 
+        }
+
+        return new ModelAndView("recetas", model);
+    }
+
+    @GetMapping("/buscar/{id}")
+    public ModelAndView obtenerRecetaPorId(@PathVariable Long id) {
+        Receta receta = servicioReceta.obtenerRecetaPorId(id);
+        ModelAndView mav = new ModelAndView("recetas");
+        mav.addObject("receta", receta);
+        return mav;
+    }
 }

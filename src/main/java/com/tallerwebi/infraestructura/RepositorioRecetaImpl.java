@@ -32,4 +32,11 @@ public class RepositorioRecetaImpl implements RepositorioReceta{
         final Session session = sessionFactory.getCurrentSession();
         return (Receta) session.createCriteria(Receta.class).add(Restrictions.eq("id",id)).uniqueResult();
     }
+
+    @Override
+    public Receta guardarReceta(Receta receta) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.save(receta);
+        return null;
+    }
 }
