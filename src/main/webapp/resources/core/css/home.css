@@ -1,0 +1,391 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+/* Banner Principal */
+.banner-section {
+    position: relative;
+    width: 100%;
+    max-height: 800px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.banner img:hover {
+    transform: scale(1.05);
+}
+
+/* Overlay del Banner */
+.banner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.banner-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e65c50;
+}
+
+/* Modal (Ya Incluido) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo */
+    z-index: 1000; /* Por encima de otros elementos */
+    padding-top: 60px; /* Espaciado desde arriba */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilita scroll si es necesario */
+    background-color: rgba(0,0,0,0.8); /* Fondo semitransparente */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    animation: zoom 0.6s;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animación */
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Responsividad del Modal */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* Ajustes de la Nueva Sección (si es necesario) */
+/* ... Puedes agregar más estilos aquí según tus necesidades ... */
+
+/* Secciones */
+section {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto */
+.texto h4 {
+    color: #ff6f61;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.texto h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.texto p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Imágenes */
+.img {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Información de fórmulas */
+.infoFormula h4 {
+    color: #ff6f61;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.infoFormula h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Acordeón */
+.accordion {
+    margin-top: 20px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-button {
+    background-color: #ff6f61;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.accordion-button:hover,
+.accordion-button.active {
+    background-color: #e65c50;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #fafafa;
+    padding: 0 15px;
+    border-left: 4px solid #ff6f61;
+    margin-bottom: 10px;
+}
+
+.accordion-content p,
+.accordion-content ul {
+    padding: 15px 0;
+}
+
+.accordion-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.conceptos {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.conceptos h4 {
+    font-size: 1.5rem;
+    color: #7D4CDB;
+    margin-bottom: 10px;
+}
+
+.conceptos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: left;
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 10px 10px 0 0;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #ff6f61;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #ff6f61;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 0.9rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6f61;
+}
+
+.footer-section.social .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-section.social .social-icons a {
+    color: #ccc;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section.social .social-icons a:hover {
+    color: #ff6f61;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+    }
+}

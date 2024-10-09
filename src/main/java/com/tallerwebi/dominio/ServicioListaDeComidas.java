@@ -3,7 +3,7 @@ package com.tallerwebi.dominio;
 import java.util.List;
 
 public interface ServicioListaDeComidas {
-  List<Alimento> buscarAlimentos(Usuario usuarioMock);
+  List<Alimento> buscarAlimentos();
 
   List<List<Alimento>> separarLosAlimentosPorTipo(List<Alimento> alimentosList);
 

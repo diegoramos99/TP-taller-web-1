@@ -18,7 +18,7 @@ public class ServicioListaDeComidasImpl implements  ServicioListaDeComidas{
         this.repositorioAlimento=listaDeComidas;
     }
 @Override
-    public List<Alimento> buscarAlimentos(Usuario usuarioMock) {
+    public List<Alimento> buscarAlimentos() {
         List <Alimento> alimentos= repositorioAlimento.traerTodosLosAlimentos();
 
         return alimentos;
@@ -135,7 +135,7 @@ public class ServicioListaDeComidasImpl implements  ServicioListaDeComidas{
 
     @Override
     public List<List<Alimento>> buscarAlimentosParaLaSemana(Usuario usuario) {
-        List<Alimento> alimentosList = buscarAlimentos(usuario);
+        List<Alimento> alimentosList = buscarAlimentos();
         List<List<Alimento>> alimentosSeparadosPorTipo = separarLosAlimentosPorTipo(alimentosList);
         List<List<Alimento>> alimentosSeparadosPorTipoYDieta = comidasParaElDiaRespetandoLaDieta(usuario, alimentosSeparadosPorTipo);
         int cantidadDeDias = 7;
