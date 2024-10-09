@@ -6,6 +6,7 @@ import com.tallerwebi.dominio.ServicioPerfilUsuario;
 import com.tallerwebi.dominio.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -44,7 +45,10 @@ public class ControladorListaComidasTest {
     @Test
     public void queAlHacerClickEnListaDeComidasTeLleveALaVistaListaDeComidas(){
         ModelAndView mav =new ModelAndView("redirect:/listaDeComidas");
-    when(controladorListaDeComidasMock.irAListaDeComidas()).thenReturn(mav);
+              MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+    when(controladorListaDeComidasMock.irAListaDeComidas(request)).thenReturn(mav);
    ModelAndView mav1= whenHagasClickTeLleveAunaVista();
 
     thenEsLaVistaCorrecta(mav1);
@@ -55,8 +59,10 @@ public class ControladorListaComidasTest {
         assertThat(mav.getViewName().toString(), equalToIgnoringCase("redirect:/listaDeComidas")) ;
     }
 
+      ModelAndView mav =new ModelAndView("redirect:/listaDeComidas");
+              MockHttpServletRequest request = new MockHttpServletRequest();
     private ModelAndView whenHagasClickTeLleveAunaVista() {
-      ModelAndView mav  =controladorListaDeComidasMock.irAListaDeComidas();
+      ModelAndView mav  =controladorListaDeComidasMock.irAListaDeComidas(request);
     return mav;
     }
 
