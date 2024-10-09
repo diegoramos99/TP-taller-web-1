@@ -26,6 +26,9 @@ public class ControladorPerfilUsuario {
 
     @RequestMapping(path = "/perfilusuario", method = RequestMethod.GET)
     public ModelAndView mostrarDatosDelUsuario(HttpServletRequest request) {
+        if (request.getSession().getAttribute("EMAIL") == null) {
+            return new ModelAndView("redirect:/login");
+        }
         String email = (String) request.getSession().getAttribute("EMAIL");
         Usuario usuarioBuscado=servicioPerfilUsuario.buscarUsuarioPoreEmail(email);
 

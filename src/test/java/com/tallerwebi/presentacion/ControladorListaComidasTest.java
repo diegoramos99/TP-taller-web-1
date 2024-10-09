@@ -5,6 +5,7 @@ import com.tallerwebi.dominio.ServicioListaDeComidasImpl;
 import com.tallerwebi.dominio.ServicioPerfilUsuario;
 import com.tallerwebi.dominio.Usuario;
 import org.junit.jupiter.api.Test;
+import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,42 +23,42 @@ public class ControladorListaComidasTest {
     private HttpSession sessionMock;
     private ServicioListaDeComidasImpl servicioListaDeComidasImplMock;
     private ServicioPerfilUsuario servicioPerfilUsuarioMock;
-    private ControladorListaDeComidas controladorListaDeComidasMock=new ControladorListaDeComidas(servicioListaDeComidasImplMock,servicioPerfilUsuarioMock);
-
-
+    private ControladorListaDeComidas controladorListaDeComidasMock = new ControladorListaDeComidas(servicioListaDeComidasImplMock, servicioPerfilUsuarioMock);
 
 
     @Test
-    public void queAlHacerClickEnListaDeComidasTeLleveALaVistaListaDeComidas(){
+    public void queAlHacerClickEnListaDeComidasTeLleveALaVistaListaDeComidas() {
 
-   ModelAndView mav= whenHagasClickTeLleveAunaVista();
+        ModelAndView mav = whenHagasClickTeLleveAunaVista();
 
-    thenEsLaVistaCorrecta(mav);
+        thenEsLaVistaCorrecta(mav);
 
-}
+    }
 
     private void thenEsLaVistaCorrecta(ModelAndView mav) {
-        assertThat(mav.getViewName().toString(), equalToIgnoringCase("redirect:/listaDeComidas")) ;
+        assertThat(mav.getViewName().toString(), equalToIgnoringCase("redirect:/listaDeComidas"));
     }
 
     private ModelAndView whenHagasClickTeLleveAunaVista() {
-      ModelAndView mav  =controladorListaDeComidasMock.irAListaDeComidas();
-    return mav;
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView mav = controladorListaDeComidasMock.irAListaDeComidas(request);
+        return mav;
     }
 
-   /** @Test
-    public void queAlEntrarALaVistaListaComidasMuestreLosAlimentosParaLaSemana(){
+    /** @Test public void queAlEntrarALaVistaListaComidasMuestreLosAlimentosParaLaSemana(){
 
-        ModelAndView mav= whenMuestreLosAlimentos(usuarioMock);
-        thenLosAlimentosSonCorrectos(mav);
+    ModelAndView mav= whenMuestreLosAlimentos(usuarioMock);
+    thenLosAlimentosSonCorrectos(mav);
     }
 
     private void thenLosAlimentosSonCorrectos(ModelAndView mav) {
     }
 
     private ModelAndView whenMuestreLosAlimentos(Usuario usuarioMock) {
-        ModelAndView mav=controladorListaDeComidasMock.mostrarAlimentosDisponibles(usuarioMock);
+    ModelAndView mav=controladorListaDeComidasMock.mostrarAlimentosDisponibles(usuarioMock);
     return mav;
     }
-   **/
+     **/
 }

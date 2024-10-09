@@ -31,13 +31,4 @@ public class Macronutrientes {
         this.grasas = grasas;
     }
 
-    // Método toString() para mostrar los valores fácilmente
-    @Override
-    public String toString() {
-        return "Macronutrientes{" +
-                "carbohidratos=" + carbohidratos +
-                ", proteinas=" + proteinas +
-                ", grasas=" + grasas +
-                '}';
-    }
 }
