@@ -6,6 +6,14 @@ public class Macronutrientes {
     private Double proteinas;
     private Double grasas;
 
+    public Macronutrientes() {
+    }
+
+    public Macronutrientes(Double proteinas, Double grasas, Double carbohidratos) {
+        this.proteinas = proteinas;
+        this.grasas = grasas;
+        this.carbohidratos = carbohidratos;
+    }
 
     public Double getCarbohidratos() {
         return carbohidratos;

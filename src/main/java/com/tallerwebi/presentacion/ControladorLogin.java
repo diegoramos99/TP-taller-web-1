@@ -36,13 +36,16 @@ public class ControladorLogin {
         ModelMap model = new ModelMap();
 
         Usuario usuarioBuscado = servicioLogin.consultarUsuario(usuario.getEmail(), usuario.getPassword());
+
         if (usuarioBuscado != null) {
             request.getSession().setAttribute("EMAIL", usuarioBuscado.getEmail());
             request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
+
             return new ModelAndView("redirect:/home");
         } else {
             model.put("error", "Usuario o clave incorrecta");
         }
+
         return new ModelAndView("login", model);
     }
 

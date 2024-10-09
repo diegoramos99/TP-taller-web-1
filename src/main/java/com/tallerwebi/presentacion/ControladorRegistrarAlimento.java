@@ -71,6 +71,8 @@ public class ControladorRegistrarAlimento {
         Double totalCaloriasDiarias = servicioCalculoNutricional.calcularCaloriasDiarias(usuario);
         Macronutrientes macros = servicioCalculoNutricional.calcularMacronutrientes(totalCaloriasDiarias);
 
+        model.addAttribute("macronutrientes", macros);
+
         model.addAttribute("totalCaloriasDiarias", Math.round(totalCaloriasDiarias));
         model.addAttribute("totalGrasasDiarias", Math.round(macros.getGrasas()));
         model.addAttribute("totalProteinasDiarias", Math.round(macros.getProteinas()));

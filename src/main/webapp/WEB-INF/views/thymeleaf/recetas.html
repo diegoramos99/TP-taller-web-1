@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Recetas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/nav.css}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Arial', sans-serif;
+    }
+    .container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+    }
+    .row {
+        margin-top: 20px;
+    }
+    h1, h2 {
+        color: #343a40;
+    }
+    .instructions {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+    }
+    .card {
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #f8f9fa;
+    }
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+    }
+    .card-body {
+        background-color: #f8f9fa;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .card-text {
+        font-family: 'Roboto', sans-serif;
+        color: #495057;
+    }
+    .bold-text {
+        font-weight: bold;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+    #recetaNombre {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    .modal-header {
+        text-align: center;
+        width: 100%;
+    }
+    .modal-title {
+        flex: 1;
+    }
+    .modal-content {
+        background-color: #d1d2d2;
+    }
+
+    .modal-body {
+        text-align: center;
+    }
+
+    .modal-body img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+
+    .modal-body #recetaPreparacion {
+        font-size: 1.2rem;
+    }
+</style>
+<body>
+
+<nav>
+    <ul>
+        <li><a th:href="@{/ver-home}">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Alimentos</a>
+            <ul class="submenu">
+                <li><a id="url-RegistrarAlimento" th:href="@{/ver-Registrar-alimentos}">Registrar Alimentos</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Ejercicio</a>
+            <ul class="submenu"></ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Calculadora</a>
+            <ul class="submenu">
+                <li><a href="#">Calcular calorías</a></li>
+                <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
+            </ul>
+        </li>
+        <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
+    </ul>
+</nav>
+
+<div class="container mt-5">
+    <h1>Buscar Recetas</h1>
+    <p class="instructions">Ingrese el ingrediente y encuentre alguna opción saludable!</p>
+    <form action="#" th:action="@{/buscar}" method="get" class="d-flex mb-4 justify-content-center">
+        <input type="text" class="form-control me-2" name="nombre" placeholder="Nombre de la receta" th:value="${nombre}" aria-label="Buscar receta">
+        <button class="btn btn-primary" type="submit">Buscar</button>
+    </form>
+
+    <h2>Resultados:</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-3" th:each="receta : ${recetas}">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${receta.nombre}"></h5>
+                    <img th:src="@{${receta.imagen}}" alt="Imagen de ${receta.nombre}" />
+                    <p class="card-text"><span class="bold-text">Tiempo de cocción:</span> <span th:text="${receta.tiempo}"></span><span> min.</span></p>
+                    <p class="card-text"><span class="bold-text">Calorías del plato:</span> <span th:text="${receta.calorias}"></span><span> cal.</span></p>
+                    <p class="card-text"><span class="bold-text">Ingredientes:</span><span th:text="${receta.ingredientes}"></span></p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recetaModal"
+                            th:data-receta-nombre="${receta.nombre}"
+                            th:data-receta-calorias="${receta.calorias}"
+                            th:data-receta-tiempo="${receta.tiempo}"
+                            th:data-receta-imagen="@{${receta.imagen}}"
+                            th:data-receta-preparacion="${receta.preparacion}"
+                            th:data-ingredientes="${receta.ingredientes}"
+                            >Ver Receta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="recetaModal" tabindex="-1" aria-labelledby="recetaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="recetaModalLabel">Detalles de la Receta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="recetaImagen" src="" alt="Imagen de la receta" class="img-fluid mb-3" style="border-radius: 10px;" />
+                <h5 id="recetaNombre"></h5>
+                <p><strong>Calorías:</strong> <span id="recetaCalorias"></span> cal.</p>
+                <p><strong>Tiempo de cocción:</strong> <span id="recetaTiempo"></span> min.</p>
+                <h5><strong>Ingredientes:</strong></h5>
+                <p id="recetaIngredientes"></p>
+                <h5><strong>Preparación:</strong></h5>
+                <p id="recetaPreparacion"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const recetaModal = document.getElementById('recetaModal');
+        recetaModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+
+            const nombre = button.getAttribute('data-receta-nombre');
+            const calorias = button.getAttribute('data-receta-calorias');
+            const tiempo = button.getAttribute('data-receta-tiempo');
+            const imagen = button.getAttribute('data-receta-imagen');
+            const preparacion = button.getAttribute('data-receta-preparacion');
+            const ingredientes = button.getAttribute('data-ingredientes');
+
+            recetaModal.querySelector('#recetaNombre').textContent = nombre;
+            recetaModal.querySelector('#recetaCalorias').textContent = calorias;
+            recetaModal.querySelector('#recetaTiempo').textContent = tiempo;
+            recetaModal.querySelector('#recetaImagen').src = imagen;
+            recetaModal.querySelector('#recetaPreparacion').textContent = preparacion;
+            recetaModal.querySelector('#recetaIngredientes').textContent = ingredientes;
+        });
+    });
+</script>
+
+</body>
+</html>
