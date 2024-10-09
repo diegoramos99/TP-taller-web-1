@@ -21,11 +21,15 @@ public class RepositorioRecetaImpl implements RepositorioReceta{
 
     @Override
     public List<Receta> buscarReceta(String nombre) {
-        return List.of();
+        final Session session = sessionFactory.getCurrentSession();
+        List<Receta> recetas = session.createCriteria(Receta.class).add(Restrictions.ilike("nombre","%" + nombre + "%")).list();
+        System.out.println("Buscando recetas con el nombre: " + nombre + ", Resultados: " + recetas.size());
+        return recetas;
     }
 
     @Override
     public Receta obtenerReceta(Long id) {
-        return null;
+        final Session session = sessionFactory.getCurrentSession();
+        return (Receta) session.createCriteria(Receta.class).add(Restrictions.eq("id",id)).uniqueResult();
     }
 }

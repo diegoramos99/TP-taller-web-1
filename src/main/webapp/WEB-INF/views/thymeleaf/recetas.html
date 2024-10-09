@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Buscar Recetas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/nav.css}"/>
 </head>
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    .row {
+        margin-top: 20px;
+    }
+    .card {
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+    }
+    .card-body {
+        background-color: #ffffff;
+    }
+</style>
 <body>
+
 <nav>
     <ul>
         <li><a th:href="@{/ver-home}">Home</a></li>
@@ -23,22 +53,40 @@
             <a href="#">Calculadora</a>
             <ul class="submenu">
                 <li><a href="#">Calcular calorias</a></li>
-                <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
+                <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a>
+                </li>
             </ul>
         </li>
         <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
     </ul>
 </nav>
-<h1>Buscar Recetas</h1>
-<form action="#" th:action="@{/buscar}" method="get">
-    <input type="text" name="nombre" placeholder="Nombre de la receta" th:value="${nombre}"/>
-    <button type="submit">Buscar</button>
-</form>
 
-<h2>Resultados:</h2>
-<ul>
-    <li th:each="receta : ${recetas}" th:text="${receta.nombre}"></li>
-</ul>
+<div class="container mt-5">
+    <h1>Buscar Recetas</h1>
+    <p>Ingrese el ingrediente y encuentre alguna opcion saludable!</p>
+    <form action="#" th:action="@{/buscar}" method="get" class="d-flex mb-4">
+        <input type="text" class="form-control me-2" name="nombre" placeholder="Nombre de la receta" th:value="${nombre}" aria-label="Buscar receta">
+        <button class="btn btn-primary" type="submit">Buscar</button>
+    </form>
+
+    <h2>Resultados:</h2>
+    <div class="row">
+        <div class="col-md-3" th:each="receta : ${recetas}">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${receta.nombre}"></h5>
+                    <p class="card-text"><span>Tiempo de cocción:</span> <span th:text="${receta.tiempo}"></span><span>min.</span></p>
+                    <p class="card-text"><span>Calorias del plato:</span> <span th:text="${receta.calorias}"></span><span>cal.</span></p>
+                    <p class="card-text" th:text="${receta.preparacion}">Descripción de la receta.</p>
+                    <a href="#" class="btn btn-primary">Ver Receta</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 <script th:src="@{/js/nav-link.js}"></script>
+
 </body>
 </html>

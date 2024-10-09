@@ -15,7 +15,7 @@ public class ServicioRecetaImpl implements ServicioReceta {
     private final RepositorioReceta repositorioReceta;
 
     @Autowired
-    public ServicioRecetaImpl(RepositorioReceta repositorioReceta, RepositorioReceta repositorioReceta1, RepositorioReceta repositorioReceta2) {
+    public ServicioRecetaImpl(RepositorioReceta repositorioReceta) {
         this.repositorioReceta = repositorioReceta;
     }
 
