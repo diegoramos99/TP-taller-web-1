@@ -9,4 +9,5 @@ public interface RepositorioAlimento {
 
       List<Alimento> buscarAlimento(String nombre);
       Alimento obtenerAlimento(Long id);
+    List<Alimento> traerTodosLosAlimentos();
 }

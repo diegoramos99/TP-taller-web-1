@@ -15,7 +15,7 @@
 <body>
 <nav>
     <ul>
-        <li><a th:href="@{/ver-home}">Home</a></li>
+        <li><a th:href="@{/home}">Home</a></li>
         <li class="dropdown">
             <a href="#">Alimentos</a>
             <ul class="submenu">
@@ -33,7 +33,12 @@
                 <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
             </ul>
         </li>
-        <li><a th:href="@{/recetas}">Recetas</a></li>
+        <li class="dropdown">
+            <a href="#">Dieta</a>
+            <ul class="submenu">
+                <li><a th:href="@{/listaComidas}">lista de comidas para esta mes</a></li>
+            </ul>
+        </li>
         <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
     </ul>
 </nav>

@@ -33,6 +33,10 @@ public class ControladorRegistrarAlimento {
     @RequestMapping("/ver-Registrar-alimentos")
     public ModelAndView verRegistrarAlimentos(@RequestParam(value = "fecha", required = false) String fechaStr, HttpServletRequest request) {
 
+        if (request.getSession().getAttribute("EMAIL") == null) {
+            return new ModelAndView("redirect:/login");
+        }
+
         ModelMap model = new ModelMap();
         List<RegistroComida> alimentos = servicioAlimento.obtenerRegistrosPorFecha(fechaStr);
 
@@ -67,6 +71,8 @@ public class ControladorRegistrarAlimento {
         Double totalCaloriasDiarias = servicioCalculoNutricional.calcularCaloriasDiarias(usuario);
         Macronutrientes macros = servicioCalculoNutricional.calcularMacronutrientes(totalCaloriasDiarias);
 
+        model.addAttribute("macronutrientes", macros);
+
         model.addAttribute("totalCaloriasDiarias", Math.round(totalCaloriasDiarias));
         model.addAttribute("totalGrasasDiarias", Math.round(macros.getGrasas()));
         model.addAttribute("totalProteinasDiarias", Math.round(macros.getProteinas()));
@@ -94,6 +100,10 @@ public class ControladorRegistrarAlimento {
             @RequestParam("comida") String tipoDeComida,
             @RequestParam("fecha") String fechaStr,
             HttpServletRequest request) {
+
+        if (request.getSession().getAttribute("EMAIL") == null) {
+            return new ModelAndView("redirect:/login");
+        }
 
         ModelMap model = new ModelMap();
 

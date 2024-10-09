@@ -16,92 +16,92 @@ import static org.mockito.Mockito.*;
 
 public class ControladorLoginTest {
 
-	private ControladorLogin controladorLogin;
-	private Usuario usuarioMock;
-	private DatosLogin datosLoginMock;
-	private HttpServletRequest requestMock;
-	private HttpSession sessionMock;
-	private ServicioLogin servicioLoginMock;
+    private ControladorLogin controladorLogin;
+    private Usuario usuarioMock;
+    private DatosLogin datosLoginMock;
+    private HttpServletRequest requestMock;
+    private HttpSession sessionMock;
+    private ServicioLogin servicioLoginMock;
 
 
-	@BeforeEach
-	public void init(){
-		datosLoginMock = new DatosLogin("dami@unlam.com", "123");
-		usuarioMock = mock(Usuario.class);
-		when(usuarioMock.getEmail()).thenReturn("dami@unlam.com");
-		requestMock = mock(HttpServletRequest.class);
-		sessionMock = mock(HttpSession.class);
-		servicioLoginMock = mock(ServicioLogin.class);
-		controladorLogin = new ControladorLogin(servicioLoginMock);
-	}
+    @BeforeEach
+    public void init() {
+        datosLoginMock = new DatosLogin("dami@unlam.com", "123");
+        usuarioMock = mock(Usuario.class);
+        when(usuarioMock.getEmail()).thenReturn("dami@unlam.com");
+        requestMock = mock(HttpServletRequest.class);
+        sessionMock = mock(HttpSession.class);
+        servicioLoginMock = mock(ServicioLogin.class);
+        controladorLogin = new ControladorLogin(servicioLoginMock);
+    }
 
-	@Test
-	public void loginConUsuarioYPasswordInorrectosDeberiaLlevarALoginNuevamente(){
-		// preparacion
-		when(servicioLoginMock.consultarUsuario(anyString(), anyString())).thenReturn(null);
+    @Test
+    public void loginConUsuarioYPasswordInorrectosDeberiaLlevarALoginNuevamente() {
+        // preparacion
+        when(servicioLoginMock.consultarUsuario(anyString(), anyString())).thenReturn(null);
 
-		// ejecucion
-		ModelAndView modelAndView = controladorLogin.validarLogin(usuarioMock, requestMock);
+        // ejecucion
+        ModelAndView modelAndView = controladorLogin.validarLogin(usuarioMock, requestMock);
 
-		// validacion
-		assertThat(modelAndView.getViewName(), equalToIgnoringCase("login"));
-		assertThat(modelAndView.getModel().get("error").toString(), equalToIgnoringCase("Usuario o clave incorrecta"));
-		verify(sessionMock, times(0)).setAttribute("ROL", "ADMIN");
-	}
+        // validacion
+        assertThat(modelAndView.getViewName(), equalToIgnoringCase("login"));
+        assertThat(modelAndView.getModel().get("error").toString(), equalToIgnoringCase("Usuario o clave incorrecta"));
+        verify(sessionMock, times(0)).setAttribute("ROL", "ADMIN");
+    }
 
+    @Test
+    public void loginConUsuarioYPasswordCorrectosDeberiaLLevarAHome() {
+        Usuario usuarioEncontradoMock = mock(Usuario.class);
+        when(usuarioEncontradoMock.getRol()).thenReturn("USER");
 
-	@Test
-	public void loginConUsuarioYPasswordCorrectosDeberiaLLevarAHome(){
-// preparacion
-		Usuario usuarioEncontradoMock = mock(Usuario.class);
-		when(usuarioEncontradoMock.getRol()).thenReturn("ADMIN");
+        when(requestMock.getSession()).thenReturn(sessionMock);
 
-		when(requestMock.getSession()).thenReturn(sessionMock);
-		when(servicioLoginMock.consultarUsuario(anyString(), anyString())).thenReturn(usuarioEncontradoMock);
+        when(usuarioMock.getEmail()).thenReturn("dami@unlam.com");
+        when(usuarioMock.getPassword()).thenReturn("123");
 
-		// ejecucion
-		ModelAndView modelAndView = controladorLogin.validarLogin(usuarioMock, requestMock);
+        when(servicioLoginMock.consultarUsuario("dami@unlam.com", "123")).thenReturn(usuarioEncontradoMock);
 
-		// validacion
-		assertThat(modelAndView.getViewName(), equalToIgnoringCase("redirect:/home"));
-		verify(sessionMock, times(1)).setAttribute("ROL", usuarioEncontradoMock.getRol());
-	}
+        ModelAndView modelAndView = controladorLogin.validarLogin(usuarioMock, requestMock);
 
+        assertThat(modelAndView.getViewName(), equalToIgnoringCase("redirect:/home"));
+        verify(sessionMock, times(1)).setAttribute("ROL", usuarioEncontradoMock.getRol());
+        verify(sessionMock, times(1)).setAttribute("EMAIL", usuarioEncontradoMock.getEmail());
+    }
 
-	@Test
-	public void registrameSiUsuarioNoExisteDeberiaCrearUsuarioYVolverAlLogin() throws UsuarioExistente {
+    @Test
+    public void registrameSiUsuarioNoExisteDeberiaCrearUsuarioYVolverAlLogin() throws UsuarioExistente {
 
-		// ejecucion
-		ModelAndView modelAndView = controladorLogin.registrarme(usuarioMock);
+        // ejecucion
+        ModelAndView modelAndView = controladorLogin.registrarme(usuarioMock);
 
-		// validacion
-		assertThat(modelAndView.getViewName(), equalToIgnoringCase("redirect:/login"));
-		verify(servicioLoginMock, times(1)).registrar(usuarioMock);
-	}
+        // validacion
+        assertThat(modelAndView.getViewName(), equalToIgnoringCase("redirect:/login"));
+        verify(servicioLoginMock, times(1)).registrar(usuarioMock);
+    }
 
-	@Test
-	public void registrarmeSiUsuarioExisteDeberiaVolverAFormularioYMostrarError() throws UsuarioExistente {
-		// preparacion
-		doThrow(UsuarioExistente.class).when(servicioLoginMock).registrar(usuarioMock);
+    @Test
+    public void registrarmeSiUsuarioExisteDeberiaVolverAFormularioYMostrarError() throws UsuarioExistente {
+        // preparacion
+        doThrow(UsuarioExistente.class).when(servicioLoginMock).registrar(usuarioMock);
 
-		// ejecucion
-		ModelAndView modelAndView = controladorLogin.registrarme(usuarioMock);
+        // ejecucion
+        ModelAndView modelAndView = controladorLogin.registrarme(usuarioMock);
 
-		// validacion
-		assertThat(modelAndView.getViewName(), equalToIgnoringCase("nuevo-usuario"));
-		assertThat(modelAndView.getModel().get("error").toString(), equalToIgnoringCase("El usuario ya existe"));
-	}
+        // validacion
+        assertThat(modelAndView.getViewName(), equalToIgnoringCase("nuevo-usuario"));
+        assertThat(modelAndView.getModel().get("error").toString(), equalToIgnoringCase("El usuario ya existe"));
+    }
 
-	@Test
-	public void errorEnRegistrarmeDeberiaVolverAFormularioYMostrarError() throws UsuarioExistente {
-		// preparacion
-		doThrow(RuntimeException.class).when(servicioLoginMock).registrar(usuarioMock);
+    @Test
+    public void errorEnRegistrarmeDeberiaVolverAFormularioYMostrarError() throws UsuarioExistente {
+        // preparacion
+        doThrow(RuntimeException.class).when(servicioLoginMock).registrar(usuarioMock);
 
-		// ejecucion
-		ModelAndView modelAndView = controladorLogin.registrarme(usuarioMock);
+        // ejecucion
+        ModelAndView modelAndView = controladorLogin.registrarme(usuarioMock);
 
-		// validacion
-		assertThat(modelAndView.getViewName(), equalToIgnoringCase("nuevo-usuario"));
-		assertThat(modelAndView.getModel().get("error").toString(), equalToIgnoringCase("Error al registrar el nuevo usuario"));
-	}
+        // validacion
+        assertThat(modelAndView.getViewName(), equalToIgnoringCase("nuevo-usuario"));
+        assertThat(modelAndView.getModel().get("error").toString(), equalToIgnoringCase("Error al registrar el nuevo usuario"));
+    }
 }

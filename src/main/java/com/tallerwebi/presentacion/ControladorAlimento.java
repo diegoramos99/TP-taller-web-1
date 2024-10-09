@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -22,8 +24,11 @@ public class ControladorAlimento {
     @RequestMapping("/ver-Buscar-Alimento")
     public ModelAndView verBuscarAlimento(
             @RequestParam(value = "comida", required = false) String comida,
-            @RequestParam(value = "fecha", required = false) String fecha) {
+            @RequestParam(value = "fecha", required = false) String fecha , HttpServletRequest request) {
 
+        if (request.getSession().getAttribute("EMAIL") == null) {
+            return new ModelAndView("redirect:/login");
+        }
         ModelMap model = new ModelMap();
 
         model.addAttribute("comida", comida);
