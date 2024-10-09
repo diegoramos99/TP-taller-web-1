@@ -104,10 +104,9 @@ INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, catego
 ('Ensalada de Atún', 400, 25, 15, 20, 'Cena', '1 porción', 'Cena', 'omnivoro');
 
 
-INSERT INTO Usuario (activo, apellido, email, informacionAdicional, nombre, objetivoSalud, password, preferenciaAlimenticia, restrincionesAlimentarias, rol)
-VALUES
-(true, 'García', 'juan.garcia@mail.com', 'Ninguna', 'Juan', 'Perder peso', '1234', 'Vegetariano', 'Sin gluten', 'USER'),
-(true, 'Pérez', 'test@unlam.edu.ar', 'Ninguna', 'María', 'Ganar músculo', 'test', 'Omnívora', '', 'USER');
+INSERT INTO Usuario (actividad, activo, altura, apellido, edad, email,     formula, informacionAdicional, nombre, objetivoSalud,     password, peso, preferenciaAlimenticia, restrincionesAlimentarias,     rol, sexo )
+VALUES ( 'moderado', true, 175.0, 'Pérez', 25, '123@gmail.com',     'Fórmula de ejemplo', 'Ninguna', 'Juan', 'mantener',     '123', 70.0, 'vegetariano', 'lácteos', 'USER', 'masculino' );
+
 
 INSERT INTO Receta (nombre, ingredientes, preparacion, tiempo, calorias,imagen)
 VALUES

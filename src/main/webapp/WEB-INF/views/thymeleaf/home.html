@@ -43,6 +43,7 @@
                 <li><a th:href="@{/listaComidas}">lista de comidas para esta mes</a></li>
             </ul>
         </li>
+        <li><a th:href="@{/recetas}">Recetas</a></li>
         <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
     </ul>
 </nav>
@@ -53,7 +54,7 @@
     <!-- Nueva Sección: Banner con Modal -->
     <section class="banner-section">
         <div class="banner">
-            <img th:src="@{../resources/static/images/banner.jpg}" alt="Banner Principal" id="bannerImage">
+            <img th:src="@{images/banner.jpg}" alt="Banner Principal" id="bannerImage">
             <div class="banner-overlay">
                 <h1>Bienvenido a la Calculadora de Calorías y Macros</h1>
                 <button id="openModal" class="cta-button">Descubre Más</button>
@@ -78,7 +79,7 @@
                 <p>Con esta calculadora de calorías y macros podrás determinar exactamente cuánto debes comer ya sea para ganar músculo, para perder grasa o mantenerte en tu peso ideal. Además, nuestra fórmula está personalizada para que incluso si tu objetivo es muy agresivo, tu salud no se vea comprometida.</p>
             </div>
             <div class="img">
-                <img th:src="@{/ejercicio1.jpg}" alt="Ejercicio 1">
+                <img th:src="@{images/ejercicio1.jpg}" alt="Ejercicio 1">
             </div>
         </article>
     </section>
@@ -92,7 +93,7 @@
                 <p>En función de los datos que nos proporciones, te recomendaremos la cantidad exacta de proteínas, hidratos de carbono y grasas que tu cuerpo y tu mente necesitan para seguir dándolo todo. ¿A qué esperas?</p>
             </div>
             <div class="img">
-                <img src="/images/ejercicio2.jpg" alt="Ejercicio 2">
+                <img th:src="@{images/ejercicio2.jpg}" alt="Ejercicio 2">
             </div>
         </article>
     </section>
@@ -148,27 +149,27 @@
         <h2>CONCEPTOS QUE DEBES CONOCER</h2>
         <div class="cards-container">
             <div class="card">
-                <img src="/images/menos.jpg" alt="Déficit">
+                <img th:src="@{images/menos.jpg}" alt="Déficit">
                 <h3>DÉFICIT</h3>
                 <p>Son las calorías que te hacen faltan para alcanzar un estado de mantenimiento. Por tanto, cuando estás en déficit estás quemando más energía que la que consumes.</p>
             </div>
             <div class="card">
-                <img src="/images/mas.png" alt="Superhábit">
+                <img th:src="@{images/mas.png}" alt="Superhábit">
                 <h3>SUPERHÁBIT</h3>
                 <p>Son las calorías que estás consumiendo de más una vez superado el estado de mantenimiento. Cuando estás en déficit estás quemando menos energía de la que consumes.</p>
             </div>
             <div class="card">
-                <img src="/images/igual.png" alt="Mantenimiento">
+                <img th:src="@{images/igual.png}" alt="Mantenimiento">
                 <h3>MANTENIMIENTO</h3>
                 <p>Lo comido por lo servido. Estar en mantenimiento es lo que ocurre cuando quemas prácticamente la misma cantidad de calorías de las que consumes.</p>
             </div>
             <div class="card">
-                <img src="/images/flama.jpg" alt="NEAT">
+                <img th:src="@{images/flama.jpg}" alt="NEAT">
                 <h3>NEAT</h3>
                 <p>Es el conjunto de actividades cotidianas no deportivas, como andar, subir escaleras o poner el lavavajillas. Cuanto más alto sea tu NEAT más calorías quemarás al día.</p>
             </div>
             <div class="card">
-                <img src="/images/tiro.jpg" alt="Macros">
+                <img th:src="@{images/tiro.jpg}" alt="Macros">
                 <h3>MACROS</h3>
                 <p>Son las proteínas, los carbohidratos y las grasas: los tres macronutrientes que necesita tu cuerpo para sobrevivir. Cada uno tiene una función que es regulada por el sistema hormonal.</p>
             </div>
@@ -178,12 +179,12 @@
                 <p>Son el resto de nutrientes que nuestro cuerpo necesita para vivir y realizar sus procesos de forma efectiva: vitaminas (hidrosolubles y liposolubles), minerales y oligoelementos.</p>
             </div>
             <div class="card">
-                <img src="/images/balanza.jpg" alt="IMC">
+                <img th:src="@{images/balanza.jpg}" alt="IMC">
                 <h3>IMC</h3>
                 <p>Sencilla métrica que nos permite saber con facilidad si estamos por encima o por debajo de nuestro peso ideal. No hay que obsesionarse porque sin contexto no tiene valor.</p>
             </div>
             <div class="card">
-                <img src="/images/infinito.png" alt="TMB">
+                <img th:src="@{images/infinito.png}" alt="TMB">
                 <h3>TMB</h3>
                 <p>Es el número de calorías más o menos exacto que necesita su cuerpo para sobrevivir. No incluye la cantidad de calorías quemadas en la actividad diaria de una persona.</p>
             </div>
@@ -193,17 +194,17 @@
                 <p>La grasa es uno de los tres macronutrientes: tiene una función de gran relevancia en la regulación hormonal. Mejor priorizar las grasas poliinsaturadas y monoinsaturadas.</p>
             </div>
             <div class="card">
-                <img src="/images/pared.jpg" alt="Proteína">
+                <img th:src="@{images/pared.jpg}" alt="Proteína">
                 <h3>PROTEÍNA</h3>
                 <p>Las proteínas son uno de los tres macronutrientes: su función es proveer al cuerpo de la materia prima necesaria para desarrollar, construir y reparar la masa muscular.</p>
             </div>
             <div class="card">
-                <img src="/images/rayo.png" alt="Carbohidratos">
+                <img th:src="@{images/rayo.png}" alt="Carbohidratos">
                 <h3>CARBOHIDRATOS</h3>
                 <p>Los carbohidratos son uno de los tres macronutrientes: energía de alta disponibilidad. Sin carbohidratos nuestro cuerpo entra en estado de cetosis.</p>
             </div>
             <div class="card">
-                <img src="/images/tenedor.jpg" alt="Calorías">
+                <img th:src="@{images/tenedor.jpg}" alt="Calorías">
                 <h3>CALORÍAS</h3>
                 <p>La palabra caloría se refiere al nº de kilocalorías (kcal). Las grasas contienen 9 kcal/g. Los carbohidratos y proteínas contienen aproximadamente 4 kcal/g.</p>
             </div>
