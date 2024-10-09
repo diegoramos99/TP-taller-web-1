@@ -10,5 +10,6 @@ public interface RepositorioReceta {
 
         List<Receta> buscarReceta(String nombre);
         Receta obtenerReceta(Long id);
+        Receta guardarReceta(Receta receta);
     }
 
