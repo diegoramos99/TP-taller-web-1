@@ -33,6 +33,10 @@ public class ControladorRegistrarAlimento {
     @RequestMapping("/ver-Registrar-alimentos")
     public ModelAndView verRegistrarAlimentos(@RequestParam(value = "fecha", required = false) String fechaStr, HttpServletRequest request) {
 
+        if (request.getSession().getAttribute("EMAIL") == null) {
+            return new ModelAndView("redirect:/login");
+        }
+
         ModelMap model = new ModelMap();
         List<RegistroComida> alimentos = servicioAlimento.obtenerRegistrosPorFecha(fechaStr);
 
@@ -94,6 +98,10 @@ public class ControladorRegistrarAlimento {
             @RequestParam("comida") String tipoDeComida,
             @RequestParam("fecha") String fechaStr,
             HttpServletRequest request) {
+
+        if (request.getSession().getAttribute("EMAIL") == null) {
+            return new ModelAndView("redirect:/login");
+        }
 
         ModelMap model = new ModelMap();
 

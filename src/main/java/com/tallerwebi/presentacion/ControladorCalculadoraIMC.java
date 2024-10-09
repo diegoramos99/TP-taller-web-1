@@ -9,15 +9,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class ControladorCalculadoraIMC {
     @RequestMapping(path = "/calculadoraIMC", method = RequestMethod.GET)
+    public ModelAndView mostrarCalculadora(HttpServletRequest request) {
+        if (request.getSession().getAttribute("EMAIL") == null) {
+            return new ModelAndView("redirect:/login");
+        }
+        return new ModelAndView("calculadoraIMC.html");
+    }
 
-    public ModelAndView mostrarCalculadora() { return new ModelAndView("calculadoraIMC.html");}
+    @RequestMapping(path = "/calcularIMC")
+    public ModelAndView calcularIMC(@RequestParam String genero, @RequestParam double altura, @RequestParam double peso, @RequestParam Integer edad,HttpServletRequest request) {
 
-    @RequestMapping(path= "/calcularIMC")
-    public ModelAndView calcularIMC (@RequestParam String genero, @RequestParam double altura, @RequestParam double peso, @RequestParam Integer edad){
 
+         if (request.getSession().getAttribute("EMAIL") == null) {
+            return new ModelAndView("redirect:/login");
+        }
         //paso altura a metros
         altura = altura / 100;
 
@@ -56,12 +66,11 @@ public class ControladorCalculadoraIMC {
         ModelMap modelo = new ModelMap();
 
         modelo.put("clasificacion", clasificacion);
-        modelo.put("genero",genero);
-        modelo.put("altura",altura);
-        modelo.put("peso",peso);
-        modelo.put("edad",edad);
-        modelo.put("imc",imc);
-
+        modelo.put("genero", genero);
+        modelo.put("altura", altura);
+        modelo.put("peso", peso);
+        modelo.put("edad", edad);
+        modelo.put("imc", imc);
 
 
         //redirigo a la pagina

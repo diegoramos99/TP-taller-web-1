@@ -1,9 +1,12 @@
 package com.tallerwebi.presentacion;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
+import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,7 +38,11 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCHombreNormalTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("hombre", 180, 75, 30);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        // Llama al método controlador pasando la sesión simulada
+        ModelAndView modelAndView = controlador.calcularIMC("hombre", 180, 75, 30, request);
 
         double imcReal = (double) modelAndView.getModel().get("imc");
         System.out.println("IMC calculado: " + imcReal); // Para depuración
@@ -50,7 +57,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCMujerBajoPesoTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("mujer", 160, 45, 28);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("mujer", 160, 45, 28, request);
         //queria comparar double con un objeto, entonces tengo q castear el double para q lo convierta en objeto
         // casteo el Double
         double imcReal = (Double) modelAndView.getModel().get("imc");
@@ -65,7 +75,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCHombreObesidadTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("hombre", 175, 95, 40);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("hombre", 175, 95, 40, request);
 
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
@@ -79,7 +92,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCMujerSobrepesoTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("mujer", 165, 70, 25);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("mujer", 165, 70, 25, request);
 
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
@@ -90,9 +106,13 @@ public class ControladorCalculadoraIMCTest {
         assertEquals(25, modelAndView.getModel().get("edad"));
         assertEquals(25.71, imcReal, 0.01);
     }
+
     @Test
     public void calcularIMCHombrePesoInsuficienteTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("hombre", 180, 60, 22);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("hombre", 180, 60, 22, request);
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
         assertEquals("resultadoIMC", modelAndView.getViewName());
@@ -105,7 +125,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCHombreSobrepesoTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("hombre", 190, 95, 30);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("hombre", 190, 95, 30, request);
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
         assertEquals("resultadoIMC", modelAndView.getViewName());
@@ -118,7 +141,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCMujerObesidadTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("mujer", 160, 85, 45);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("mujer", 160, 85, 45, request);
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
         assertEquals("resultadoIMC", modelAndView.getViewName());
@@ -131,7 +157,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCHombrePesoInsuficienteExtremoTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("hombre", 175, 50, 30);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("hombre", 175, 50, 30, request);
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
         assertEquals("resultadoIMC", modelAndView.getViewName());
@@ -144,7 +173,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCMujerSobrepesoExtremoTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("mujer", 170, 80, 50);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("mujer", 170, 80, 50, request);
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
         assertEquals("resultadoIMC", modelAndView.getViewName());
@@ -157,7 +189,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCMujerObesidadExtremaTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("mujer", 165, 100, 40);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("mujer", 165, 100, 40, request);
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
         assertEquals("resultadoIMC", modelAndView.getViewName());
@@ -170,7 +205,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCHombreNormalLímiteSuperiorTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("hombre", 175, 77, 28);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("hombre", 175, 77, 28, request);
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
         assertEquals("resultadoIMC", modelAndView.getViewName());
@@ -183,7 +221,10 @@ public class ControladorCalculadoraIMCTest {
 
     @Test
     public void calcularIMCMujerNormalLímiteInferiorTest() {
-        ModelAndView modelAndView = controlador.calcularIMC("mujer", 160, 48, 22);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.getSession().setAttribute("EMAIL", "test@example.com");
+
+        ModelAndView modelAndView = controlador.calcularIMC("mujer", 160, 48, 22, request);
         double imcReal = (Double) modelAndView.getModel().get("imc");
 
         assertEquals("resultadoIMC", modelAndView.getViewName());
