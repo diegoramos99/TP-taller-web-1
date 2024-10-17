@@ -53,20 +53,13 @@ public class ControladorPerfilUsuario {
         return new ModelAndView("formulario",map);
     }
 
-
-
-
-
-
-
-
     @RequestMapping(path = "/enviarDatos", method = RequestMethod.POST)
     public ModelAndView enviarDatosDelFormulario(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 
         String email = (String) request.getSession().getAttribute("EMAIL");
         Usuario usuarioActivo=servicioPerfilUsuario.buscarUsuarioPoreEmail(email);
 
-         Usuario usuarioActualizado=servicioPerfilUsuario.modificarUsuario(usuarioActivo , usuario);
+        Usuario usuarioActualizado=servicioPerfilUsuario.modificarUsuario(usuarioActivo , usuario);
         ModelMap model = new ModelMap();
         model.put("nombre",usuarioActualizado.getNombre());
         model.put("apellido",usuarioActualizado.getApellido());

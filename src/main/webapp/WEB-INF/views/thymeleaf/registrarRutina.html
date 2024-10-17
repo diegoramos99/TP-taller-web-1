@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Rutina</title>
+    <link rel="stylesheet" th:href="@{/css/registrarRutina.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Rutina Semanal</h1>
+
+        <!-- Contenedor de los días de la semana -->
+        <div class="days-grid">
+            <div class="day-card" onclick="seleccionarDia('Lunes')">
+                <span>Lunes</span>
+            </div>
+            <div class="day-card" onclick="seleccionarDia('Martes')">
+                <span>Martes</span>
+            </div>
+            <div class="day-card" onclick="seleccionarDia('Miércoles')">
+                <span>Miércoles</span>
+            </div>
+            <div class="day-card" onclick="seleccionarDia('Jueves')">
+                <span>Jueves</span>
+            </div>
+            <div class="day-card" onclick="seleccionarDia('Viernes')">
+                <span>Viernes</span>
+            </div>
+            <div class="day-card" onclick="seleccionarDia('Sábado')">
+                <span>Sábado</span>
+            </div>
+            <div class="day-card" onclick="seleccionarDia('Domingo')">
+                <span>Domingo</span>
+            </div>
+        </div>
+
+        <form th:action="@{/guardarRutina}" method="post">
+            <input type="hidden" id="diaSeleccionado" name="dia">
+
+            <div class="exercise-list">
+                <h2>Ejercicios para el día seleccionado</h2>
+                <ul id="lista-ejercicios">
+                    <li>No hay ejercicios agregados aún.</li>
+                </ul>
+            </div>
+
+            <button type="button" class="add-exercise" onclick="buscarEjercicio()">Agregar Ejercicio</button>
+
+            <div class="form-actions">
+                <button type="submit">Guardar Rutina</button>
+                <button type="reset">Limpiar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>

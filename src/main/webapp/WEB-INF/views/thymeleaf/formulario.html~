@@ -79,19 +79,19 @@
         <input type="hidden" th:field="*{id}"/>
         <label for="objetivos">Objetivos de Salud</label>
         <select th:field="*{objetivoSalud}" id="objetivos" name="objetivos">
-            <option value="mantener" th:selected="*{objetivoSalud == 'mantener'}">
+            <option value="mantener_peso" th:selected="*{objetivoSalud == 'mantener'}">
                 Mantener Peso
             </option>
-            <option value="perder" th:selected="*{objetivoSalud == 'perder'}">
+            <option value="perdida_grasa" th:selected="*{objetivoSalud == 'perder'}">
                 Pérdida de Grasa
             </option>
-            <option value="agresivo" th:selected="*{objetivoSalud == 'agresivo'}">
+            <option value="perdida_agresiva" th:selected="*{objetivoSalud == 'agresivo'}">
                 Pérdida de Grasa Agresiva
             </option>
-            <option value="ganar" th:selected="*{objetivoSalud == 'ganar'}">
+            <option value="ganancia_masa" th:selected="*{objetivoSalud == 'ganar'}">
                 Ganancia de Masa Muscular
             </option>
-            <option value="ganar-agresivo" th:selected="*{objetivoSalud == 'ganar-agresivo'}">
+            <option value="ganancia_agresiva" th:selected="*{objetivoSalud == 'ganar-agresivo'}">
                 Ganancia de Peso Agresiva
             </option>
         </select>

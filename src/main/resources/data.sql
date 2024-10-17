@@ -145,3 +145,5 @@ VALUES
 ('Carne al Vino', 'Carne de res, Vino tinto, Cebolla, Zanahorias, Especias', 'Dora la carne, añade cebolla y zanahorias. Vierte vino y cocina a fuego lento hasta que esté tierno.', 50, 500,'images/plato_vacio.jpg'),
 ('Chili con Carne', 'Carne molida, Frijoles, Tomate, Cebolla, Especias', 'Sofríe cebolla y carne, añade tomates y frijoles. Cocina a fuego lento con especias.', 40, 450,'images/plato_vacio.jpg'),
 ('Kebabs de Carne', 'Carne de res, Especias, Pimiento, Cebolla, Palitos', 'Corta la carne y vegetales en trozos, sazona y ensarta en palitos. Asa hasta que estén cocidos.', 25, 300,'images/plato_vacio.jpg');
+
+
