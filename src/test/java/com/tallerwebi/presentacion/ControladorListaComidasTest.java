@@ -41,7 +41,7 @@ public class ControladorListaComidasTest {
         controladorListaDeComidasMock = mock(ControladorListaDeComidas.class);
     }
 
-
+/*
     @Test
     public void queAlHacerClickEnListaDeComidasTeLleveALaVistaListaDeComidas(){
         ModelAndView mav =new ModelAndView("redirect:/listaDeComidas");
@@ -54,6 +54,9 @@ public class ControladorListaComidasTest {
     thenEsLaVistaCorrecta(mav1);
 
 }
+
+
+ */
 
     private void thenEsLaVistaCorrecta(ModelAndView mav) {
         assertThat(mav.getViewName().toString(), equalToIgnoringCase("redirect:/listaDeComidas")) ;

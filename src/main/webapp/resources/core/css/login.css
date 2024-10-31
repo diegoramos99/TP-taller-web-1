@@ -41,9 +41,14 @@
         .form-group label {
             color: #34495e;
             font-weight: 600;
+            margin-bottom: 4px;
         }
 
         .alert {
+            margin-top: 15px;
+        }
+
+        #btn-login {
             margin-top: 15px;
         }
 

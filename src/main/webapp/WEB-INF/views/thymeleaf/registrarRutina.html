@@ -5,57 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Rutina</title>
     <link rel="stylesheet" th:href="@{/css/registrarRutina.css}">
+    <link rel="stylesheet" th:href="@{/css/nav.css}">
 </head>
 <body>
-    <div class="container">
-        <h1>Registro de Rutina Semanal</h1>
 
-        <!-- Contenedor de los días de la semana -->
-        <div class="days-grid">
-            <div class="day-card" onclick="seleccionarDia('Lunes')">
-                <span>Lunes</span>
-            </div>
-            <div class="day-card" onclick="seleccionarDia('Martes')">
-                <span>Martes</span>
-            </div>
-            <div class="day-card" onclick="seleccionarDia('Miércoles')">
-                <span>Miércoles</span>
-            </div>
-            <div class="day-card" onclick="seleccionarDia('Jueves')">
-                <span>Jueves</span>
-            </div>
-            <div class="day-card" onclick="seleccionarDia('Viernes')">
-                <span>Viernes</span>
-            </div>
-            <div class="day-card" onclick="seleccionarDia('Sábado')">
-                <span>Sábado</span>
-            </div>
-            <div class="day-card" onclick="seleccionarDia('Domingo')">
-                <span>Domingo</span>
-            </div>
+<div th:replace="nav :: nav"></div>
+
+<div class="container">
+
+    <h1>Registro de Rutina Semanal</h1>
+
+    <div class="days-grid">
+        <div class="day-card" onclick="seleccionarDia('Lunes')">
+            <span>Lunes</span>
         </div>
-
-        <form th:action="@{/guardarRutina}" method="post">
-            <input type="hidden" id="diaSeleccionado" name="dia">
-
-            <div class="exercise-list">
-                <h2>Ejercicios para el día seleccionado</h2>
-                <ul id="lista-ejercicios">
-                    <li>No hay ejercicios agregados aún.</li>
-                </ul>
-            </div>
-
-            <button type="button" class="add-exercise" onclick="buscarEjercicio()">Agregar Ejercicio</button>
-
-            <div class="form-actions">
-                <button type="submit">Guardar Rutina</button>
-                <button type="reset">Limpiar</button>
-            </div>
-        </form>
+        <div class="day-card" onclick="seleccionarDia('Martes')">
+            <span>Martes</span>
+        </div>
+        <div class="day-card" onclick="seleccionarDia('Miercoles')">
+            <span>Miercoles</span>
+        </div>
+        <div class="day-card" onclick="seleccionarDia('Jueves')">
+            <span>Jueves</span>
+        </div>
+        <div class="day-card" onclick="seleccionarDia('Viernes')">
+            <span>Viernes</span>
+        </div>
+        <div class="day-card" onclick="seleccionarDia('Sábado')">
+            <span>Sábado</span>
+        </div>
+        <div class="day-card" onclick="seleccionarDia('Domingo')">
+            <span>Domingo</span>
+        </div>
     </div>
 
-    <script>
+    <h2>Ejercicio Seleccionado</h2>
+    <table class="exercise-table">
+        <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Ejercicio</th>
+            <th>Series</th>
+            <th>Repeticiones</th>
+            <th>Descanso</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="registro : ${registroEjercicios}">
+            <td>
+                <img th:src="@{/images/{img}(img=${registro.ejercicio.ubicacion})}"
+                     alt="Imagen del ejercicio" class="exercise-img"/>
+            </td>
+            <td th:text="${registro.getEjercicio().getNombre()}"></td>
+            <td th:text="${registro.getSeries()}"></td>
+            <td th:text="${registro.getRepeticiones()}"></td>
+            <td th:text="${registro.getDescanso()}"></td>
+            <td>
+                <form th:action="@{/eliminar-RegistroEjercicio}" method="post" style="display: inline;">
+                    <input type="hidden" th:name="id" th:value="${registro.getId()}"/>
+                    <input type="hidden" th:name="dia" th:value="${registro.getDia()}"/>
+                    <input type="submit" value="Eliminar" class="delete-button"
+                           onclick="return confirm('¿Estás seguro de que deseas eliminar este ejercicio?');"/>
+                </form>
+            </td>
 
-    </script>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <form method="get" th:action="@{/buscarEjercicio}">
+        <input type="hidden" id="diaSeleccionado" name="dia" th:value="${dia}">
+        <button type="submit" class="add-exercise button-link">Agregar Ejercicio</button>
+    </form>
+
+</div>
+
+<script>
+    const days = document.querySelectorAll('.day-card');
+
+    days.forEach(day => {
+        day.addEventListener('click', () => {
+            days.forEach(d => d.classList.remove('selected'));
+            day.classList.add('selected');
+
+            const diaSeleccionado = day.textContent.trim();
+
+            window.location.href = `/spring/ver-Rutina?dia=${encodeURIComponent(diaSeleccionado)}`;
+        });
+    });
+
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const diaActual = urlParams.get('dia');
+
+        if (diaActual) {
+            const selectedDay = Array.from(days).find(day => day.textContent.trim() === diaActual);
+            if (selectedDay) selectedDay.classList.add('selected');
+        } else {
+            days[0].classList.add('selected');
+        }
+    };
+</script>
+
 </body>
 </html>

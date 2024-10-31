@@ -7,4 +7,6 @@ public interface ServicioAlimento {
     Alimento obtenerAlimentoPorId(Long id);
     void guardarRegistroAlimento(RegistroComida registroComida);
     List<RegistroComida> obtenerRegistrosPorFecha(String fecha);
+
+    void eliminarRegistroAlimento(Long id);
 }

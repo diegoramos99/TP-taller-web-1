@@ -11,28 +11,31 @@ import java.util.Random;
 
 @Service("servicioListaDeComidas")
 @Transactional
-public class ServicioListaDeComidasImpl implements  ServicioListaDeComidas{
+public class ServicioListaDeComidasImpl implements ServicioListaDeComidas {
     private RepositorioAlimento repositorioAlimento;
+
     @Autowired
-    public void ServicioListaDeComidas(RepositorioAlimento listaDeComidas){
-        this.repositorioAlimento=listaDeComidas;
+    public void ServicioListaDeComidas(RepositorioAlimento listaDeComidas) {
+        this.repositorioAlimento = listaDeComidas;
     }
-@Override
+
+    @Override
     public List<Alimento> buscarAlimentos() {
-        List <Alimento> alimentos= repositorioAlimento.traerTodosLosAlimentos();
+        List<Alimento> alimentos = repositorioAlimento.traerTodosLosAlimentos();
 
         return alimentos;
     }
-@Override
-    public List<List<Alimento>> separarLosAlimentosPorTipo(List<Alimento> alimentosList){
+
+    @Override
+    public List<List<Alimento>> separarLosAlimentosPorTipo(List<Alimento> alimentosList) {
         List<List<Alimento>> alimentosSeparadosPorTipo = new ArrayList<>();
         List<Alimento> desayunos = new ArrayList<>();
         List<Alimento> almuerzos = new ArrayList<>();
         List<Alimento> meriendas = new ArrayList<>();
         List<Alimento> cenas = new ArrayList<>();
 
-        for (Alimento alimento : alimentosList){
-            switch (alimento.getTipo().toLowerCase()){
+        for (Alimento alimento : alimentosList) {
+            switch (alimento.getTipo().toLowerCase()) {
                 case "desayuno":
                     desayunos.add(alimento);
                     break;
@@ -60,8 +63,8 @@ public class ServicioListaDeComidasImpl implements  ServicioListaDeComidas{
     }
 
 
-@Override
-    public List<List<Alimento>> comidasParaElDiaRespetandoLaDieta(Usuario usuarioMock, List<List<Alimento>> alimentosSeparadosPorTipo ){
+    @Override
+    public List<List<Alimento>> comidasParaElDiaRespetandoLaDieta(Usuario usuarioMock, List<List<Alimento>> alimentosSeparadosPorTipo) {
         List<Alimento> desayunos = alimentosSeparadosPorTipo.get(0);
         List<Alimento> almuerzos = alimentosSeparadosPorTipo.get(1);
         List<Alimento> meriendas = alimentosSeparadosPorTipo.get(2);
@@ -73,23 +76,23 @@ public class ServicioListaDeComidasImpl implements  ServicioListaDeComidas{
         List<Alimento> meriendasDeDieta = new ArrayList<>();
         List<Alimento> cenasDeDieta = new ArrayList<>();
 
-        for (Alimento alimento : desayunos){
-            if (dieta.equalsIgnoreCase(alimento.getDieta())){
+        for (Alimento alimento : desayunos) {
+            if (dieta.equalsIgnoreCase(alimento.getDieta())) {
                 desayunosDeDieta.add(alimento);
             }
         }
-        for (Alimento alimento : almuerzos){
-            if (dieta.equalsIgnoreCase(alimento.getDieta())){
+        for (Alimento alimento : almuerzos) {
+            if (dieta.equalsIgnoreCase(alimento.getDieta())) {
                 almuerzosDeDieta.add(alimento);
             }
         }
-        for (Alimento alimento : meriendas){
-            if (dieta.equalsIgnoreCase(alimento.getDieta())){
+        for (Alimento alimento : meriendas) {
+            if (dieta.equalsIgnoreCase(alimento.getDieta())) {
                 meriendasDeDieta.add(alimento);
             }
         }
-        for (Alimento alimento : cenas){
-            if (dieta.equalsIgnoreCase(alimento.getDieta())){
+        for (Alimento alimento : cenas) {
+            if (dieta.equalsIgnoreCase(alimento.getDieta())) {
                 cenasDeDieta.add(alimento);
             }
         }
@@ -148,7 +151,6 @@ public class ServicioListaDeComidasImpl implements  ServicioListaDeComidas{
 
         return alimentosParaLaSemana;
     }
-
 
 
 }

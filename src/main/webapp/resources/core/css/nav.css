@@ -1,17 +1,26 @@
 
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
     padding: 0;
     margin: 0;
-    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
+
 
 nav ul li {
     position: relative;
     z-index: 10;
 }
+
 
 nav ul li a {
     color: white;
@@ -51,7 +60,36 @@ nav ul li .submenu li a:hover {
     background-color: #555;
 }
 
-
 nav ul li:hover .submenu {
     display: block;
+}
+
+
+.perfil-usuario {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+}
+
+.perfil-link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.perfil-usuario img.icono-usuario {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.perfil-usuario .submenu {
+    right: 0;
+    top: 100%;
+    border-radius: 5px;
+    overflow: hidden;
 }

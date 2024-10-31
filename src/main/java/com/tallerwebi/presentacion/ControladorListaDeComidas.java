@@ -23,7 +23,7 @@ public class ControladorListaDeComidas {
         this.servicioPerfilUsuario = servicioPerfilUsuario;
     }
 
-    @RequestMapping(path = "/listaComidas", method = RequestMethod.GET)
+    @RequestMapping("/listaComidas")
     public ModelAndView irAListaDeComidas(HttpServletRequest request) {
         if (request.getSession().getAttribute("EMAIL") == null) {
             return new ModelAndView("redirect:/login");
@@ -41,7 +41,6 @@ public class ControladorListaDeComidas {
         List<List<Alimento>> alimento = servicioListaDeComidas.buscarAlimentosParaLaSemana(usuarioBuscado);
         ModelMap map = new ModelMap();
         map.put("alimentos", alimento);
-        ModelAndView mav = new ModelAndView("listaDeComidas", map);
-        return mav;
+        return new ModelAndView("listaDeComidas", map);
     }
 }
