@@ -12,4 +12,6 @@ public interface ServicioEjercicio {
     List<RegistroEjercicio> traerTodosLosEjerciciosPorDia(String dia);
 
     void eliminarRegistroEjercicio(Long id);
+
+    List<RegistroEjercicio> traerRutina(String rutinaSelecionada, Usuario usuario);
 }

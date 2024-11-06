@@ -1,7 +1,7 @@
 package com.tallerwebi.infraestructura;
 
-import com.tallerwebi.dominio.Alimento;
 import com.tallerwebi.dominio.RegistroEjercicio;
+import com.tallerwebi.dominio.Usuario;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -68,5 +68,25 @@ public class RepositorioEjercicioImpl implements RepositorioEjercicio {
         session.delete(session.load(RegistroEjercicio.class, id));
     }
 
+    @Override
+    public List<RegistroEjercicio> traerTodosLosEjercicios(String nombreRutinaSeleccionada, Usuario usuario) {
+        final Session session = sessionFactory.getCurrentSession();
 
+        List<RegistroEjercicio> registros = session.createCriteria(RegistroEjercicio.class)
+                .add(Restrictions.eq("nombreRutina", nombreRutinaSeleccionada))
+                .list();
+
+        if (registros.isEmpty()) {
+            return registros;
+        }else {
+             for (RegistroEjercicio registro : registros) {
+            registro.setUsuario(usuario);
+            session.update(registro);
+         }
+        }
+
+
+
+        return registros;
+    }
 }

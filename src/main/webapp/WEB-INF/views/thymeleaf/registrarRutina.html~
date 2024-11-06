@@ -46,7 +46,7 @@
                 <option value="Rutina Personalizada" th:selected="${rutinaSelecionada == 'Rutina Personalizada'}">Rutina
                     Personalizada
                 </option>
-                <option value="Torso Pierna" th:selected="${rutinaSelecionada == 'Torso Pierna'}">Torso Pierna(4 dias)</option>
+                <option value="Torso Pierna" th:selected="${rutinaSelecionada == 'Torso Pierna'}">Torso Pierna</option>
             </select>
             <button type="submit" class="button-link">Cargar Rutina</button>
         </form>

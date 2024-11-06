@@ -44,4 +44,9 @@ public class ServicioEjercicioImpl implements ServicioEjercicio{
         repoEjercicios.eliminarRegistroEjercicio(id);
     }
 
+    @Override
+    public List<RegistroEjercicio> traerRutina(String rutinaSelecionada, Usuario usuario) {
+        return repoEjercicios.traerTodosLosEjercicios(rutinaSelecionada, usuario);
+    }
+
 }
