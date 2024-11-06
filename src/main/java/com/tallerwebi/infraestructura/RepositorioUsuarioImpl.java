@@ -13,7 +13,7 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
     private SessionFactory sessionFactory;
 
     @Autowired
-    public RepositorioUsuarioImpl(SessionFactory sessionFactory){
+    public RepositorioUsuarioImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -45,6 +45,17 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
         sessionFactory.getCurrentSession().update(usuario);
     }
 
+    @Override
+    public void actualizarEstadoPremium(boolean b, Long id) {
+        final Session session = sessionFactory.getCurrentSession();
+        Usuario usuario = (Usuario) session.createCriteria(Usuario.class)
+                .add(Restrictions.eq("id", id))
+                .uniqueResult();
+
+            usuario.setEsPremium(b);
+            session.update(usuario);
+
+    }
 
 
 }

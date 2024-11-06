@@ -40,4 +40,12 @@ public class ServicioPerfilUsuarioImpl implements ServicioPerfilUsuario {
 
         return usuario;
     }
+
+    @Override
+    public void actualizarEstadoPremium(boolean b, Long id) {
+
+        repositorioUsuario.actualizarEstadoPremium(b,id);
+    }
+
+
 }
