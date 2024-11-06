@@ -18,6 +18,7 @@ public class RegistroEjercicio {
     @ManyToOne
     private Ejercicio ejercicio;
 
+    private String nombreRutina;
     private Integer series;
     private Integer repeticiones;
     private Double descanso;
@@ -77,5 +78,13 @@ public class RegistroEjercicio {
 
     public void setEjercicio(Ejercicio ejercicio) {
         this.ejercicio = ejercicio;
+    }
+
+    public String getNombreRutina() {
+        return nombreRutina;
+    }
+
+    public void setNombreRutina(String nombreRutina) {
+        this.nombreRutina = nombreRutina;
     }
 }
