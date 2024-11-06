@@ -21,26 +21,28 @@
         <playwright.version>1.36.0</playwright.version>
         <!--  <mysql.version>8.0.33</mysql.version>  -->
         <hsqldb.version>2.3.2</hsqldb.version>
+        <mercadopago.version>2.1.7</mercadopago.version>
 
-   </properties>
+    </properties>
 
-   <dependencies>
+    <dependencies>
 
-       <!-- -->
-       <dependency>
-           <groupId>org.hsqldb</groupId>
-           <artifactId>hsqldb</artifactId>
-           <version>${hsqldb.version}</version>
-       </dependency>
+        <!-- -->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
+        </dependency>
 
-       <!-- <version>${mysql.version}</version>-->
-       <!--<dependency>
-           <groupId>mysql</groupId>
-           <artifactId>mysql-connector-java</artifactId>
 
-           <scope>runtime</scope>
-           <version>8.0.33</version>
-       </dependency>-->
+        <!-- <version>${mysql.version}</version>-->
+        <!--<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+
+            <scope>runtime</scope>
+            <version>8.0.33</version>
+        </dependency>-->
 
 
         <dependency>
@@ -60,8 +62,6 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
-
 
         <dependency>
             <groupId>org.thymeleaf</groupId>
@@ -110,6 +110,14 @@
             <scope>test</scope>
         </dependency>
 
+
+        <dependency>
+            <groupId>com.mercadopago</groupId>
+            <artifactId>sdk-java</artifactId>
+            <version>${mercadopago.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -122,6 +130,8 @@
             <version>${playwright.version}</version>
             <scope>test</scope>
         </dependency>
+
+
         <!-- compile only, deployed container will provide this -->
         <!--
         <dependency>

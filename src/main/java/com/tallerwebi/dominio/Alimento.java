@@ -21,6 +21,9 @@ public class Alimento {
     private String tipo;
     private  String dieta;
 
+    public Alimento() {
+    }
+
     public String getNombre() {
         return nombre;
     }

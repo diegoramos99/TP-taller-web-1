@@ -22,59 +22,12 @@ public class Usuario {
     private Integer edad;
     private Float peso;
     private Float altura;
+    private Boolean esPremium = false;
     private String actividad;
     private String objetivoSalud;
     private String preferenciaAlimenticia;
     private String restrincionesAlimentarias;
     private String informacionAdicional;
-
-
-    public Float getAltura() {
-        return altura;
-    }
-
-    public void setAltura(Float altura) {
-        this.altura = altura;
-    }
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getFormula() {
-        return formula;
-    }
-
-    public void setFormula(String formula) {
-        this.formula = formula;
-    }
-
-    public Integer getEdad() {
-        return edad;
-    }
-
-    public void setEdad(Integer edad) {
-        this.edad = edad;
-    }
-
-    public Float getPeso() {
-        return peso;
-    }
-
-    public void setPeso(Float peso) {
-        this.peso = peso;
-    }
-
-    public String getActividad() {
-        return actividad;
-    }
-
-    public void setActividad(String actividad) {
-        this.actividad = actividad;
-    }
 
     public Long getId() {
         return id;
@@ -116,6 +69,22 @@ public class Usuario {
         this.activo = activo;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
     public String getApellido() {
         return apellido;
     }
@@ -124,20 +93,44 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public String getRestrincionesAlimentarias() {
-        return restrincionesAlimentarias;
+    public String getFormula() {
+        return formula;
     }
 
-    public void setRestrincionesAlimentarias(String restrincionesAlimentarias) {
-        this.restrincionesAlimentarias = restrincionesAlimentarias;
+    public void setFormula(String formula) {
+        this.formula = formula;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Integer getEdad() {
+        return edad;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setEdad(Integer edad) {
+        this.edad = edad;
+    }
+
+    public Float getAltura() {
+        return altura;
+    }
+
+    public void setAltura(Float altura) {
+        this.altura = altura;
+    }
+
+    public Boolean getEsPremium() {
+        return esPremium;
+    }
+
+    public void setEsPremium(Boolean esPremium) {
+        this.esPremium = esPremium;
+    }
+
+    public String getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(String actividad) {
+        this.actividad = actividad;
     }
 
     public String getObjetivoSalud() {
@@ -148,12 +141,12 @@ public class Usuario {
         this.objetivoSalud = objetivoSalud;
     }
 
-    public String getPreferenciaAlimenticia() {
-        return preferenciaAlimenticia;
+    public String getRestrincionesAlimentarias() {
+        return restrincionesAlimentarias;
     }
 
-    public void setPreferenciaAlimenticia(String preferenciaAlimenticia) {
-        this.preferenciaAlimenticia = preferenciaAlimenticia;
+    public void setRestrincionesAlimentarias(String restrincionesAlimentarias) {
+        this.restrincionesAlimentarias = restrincionesAlimentarias;
     }
 
     public String getInformacionAdicional() {
@@ -164,4 +157,19 @@ public class Usuario {
         this.informacionAdicional = informacionAdicional;
     }
 
+    public String getPreferenciaAlimenticia() {
+        return preferenciaAlimenticia;
+    }
+
+    public void setPreferenciaAlimenticia(String preferenciaAlimenticia) {
+        this.preferenciaAlimenticia = preferenciaAlimenticia;
+    }
+
+    public Float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Float peso) {
+        this.peso = peso;
+    }
 }

@@ -41,10 +41,10 @@ public class ServicioAlimentoImpl implements ServicioAlimento {
         return repositorioRegistroComida.buscarRegistroComidaPorFecha(fecha);
     }
 
-
-
-
-
+    @Override
+    public void eliminarRegistroAlimento(Long id) {
+        repositorioRegistroComida.eliminarRegistroComida(id);
+    }
 
 
 }

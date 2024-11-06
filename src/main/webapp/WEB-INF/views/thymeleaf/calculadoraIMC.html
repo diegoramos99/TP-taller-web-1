@@ -6,45 +6,29 @@
     <title>Calculadora de IMC</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/nav.css}"/>
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    </style>
 
 </head>
 <body>
 
 
-<nav>
-    <ul>
-        <li><a th:href="@{/home}">Home</a></li>
-        <li class="dropdown">
-            <a href="#">Alimentos</a>
-            <ul class="submenu">
-                <li><a id="url-RegistrarAlimento" th:href="@{/ver-Registrar-alimentos}">Registrar Alimentos</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Ejercicio</a>
-            <ul class="submenu"></ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Calculadora</a>
-            <ul class="submenu">
-                <li><a href="#">Calcular calorias</a></li>
-                <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Dieta</a>
-            <ul class="submenu">
-                <li><a th:href="@{/listaComidas}">lista de comidas para esta mes</a></li>
-            </ul>
-        </li>
-        <li><a th:href="@{/recetas}">Recetas</a></li>
-        <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
-    </ul>
-</nav>
+<div th:replace="nav :: nav"></div>
 
 
 <div class="container mt-5">
-
 
 
     <h2>Calculo del Indice de Masa Corporal (IMC)</h2>
@@ -59,21 +43,25 @@
         </div>
         <div class="mb-3">
             <label for="altura" class="form-label">Altura (cm)</label>
-            <input type="number" id="altura" name="altura" class="form-control" placeholder="Ingrese su altura en cm" required>
+            <input type="number" id="altura" name="altura" class="form-control" placeholder="Ingrese su altura en cm"
+                   required>
         </div>
         <div class="mb-3">
             <label for="peso" class="form-label">Peso (kg)</label>
-            <input type="number" id="peso" name="peso" class="form-control" placeholder="Ingrese su peso en kg" required>
+            <input type="number" id="peso" name="peso" class="form-control" placeholder="Ingrese su peso en kg"
+                   required>
         </div>
         <div class="mb-3">
             <label for="edad" class="form-label">Edad (años)</label>
-            <input type="number" id="edad" name="edad" class="form-control" placeholder="Ingrese su edad en años" required>
+            <input type="number" id="edad" name="edad" class="form-control" placeholder="Ingrese su edad en años"
+                   required>
         </div>
         <button type="submit" class="btn btn-primary">Calcular IMC</button>
     </form>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" type="text/javascript"
+        th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
 </body>
 <script th:src="@{/js/nav-link.js}"></script>
 

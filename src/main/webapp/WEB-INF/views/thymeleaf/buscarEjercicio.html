@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Ejercicio</title>
+    <link rel="stylesheet" th:href="@{/css/nav.css}"/>
+    <link rel="stylesheet" th:href="@{/css/buscarEjercicio.css}"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .search-section {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .search-form {
+            display: flex;
+            width: 100%;
+            margin: 15px 0 15px 0;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
+        .content-section {
+            display: flex;
+            width: 100%;
+            max-width: 1500px;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .result-list {
+            list-style: none;
+            padding: 0;
+            width: 50%;
+            margin: 0;
+        }
+
+        .li-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
+        }
+
+        .li-container:hover {
+            background-color: #e6e6e6;
+        }
+
+        .li-container img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .no-result {
+            text-align: center;
+            color: #888;
+            padding: 20px 0;
+        }
+
+        .exercise-details {
+            width: 50%;
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-height: 200px;
+            margin-top: 0;
+        }
+
+        .exercise-details input {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .exercise-details button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .exercise-details button:hover {
+            background-color: #45a049;
+        }
+
+        .selected {
+            background-color: #cce5ff;
+        }
+
+    </style>
+</head>
+<body>
+
+<div th:replace="nav :: nav"></div>
+
+<div class="container">
+    <div class="search-section">
+        <h2>Encuentra tu Ejercicio</h2>
+        <form class="search-form" th:action="@{/buscarEjercicio}" method="get">
+            <input type="text" class="search-input" name="termino" placeholder="Buscar ejercicios..."
+                   th:value="${termino}"/>
+            <input type="hidden" name="dia" th:value="${dia}"/>
+            <button type="submit" class="search-button">Buscar</button>
+        </form>
+    </div>
+
+    <div class="content-section">
+
+        <ul class="result-list" id="exerciseList">
+            <li class="li-container" th:each="ejercicio : ${ejercicios}"
+                th:data-id="${ejercicio.id}" th:data-nombre="${ejercicio.nombre}">
+                <img th:src="@{/images/{img}(img=${ejercicio.ubicacion})}" alt="Imagen del ejercicio"/>
+                <span th:text="${ejercicio.nombre}"></span>
+            </li>
+            <li class="no-result" th:if="${#lists.isEmpty(ejercicios)}">
+                No se encontraron ejercicios.
+            </li>
+        </ul>
+
+        <form id="exerciseForm" th:action="@{/addEjercicio}" th:object="${datosEjercicio}"
+              class="exercise-details" method="post" style="display: none;">
+
+            <h3 id="exerciseName">Añadir:</h3>
+            <input type="hidden" id="idEjercicioInput" th:field="*{idEjercicio}"/>
+            <input type="hidden" id="nombreInput" th:field="*{nombre}"/>
+            <input type="hidden" id="diaInput" th:field="*{dia}"/>
+
+            <label for="seriesInput">Cantidad de series:</label>
+            <input type="number" id="seriesInput" th:field="*{series}" placeholder="Ej: 4"/>
+
+            <label for="repeticionesInput">Repeticiones por serie:</label>
+            <input type="number" id="repeticionesInput" th:field="*{repeticiones}" placeholder="Ej: 12"/>
+
+            <label for="descansoInput">Descanso por ejercicio:</label>
+            <input type="number" id="descansoInput" th:field="*{descanso}" placeholder="Ej: 2.30" step="0.01"/>
+            <button type="submit">Añadir</button>
+        </form>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const exerciseList = document.getElementById('exerciseList');
+            const exerciseForm = document.getElementById('exerciseForm');
+            const nombreInput = document.getElementById('nombreInput');
+            const idEjercicioInput = document.getElementById('idEjercicioInput');
+            const diaInput = document.getElementById('diaInput');
+            const exerciseName = document.getElementById('exerciseName');
+
+            exerciseList.addEventListener('click', (event) => {
+                const target = event.target.closest('.li-container');
+                if (target) {
+                    const nombre = target.getAttribute('data-nombre');
+                    const idEjercicio = target.getAttribute('data-id');
+                    const dia = document.querySelector('[name="dia"]').value;
+
+                    exerciseList.querySelectorAll('.li-container').forEach(li => li.classList.remove('selected'));
+
+                    target.classList.add('selected');
+
+                    nombreInput.value = nombre;
+                    idEjercicioInput.value = idEjercicio;
+                    diaInput.value = dia;
+
+                    exerciseName.textContent = `Añadir: ${nombre}`;
+
+                    exerciseForm.style.display = 'block';
+                    exerciseForm.scrollIntoView({behavior: 'smooth'});
+                }
+            });
+        });
+    </script>
+
+</div>
+
+</body>
+</html>

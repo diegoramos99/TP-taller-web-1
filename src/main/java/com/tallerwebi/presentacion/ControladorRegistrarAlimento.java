@@ -140,4 +140,11 @@ public class ControladorRegistrarAlimento {
     }
 
 
+    @RequestMapping("/eliminar-RegistroAlimento")
+    public ModelAndView eliminarAlimento(@RequestParam("alimentoId") Long id, @RequestParam("fecha") String fecha) {
+        servicioAlimento.eliminarRegistroAlimento(id);
+        return new ModelAndView("redirect:/ver-Registrar-alimentos?fecha=" + fecha);
+    }
+
+
 }

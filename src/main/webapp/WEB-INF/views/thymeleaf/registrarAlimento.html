@@ -6,146 +6,12 @@
     <title>Registro de Comidas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/nav.css}"/>
-
-    <style>
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .date-picker {
-            display: flex;
-            align-items: center;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header h2 {
-            margin: 0;
-        }
-
-
-        .date-picker button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .date-picker input[type="date"] {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-left: 10px;
-        }
-
-        .meal-section {
-            margin-top: 20px;
-        }
-
-        .meal-section h3 {
-            margin-bottom: 10px;
-            color: #007bff;
-        }
-
-        .meal-section .actions {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .meal-section a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        table th, table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-
-        table th {
-            background-color: #f8f8f8;
-        }
-
-        .totals {
-            margin-top: 20px;
-        }
-
-        .totals table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        .totals table th, .totals table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-
-        .totals table th {
-            background-color: #f8f8f8;
-        }
-
-        .totals table td.green {
-            color: green;
-        }
-
-    </style>
+    <link rel="stylesheet" th:href="@{/css/registrarAlimento.css}"/>
 
 </head>
 <body>
 
-<nav>
-    <ul>
-        <li><a th:href="@{/home}">Home</a></li>
-        <li class="dropdown">
-            <a href="#">Alimentos</a>
-            <ul class="submenu">
-                <li><a id="url-RegistrarAlimento" th:href="@{/ver-Registrar-alimentos}">Registrar Alimentos</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Ejercicio</a>
-            <ul class="submenu"></ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Calculadora</a>
-            <ul class="submenu">
-                <li><a href="#">Calcular calorias</a></li>
-                <li><a th:href="@{/calculadoraIMC}">Calcular IMC</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Dieta</a>
-            <ul class="submenu">
-                <li><a th:href="@{/listaComidas}">lista de comidas para esta mes</a></li>
-            </ul>
-        </li>
-        <li><a th:href="@{/recetas}">Recetas</a></li>
-        <li><a th:href="@{/perfilusuario}">Perfil del Usuario</a></li>
-    </ul>
-</nav>
+<div th:replace="nav :: nav"></div>
 
 
 <div class="container">
@@ -175,6 +41,7 @@
                 <th>Carbohidratos (g)</th>
                 <th>Grasas (g)</th>
                 <th>Proteínas (g)</th>
+                <th>Eliminar</th>
             </tr>
             </thead>
             <tbody>
@@ -186,6 +53,13 @@
                 <td th:text="${alimento.getAlimento().getCarbohidratos()}"></td>
                 <td th:text="${alimento.getAlimento().getGrasas()}"></td>
                 <td th:text="${alimento.getAlimento().getProteinas()}"></td>
+                <td>
+                    <form method="POST" th:action="@{/eliminar-RegistroAlimento}">
+                        <input type="hidden" name="alimentoId" th:value="${alimento.getId()}">
+                        <input type="hidden" name="fecha" class="hiddenFecha">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -205,6 +79,7 @@
                 <th>Carbohidratos (g)</th>
                 <th>Grasas (g)</th>
                 <th>Proteínas (g)</th>
+                <th>Eliminar</th>
             </tr>
             </thead>
             <tbody>
@@ -216,6 +91,13 @@
                 <td th:text="${alimento.getAlimento().getCarbohidratos()}"></td>
                 <td th:text="${alimento.getAlimento().getGrasas()}"></td>
                 <td th:text="${alimento.getAlimento().getProteinas()}"></td>
+                 <td>
+                    <form method="POST" th:action="@{/eliminar-RegistroAlimento}">
+                        <input type="hidden" name="alimentoId" th:value="${alimento.getId()}">
+                        <input type="hidden" name="fecha" class="hiddenFecha">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -236,6 +118,7 @@
                 <th>Carbohidratos (g)</th>
                 <th>Grasas (g)</th>
                 <th>Proteínas (g)</th>
+                <th>Eliminar</th>
             </tr>
             </thead>
             <tbody>
@@ -246,6 +129,13 @@
                 <td th:text="${alimento.getAlimento().getCarbohidratos()}"></td>
                 <td th:text="${alimento.getAlimento().getGrasas()}"></td>
                 <td th:text="${alimento.getAlimento().getProteinas()}"></td>
+                 <td>
+                    <form method="POST" th:action="@{/eliminar-RegistroAlimento}">
+                        <input type="hidden" name="alimentoId" th:value="${alimento.getId()}">
+                        <input type="hidden" name="fecha" class="hiddenFecha">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -266,6 +156,7 @@
                 <th>Carbohidratos (g)</th>
                 <th>Grasas (g)</th>
                 <th>Proteínas (g)</th>
+                <th>Eliminar</th>
             </tr>
             </thead>
             <tbody>
@@ -276,6 +167,13 @@
                 <td th:text="${alimento.getAlimento().getCarbohidratos()}"></td>
                 <td th:text="${alimento.getAlimento().getGrasas()}"></td>
                 <td th:text="${alimento.getAlimento().getProteinas()}"></td>
+                 <td>
+                    <form method="POST" th:action="@{/eliminar-RegistroAlimento}">
+                        <input type="hidden" name="alimentoId" th:value="${alimento.getId()}">
+                        <input type="hidden" name="fecha" class="hiddenFecha">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -341,6 +239,9 @@
         document.getElementById('añadirAlimentoMerienda').href = `/spring/ver-Buscar-Alimento?comida=Merienda&fecha=` + selectedDate;
         document.getElementById('añadirAlimentoCena').href = `/spring/ver-Buscar-Alimento?comida=Cena&fecha=` + selectedDate;
         document.getElementById('url-RegistrarAlimento').href = `/spring/ver-Registrar-alimentos?fecha=` + selectedDate;
+        document.querySelectorAll('.hiddenFecha').forEach(function (hiddenFecha) {
+            hiddenFecha.value = selectedDate || '';
+        });
     }
 
     document.getElementById('fechaInput').addEventListener('change', function () {
@@ -352,6 +253,7 @@
             window.location.href = `/spring/ver-Registrar-alimentos?fecha=` + selectedDate;
         }
     });
+
 
 </script>
 

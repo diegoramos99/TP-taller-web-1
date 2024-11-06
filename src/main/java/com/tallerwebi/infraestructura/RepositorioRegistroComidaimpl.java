@@ -33,14 +33,18 @@ public class RepositorioRegistroComidaimpl implements RepositorioRegistroComida 
 
     @Override
     public List<RegistroComida> buscarRegistroComidaPorFecha(String fecha) {
-        String hql = "FROM RegistroComida rc WHERE rc.fecha = :fecha";
-        Query<RegistroComida> query = sessionFactory.getCurrentSession().createQuery(hql, RegistroComida.class);
+        String sql = "FROM RegistroComida rc WHERE rc.fecha = :fecha";
+        Query<RegistroComida> query = sessionFactory.getCurrentSession().createQuery(sql, RegistroComida.class);
         query.setParameter("fecha", fecha);
 
         return query.getResultList();
     }
 
-
+    @Override
+    public void eliminarRegistroComida(Long id) {
+        RegistroComida registroComida = sessionFactory.getCurrentSession().get(RegistroComida.class, id);
+        sessionFactory.getCurrentSession().delete(registroComida);
+    }
 
 
 }

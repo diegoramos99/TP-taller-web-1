@@ -1,0 +1,64 @@
+package com.tallerwebi.presentacion;
+
+public class DatosEjercicio {
+
+
+    private String nombre;
+    private Integer series;
+    private Integer repeticiones;
+    private Double descanso;
+    private Long idEjercicio;
+    private String dia;
+
+    public DatosEjercicio() {
+
+    }
+
+    public int getSeries() {
+        return series;
+    }
+
+    public void setSeries(int series) {
+        this.series = series;
+    }
+
+    public double getDescanso() {
+        return descanso;
+    }
+
+    public void setDescanso(double descanso) {
+        this.descanso = descanso;
+    }
+
+    public Long getIdEjercicio() {
+        return idEjercicio;
+    }
+
+    public void setIdEjercicio(Long idEjercicio) {
+        this.idEjercicio = idEjercicio;
+    }
+
+    public int getRepeticiones() {
+        return repeticiones;
+    }
+
+    public void setRepeticiones(int repeticiones) {
+        this.repeticiones = repeticiones;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+}

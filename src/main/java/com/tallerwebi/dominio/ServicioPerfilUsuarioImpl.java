@@ -30,17 +30,22 @@ public class ServicioPerfilUsuarioImpl implements ServicioPerfilUsuario {
     }
     @Override
     public Usuario modificarUsuario(Usuario usuario,Usuario usuarioConDatos){
-                Long idDeUsuario=usuario.getId();
-                String nombre=usuario.getNombre();
-                 String apellido=usuario.getApellido();
-                 String email= usuario.getEmail();
-                 String password= usuario.getPassword();
-                usuarioConDatos.setId(idDeUsuario);
-                usuarioConDatos.setNombre(nombre);
-                usuarioConDatos.setApellido(apellido);
-                usuarioConDatos.setEmail(email);
-                usuarioConDatos.setPassword(password);
-                repositorioUsuario.modificar(usuarioConDatos);
-        return usuarioConDatos;
+
+        usuario.setObjetivoSalud(usuarioConDatos.getObjetivoSalud());
+        usuario.setInformacionAdicional(usuarioConDatos.getInformacionAdicional());
+        usuario.setPreferenciaAlimenticia(usuarioConDatos.getPreferenciaAlimenticia());
+        usuario.setRestrincionesAlimentarias(usuarioConDatos.getRestrincionesAlimentarias());
+
+         repositorioUsuario.modificar(usuario);
+
+        return usuario;
     }
+
+    @Override
+    public void actualizarEstadoPremium(boolean b, Long id) {
+
+        repositorioUsuario.actualizarEstadoPremium(b,id);
+    }
+
+
 }

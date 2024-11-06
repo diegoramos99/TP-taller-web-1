@@ -14,11 +14,9 @@ public class RegistroComida {
     private String tipoComida;
 
     @ManyToOne
-    @JoinColumn(name = "alimento_id")
     private Alimento alimento;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
 

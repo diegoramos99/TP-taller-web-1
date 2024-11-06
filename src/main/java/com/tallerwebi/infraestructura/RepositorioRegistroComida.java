@@ -7,4 +7,6 @@ import java.util.List;
 public interface RepositorioRegistroComida {
     void guardar(RegistroComida registroComida);
     List<RegistroComida> buscarRegistroComidaPorFecha(String fecha);
+
+    void eliminarRegistroComida(Long id);
 }
