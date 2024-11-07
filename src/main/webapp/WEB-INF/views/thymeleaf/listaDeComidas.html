@@ -8,35 +8,59 @@
     <link rel="stylesheet" th:href="@{/css/nav.css}"/>
 </head>
 <body>
-
+<div class="container">
+<div th:replace="nav :: nav"></div>
 <div class="calendario">
-    <div th:each="listaAlimentos, iterStat : ${alimentos}">
-        <div class="calendario">
+    <div class="planificacionDelDia" th:each="listaAlimentos, iterStat : ${alimentos}">
+        <div class="planificacionDelDia_firstChild">
             <div class="dia">
                 <!-- Usar iterStat.index con el título dinámico -->
                 <h3 th:text="'Día ' + (${iterStat.count})"></h3>
 
                 <div class="comida">
                     <strong>Desayuno:</strong>
-                    <p th:text="${listaAlimentos[0].getNombre()}" ></p>
-                </div>
+                    <p th:text="${listaAlimentos[0].getNombre()}"
+                       th:attr="data-tooltip=${listaAlimentos[0].getCalorias()} + ' kcal' + '&#10;' +
+                   ${listaAlimentos[0].getProteinas()} + ' Proteina' + '&#10;' +
+                   ${listaAlimentos[0].getGrasas()} + ' Grasas' + '&#10;' +
+                   ${listaAlimentos[0].getCarbohidratos()} + ' Carbohidratos'">
+                        Nombre del alimento
+                    </p>                </div>
                 <div class="comida">
                     <strong>Almuerzo:</strong>
-                    <p th:text="${listaAlimentos[1].getNombre()}" ></p>
-                </div>
+                    <p th:text="${listaAlimentos[1].getNombre()}"
+                       th:attr="data-tooltip=${listaAlimentos[1].getCalorias()} + ' kcal' + '&#10;' +
+                   ${listaAlimentos[1].getProteinas()} + ' Proteina' + '&#10;' +
+                   ${listaAlimentos[1].getGrasas()} + ' Grasas' + '&#10;' +
+                   ${listaAlimentos[1].getCarbohidratos()} + ' Carbohidratos'">
+                        Nombre del alimento
+                    </p>                </div>
                 <div class="comida">
                     <strong>Merienda:</strong>
-                    <p th:text="${listaAlimentos[2].getNombre()}" ></p>
-                </div>
+                    <p th:text="${listaAlimentos[2].getNombre()}"
+                       th:attr="data-tooltip=${listaAlimentos[2].getCalorias()} + ' kcal' + '&#10;' +
+                   ${listaAlimentos[2].getProteinas()} + ' Proteina' + '&#10;' +
+                   ${listaAlimentos[2].getGrasas()} + ' Grasas' + '&#10;' +
+                   ${listaAlimentos[2].getCarbohidratos()} + ' Carbohidratos'">
+                        Nombre del alimento
+                    </p>                </div>
                 <div class="comida">
                     <strong>Cena:</strong>
-                    <p th:text="${listaAlimentos[3].getNombre()}" ></p>
+                    <a href="https://www.youtube.com/watch?v=H_VYddRAbJE">    <p th:text="${listaAlimentos[3].getNombre()}"
+                       th:attr="data-tooltip=${listaAlimentos[3].getCalorias()} + ' kcal' + '&#10;' +
+                   ${listaAlimentos[3].getProteinas()} + ' Proteina' + '&#10;' +
+                   ${listaAlimentos[3].getGrasas()} + ' Grasas' + '&#10;' +
+                   ${listaAlimentos[3].getCarbohidratos()} + ' Carbohidratos'">
+                        Nombre del alimento
+                    </p>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
 
+</div>
 </div>
 </body>
 </html>
