@@ -30,6 +30,7 @@ public class ControladorEjercicio {
                                         @RequestParam(value = "dia", required = false) String dia) {
         if (request.getSession().getAttribute("EMAIL") == null) {
             return new ModelAndView("redirect:/login");
+
         }
 
         ModelMap model = new ModelMap();
@@ -47,6 +48,14 @@ public class ControladorEjercicio {
         model.addAttribute("datosEjercicio", new DatosEjercicio());
         return new ModelAndView("buscarEjercicio", model);
     }
+    @RequestMapping("/traerRutina")
+    public ModelAndView traerRutina(HttpServletRequest request) {
+        if (request.getSession().getAttribute("EMAIL") == null) {
+            return new ModelAndView("redirect:/login");
+        }
 
+        ModelMap model = new ModelMap();
+       return new ModelAndView("redirect:/buscarEjercicio",model);
+    }
 
 }

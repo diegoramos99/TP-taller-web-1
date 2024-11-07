@@ -406,4 +406,99 @@ VALUES
 
 
 
+INSERT INTO RegistroEjercicio (nombreRutina, descanso, dia, series, repeticiones, ejercicio_id, usuario_id)
+VALUES
+-- Pecho y Biceps - Lunes
+('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 97, 1),  -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.30, 'Lunes', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Lunes', 3, 8, 101, 1),  -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 88, 1),  -- Curl de Biceps con Barra "W"
+-- Pecho y Biceps - Martes
+('Pecho y Biceps', 1.30, 'Martes', 3, 15, 97, 1),  -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.00, 'Martes', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Martes', 3, 12, 104, 1), -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Martes', 4, 10, 88, 1),  -- Curl de Biceps con Barra "W"
+-- Pecho y Biceps - Miércoles
+('Pecho y Biceps', 2.00, 'Miércoles', 4, 12, 97, 1), -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.30, 'Miércoles', 3, 8, 101, 1), -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Miércoles', 3, 15, 88, 1), -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.00, 'Miércoles', 4, 10, 56, 1), -- Flexiones Comunes
+-- Pecho y Biceps - Jueves
+('Pecho y Biceps', 1.30, 'Jueves', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1), -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Jueves', 3, 8, 101, 1),  -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1), -- Press Militar con Mancuernas
 
+-- Pecho y Biceps - Viernes
+('Pecho y Biceps', 1.30, 'Viernes', 3, 15, 97, 1),  -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.00, 'Viernes', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Viernes', 3, 12, 104, 1), -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Viernes', 4, 10, 88, 1),  -- Curl de Biceps con Barra "W"
+-- Pecho y Biceps - Sábado
+('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 97, 1),  -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.30, 'Sábado', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Sábado', 3, 8, 101, 1),  -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 88, 1),  -- Curl de Biceps con Barra "W"
+
+
+-- Espalda y Triceps - Lunes
+('Espalda y Triceps', 2.00, 'Lunes', 4, 15, 74, 1),  -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 67, 1),  -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Lunes', 4, 10, 61, 1),  -- Jalon al Pecho
+-- Espalda y Triceps - Martes
+('Espalda y Triceps', 2.00, 'Martes', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.45, 'Martes', 3, 10, 61, 1),  -- Jalon al Pecho
+('Espalda y Triceps', 1.30, 'Martes', 4, 15, 67, 1),  -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Martes', 4, 12, 63, 1),  -- Jalon Unilateral
+-- Espalda y Triceps - Miércoles
+('Espalda y Triceps', 2.00, 'Miércoles', 4, 15, 74, 1),  -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 67, 1),  -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Miércoles', 4, 10, 61, 1),  -- Jalon al Pecho
+-- Espalda y Triceps - Jueves
+('Espalda y Triceps', 1.30, 'Jueves', 4, 15, 72, 1), -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.30, 'Jueves', 4, 12, 63, 1), -- Jalon Unilateral
+('Espalda y Triceps', 1.00, 'Jueves', 3, 12, 75, 1), -- Remo con Barra Guiada
+('Espalda y Triceps', 1.15, 'Jueves', 4, 10, 68, 1), -- Patada de Triceps
+-- Espalda y Triceps - Viernes
+('Espalda y Triceps', 2.00, 'Viernes', 4, 15, 74, 1),  -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 67, 1),  -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Viernes', 4, 10, 61, 1),  -- Jalon al Pecho
+-- Espalda y Triceps - Sábado
+('Espalda y Triceps', 2.00, 'Sábado', 4, 15, 74, 1),  -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 67, 1),  -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Sábado', 4, 10, 61, 1),  -- Jalon al Pecho
+
+-- Piernas y Abdomen - Lunes
+('Piernas y Abdomen', 2.00, 'Lunes', 4, 12, 84, 1),  -- Sentadilla con Barra
+('Piernas y Abdomen', 2.00, 'Lunes', 4, 10, 94, 1),  -- Prensa de Pierna Horizontal
+('Piernas y Abdomen', 1.45, 'Lunes', 3, 15, 83, 1),  -- Rueda Abdominal
+('Piernas y Abdomen', 1.30, 'Lunes', 4, 10, 49, 1),  -- Extensión de Cadera en Maquina
+-- Piernas y Abdomen - Martes
+('Piernas y Abdomen', 2.00, 'Martes', 3, 12, 36, 1),  -- Elevaciones Burro para Gemelo
+('Piernas y Abdomen', 1.15, 'Martes', 4, 15, 92, 1),  -- Plancha Abdominal
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),  -- Hip Thrust
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),  -- Rueda Abdominal
+-- Piernas y Abdomen - Miércoles
+('Piernas y Abdomen', 2.00, 'Miércoles', 4, 10, 84, 1), -- Sentadilla con Barra
+('Piernas y Abdomen', 1.45, 'Miércoles', 3, 15, 94, 1), -- Prensa de Pierna Horizontal
+('Piernas y Abdomen', 1.30, 'Miércoles', 4, 12, 83, 1), -- Rueda Abdominal
+('Piernas y Abdomen', 1.15, 'Miércoles', 4, 15, 49, 1), -- Extensión de Cadera en Maquina
+-- Piernas y Abdomen - Jueves
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),  -- Hip Thrust
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),  -- Rueda Abdominal
+('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),  -- Elevaciones Burro para Gemelo
+('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),  -- Plancha Abdominal
+-- Piernas y Abdomen - Viernes
+('Piernas y Abdomen', 2.00, 'Viernes', 4, 12, 84, 1),  -- Sentadilla con Barra
+('Piernas y Abdomen', 2.00, 'Viernes', 4, 10, 94, 1),  -- Prensa de Pierna Horizontal
+('Piernas y Abdomen', 1.45, 'Viernes', 3, 15, 83, 1),  -- Rueda Abdominal
+('Piernas y Abdomen', 1.30, 'Viernes', 4, 10, 49, 1),  -- Extensión de Cadera en Maquina
+-- Piernas y Abdomen - Sábado
+('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),  -- Elevaciones Burro para Gemelo
+('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),  -- Plancha Abdominal
+('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 58, 1),  -- Hip Thrust
+('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 83, 1);  -- Rueda Abdominal

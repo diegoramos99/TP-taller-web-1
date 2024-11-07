@@ -20,8 +20,8 @@
         <div class="day-card" onclick="seleccionarDia('Martes')">
             <span>Martes</span>
         </div>
-        <div class="day-card" onclick="seleccionarDia('Miercoles')">
-            <span>Miercoles</span>
+        <div class="day-card" onclick="seleccionarDia('Miércoles')">
+            <span>Miércoles</span>
         </div>
         <div class="day-card" onclick="seleccionarDia('Jueves')">
             <span>Jueves</span>
@@ -29,8 +29,8 @@
         <div class="day-card" onclick="seleccionarDia('Viernes')">
             <span>Viernes</span>
         </div>
-        <div class="day-card" onclick="seleccionarDia('Sabado')">
-            <span>Sabado</span>
+        <div class="day-card" onclick="seleccionarDia('Sábado')">
+            <span>Sábado</span>
         </div>
         <div class="day-card" onclick="seleccionarDia('Domingo')">
             <span>Domingo</span>
@@ -47,6 +47,11 @@
                     Personalizada
                 </option>
                 <option value="Torso Pierna" th:selected="${rutinaSelecionada == 'Torso Pierna'}">Torso Pierna(4 dias)</option>
+
+                <option value="Pecho y Biceps" th:selected="${rutinaSelecionada == 'Pecho y Biceps'}">Pecho y Bíceps(4 dias)</option>
+                <option value="Espalda y Triceps" th:selected="${rutinaSelecionada == 'Espalda y Triceps'}">Espalda y Tríceps(4 dias)</option>
+                <option value="Piernas y Abdomen" th:selected="${rutinaSelecionada == 'Piernas y Abdomen'}">Piernas y Abdomen(4 dias)</option>
+
             </select>
             <button type="submit" class="button-link">Cargar Rutina</button>
         </form>
