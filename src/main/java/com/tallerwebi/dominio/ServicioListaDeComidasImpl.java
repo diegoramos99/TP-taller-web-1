@@ -1,6 +1,7 @@
 package com.tallerwebi.dominio;
 
 import com.tallerwebi.infraestructura.RepositorioAlimento;
+import com.tallerwebi.infraestructura.RepositorioReceta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +14,12 @@ import java.util.Random;
 @Transactional
 public class ServicioListaDeComidasImpl implements ServicioListaDeComidas {
     private RepositorioAlimento repositorioAlimento;
+    private RepositorioReceta repositorioReceta;
 
     @Autowired
-    public void ServicioListaDeComidas(RepositorioAlimento listaDeComidas) {
+    public void ServicioListaDeComidas(RepositorioAlimento listaDeComidas,RepositorioReceta repositorioReceta) {
         this.repositorioAlimento = listaDeComidas;
+        this.repositorioReceta=repositorioReceta;
     }
 
     @Override
@@ -134,6 +137,12 @@ public class ServicioListaDeComidasImpl implements ServicioListaDeComidas {
         comidaParaUnDia.add(cenas.get(numeroRandomCen));
 
         return comidaParaUnDia;
+    }
+
+    @Override
+    public List <Receta> buscarReceta(String receta) {
+        List <Receta> receta1=repositorioReceta.buscarReceta(receta);
+        return receta1;
     }
 
     @Override
