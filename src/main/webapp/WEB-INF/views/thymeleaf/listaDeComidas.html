@@ -15,38 +15,48 @@
         <div class="planificacionDelDia_firstChild">
             <div class="dia">
                 <!-- Usar iterStat.index con el título dinámico -->
-                <h3 th:text="'Día ' + (${iterStat.count})"></h3>
+                <h2 th:text="'Día ' + (${iterStat.count})"></h2>
 
                 <div class="comida">
                     <strong>Desayuno:</strong>
+                    <a th:href="@{/verReceta(receta=${listaAlimentos[0].getNombre()})}" >
                     <p th:text="${listaAlimentos[0].getNombre()}"
                        th:attr="data-tooltip=${listaAlimentos[0].getCalorias()} + ' kcal' + '&#10;' +
                    ${listaAlimentos[0].getProteinas()} + ' Proteina' + '&#10;' +
                    ${listaAlimentos[0].getGrasas()} + ' Grasas' + '&#10;' +
                    ${listaAlimentos[0].getCarbohidratos()} + ' Carbohidratos'">
                         Nombre del alimento
-                    </p>                </div>
+                    </p>
+                    </a>
+                </div>
                 <div class="comida">
                     <strong>Almuerzo:</strong>
+                    <a th:href="@{/verReceta(receta=${listaAlimentos[1].getNombre()})}" >
                     <p th:text="${listaAlimentos[1].getNombre()}"
                        th:attr="data-tooltip=${listaAlimentos[1].getCalorias()} + ' kcal' + '&#10;' +
                    ${listaAlimentos[1].getProteinas()} + ' Proteina' + '&#10;' +
                    ${listaAlimentos[1].getGrasas()} + ' Grasas' + '&#10;' +
                    ${listaAlimentos[1].getCarbohidratos()} + ' Carbohidratos'">
                         Nombre del alimento
-                    </p>                </div>
+                    </p>
+                    </a>
+                </div>
                 <div class="comida">
                     <strong>Merienda:</strong>
+                    <a th:href="@{/verReceta(receta=${listaAlimentos[2].getNombre()})}" >
                     <p th:text="${listaAlimentos[2].getNombre()}"
                        th:attr="data-tooltip=${listaAlimentos[2].getCalorias()} + ' kcal' + '&#10;' +
                    ${listaAlimentos[2].getProteinas()} + ' Proteina' + '&#10;' +
                    ${listaAlimentos[2].getGrasas()} + ' Grasas' + '&#10;' +
                    ${listaAlimentos[2].getCarbohidratos()} + ' Carbohidratos'">
                         Nombre del alimento
-                    </p>                </div>
+                    </p>
+                    </a>
+                </div>
+
                 <div class="comida">
                     <strong>Cena:</strong>
-                    <a th:href="@{/verReceta?receta=${listaAlimentos.get(3).nombre}}" data-bs-toggle="modal" data-bs-target="#recipeModal">
+                    <a th:href="@{/verReceta(receta=${listaAlimentos.get(3).nombre})}" >
                         <p th:text="${listaAlimentos[3].getNombre()}"
                        th:attr="data-tooltip=${listaAlimentos[3].getCalorias()} + ' kcal' + '&#10;' +
                    ${listaAlimentos[3].getProteinas()} + ' Proteina' + '&#10;' +
@@ -63,48 +73,7 @@
 
 </div>
     <!-- Enlace para abrir el modal -->
-    <a href="#" class="btn btn-primary" >Ver Receta</a>
 
-    <!-- Modal de Receta -->
-    <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Encabezado del modal -->
-                <div class="modal-header">
-                    <h5 class="modal-title" id="recipeModalLabel">Receta de Comida</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <!-- Cuerpo del modal -->
-                <div class="modal-body">
-                    <h6 th:text="${receta}"></h6>
-                    <p>Una deliciosa receta para preparar en casa.</p>
-
-                    <h6>Ingredientes</h6>
-                    <ul>
-                        <li>2 tazas de harina</li>
-                        <li>1 taza de azúcar</li>
-                        <li>3 huevos</li>
-                        <li>1 cucharadita de esencia de vainilla</li>
-                        <li>1 taza de leche</li>
-                    </ul>
-
-                    <h6 th:text="${receta}"></h6>
-                    <ol>
-                        <li>Precalentar el horno a 180°C.</li>
-                        <li>Mezclar los ingredientes secos en un bowl.</li>
-                        <li>Agregar los huevos, la esencia de vainilla y la leche.</li>
-                        <li>Batir hasta obtener una mezcla homogénea.</li>
-                        <li>Hornear durante 30 minutos o hasta que esté dorado.</li>
-                    </ol>
-                </div>
-                <!-- Pie de página del modal -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar Receta</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

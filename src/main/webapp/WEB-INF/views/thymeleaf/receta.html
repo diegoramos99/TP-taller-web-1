@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h6 th:text="${receta}"></h6>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Receta de Comida</title>
 
-</body>
-</html>
+        <link rel="stylesheet" th:href="@{/css/receta.css}"/>
+
+        <link rel="stylesheet" th:href="@{/css/nav.css}"/>
+    </head>
+    <body>
+
+
+    <div class="recipe-container">
+        <div class="recipe-image">
+            <img src="https://cdn0.recetasgratis.net/es/posts/1/7/7/ensalada_de_apio_tomate_y_aguacate_60771_600.webp">
+        </div>
+
+        <div class="recipe-details">
+            <h1 th:text="${nombre}"></h1>
+            <p  th:text= "'Tiempo de preparación: '+ ${tiempo}" class="time"></p>
+            <p th:text= "'calorias: '+ ${calorias}"  class="calories"></p>
+
+            <h2 th:text= "ingredientes" ></h2>
+            <ul  th:each="ingrediente, iterStat : ${listaIngredientes}">
+                <li th:text="${ingrediente}"></li>
+
+            </ul>
+
+            <h2 th:text="Preparacion"></h2>
+            <p th:text="${preparacion}" ></p>
+            <a href th:href="@{/listaComidas}">
+                <div class="button-container">
+                    <button class="back-button">
+                        <span>&larr;</span> Volver al Listado
+                    </button>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    </body>
+    </html>
