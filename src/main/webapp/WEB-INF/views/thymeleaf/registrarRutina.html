@@ -6,6 +6,75 @@
     <title>Registro de Rutina</title>
     <link rel="stylesheet" th:href="@{/css/registrarRutina.css}">
     <link rel="stylesheet" th:href="@{/css/nav.css}">
+    <style>
+        .premium-info {
+            border: 1px solid #4CAF50;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+            background-color: #e8f5e9;
+            color: #388E3C;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .premium-info h3 {
+            margin-bottom: 5px;
+            font-size: 1.2em;
+            color: #2E7D32;
+        }
+
+        .premium-info p {
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: #388E3C;
+        }
+
+        .premium-info .button-link {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .premium-info .button-link:hover {
+            background-color: #43A047;
+        }
+
+        .day-card.ocupado {
+            border: 2px solid #4CAF50;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+            background-color: transparent;
+        }
+
+
+        .day-card.selected {
+            border: 2px solid #4CAF50;
+            background-color: #4CAF50;
+        }
+
+        .day-card.selected .button-link {
+            background-color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
+
+        .day-card {
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .day-card:hover {
+            background-color: #f1f1f1;
+        }
+
+
+    </style>
 </head>
 <body>
 <div th:replace="nav :: nav"></div>
@@ -14,48 +83,73 @@
     <h1>Registro de Rutina Semanal</h1>
 
     <div class="days-grid">
-        <div class="day-card" onclick="seleccionarDia('Lunes')">
+        <div class="day-card" th:classappend="${diasOcupados.contains('Lunes') ? 'ocupado' : ''}"
+             onclick="seleccionarDia('Lunes')">
             <span>Lunes</span>
         </div>
-        <div class="day-card" onclick="seleccionarDia('Martes')">
+        <div class="day-card" th:classappend="${diasOcupados.contains('Martes') ? 'ocupado' : ''}"
+             onclick="seleccionarDia('Martes')">
             <span>Martes</span>
         </div>
-        <div class="day-card" onclick="seleccionarDia('Miércoles')">
-            <span>Miércoles</span>
+        <div class="day-card" th:classappend="${diasOcupados.contains('Miercoles') ? 'ocupado' : ''}"
+             onclick="seleccionarDia('Miercoles')">
+            <span>Miercoles</span>
         </div>
-        <div class="day-card" onclick="seleccionarDia('Jueves')">
+        <div class="day-card" th:classappend="${diasOcupados.contains('Jueves') ? 'ocupado' : ''}"
+             onclick="seleccionarDia('Jueves')">
             <span>Jueves</span>
         </div>
-        <div class="day-card" onclick="seleccionarDia('Viernes')">
+        <div class="day-card" th:classappend="${diasOcupados.contains('Viernes') ? 'ocupado' : ''}"
+             onclick="seleccionarDia('Viernes')">
             <span>Viernes</span>
         </div>
-        <div class="day-card" onclick="seleccionarDia('Sábado')">
-            <span>Sábado</span>
+        <div class="day-card" th:classappend="${diasOcupados.contains('Sabado') ? 'ocupado' : ''}"
+             onclick="seleccionarDia('Sabado')">
+            <span>Sabado</span>
         </div>
-        <div class="day-card" onclick="seleccionarDia('Domingo')">
+        <div class="day-card" th:classappend="${diasOcupados.contains('Domingo') ? 'ocupado' : ''}"
+             onclick="seleccionarDia('Domingo')">
             <span>Domingo</span>
         </div>
     </div>
 
-    <div th:if="${esPremium != null and esPremium}">
-        <h2>Seleccionar Rutina</h2>
+
+    <div th:if="${esPremium == null or !esPremium}" class="premium-info">
+        <h3>Hazte Premium</h3>
+        <p>Accede a rutinas personalizadas y más beneficios.</p>
+        <select disabled>
+            <option>Rutina Personalizada (Premium)</option>
+        </select>
+        <button class="button-link" onclick="irAPago()">Actualizar</button>
+    </div>
+
+
+    <div th:if="${esPremium != null and esPremium}" class="premium-info">
+        <h3>Seleccionar Rutina</h3>
         <form method="get" th:action="@{/selecionar-rutina}">
-            <label for="rutinaSelecionada">Selecciona tu rutina:</label>
+            <label for="rutinaSelecionada">Rutina:</label>
             <input type="hidden" name="dia" th:value="${dia}">
             <select name="rutinaSelecionada" id="rutinaSelecionada">
-                <option value="Rutina Personalizada" th:selected="${rutinaSelecionada == 'Rutina Personalizada'}">Rutina
-                    Personalizada
+                <option value="Rutina Personalizada" th:selected="${rutinaSelecionada == 'Rutina Personalizada'}">
+                    Rutina Personalizada
                 </option>
-                <option value="Torso Pierna" th:selected="${rutinaSelecionada == 'Torso Pierna'}">Torso Pierna(4 dias)</option>
-
-                <option value="Pecho y Biceps" th:selected="${rutinaSelecionada == 'Pecho y Biceps'}">Pecho y Bíceps(4 dias)</option>
-                <option value="Espalda y Triceps" th:selected="${rutinaSelecionada == 'Espalda y Triceps'}">Espalda y Tríceps(4 dias)</option>
-                <option value="Piernas y Abdomen" th:selected="${rutinaSelecionada == 'Piernas y Abdomen'}">Piernas y Abdomen(4 dias)</option>
-
+                <option value="Torso Pierna" th:selected="${rutinaSelecionada == 'Torso Pierna'}">Torso Pierna (4
+                    días)
+                </option>
+                <option value="Pecho y Biceps" th:selected="${rutinaSelecionada == 'Pecho y Biceps'}">Pecho y Bíceps (4
+                    días)
+                </option>
+                <option value="Espalda y Triceps" th:selected="${rutinaSelecionada == 'Espalda y Triceps'}">Espalda y
+                    Tríceps (4 días)
+                </option>
+                <option value="Piernas y Abdomen" th:selected="${rutinaSelecionada == 'Piernas y Abdomen'}">Piernas y
+                    Abdomen (4 días)
+                </option>
             </select>
             <button type="submit" class="button-link">Cargar Rutina</button>
         </form>
     </div>
+
 
     <h2>Ejercicio Seleccionado</h2>
     <table class="exercise-table">
@@ -101,17 +195,26 @@
 <script>
     const days = document.querySelectorAll('.day-card');
 
-    // Agrega un event listener a cada día
     days.forEach(day => {
         day.addEventListener('click', () => {
+            // Remover la clase 'selected' de todos los días
             days.forEach(d => d.classList.remove('selected'));
             day.classList.add('selected');
 
+            // Obtener el día seleccionado
             const diaSeleccionado = day.textContent.trim();
 
-            const rutinaSelecionada = document.getElementById("rutinaSelecionada").value;
+            // Verificar si el usuario tiene la opción "rutinaSelecionada" disponible
+            const rutinaElement = document.getElementById("rutinaSelecionada");
+            let url = `/spring/ver-Rutina?dia=${encodeURIComponent(diaSeleccionado)}`;
 
-            window.location.href = `/spring/ver-Rutina?dia=${encodeURIComponent(diaSeleccionado)}&rutinaSelecionada=${encodeURIComponent(rutinaSelecionada)}`;
+            if (rutinaElement) {
+                const rutinaSelecionada = rutinaElement.value;
+                url += `&rutinaSelecionada=${encodeURIComponent(rutinaSelecionada)}`;
+            }
+
+            // Redirigir a la nueva URL
+            window.location.href = url;
         });
     });
 
@@ -127,6 +230,9 @@
         }
     };
 
+    function irAPago() {
+        window.location.href = '/spring/premium';
+    }
 
 </script>
 

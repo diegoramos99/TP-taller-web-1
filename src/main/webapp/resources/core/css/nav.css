@@ -1,9 +1,7 @@
-
 nav {
     background-color: #333;
     padding: 10px;
 }
-
 
 nav ul {
     list-style: none;
@@ -15,12 +13,10 @@ nav ul {
     position: relative;
 }
 
-
 nav ul li {
     position: relative;
     z-index: 10;
 }
-
 
 nav ul li a {
     color: white;
@@ -32,7 +28,6 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #555;
 }
-
 
 nav ul li .submenu {
     display: none;
@@ -64,7 +59,6 @@ nav ul li:hover .submenu {
     display: block;
 }
 
-
 .perfil-usuario {
     margin-left: auto;
     display: flex;
@@ -86,10 +80,20 @@ nav ul li:hover .submenu {
     margin-right: 10px;
 }
 
-
 .perfil-usuario .submenu {
     right: 0;
     top: 100%;
     border-radius: 5px;
     overflow: hidden;
+}
+
+
+.premium-badge {
+    background-color: #ffd700;
+    color: #333;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    font-weight: bold;
 }

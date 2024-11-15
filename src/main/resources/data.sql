@@ -346,33 +346,6 @@ VALUES ('Abdominales', 'Abdominales en Maquina', 'ejercicios/10004.png'),
        ('Trapecio', 'Trapecio con Mancuernas', 'ejercicios/10145.png'),
        ('Pecho', 'Press Banca', 'ejercicios/press banca.jpg');
 
-/*
-INSERT INTO RegistrosEjercicio (nombreRutina, descanso, dia, series, repeticiones, ejercicio_id, usuario_id)
-VALUES ('Torso Pierna', 84, 'Viernes', 4, 10, 2.30, 1),
-       ('Torso Pierna', 94, 'Viernes', 4, 12, 2.00, 1),
-       ('Torso Pierna', 22, 'Viernes', 4, 15, 1.30, 1),
-       ('Torso Pierna', 32, 'Viernes', 4, 15, 1.30, 1),
-       ('Torso Pierna', 58, 'Viernes', 4, 10, 2.00, 1),
-       ('Torso Pierna', 50, 'Viernes', 3, 12, 1.30, 1),
-       ('Torso Pierna', 123, 'Jueves', 4, 10, 2.00, 1),
-       ('Torso Pierna', 76, 'Jueves', 4, 12, 2.30, 1),
-       ('Torso Pierna', 104, 'Jueves', 4, 10, 1.30, 1),
-       ('Torso Pierna', 7, 'Jueves', 4, 15, 1.00, 1),
-       ('Torso Pierna', 43, 'Jueves', 3, 15, 1.00, 1),
-       ('Torso Pierna', 91, 'Jueves', 3, 12, 1.30, 1);
-
-
-
-
-VALUES ('Torso Pierna', 84, 'Martes', 4, 10, 2.30, 1),
-       ('Torso Pierna', 94, 'Martes', 4, 12, 2.00, 1),
-       ('Torso Pierna', 32, 'Martes', 4, 15, 1.30, 1),
-       ('Torso Pierna', 58, 'Martes', 4, 10, 2.00, 1),
-       ('Torso Pierna', 65, 'Martes', 3, 12, 1.30, 1),
-       ('Torso Pierna', 49, 'Martes', 3, 15, 1.00, 1);
-
-*/
-
 INSERT INTO RegistroEjercicio (nombreRutina, descanso, dia, series, repeticiones, ejercicio_id, usuario_id)
 VALUES
 ('Torso Pierna', 2.30, 'Viernes', 4, 10, 123, 1),

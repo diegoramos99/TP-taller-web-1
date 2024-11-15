@@ -51,6 +51,18 @@ public class ControladorRegistroRutina {
         List<RegistroEjercicio> registroEjercicio = servicioEjercicio.traerRutina(rutinaSelecionada, usuario);
         List<RegistroEjercicio> registroEjercicio2 = new ArrayList<>();
 
+        List<String> diasOcupados = new ArrayList<>();
+
+
+        for (RegistroEjercicio registroEjercicioBuscado : registroEjercicio) {
+            String diaocupado = registroEjercicioBuscado.getDia();
+
+            if (!diasOcupados.contains(diaocupado)) {
+                diasOcupados.add(diaocupado);
+            }
+        }
+
+
         for (RegistroEjercicio registroEjercicioBuscado : registroEjercicio) {
             if (registroEjercicioBuscado.getDia().equals(dia)) {
                 registroEjercicio2.add(registroEjercicioBuscado);
@@ -63,9 +75,11 @@ public class ControladorRegistroRutina {
             model.put("esPremium", false);
         }
 
+
         model.put("registroEjercicios", registroEjercicio2);
         model.put("dia", dia);
         model.put("rutinaSelecionada", rutinaSelecionada);
+        model.put("diasOcupados", diasOcupados);
 
         return new ModelAndView("registrarRutina", model);
     }

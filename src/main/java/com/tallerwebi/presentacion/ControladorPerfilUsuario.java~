@@ -85,8 +85,4 @@ public class ControladorPerfilUsuario {
         ModelAndView model = new ModelAndView("calculadoraIMC");
         return model;
     }
-
-
-
-
 }

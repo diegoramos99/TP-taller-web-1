@@ -63,75 +63,11 @@
             background-color: #0056b3;
         }
 
-        /* Estilos del modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background-color: #fff;
-            padding: 20px;
-            width: 90%;
-            max-width: 500px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        /* Estilos para el botón de abrir modal */
-        .edit-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .modal-body p {
-            font-size: 16px;
-            color: #333;
-            margin: 15px 0;
-        }
     </style>
 </head>
 <body>
 
 <div th:replace="nav :: nav"></div>
-
-<div class="modal-overlay" id="premiumModal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5>Acceso Premium - FitCal</h5>
-            <button class="modal-close" onclick="closeModal()">×</button>
-        </div>
-        <div class="modal-body">
-            <p>Desbloquea las funciones premium de FitCal.</p>
-            <p>Precio: $1000</p>
-            <div id="wallet_container"></div>
-        </div>
-    </div>
-</div>
-
-<input type="hidden" id="preferenceId" th:value="${preferenceId}"/>
 
 
 <div class="profile-container">
@@ -144,10 +80,6 @@
     <p th:text="'Informacion Adicional:'+${informacionAdicional}"></p>
 
     <a href="mostrarFormulario" class="edit-btn">Editar Perfil</a>
-    <div th:if="${esPremium != null and !esPremium}">
-    <a id="premiumButton" class="edit-btn" th:href="@{/crear-preferencia}">Comprar Premium</a>
-</div>
-
 </div>
 
 
@@ -155,38 +87,5 @@
 <script th:src="@{/js/nav-link.js}"></script>
 
 <script>
-
-    const mp = new MercadoPago('APP_USR-b2387265-3ece-4c15-b857-6a26ee07de67');
-    const bricksBuilder = mp.bricks();
-    const preferenceId = document.getElementById("preferenceId").value;
-
-    console.log(preferenceId);
-
-    function openModal() {
-        document.getElementById("premiumModal").style.display = "flex";
-    }
-
-    function closeModal() {
-        document.getElementById("premiumModal").style.display = "none";
-    }
-
-
-    if (preferenceId) {
-        openModal();
-
-        bricksBuilder.create("wallet", "wallet_container", {
-            initialization: {
-                preferenceId: preferenceId,
-            },
-            customization: {
-                texts: {
-                    valueProp: 'smart_option',
-                },
-            },
-        });
-    } else {
-        console.error("El preferenceId no se encuentra o está vacío.");
-    }
-
 </script>
 </html>

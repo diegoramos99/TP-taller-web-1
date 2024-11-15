@@ -1,10 +1,12 @@
 package com.tallerwebi.presentacion;
+import com.mercadopago.client.payment.PaymentClient;
 import com.mercadopago.client.preference.PreferenceBackUrlsRequest;
 import com.mercadopago.client.preference.PreferenceClient;
 import com.mercadopago.client.preference.PreferenceItemRequest;
 import com.mercadopago.client.preference.PreferenceRequest;
 import com.mercadopago.exceptions.MPApiException;
 import com.mercadopago.exceptions.MPException;
+import com.mercadopago.resources.payment.Payment;
 import com.mercadopago.resources.preference.Preference;
 import com.tallerwebi.dominio.ServicioPerfilUsuario;
 import com.tallerwebi.dominio.Usuario;
@@ -57,7 +59,7 @@ public class MercadoPagoController {
         return client.create(preferenceRequest);
     }
 
-    @RequestMapping("/crear-preferencia")
+    @RequestMapping("/premium")
     public ModelAndView crearPreferencia() throws MPException, MPApiException {
         Preference preference = createPreference();
         String preferenceId = preference.getId();
@@ -65,22 +67,41 @@ public class MercadoPagoController {
         ModelMap model = new ModelMap();
         model.addAttribute("preferenceId", preferenceId);
 
-        return new ModelAndView("perfilusuario", model);
+        return new ModelAndView("premium", model);
     }
 
-    @GetMapping("/pago-exitoso")
+     @GetMapping("/pago-exitoso")
     public ModelAndView pagoExitoso(@RequestParam("collection_id") String collectionId, HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView();
+        PaymentClient paymentClient = new PaymentClient();
+
+        try {
+
+            Payment payment = paymentClient.get(Long.valueOf(collectionId));
 
 
-        Usuario usuarioBuscado = servicioPerfilUsuario.buscarUsuarioPoreEmail((String) request.getSession().getAttribute("EMAIL"));
-        servicioPerfilUsuario.actualizarEstadoPremium(true, usuarioBuscado.getId());
+            if ("approved".equals(payment.getStatus())) {
 
-        modelAndView.addObject("mensaje", "Pago realizado con éxito.");
-        modelAndView.setViewName("home");
+                Usuario usuarioBuscado = servicioPerfilUsuario.buscarUsuarioPoreEmail((String) request.getSession().getAttribute("EMAIL"));
+                servicioPerfilUsuario.actualizarEstadoPremium(true, usuarioBuscado.getId());
+
+                   request.getSession().setAttribute("TIPO", "PREMIUM");
+                modelAndView.addObject("mensaje", "Pago realizado con éxito.");
+                modelAndView.setViewName("home");
+            } else {
+                modelAndView.addObject("mensaje", "El pago no fue aprobado.");
+                modelAndView.setViewName("perfilusuario");
+            }
+        } catch (MPException | MPApiException e) {
+            e.printStackTrace();
+            modelAndView.addObject("mensaje", "Ocurrió un error al verificar el pago.");
+            modelAndView.setViewName("perfilusuario");
+        }
 
         return modelAndView;
     }
+
+
 
     @GetMapping("/pago-fallido")
     public ModelAndView pagoFallido() {
