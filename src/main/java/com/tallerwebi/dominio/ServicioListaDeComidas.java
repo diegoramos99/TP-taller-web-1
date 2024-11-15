@@ -12,4 +12,6 @@ public interface ServicioListaDeComidas {
   List<List<Alimento>> comidasParaElDiaRespetandoLaDieta(Usuario usuarioMock, List<List<Alimento>> alimentosSeparadosPorTipo);
 
   List<Alimento> comidasParaEldia(Usuario usuarioMock, List<List<Alimento>> alimentosSeparadosPorTipoYDieta);
+
+    List<Receta> buscarReceta(String receta);
 }

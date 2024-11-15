@@ -2,35 +2,69 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/calendario.css}"/>
-
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css/nav.css}"/>
 </head>
 <body>
-
+<div class="contenedor">
+<div th:replace="nav :: nav"></div>
 <div class="calendario">
-    <div th:each="listaAlimentos, iterStat : ${alimentos}">
-        <div class="calendario">
+    <div class="planificacionDelDia" th:each="listaAlimentos, iterStat : ${alimentos}">
+        <div class="planificacionDelDia_firstChild">
             <div class="dia">
                 <!-- Usar iterStat.index con el título dinámico -->
-                <h3 th:text="'Día ' + (${iterStat.count})"></h3>
+                <h2 th:text="'Día ' + (${iterStat.count})"></h2>
 
                 <div class="comida">
                     <strong>Desayuno:</strong>
-                    <p th:text="${listaAlimentos[0].getNombre()}" ></p>
+                    <a th:href="@{/verReceta(receta=${listaAlimentos[0].getNombre()})}" >
+                    <p th:text="${listaAlimentos[0].getNombre()}"
+                       th:attr="data-tooltip=${listaAlimentos[0].getCalorias()} + ' kcal' + '&#10;' +
+                   ${listaAlimentos[0].getProteinas()} + ' Proteina' + '&#10;' +
+                   ${listaAlimentos[0].getGrasas()} + ' Grasas' + '&#10;' +
+                   ${listaAlimentos[0].getCarbohidratos()} + ' Carbohidratos'">
+                        Nombre del alimento
+                    </p>
+                    </a>
                 </div>
                 <div class="comida">
                     <strong>Almuerzo:</strong>
-                    <p th:text="${listaAlimentos[1].getNombre()}" ></p>
+                    <a th:href="@{/verReceta(receta=${listaAlimentos[1].getNombre()})}" >
+                    <p th:text="${listaAlimentos[1].getNombre()}"
+                       th:attr="data-tooltip=${listaAlimentos[1].getCalorias()} + ' kcal' + '&#10;' +
+                   ${listaAlimentos[1].getProteinas()} + ' Proteina' + '&#10;' +
+                   ${listaAlimentos[1].getGrasas()} + ' Grasas' + '&#10;' +
+                   ${listaAlimentos[1].getCarbohidratos()} + ' Carbohidratos'">
+                        Nombre del alimento
+                    </p>
+                    </a>
                 </div>
                 <div class="comida">
                     <strong>Merienda:</strong>
-                    <p th:text="${listaAlimentos[2].getNombre()}" ></p>
+                    <a th:href="@{/verReceta(receta=${listaAlimentos[2].getNombre()})}" >
+                    <p th:text="${listaAlimentos[2].getNombre()}"
+                       th:attr="data-tooltip=${listaAlimentos[2].getCalorias()} + ' kcal' + '&#10;' +
+                   ${listaAlimentos[2].getProteinas()} + ' Proteina' + '&#10;' +
+                   ${listaAlimentos[2].getGrasas()} + ' Grasas' + '&#10;' +
+                   ${listaAlimentos[2].getCarbohidratos()} + ' Carbohidratos'">
+                        Nombre del alimento
+                    </p>
+                    </a>
                 </div>
+
                 <div class="comida">
                     <strong>Cena:</strong>
-                    <p th:text="${listaAlimentos[3].getNombre()}" ></p>
+                    <a th:href="@{/verReceta(receta=${listaAlimentos.get(3).nombre})}" >
+                        <p th:text="${listaAlimentos[3].getNombre()}"
+                       th:attr="data-tooltip=${listaAlimentos[3].getCalorias()} + ' kcal' + '&#10;' +
+                   ${listaAlimentos[3].getProteinas()} + ' Proteina' + '&#10;' +
+                   ${listaAlimentos[3].getGrasas()} + ' Grasas' + '&#10;' +
+                   ${listaAlimentos[3].getCarbohidratos()} + ' Carbohidratos'">
+                        Nombre del alimento
+                    </p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -38,5 +72,11 @@
 
 
 </div>
+    <!-- Enlace para abrir el modal -->
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
