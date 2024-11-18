@@ -1,0 +1,139 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+         background: url('https://img.freepik.com/vector-gratis/formulas-cientificas-dibujadas-mano-pizarra_23-2148496321.jpghttps://img.freepik.com/vector-premium/fondo-iconos-simbolos-ejercicios-deportivos_556049-215.jpg') no-repeat center center fixed;
+                          background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #081d6fdb;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .search-section {
+            width: 100%;
+            max-width: 800px;
+            color:white;
+        }
+
+        .search-form {
+            display: flex;
+            width: 100%;
+            margin: 15px 0 15px 0;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
+        .content-section {
+            display: flex;
+            width: 100%;
+            max-width: 1500px;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .result-list {
+            list-style: none;
+            padding: 0;
+            width: 50%;
+            margin: 0;
+        }
+
+        .li-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
+        }
+
+        .li-container:hover {
+            background-color: #e6e6e6;
+        }
+
+        .li-container img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .no-result {
+            text-align: center;
+            color: #888;
+            padding: 20px 0;
+        }
+
+        .exercise-details {
+            width: 50%;
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-height: 200px;
+            margin-top: 0;
+        }
+
+        .exercise-details input {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .exercise-details input:focus {
+        border:none;
+        outline:none;
+        border:2px solid #7a42e4;
+                }
+
+        .exercise-details button {
+            background-color: #7a42e4;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .exercise-details button:hover {
+            background-color: #45a049;
+        }
+
+        .selected {
+            background-color: #cce5ff;
+        }
