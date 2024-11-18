@@ -20,10 +20,22 @@
 <div class="container">
     <section class="section-foto-perfil">
         <div class="foto-perfil">
-            <img th:src="@{images/logoLogin.png}" alt="" srcset="">
+            <img th:src="@{${fotoPerfil}}" alt="" srcset="">
         </div>
-        <button onmouseover="quitarTexto(this)" onmouseout="restaurarTexto(this)" class="btn proximamente-btn" type="submit">cambiar foto</button>
+        <button class="btn" type="button" id="btnCambiarFoto">Cambiar Foto</button>
     </section>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>Cambiar Foto</h2>
+            <form th:action="@{/cambiarFotoPerfil}" method="post" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="foto" accept="image/*" required>
+                <div>
+                    <button type="submit" class="btn-confirm">Cambiar</button>
+                    <button type="button" class="btn-cancel" id="btnCancelar">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <section class="section-info-personal">
         <div class="info-personal">
             <h1 th:text="${nombre}+' '+${apellido}"></h1>
@@ -34,7 +46,7 @@
                 </div>
                 <div class="info-item">
                     <h3>Preferencia Alimenticia:</h3>
-                    <p  th:text="${preferenciaAlimenticia}" ></p>
+                    <p th:text="${preferenciaAlimenticia}"></p>
                 </div>
                 <div class="info-item">
                     <h3>Restricciones Alimenticias:</h3>
@@ -42,11 +54,12 @@
                 </div>
                 <div class="info-item">
                     <h3>Información Adicional:</h3>
-                    <p th:text="${informacionAdicional}" ></p>
+                    <p th:text="${informacionAdicional}"></p>
                 </div>
             </div>
             <a href="mostrarFormulario" class="edit-btn">
-                <button class="btn" type="submit">Editar Perfil</button></a>
+                <button class="btn" type="submit">Editar Perfil</button>
+            </a>
 
         </div>
     </section>
@@ -56,13 +69,31 @@
 <script th:src="@{/js/nav-link.js}"></script>
 <script>
     function quitarTexto(btn) {
-  btn.innerHTML = ''; // Borra el texto del botón cuando el ratón entra
-}
+        btn.innerHTML = '';
+    }
 
-function restaurarTexto(btn) {
-  btn.innerHTML = 'cambiar foto de perfil'; // Restaura el texto cuando el ratón sale
+    function restaurarTexto(btn) {
+        btn.innerHTML = 'cambiar foto de perfil';
 
-}
+    }
+
+    const modal = document.getElementById('modal');
+    const btnCambiarFoto = document.getElementById('btnCambiarFoto');
+    const btnCancelar = document.getElementById('btnCancelar');
+
+    btnCambiarFoto.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+    btnCancelar.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
 </script>
 <script>

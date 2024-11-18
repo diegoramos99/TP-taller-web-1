@@ -8,5 +8,7 @@ public interface ServicioPerfilUsuario {
     Usuario modificarUsuario(Usuario usuario,Usuario usuarioConDatos);
 
     void actualizarEstadoPremium(boolean b, Long id);
+
+    void actualizarUsuario(Usuario usuarioActivo);
 }
 

@@ -47,5 +47,11 @@ public class ServicioPerfilUsuarioImpl implements ServicioPerfilUsuario {
         repositorioUsuario.actualizarEstadoPremium(b,id);
     }
 
+    @Override
+    public void actualizarUsuario(Usuario usuarioActivo) {
+
+        repositorioUsuario.actualizar(usuarioActivo);
+    }
+
 
 }

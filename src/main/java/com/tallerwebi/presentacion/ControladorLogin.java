@@ -45,9 +45,11 @@ public ModelAndView validarLogin(@ModelAttribute("usuario") Usuario usuario, Htt
 
         if (usuarioBuscado.getRol().equals("USER")) {
             request.getSession().setAttribute("ROL", "USER");
+            request.getSession().setAttribute("FOTOPERFIL", usuarioBuscado.getFotoPerfil());
             return new ModelAndView("redirect:/home");
         } else if (usuarioBuscado.getRol().equals("ADMIN")) {
             request.getSession().setAttribute("ROL", "ADMIN");
+            request.getSession().setAttribute("FOTOPERFIL", usuarioBuscado.getFotoPerfil());
             return new ModelAndView("redirect:/ver-admin");
         }
     }
