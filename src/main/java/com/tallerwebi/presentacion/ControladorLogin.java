@@ -75,9 +75,9 @@ public class ControladorLogin {
     @RequestMapping(path = "/home", method = RequestMethod.GET)
     public ModelAndView irAHome(HttpServletRequest request) {
         if (request.getSession().getAttribute("EMAIL") == null) {
-            return new ModelAndView("redirect:/login");
+        return  new ModelAndView("redirect:/login");
         }
-        return new ModelAndView("home");
+            return new ModelAndView("home");
     }
 
 
@@ -93,7 +93,41 @@ public class ControladorLogin {
     }
 
 
+    @RequestMapping(path = "/irAlHomeSinLoguearse", method = RequestMethod.GET)
+    public ModelAndView irAlHomeSinLoguearse() {
 
+            return new ModelAndView("redirect:/homeSinLoguearse");
 
+    }
+    @RequestMapping(path = "/homeSinLoguearse", method = RequestMethod.GET)
+    public ModelAndView HomeSinLoguearse() {
+
+        return new ModelAndView("homeSinLoguearse");
+
+    }
+    @RequestMapping(path = "/irAboutUs", method = RequestMethod.GET)
+    public ModelAndView irAboutUs() {
+
+        return new ModelAndView("redirect:/AboutUs");
+
+    }
+    @RequestMapping(path = "/AboutUs", method = RequestMethod.GET)
+    public ModelAndView aboutUs() {
+
+        return new ModelAndView("AboutUs");
+
+    }
+    @RequestMapping(path = "/irCatalogo", method = RequestMethod.GET)
+    public ModelAndView irCatalogo() {
+
+        return new ModelAndView("redirect:/catalogo");
+
+    }
+    @RequestMapping(path = "/catalogo", method = RequestMethod.GET)
+    public ModelAndView catalogo() {
+
+        return new ModelAndView("catalogo");
+
+    }
 }
 

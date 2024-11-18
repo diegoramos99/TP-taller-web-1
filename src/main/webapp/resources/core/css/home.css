@@ -385,3 +385,27 @@ section {
         margin: 20px 0;
     }
 }
+  .navSinLogin{
+    color: #fff;
+    width: 100%;
+display:flex;
+justify-content:center;
+  }
+  .navSinLogin a{
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all .5s;
+  }
+  .navSinLogin a:hover{
+    color: #60db67;
+font-size: 1.7rem;
+  box-shadow: 10px ,10px ,2px;
+ }
+  .navSinLogin ol{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: larger;
+    width :80%;
+  }

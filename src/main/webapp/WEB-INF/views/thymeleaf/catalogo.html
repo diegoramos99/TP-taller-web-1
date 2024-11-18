@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+
+
+    <!-- Bootstrap core css -->
+    <!--    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/> -->
+
+    <link rel="stylesheet" th:href="@{/css/catalogo.css}"/>
+
+</head>
+<body>
+<section class="benefits">
+    <div class="container">
+        <nav>
+            <ol>
+                <li>
+                    <a href="irAlHomeSinLoguearse">Home</a>
+                </li>
+                <li>
+                    <a href="acercaDeNosotros">Acerca De Nosotros</a>
+                </li>
+                <li>
+                    <a href="catalogo">Catalogo</a>
+                </li>
+                <li>
+                    <a href="login">Iniciar Sesion</a>
+                </li>
+            </ol>
+        </nav>
+        <h1>¡Únete a nuestra App de Nutrición!</h1>
+        <p class="subtitle">Descubre todas las herramientas que tenemos para ayudarte a llevar un estilo de vida más saludable.</p>
+
+        <!-- Beneficios generales -->
+        <div class="features">
+            <div class="feature">
+                <img th:src="@{images/planes_comida.jpg}" alt="Planes de Comida">
+                <h3>Planes de Comida Personalizados</h3>
+                <p>Accede a dietas adaptadas a tus objetivos: perder peso, ganar músculo o mantenerte saludable.</p>
+            </div>
+
+            <div class="feature">
+                <img th:src="@{images/recetas_saludables.jpg}" alt="Recetas Saludables">
+                <h3>Recetas Saludables</h3>
+                <p>Encuentra ideas fáciles y deliciosas para desayunos, almuerzos, cenas y snacks.</p>
+            </div>
+
+            <div class="feature">
+                <img th:src="@{images/calculadoras.jpg}" alt="Calculadoras">
+                <h3>Herramientas de Nutrición</h3>
+                <p>Calcula tu IMC y calorías diarias para alcanzar tus metas de manera efectiva.</p>
+            </div>
+
+            <div class="feature">
+                <img th:src="@{images/registro_rutinas.jpg}" alt="Registro de Rutinas">
+                <h3>Registro de Rutinas</h3>
+                <p>Crea y guarda tus propias rutinas de ejercicio, personalizadas según tus necesidades.</p>
+            </div>
+        </div>
+
+        <!-- Beneficios Premium -->
+        <div class="premium-section">
+            <h2>Hazte Premium y Disfruta de Más Beneficios</h2>
+            <p>Con nuestra suscripción Premium, podrás acceder a contenido exclusivo diseñado por expertos.</p>
+
+            <div class="premium-features">
+                <div class="premium-feature">
+                    <img th:src="@{images/rutinas_premium.jpg}" alt="Rutinas Premium">
+                    <h3>Rutinas Prediseñadas</h3>
+                    <p>Accede a rutinas de ejercicio diseñadas por entrenadores profesionales.</p>
+                </div>
+
+                <div class="premium-feature">
+                    <img th:src="@{images/dietas_personalizadas.jpg}" alt="Dietas Exclusivas">
+                    <h3>Dietas Exclusivas</h3>
+                    <p>Planifica tus comidas con planes de alimentación más avanzados y variados.</p>
+                </div>
+            </div>
+
+            <a href="/premium" class="btn-premium">Hazte Premium</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

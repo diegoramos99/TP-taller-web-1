@@ -1,0 +1,149 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    background:url("fondoPantalla.jpg");
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+  h1, h2, h3 {
+    color: #2b7a78;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  /* Features Section */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .feature {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+  }
+
+  .feature img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .feature h3 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+  }
+
+  .feature p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* Premium Section */
+  .premium-section {
+    background-color: #e8f9f8;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .premium-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .premium-section p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 30px;
+  }
+
+  .premium-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .premium-feature {
+    text-align: center;
+  }
+
+  .premium-feature img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .premium-feature h3 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+  }
+
+  .premium-feature p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .btn-premium {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #3aafa9;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .btn-premium:hover {
+    background-color: #2b7a78;
+  }
+  nav{
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 1rem;
+  }
+  nav a{
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all .5s;
+  }
+  nav a:hover{
+    color: #60db67;
+font-size: 1.7rem;
+  box-shadow: 10px ,10px ,2px;
+ }
+  ol{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: larger;
+  }

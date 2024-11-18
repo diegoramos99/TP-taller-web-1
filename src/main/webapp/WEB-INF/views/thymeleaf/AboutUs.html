@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+
+
+    <!-- Bootstrap core css -->
+    <!--    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/> -->
+
+    <link rel="stylesheet" th:href="@{/css/aboutUs.css}"/>
+
+</head>
+<body>
+<section class="about-section">
+
+    <div class="about-container">
+        <nav>
+            <ol>
+                <li>
+                    <a href="irAlHomeSinLoguearse">Home</a>
+                </li>
+                <li>
+                    <a href="irAboutUs">Acerca De Nosotros</a>
+                </li>
+                <li>
+                    <a href="catalogo">Catalogo</a>
+                </li>
+                <li>
+                    <a href="login">Loguearse</a>
+                </li>
+            </ol>
+        </nav>
+        <h1>Sobre Nosotros</h1>
+        <p>
+            Bienvenidos a **Nutrición Inteligente**. Nuestra misión es guiarte hacia un estilo de vida más saludable a través de herramientas digitales fáciles de usar, recomendaciones personalizadas y conocimientos respaldados por expertos en salud. ¡Conéctate con tu bienestar hoy!
+        </p>
+        <img th:src="@{images/logoLogin.png}" alt="Equipo Nutrición Inteligente" class="about-image">
+
+        <div class="features">
+            <h2>¿Qué ofrecemos?</h2>
+            <ul>
+                <li>
+                    <img th:src="@{images/feature_imc.jpg}" alt="Cálculo de IMC">
+                    <strong>Cálculo del Índice de Masa Corporal (IMC):</strong> Descubre rápidamente tu estado de salud con nuestro calculador.
+                </li>
+                <li>
+                    <img th:src="@{images/feature_diet.jpg}" alt="Dietas Personalizadas">
+                    <strong>Dietas Personalizadas:</strong> Diseñamos planes alimenticios ajustados a tus objetivos personales.
+                </li>
+                <li>
+                    <img th:src="@{images/feature_exercise.jpg}" alt="Planes de Ejercicio">
+                    <strong>Planes de Ejercicio:</strong> Rutinas adaptadas a tu nivel de actividad física para mejorar tu rendimiento.
+                </li>
+                <li>
+                    <img th:src="@{images/feature_tracking.jpg}" alt="Seguimiento de Progreso">
+                    <strong>Registro de alimentos:</strong> Registra y guarda tus comidas para llegar a tus objetivos.
+                </li>
+            </ul>
+        </div>
+
+        <div class="team">
+            <h2>¿Quiénes somos?</h2>
+            <p>
+                Somos un grupo multidisciplinario apasionado por el bienestar. Nuestro equipo está compuesto por:
+            </p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img th:src="@{images/team_trainer.jpg}" alt="Entrenador Físico">
+                    <h3>Javier Cabrera</h3>
+                    <p>Entrenador personal especializado en planes de ejercicio funcional.</p>
+                </div>
+                <div class="team-member">
+                    <img th:src="@{images/team_developer.jpg}" alt="Desarrollador">
+                    <h3>Diego Ramos</h3>
+                    <p>Desarrolladora de software, creando soluciones digitales intuitivas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="call-to-action">
+            <h2>¡Únete a nosotros!</h2>
+            <p>
+                Empieza tu viaje hacia una vida más saludable con nuestra plataforma. Inscríbete ahora y accede a herramientas exclusivas.
+            </p>
+            <a href="/login" class="btn">Comenzar</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>
