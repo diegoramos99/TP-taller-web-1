@@ -17,8 +17,7 @@ public class Alimento {
     private Double grasas;
     private Double carbohidratos;
     private String categoria;
-    private String cantidad; // Nuevo atributo
-    private String tipo;
+    private String cantidad;
     private  String dieta;
 
     public Alimento() {
@@ -88,13 +87,6 @@ public class Alimento {
         this.carbohidratos = carbohidratos;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
 
     public String getDieta() {
         return dieta;

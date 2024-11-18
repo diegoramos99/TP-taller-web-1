@@ -32,28 +32,37 @@ public class ControladorLogin {
     }
 
     @RequestMapping(path = "/validar-login", method = RequestMethod.POST)
-    public ModelAndView validarLogin(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
-        ModelMap model = new ModelMap();
+public ModelAndView validarLogin(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
+    ModelMap model = new ModelMap();
 
-        Usuario usuarioBuscado = servicioLogin.consultarUsuario(usuario.getEmail(), usuario.getPassword());
+    Usuario usuarioBuscado = servicioLogin.consultarUsuario(usuario.getEmail(), usuario.getPassword());
 
-        if (usuarioBuscado != null) {
-            request.getSession().setAttribute("EMAIL", usuarioBuscado.getEmail());
-            request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
-            request.getSession().setAttribute("NOMBRE", usuarioBuscado.getNombre());
-            request.getSession().setAttribute("APELLIDO", usuarioBuscado.getApellido());
+    if (usuarioBuscado != null) {
+
+        request.getSession().setAttribute("EMAIL", usuarioBuscado.getEmail());
+        request.getSession().setAttribute("NOMBRE", usuarioBuscado.getNombre());
+        request.getSession().setAttribute("APELLIDO", usuarioBuscado.getApellido());
+
+        if (usuarioBuscado.getRol().equals("USER")) {
+            request.getSession().setAttribute("ROL", "USER");
             return new ModelAndView("redirect:/home");
-        } else {
-            model.put("error", "Usuario o clave incorrecta");
+        } else if (usuarioBuscado.getRol().equals("ADMIN")) {
+            request.getSession().setAttribute("ROL", "ADMIN");
+            return new ModelAndView("redirect:/ver-admin");
         }
-
-        return new ModelAndView("login", model);
     }
+
+    // Si no se encuentra el usuario o el rol es incorrecto
+    model.put("error", "Usuario o clave incorrecta");
+    return new ModelAndView("login", model);
+}
+
 
     @RequestMapping(path = "/registrarme", method = RequestMethod.POST)
     public ModelAndView registrarme(@ModelAttribute("usuario") Usuario usuario) {
         ModelMap model = new ModelMap();
         try {
+            usuario.setRol("USER");
             servicioLogin.registrar(usuario);
         } catch (UsuarioExistente e) {
             model.put("error", "El usuario ya existe");

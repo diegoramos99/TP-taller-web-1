@@ -64,6 +64,7 @@ public class MercadoPagoController {
         Preference preference = createPreference();
         String preferenceId = preference.getId();
 
+
         ModelMap model = new ModelMap();
         model.addAttribute("preferenceId", preferenceId);
 

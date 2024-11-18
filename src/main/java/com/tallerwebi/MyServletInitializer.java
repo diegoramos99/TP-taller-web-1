@@ -5,6 +5,7 @@ import com.tallerwebi.config.HibernateConfig;
 import com.tallerwebi.config.SpringWebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+
 public class MyServletInitializer
         extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -24,4 +25,6 @@ public class MyServletInitializer
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }
+
+
 }

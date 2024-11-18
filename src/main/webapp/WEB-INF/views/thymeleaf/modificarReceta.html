@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Receta</title>
+    <link rel="stylesheet" th:href="@{/css/modificarEstilos.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Modificar Receta</h1>
+
+    <form th:action="@{/guardarReceta}" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="nombre">Nombre de la Receta:</label>
+            <input type="text" id="nombre" name="nombre" th:value="${recetaSeleccionada.nombre}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ingredientes">Ingredientes:</label>
+            <textarea id="ingredientes" name="ingredientes" required
+                      th:text="${recetaSeleccionada.ingredientes}"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="preparacion">Preparación:</label>
+            <textarea id="preparacion" name="preparacion" required
+                      th:text="${recetaSeleccionada.preparacion}"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="tiempo">Tiempo (minutos):</label>
+            <input type="number" id="tiempo" name="tiempo" th:value="${recetaSeleccionada.tiempo}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="calorias">Calorías:</label>
+            <input type="number" id="calorias" name="calorias" th:value="${recetaSeleccionada.calorias}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Imagen de la receta:</label>
+            <div>
+                <img th:src="@{${recetaSeleccionada.imagen}}" alt="Imagen de la receta"
+                     class="recipe-image" th:if="${recetaSeleccionada.imagen != null}"/>
+            </div>
+            <div>
+
+                <input type="file" id="imagen" name="imagenNueva">
+                <input type="hidden" id="imagenOriginal" name="imagenOriginal" th:value="${recetaSeleccionada.imagen}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="id" th:value="${recetaSeleccionada.id}">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

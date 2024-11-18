@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Alimento</title>
+    <link rel="stylesheet" th:href="@{/css/modificarEstilos.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Modificar Alimento</h1>
+    <div class="instructions">
+        <p>Modifica los campos que desees y guarda los cambios.</p>
+    </div>
+
+    <form th:action="@{/guardarAlimento}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nombre">Nombre del Alimento:</label>
+            <input type="text" id="nombre" name="nombre" th:value="${alimentoSeleccionado.nombre}" required>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" id="id" name="id" th:value="${alimentoSeleccionado.id}">
+        </div>
+
+        <div class="form-group">
+            <label for="calorias">Calorías:</label>
+            <input type="number" id="calorias" name="calorias" th:value="${alimentoSeleccionado.calorias}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="proteinas">Proteínas (g):</label>
+            <input type="number" id="proteinas" name="proteinas" th:value="${alimentoSeleccionado.proteinas}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="grasas">Grasas (g):</label>
+            <input type="number" id="grasas" name="grasas" th:value="${alimentoSeleccionado.grasas}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="carbohidratos">Carbohidratos (g):</label>
+            <input type="number" id="carbohidratos" name="carbohidratos"
+                   th:value="${alimentoSeleccionado.carbohidratos}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <input type="text" id="categoria" name="categoria" th:value="${alimentoSeleccionado.categoria}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input type="text" id="cantidad" name="cantidad" th:value="${alimentoSeleccionado.cantidad}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dieta">Dieta:</label>
+            <input type="text" id="dieta" name="dieta" th:value="${alimentoSeleccionado.dieta}" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

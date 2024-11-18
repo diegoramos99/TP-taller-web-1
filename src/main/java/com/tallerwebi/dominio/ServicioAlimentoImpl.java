@@ -46,5 +46,25 @@ public class ServicioAlimentoImpl implements ServicioAlimento {
         repositorioRegistroComida.eliminarRegistroComida(id);
     }
 
+    @Override
+    public List<Alimento> getAlimentos() {
+        return repositorioAlimento.traerTodosLosAlimentos();
+    }
+
+    @Override
+    public void actualizarAlimento(Alimento alimento) {
+        repositorioAlimento.actualizarAlimento(alimento);
+    }
+
+    @Override
+    public void eliminarAlimento(Long id) {
+        repositorioAlimento.eliminarAlimento(id);
+    }
+
+    @Override
+    public void guardar(Alimento alimento) {
+        repositorioAlimento.guardar(alimento);
+    }
+
 
 }

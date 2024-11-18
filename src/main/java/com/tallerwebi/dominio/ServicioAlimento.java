@@ -9,4 +9,12 @@ public interface ServicioAlimento {
     List<RegistroComida> obtenerRegistrosPorFecha(String fecha);
 
     void eliminarRegistroAlimento(Long id);
+
+    List<Alimento> getAlimentos();
+
+    void actualizarAlimento(Alimento alimento);
+
+    void eliminarAlimento(Long id);
+
+    void guardar(Alimento alimento);
 }

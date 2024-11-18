@@ -1,113 +1,113 @@
-INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, tipo, dieta)
-VALUES ('Avena con Frutas', 250, 10, 5, 45, 'Desayuno', '1 taza', 'Desayuno', 'Vegano'),
-       ('Smoothie Verde', 200, 5, 2, 40, 'Desayuno', '1 vaso', 'Desayuno', 'Vegano'),
-       ('Tofu Revuelto', 220, 15, 12, 6, 'Desayuno', '1 taza', 'Desayuno', 'Vegano'),
-       ('Yogur de Soja con Granola', 180, 8, 4, 30, 'Desayuno', '1 taza', 'Desayuno', 'Vegano'),
-       ('Pan Integral con Aguacate', 300, 8, 15, 35, 'Desayuno', '2 rebanadas', 'Desayuno', 'Vegano'),
-       ('Batido de Plátano y Espinaca', 210, 6, 1, 45, 'Desayuno', '1 vaso', 'Desayuno', 'Vegano'),
-       ('Chía Pudding', 180, 5, 7, 30, 'Desayuno', '1 taza', 'Desayuno', 'Vegano'),
+INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, dieta)
+VALUES ('Avena con Frutas', 250, 10, 5, 45, 'Desayuno', '1 taza', 'Vegano'),
+       ('Smoothie Verde', 200, 5, 2, 40, 'Desayuno', '1 vaso', 'Vegano'),
+       ('Tofu Revuelto', 220, 15, 12, 6, 'Desayuno', '1 taza', 'Vegano'),
+       ('Yogur de Soja con Granola', 180, 8, 4, 30, 'Desayuno', '1 taza', 'Vegano'),
+       ('Pan Integral con Aguacate', 300, 8, 15, 35, 'Desayuno', '2 rebanadas', 'Vegano'),
+       ('Batido de Plátano y Espinaca', 210, 6, 1, 45, 'Desayuno', '1 vaso', 'Vegano'),
+       ('Chía Pudding', 180, 5, 7, 30, 'Desayuno', '1 taza', 'Vegano'),
 
-       ('Tostadas Francesas', 350, 10, 15, 50, 'Desayuno', '2 rebanadas', 'Desayuno', 'Vegetariano'),
-       ('Yogur con Frutas y Miel', 250, 9, 4, 40, 'Desayuno', '1 taza', 'Desayuno', 'Vegetariano'),
-       ('Huevos Revueltos', 300, 20, 25, 2, 'Desayuno', '2 huevos', 'Desayuno', 'Vegetariano'),
-       ('Quesadilla de Espinaca', 320, 15, 15, 35, 'Desayuno', '1 porción', 'Desayuno', 'Vegetariano'),
-       ('Tortilla Española', 350, 12, 20, 30, 'Desayuno', '1 porción', 'Desayuno', 'Vegetariano'),
-       ('Pancakes con Miel', 400, 8, 10, 60, 'Desayuno', '3 pancakes', 'Desayuno', 'Vegetariano'),
-       ('Muffin de Arándano', 220, 4, 9, 35, 'Desayuno', '1 muffin', 'Desayuno', 'Vegetariano'),
+       ('Tostadas Francesas', 350, 10, 15, 50, 'Desayuno', '2 rebanadas', 'Vegetariano'),
+       ('Yogur con Frutas y Miel', 250, 9, 4, 40, 'Desayuno', '1 taza', 'Vegetariano'),
+       ('Huevos Revueltos', 300, 20, 25, 2, 'Desayuno', '2 huevos', 'Vegetariano'),
+       ('Quesadilla de Espinaca', 320, 15, 15, 35, 'Desayuno', '1 porción', 'Vegetariano'),
+       ('Tortilla Española', 350, 12, 20, 30, 'Desayuno', '1 porción', 'Vegetariano'),
+       ('Pancakes con Miel', 400, 8, 10, 60, 'Desayuno', '3 pancakes', 'Vegetariano'),
+       ('Muffin de Arándano', 220, 4, 9, 35, 'Desayuno', '1 muffin', 'Vegetariano'),
 
-       ('Huevos Benedictinos', 400, 22, 30, 18, 'Desayuno', '2 huevos', 'Desayuno', 'omnivoro'),
-       ('Bacon y Huevos', 450, 30, 35, 1, 'Desayuno', '2 huevos y 2 tiras', 'Desayuno', 'omnivoro'),
-       ('Tostada de Aguacate con Huevo', 300, 12, 14, 30, 'Desayuno', '1 tostada', 'Desayuno', 'omnivoro'),
-       ('Batido de Proteína', 250, 25, 5, 20, 'Desayuno', '1 vaso', 'Desayuno', 'omnivoro'),
-       ('Sándwich de Huevo y Tocino', 500, 20, 25, 40, 'Desayuno', '1 sándwich', 'Desayuno', 'omnivoro'),
-       ('Crepas con Jamón y Queso', 400, 15, 20, 30, 'Desayuno', '2 crepas', 'Desayuno', 'omnivoro'),
-       ('Omelette de Verduras', 300, 20, 22, 5, 'Desayuno', '1 porción', 'Desayuno', 'omnivoro');
+       ('Huevos Benedictinos', 400, 22, 30, 18, 'Desayuno', '2 huevos', 'omnivoro'),
+       ('Bacon y Huevos', 450, 30, 35, 1, 'Desayuno', '2 huevos y 2 tiras',  'omnivoro'),
+       ('Tostada de Aguacate con Huevo', 300, 12, 14, 30, 'Desayuno', '1 tostada', 'omnivoro'),
+       ('Batido de Proteína', 250, 25, 5, 20, 'Desayuno', '1 vaso',  'omnivoro'),
+       ('Sándwich de Huevo y Tocino', 500, 20, 25, 40, 'Desayuno', '1 sándwich',  'omnivoro'),
+       ('Crepas con Jamón y Queso', 400, 15, 20, 30, 'Desayuno', '2 crepas',  'omnivoro'),
+       ('Omelette de Verduras', 300, 20, 22, 5, 'Desayuno', '1 porción',  'omnivoro');
 
 -- Insertar Almuerzos
-INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, tipo, dieta)
-VALUES ('Ensalada de Garbanzos', 350, 15, 10, 50, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegano'),
-       ('Bowl de Quinoa y Verduras', 400, 14, 8, 60, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegano'),
-       ('Tacos de Lentejas', 450, 18, 12, 70, 'Almuerzo', '3 tacos', 'Almuerzo', 'Vegano'),
-       ('Sopa de Verduras', 200, 5, 1, 40, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegano'),
-       ('Hamburguesa de Frijoles Negros', 350, 20, 5, 55, 'Almuerzo', '1 hamburguesa', 'Almuerzo', 'Vegano'),
-       ('Curry de Garbanzos', 380, 15, 10, 55, 'Almuerzo', '1 porción', 'Almuerzo', 'Vegano'),
-       ('Stir-Fry de Tofu', 420, 20, 15, 40, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegano'),
+INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, dieta)
+VALUES ('Ensalada de Garbanzos', 350, 15, 10, 50, 'Almuerzo', '1 taza', 'Vegano'),
+       ('Bowl de Quinoa y Verduras', 400, 14, 8, 60, 'Almuerzo', '1 taza', 'Vegano'),
+       ('Tacos de Lentejas', 450, 18, 12, 70, 'Almuerzo', '3 tacos', 'Vegano'),
+       ('Sopa de Verduras', 200, 5, 1, 40, 'Almuerzo', '1 taza', 'Vegano'),
+       ('Hamburguesa de Frijoles Negros', 350, 20, 5, 55, 'Almuerzo', '1 hamburguesa', 'Vegano'),
+       ('Curry de Garbanzos', 380, 15, 10, 55, 'Almuerzo', '1 porción', 'Vegano'),
+       ('Stir-Fry de Tofu', 420, 20, 15, 40, 'Almuerzo', '1 taza', 'Vegano'),
 
-       ('Ensalada de Quinoa y Feta', 400, 15, 10, 50, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegetariano'),
-       ('Pasta al Pesto', 500, 15, 20, 60, 'Almuerzo', '1 plato', 'Almuerzo', 'Vegetariano'),
-       ('Wrap de Verduras y Hummus', 350, 10, 8, 50, 'Almuerzo', '1 wrap', 'Almuerzo', 'Vegetariano'),
-       ('Pizza Vegetariana', 600, 25, 25, 70, 'Almuerzo', '1 porción', 'Almuerzo', 'Vegetariano'),
-       ('Tortilla de Espinacas', 300, 15, 12, 30, 'Almuerzo', '1 porción', 'Almuerzo', 'Vegetariano'),
-       ('Risotto de Champiñones', 450, 18, 10, 60, 'Almuerzo', '1 plato', 'Almuerzo', 'Vegetariano'),
-       ('Lasaña Vegetariana', 600, 20, 25, 80, 'Almuerzo', '1 porción', 'Almuerzo', 'Vegetariano'),
+       ('Ensalada de Quinoa y Feta', 400, 15, 10, 50, 'Almuerzo', '1 taza', 'Vegetariano'),
+       ('Pasta al Pesto', 500, 15, 20, 60, 'Almuerzo', '1 plato', 'Vegetariano'),
+       ('Wrap de Verduras y Hummus', 350, 10, 8, 50, 'Almuerzo', '1 wrap', 'Vegetariano'),
+       ('Pizza Vegetariana', 600, 25, 25, 70, 'Almuerzo', '1 porción', 'Vegetariano'),
+       ('Tortilla de Espinacas', 300, 15, 12, 30, 'Almuerzo', '1 porción', 'Vegetariano'),
+       ('Risotto de Champiñones', 450, 18, 10, 60, 'Almuerzo', '1 plato', 'Vegetariano'),
+       ('Lasaña Vegetariana', 600, 20, 25, 80, 'Almuerzo', '1 porción', 'Vegetariano'),
 
-       ('Pollo Asado con Verduras', 600, 40, 30, 20, 'Almuerzo', '1 porción', 'Almuerzo', 'omnivoro'),
-       ('Tacos de Pollo', 500, 35, 20, 50, 'Almuerzo', '3 tacos', 'Almuerzo', 'omnivoro'),
-       ('Pasta con Salsa Boloñesa', 700, 25, 15, 90, 'Almuerzo', '1 plato', 'Almuerzo', 'omnivoro'),
-       ('Ensalada César con Pollo', 550, 30, 25, 20, 'Almuerzo', '1 porción', 'Almuerzo', 'omnivoro'),
-       ('Arroz Frito con Cerdo', 600, 20, 30, 70, 'Almuerzo', '1 taza', 'Almuerzo', 'omnivoro'),
-       ('Sándwich de Pavo', 450, 30, 10, 40, 'Almuerzo', '1 sándwich', 'Almuerzo', 'omnivoro'),
-       ('Bowl de Pollo Teriyaki', 650, 35, 25, 80, 'Almuerzo', '1 taza', 'Almuerzo', 'omnivoro');
+       ('Pollo Asado con Verduras', 600, 40, 30, 20, 'Almuerzo', '1 porción', 'omnivoro'),
+       ('Tacos de Pollo', 500, 35, 20, 50, 'Almuerzo', '3 tacos', 'omnivoro'),
+       ('Pasta con Salsa Boloñesa', 700, 25, 15, 90, 'Almuerzo', '1 plato', 'omnivoro'),
+       ('Ensalada César con Pollo', 550, 30, 25, 20, 'Almuerzo', '1 porción', 'omnivoro'),
+       ('Arroz Frito con Cerdo', 600, 20, 30, 70, 'Almuerzo', '1 taza', 'omnivoro'),
+       ('Sándwich de Pavo', 450, 30, 10, 40, 'Almuerzo', '1 sándwich', 'omnivoro'),
+       ('Bowl de Pollo Teriyaki', 650, 35, 25, 80, 'Almuerzo', '1 taza', 'omnivoro');
 
 -- Insertar Meriendas
-INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, tipo, dieta)
-VALUES ('Batido de Frutas', 150, 3, 1, 35, 'Merienda', '1 vaso', 'Merienda', 'Vegano'),
-       ('Galletas de Avena', 200, 5, 7, 30, 'Merienda', '3 galletas', 'Merienda', 'Vegano'),
-       ('Hummus con Verduras', 250, 10, 12, 20, 'Merienda', '1 taza', 'Merienda', 'Vegano'),
-       ('Frutos Secos Mixtos', 300, 10, 20, 20, 'Merienda', '1/2 taza', 'Merienda', 'Vegano'),
-       ('Barra de Granola', 200, 5, 5, 35, 'Merienda', '1 barra', 'Merienda', 'Vegano'),
-       ('Palomitas de Maíz', 100, 3, 1, 20, 'Merienda', '1 taza', 'Merienda', 'Vegano'),
-       ('Gelatina de Frutas', 80, 2, 0, 20, 'Merienda', '1 porción', 'Merienda', 'Vegano'),
+INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, dieta)
+VALUES ('Batido de Frutas', 150, 3, 1, 35, 'Merienda', '1 vaso', 'Vegano'),
+       ('Galletas de Avena', 200, 5, 7, 30, 'Merienda', '3 galletas', 'Vegano'),
+       ('Hummus con Verduras', 250, 10, 12, 20, 'Merienda', '1 taza', 'Vegano'),
+       ('Frutos Secos Mixtos', 300, 10, 20, 20, 'Merienda', '1/2 taza', 'Vegano'),
+       ('Barra de Granola', 200, 5, 5, 35, 'Merienda', '1 barra', 'Vegano'),
+       ('Palomitas de Maíz', 100, 3, 1, 20, 'Merienda', '1 taza', 'Vegano'),
+       ('Gelatina de Frutas', 80, 2, 0, 20, 'Merienda', '1 porción', 'Vegano'),
 
-       ('Yogur con Granola', 250, 9, 4, 40, 'Merienda', '1 taza', 'Merienda', 'Vegetariano'),
-       ('Tostadas con Mantequilla de Maní', 300, 12, 18, 30, 'Merienda', '2 rebanadas', 'Merienda', 'Vegetariano'),
-       ('Frutas con Chocolate', 180, 2, 7, 30, 'Merienda', '1 porción', 'Merienda', 'Vegetariano'),
-       ('Mini Quiches de Espinaca', 220, 10, 15, 15, 'Merienda', '2 mini quiches', 'Merienda', 'Vegetariano'),
-       ('Cheesecake de Frutos Rojos', 400, 8, 25, 30, 'Merienda', '1 porción', 'Merienda', 'Vegetariano'),
-       ('Smoothie de Fresa', 200, 4, 1, 40, 'Merienda', '1 vaso', 'Merienda', 'Vegetariano'),
-       ('Pudding de Chía', 180, 5, 9, 30, 'Merienda', '1 taza', 'Merienda', 'Vegetariano'),
+       ('Yogur con Granola', 250, 9, 4, 40, 'Merienda', '1 taza', 'Vegetariano'),
+       ('Tostadas con Mantequilla de Maní', 300, 12, 18, 30, 'Merienda', '2 rebanadas', 'Vegetariano'),
+       ('Frutas con Chocolate', 180, 2, 7, 30, 'Merienda', '1 porción', 'Vegetariano'),
+       ('Mini Quiches de Espinaca', 220, 10, 15, 15, 'Merienda', '2 mini quiches', 'Vegetariano'),
+       ('Cheesecake de Frutos Rojos', 400, 8, 25, 30, 'Merienda', '1 porción', 'Vegetariano'),
+       ('Smoothie de Fresa', 200, 4, 1, 40, 'Merienda', '1 vaso', 'Vegetariano'),
+       ('Pudding de Chía', 180, 5, 9, 30, 'Merienda', '1 taza', 'Vegetariano'),
 
-       ('Galletas de Chocolate Chip', 250, 3, 12, 35, 'Merienda', '3 galletas', 'Merienda', 'omnivoro'),
-       ('Sándwich de Jamón y Queso', 400, 20, 20, 30, 'Merienda', '1 sándwich', 'Merienda', 'omnivoro'),
-       ('Batido de Proteína con Plátano', 300, 25, 5, 40, 'Merienda', '1 vaso', 'Merienda', 'omnivoro'),
-       ('Nachos con Queso', 400, 10, 25, 30, 'Merienda', '1 porción', 'Merienda', 'omnivoro'),
-       ('Tortas de Arroz con Mantequilla', 200, 5, 10, 25, 'Merienda', '3 tortas', 'Merienda', 'omnivoro'),
-       ('Galletas de Avena con Pasas', 220, 4, 7, 35, 'Merienda', '2 galletas', 'Merienda', 'omnivoro'),
-       ('Smoothie de Mango', 250, 4, 1, 55, 'Merienda', '1 vaso', 'Merienda', 'omnivoro');
+       ('Galletas de Chocolate Chip', 250, 3, 12, 35, 'Merienda', '3 galletas', 'omnivoro'),
+       ('Sándwich de Jamón y Queso', 400, 20, 20, 30, 'Merienda', '1 sándwich', 'omnivoro'),
+       ('Batido de Proteína con Plátano', 300, 25, 5, 40, 'Merienda', '1 vaso', 'omnivoro'),
+       ('Nachos con Queso', 400, 10, 25, 30, 'Merienda', '1 porción', 'omnivoro'),
+       ('Tortas de Arroz con Mantequilla', 200, 5, 10, 25, 'Merienda', '3 tortas', 'omnivoro'),
+       ('Galletas de Avena con Pasas', 220, 4, 7, 35, 'Merienda', '2 galletas', 'omnivoro'),
+       ('Smoothie de Mango', 250, 4, 1, 55, 'Merienda', '1 vaso', 'omnivoro');
 
 -- Insertar Cenas
-INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, tipo, dieta)
-VALUES ('Ensalada de Espinaca', 200, 5, 1, 40, 'Cena', '1 porción', 'Cena', 'Vegano'),
-       ('Sopa de Lentejas', 250, 13, 2, 40, 'Cena', '1 taza', 'Cena', 'Vegano'),
-       ('Pasta con Salsa de Tomate', 300, 10, 5, 60, 'Cena', '1 plato', 'Cena', 'Vegano'),
-       ('Buddha Bowl', 400, 12, 8, 70, 'Cena', '1 tazón', 'Cena', 'Vegano'),
-       ('Verduras Asadas', 180, 4, 8, 25, 'Cena', '1 porción', 'Cena', 'Vegano'),
-       ('Curry de Verduras', 350, 10, 15, 40, 'Cena', '1 porción', 'Cena', 'Vegano'),
-       ('Tofu al Horno con Especias', 400, 20, 20, 30, 'Cena', '1 porción', 'Cena', 'Vegano'),
+INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, dieta)
+VALUES ('Ensalada de Espinaca', 200, 5, 1, 40, 'Cena', '1 porción', 'Vegano'),
+       ('Sopa de Lentejas', 250, 13, 2, 40, 'Cena', '1 taza', 'Vegano'),
+       ('Pasta con Salsa de Tomate', 300, 10, 5, 60, 'Cena', '1 plato', 'Vegano'),
+       ('Buddha Bowl', 400, 12, 8, 70, 'Cena', '1 tazón', 'Vegano'),
+       ('Verduras Asadas', 180, 4, 8, 25, 'Cena', '1 porción', 'Vegano'),
+       ('Curry de Verduras', 350, 10, 15, 40, 'Cena', '1 porción', 'Vegano'),
+       ('Tofu al Horno con Especias', 400, 20, 20, 30, 'Cena', '1 porción', 'Vegano'),
 
-       ('Pasta con Salsa Alfredo', 500, 15, 30, 60, 'Cena', '1 plato', 'Cena', 'Vegetariano'),
-       ('Ensalada Caprese', 300, 12, 18, 20, 'Cena', '1 porción', 'Cena', 'Vegetariano'),
-       ('Tortilla de Papas', 400, 10, 25, 40, 'Cena', '1 porción', 'Cena', 'Vegetariano'),
-       ('Pizza Margherita', 600, 25, 30, 70, 'Cena', '1 porción', 'Cena', 'Vegetariano'),
-       ('Risotto de Espárragos', 500, 12, 15, 80, 'Cena', '1 plato', 'Cena', 'Vegetariano'),
-       ('Tacos de Queso', 350, 18, 22, 30, 'Cena', '2 tacos', 'Cena', 'Vegetariano'),
-       ('Bowl de Quinoa y Espinaca', 400, 15, 8, 60, 'Cena', '1 tazón', 'Cena', 'Vegetariano'),
+       ('Pasta con Salsa Alfredo', 500, 15, 30, 60, 'Cena', '1 plato', 'Vegetariano'),
+       ('Ensalada Caprese', 300, 12, 18, 20, 'Cena', '1 porción', 'Vegetariano'),
+       ('Tortilla de Papas', 400, 10, 25, 40, 'Cena', '1 porción', 'Vegetariano'),
+       ('Pizza Margherita', 600, 25, 30, 70, 'Cena', '1 porción', 'Vegetariano'),
+       ('Risotto de Espárragos', 500, 12, 15, 80, 'Cena', '1 plato', 'Vegetariano'),
+       ('Tacos de Queso', 350, 18, 22, 30, 'Cena', '2 tacos', 'Vegetariano'),
+       ('Bowl de Quinoa y Espinaca', 400, 15, 8, 60, 'Cena', '1 tazón', 'Vegetariano'),
 
-       ('Salmón a la Parrilla', 600, 40, 30, 20, 'Cena', '1 porción', 'Cena', 'omnivoro'),
-       ('Pollo al Limón', 500, 35, 20, 30, 'Cena', '1 porción', 'Cena', 'omnivoro'),
-       ('Carne Asada', 700, 40, 35, 0, 'Cena', '1 porción', 'Cena', 'omnivoro'),
-       ('Tacos de Carne', 600, 30, 25, 40, 'Cena', '3 tacos', 'Cena', 'omnivoro'),
-       ('Sopa de Pollo', 350, 20, 10, 30, 'Cena', '1 taza', 'Cena', 'omnivoro'),
-       ('Pasta con Pollo y Espinacas', 550, 30, 25, 40, 'Cena', '1 plato', 'Cena', 'omnivoro'),
-       ('Ensalada de Atún', 400, 25, 15, 20, 'Cena', '1 porción', 'Cena', 'omnivoro');
+       ('Salmón a la Parrilla', 600, 40, 30, 20, 'Cena', '1 porción', 'omnivoro'),
+       ('Pollo al Limón', 500, 35, 20, 30, 'Cena', '1 porción', 'omnivoro'),
+       ('Carne Asada', 700, 40, 35, 0, 'Cena', '1 porción', 'omnivoro'),
+       ('Tacos de Carne', 600, 30, 25, 40, 'Cena', '3 tacos', 'omnivoro'),
+       ('Sopa de Pollo', 350, 20, 10, 30, 'Cena', '1 taza', 'omnivoro'),
+       ('Pasta con Pollo y Espinacas', 550, 30, 25, 40, 'Cena', '1 plato', 'omnivoro'),
+       ('Ensalada de Atún', 400, 25, 15, 20, 'Cena', '1 porción', 'omnivoro');
 
 
 INSERT INTO Usuario (actividad, activo, altura, apellido, edad, email, formula, informacionAdicional, nombre,
                      objetivoSalud, password, peso, preferenciaAlimenticia, restrincionesAlimentarias, rol, sexo)
 VALUES ('moderado', true, 175.0, 'Pérez', 25, '123@gmail.com', 'Fórmula de ejemplo', 'Ninguna', 'Juan', 'mantener',
         '123', 70.0, 'vegetariano', 'lácteos', 'USER', 'masculino'),
-       ('sedentario', true, 170.0, 'Generico', 30, 'default_user@example.com', 'N/A', 'Usuario por defecto', 'Invitado',
-        'mantener', 'default123', 68.0, 'ninguna', 'ninguna', 'USER', 'no especificado');
+       ('sedentario', true, 170.0, '1', 30, 'admin@gmail.com', 'N/A', 'Usuario por defecto', 'admin',
+        'mantener', '1234', 68.0, 'ninguna', 'ninguna', 'ADMIN', 'no especificado');
 
 
 INSERT INTO Receta (nombre, ingredientes, preparacion, tiempo, calorias, imagen)
@@ -122,7 +122,7 @@ VALUES ('Huevo Revueltos', 'Huevos, Sal, Mantequilla',
         10, 300, 'images/plato_vacio.jpg'),
        ('Pasta al Ajo', 'Pasta, Ajo, Aceite de oliva',
         'Cocina la pasta según las instrucciones del paquete. En una sartén, calienta aceite de oliva y añade ajo picado. Sofríe hasta que esté dorado, luego mezcla con la pasta cocida y sirve caliente.',
-        15, 400, 'src/main/resources/arroz_blanco.jpg'),
+        15, 400, 'images/plato_vacio.jpg'),
        ('Papas Fritas', 'Papas, Aceite, Sal',
         'Pela y corta las papas en tiras. Calienta aceite en una freidora o sartén. Fría las papas en tandas hasta que estén doradas y crujientes. Escurre sobre papel absorbente y espolvorea con sal.',
         25, 350, 'images/plato_vacio.jpg'),
@@ -216,109 +216,292 @@ VALUES ('Huevo Revueltos', 'Huevos, Sal, Mantequilla',
        ('Kebabs de Carne', 'Carne de res, Especias, Pimiento, Cebolla, Palitos',
         'Corta la carne y vegetales en trozos, sazona y ensarta en palitos. Asa hasta que estén cocidos.', 25, 300,
         'images/plato_vacio.jpg'),
-        ('Avena con Frutas', 'Avena (50g), frutas frescas (100g)', 'Medir 50 gramos de avena y añadir 100 gramos de frutas frescas. Mezclar bien hasta que esté uniforme.', 5, 150, 'imagen1.jpg'),
+       ('Avena con Frutas', 'Avena (50g), frutas frescas (100g)',
+        'Medir 50 gramos de avena y añadir 100 gramos de frutas frescas. Mezclar bien hasta que esté uniforme.', 5, 150,
+        'images/plato_vacio.jpg'),
 
-        ('Smoothie Verde', 'Espinaca (1 taza), plátano (1 unidad), manzana (1 unidad), agua (200ml)', 'Colocar una taza de espinaca, un plátano pelado y cortado, una manzana picada y 200 ml de agua en la licuadora. Licuar hasta obtener una mezcla homogénea.', 5, 120, 'imagen2.jpg'),
+       ('Smoothie Verde', 'Espinaca (1 taza), plátano (1 unidad), manzana (1 unidad), agua (200ml)',
+        'Colocar una taza de espinaca, un plátano pelado y cortado, una manzana picada y 200 ml de agua en la licuadora. Licuar hasta obtener una mezcla homogénea.',
+        5, 120, 'images/plato_vacio.jpg'),
 
-        ('Tofu Revuelto', 'Tofu (200g), espinacas (1 taza), cebolla (50g), especias (al gusto)', 'Cortar 200 gramos de tofu en cubos y saltear con una taza de espinacas frescas y 50 gramos de cebolla picada. Añadir especias al gusto y cocinar hasta que esté bien dorado.', 10, 200, 'imagen3.jpg'),
+       ('Tofu Revuelto', 'Tofu (200g), espinacas (1 taza), cebolla (50g), especias (al gusto)',
+        'Cortar 200 gramos de tofu en cubos y saltear con una taza de espinacas frescas y 50 gramos de cebolla picada. Añadir especias al gusto y cocinar hasta que esté bien dorado.',
+        10, 200, 'images/plato_vacio.jpg'),
 
-        ('Yogur de Soja con Granola', 'Yogur de soja (200ml), granola (50g), miel (1 cucharada)', 'Mezclar 200 ml de yogur de soja con 50 gramos de granola. Añadir una cucharada de miel y mezclar suavemente.', 5, 180, 'imagen4.jpg'),
+       ('Yogur de Soja con Granola', 'Yogur de soja (200ml), granola (50g), miel (1 cucharada)',
+        'Mezclar 200 ml de yogur de soja con 50 gramos de granola. Añadir una cucharada de miel y mezclar suavemente.',
+        5, 180, 'images/plato_vacio.jpg'),
 
-        ('Pan Integral con Aguacate', 'Pan integral (1 rebanada), aguacate (50g)', 'Tostar una rebanada de pan integral. Cortar 50 gramos de aguacate y machacarlo antes de extender sobre el pan.', 5, 220, 'imagen5.jpg'),
+       ('Pan Integral con Aguacate', 'Pan integral (1 rebanada), aguacate (50g)',
+        'Tostar una rebanada de pan integral. Cortar 50 gramos de aguacate y machacarlo antes de extender sobre el pan.',
+        5, 220, 'images/plato_vacio.jpg'),
 
-        ('Batido de Plátano y Espinaca', 'Plátano (1 unidad), espinaca (1 taza), leche vegetal (200ml)', 'Colocar un plátano, una taza de espinaca fresca y 200 ml de leche vegetal en una licuadora. Licuar hasta que esté suave y bien mezclado.', 5, 150, 'imagen6.jpg'),
+       ('Batido de Plátano y Espinaca', 'Plátano (1 unidad), espinaca (1 taza), leche vegetal (200ml)',
+        'Colocar un plátano, una taza de espinaca fresca y 200 ml de leche vegetal en una licuadora. Licuar hasta que esté suave y bien mezclado.',
+        5, 150, 'images/plato_vacio.jpg'),
 
-        ('Chía Pudding', 'Chía (2 cucharadas), leche de almendras (150ml), miel (1 cucharadita)', 'Mezclar dos cucharadas de chía con 150 ml de leche de almendras y una cucharadita de miel. Refrigerar por varias horas hasta que la mezcla adquiera una consistencia gelatinosa.', 10, 170, 'imagen7.jpg'),
+       ('Chía Pudding', 'Chía (2 cucharadas), leche de almendras (150ml), miel (1 cucharadita)',
+        'Mezclar dos cucharadas de chía con 150 ml de leche de almendras y una cucharadita de miel. Refrigerar por varias horas hasta que la mezcla adquiera una consistencia gelatinosa.',
+        10, 170, 'images/plato_vacio.jpg'),
 
-        ('Tostadas Francesas', 'Pan (2 rebanadas), huevos (1 unidad), leche (50ml), canela (1 pizca)', 'Batir un huevo con 50 ml de leche y una pizca de canela. Sumergir las rebanadas de pan en la mezcla y freír en una sartén caliente hasta que estén doradas.', 10, 250, 'imagen8.jpg'),
+       ('Tostadas Francesas', 'Pan (2 rebanadas), huevos (1 unidad), leche (50ml), canela (1 pizca)',
+        'Batir un huevo con 50 ml de leche y una pizca de canela. Sumergir las rebanadas de pan en la mezcla y freír en una sartén caliente hasta que estén doradas.',
+        10, 250, 'images/plato_vacio.jpg'),
 
-        ('Yogur con Frutas y Miel', 'Yogur (200g), frutas (100g), miel (1 cucharada)', 'Mezclar 200 gramos de yogur con 100 gramos de frutas picadas. Añadir una cucharada de miel y mezclar nuevamente.', 5, 180, 'imagen9.jpg'),
+       ('Yogur con Frutas y Miel', 'Yogur (200g), frutas (100g), miel (1 cucharada)',
+        'Mezclar 200 gramos de yogur con 100 gramos de frutas picadas. Añadir una cucharada de miel y mezclar nuevamente.',
+        5, 180, 'images/plato_vacio.jpg'),
 
-        ('Huevos Revueltos', 'Huevos (2 unidades), mantequilla (10g), sal (al gusto)', 'Batir dos huevos y añadir sal al gusto. Derretir 10 gramos de mantequilla en una sartén y cocinar los huevos hasta que estén revueltos y cocidos.', 5, 200, 'imagen10.jpg'),
+       ('Huevos Revueltos', 'Huevos (2 unidades), mantequilla (10g), sal (al gusto)',
+        'Batir dos huevos y añadir sal al gusto. Derretir 10 gramos de mantequilla en una sartén y cocinar los huevos hasta que estén revueltos y cocidos.',
+        5, 200, 'images/plato_vacio.jpg'),
 
-        ('Quesadilla de Espinaca', 'Tortilla (1 unidad), espinaca (1/2 taza), queso (50g)', 'Colocar media taza de espinaca y 50 gramos de queso rallado en el centro de la tortilla. Calentar en una sartén hasta que el queso se derrita.', 10, 250, 'imagen11.jpg'),
+       ('Quesadilla de Espinaca', 'Tortilla (1 unidad), espinaca (1/2 taza), queso (50g)',
+        'Colocar media taza de espinaca y 50 gramos de queso rallado en el centro de la tortilla. Calentar en una sartén hasta que el queso se derrita.',
+        10, 250, 'images/plato_vacio.jpg'),
 
-        ('Tortilla Española', 'Papas (200g), cebolla (50g), huevos (2 unidades)', 'Freír 200 gramos de papas peladas y cortadas en rodajas junto con 50 gramos de cebolla picada. Batir los huevos y mezclar con las papas y cebolla, luego cocinar en una sartén.', 15, 300, 'imagen12.jpg'),
+       ('Tortilla Española', 'Papas (200g), cebolla (50g), huevos (2 unidades)',
+        'Freír 200 gramos de papas peladas y cortadas en rodajas junto con 50 gramos de cebolla picada. Batir los huevos y mezclar con las papas y cebolla, luego cocinar en una sartén.',
+        15, 300, 'images/plato_vacio.jpg'),
 
-        ('Pancakes con Miel', 'Harina (100g), leche (100ml), huevos (1 unidad), miel (1 cucharada)', 'Mezclar 100 gramos de harina, 100 ml de leche y un huevo. Cocinar en una sartén hasta que se doren por ambos lados. Servir con miel.', 10, 280, 'imagen13.jpg'),
+       ('Pancakes con Miel', 'Harina (100g), leche (100ml), huevos (1 unidad), miel (1 cucharada)',
+        'Mezclar 100 gramos de harina, 100 ml de leche y un huevo. Cocinar en una sartén hasta que se doren por ambos lados. Servir con miel.',
+        10, 280, 'images/plato_vacio.jpg'),
 
-        ('Muffin de Arándano', 'Harina (100g), arándanos (50g), azúcar (50g)', 'Mezclar 100 gramos de harina con 50 gramos de arándanos y 50 gramos de azúcar. Hornear en moldes de muffins a 180°C durante 20 minutos.', 20, 220, 'imagen14.jpg'),
+       ('Muffin de Arándano', 'Harina (100g), arándanos (50g), azúcar (50g)',
+        'Mezclar 100 gramos de harina con 50 gramos de arándanos y 50 gramos de azúcar. Hornear en moldes de muffins a 180°C durante 20 minutos.',
+        20, 220, 'images/plato_vacio.jpg'),
 
-        ('Huevos Benedictinos', 'Huevos (2 unidades), panecillos (1 unidad), jamón (50g), salsa holandesa (30ml)', 'Preparar los huevos pochados y colocarlos sobre un panecillo tostado. Añadir 50 gramos de jamón y cubrir con salsa holandesa.', 15, 350, 'imagen15.jpg'),
+       ('Huevos Benedictinos', 'Huevos (2 unidades), panecillos (1 unidad), jamón (50g), salsa holandesa (30ml)',
+        'Preparar los huevos pochados y colocarlos sobre un panecillo tostado. Añadir 50 gramos de jamón y cubrir con salsa holandesa.',
+        15, 350, 'images/plato_vacio.jpg'),
 
-        ('Bacon y Huevos', 'Bacon (50g), huevos (2 unidades), sal (al gusto)', 'Freír 50 gramos de bacon hasta que esté crujiente. Luego, en la misma sartén, cocinar los huevos al gusto con una pizca de sal.', 10, 400, 'imagen16.jpg'),
+       ('Bacon y Huevos', 'Bacon (50g), huevos (2 unidades), sal (al gusto)',
+        'Freír 50 gramos de bacon hasta que esté crujiente. Luego, en la misma sartén, cocinar los huevos al gusto con una pizca de sal.',
+        10, 400, 'images/plato_vacio.jpg'),
 
-        ('Tostada de Aguacate con Huevo', 'Aguacate (1/2 unidad), huevo (1 unidad), pan (1 rebanada)', 'Tostar una rebanada de pan. Machacar medio aguacate y cubrir la tostada. Cocinar un huevo y colocarlo sobre el aguacate.', 10, 300, 'imagen17.jpg'),
+       ('Tostada de Aguacate con Huevo', 'Aguacate (1/2 unidad), huevo (1 unidad), pan (1 rebanada)',
+        'Tostar una rebanada de pan. Machacar medio aguacate y cubrir la tostada. Cocinar un huevo y colocarlo sobre el aguacate.',
+        10, 300, 'images/plato_vacio.jpg'),
 
-        ('Batido de Proteína', 'Proteína en polvo (1 cucharada), leche vegetal (200ml)', 'Mezclar una cucharada de proteína en polvo con 200 ml de leche vegetal en una licuadora hasta obtener un batido homogéneo.', 5, 200, 'imagen18.jpg'),
+       ('Batido de Proteína', 'Proteína en polvo (1 cucharada), leche vegetal (200ml)',
+        'Mezclar una cucharada de proteína en polvo con 200 ml de leche vegetal en una licuadora hasta obtener un batido homogéneo.',
+        5, 200, 'images/plato_vacio.jpg'),
 
-        ('Sándwich de Huevo y Tocino', 'Huevo (1 unidad), tocino (50g), pan (2 rebanadas)', 'Freír el tocino y cocinar el huevo al gusto. Armar el sándwich con el tocino, el huevo y las rebanadas de pan.', 10, 350, 'imagen19.jpg'),
+       ('Sándwich de Huevo y Tocino', 'Huevo (1 unidad), tocino (50g), pan (2 rebanadas)',
+        'Freír el tocino y cocinar el huevo al gusto. Armar el sándwich con el tocino, el huevo y las rebanadas de pan.',
+        10, 350, 'images/plato_vacio.jpg'),
 
-        ('Crepas con Jamón y Queso', 'Crepas (2 unidades), jamón (50g), queso (50g)', 'Rellenar las crepas con 50 gramos de jamón y 50 gramos de queso. Calentar en una sartén hasta que el queso se derrita.', 15, 400, 'imagen20.jpg'),
+       ('Crepas con Jamón y Queso', 'Crepas (2 unidades), jamón (50g), queso (50g)',
+        'Rellenar las crepas con 50 gramos de jamón y 50 gramos de queso. Calentar en una sartén hasta que el queso se derrita.',
+        15, 400, 'images/plato_vacio.jpg'),
 
-        ('Omelette de Verduras', 'Huevos (2 unidades), espinacas (1/2 taza), pimientos (50g)', 'Batir los huevos y añadir media taza de espinacas frescas y 50 gramos de pimientos picados. Cocinar en una sartén hasta que el omelette esté cocido por completo.', 10, 250, 'imagen21.jpg'),
-        ('Ensalada de Garbanzos', 'Garbanzos cocidos (200g), tomate (1 unidad), pepino (1 unidad), cebolla morada (1/2 unidad), aceite de oliva (15ml), limón (1 unidad), sal y pimienta al gusto', 'Mezclar los garbanzos cocidos con el tomate picado, pepino en rodajas, cebolla morada en tiras finas, aderezar con aceite de oliva, jugo de limón, sal y pimienta al gusto.', 10, 180, 'imagen22.jpg'),
-        ('Bowl de Quinoa y Verduras', 'Quinoa (100g), brócoli (100g), zanahoria (1 unidad), aguacate (1 unidad), aceite de oliva (10ml), sal y pimienta al gusto', 'Cocer la quinoa, luego mezclar con el brócoli al vapor, zanahoria rallada y aguacate picado. Aderezar con aceite de oliva, sal y pimienta.', 15, 300, 'imagen23.jpg'),
-        ('Tacos de Lentejas', 'Lentejas cocidas (150g), tortillas (2 unidades), cebolla morada (1/4 unidad), pimientos (1 unidad), especias (comino, pimentón, cilantro)', 'Cocinar las lentejas con cebolla y pimientos picados, añadir especias al gusto, luego armar los tacos con las tortillas.', 20, 350, 'imagen24.jpg'),
-        ('Sopa de Verduras', 'Verduras variadas (zanahorias, papas, apio, cebolla, 300g en total), caldo de verduras (500ml), sal y pimienta al gusto', 'Cocer las verduras con el caldo de verduras hasta que estén tiernas, aderezar con sal y pimienta al gusto.', 30, 200, 'imagen25.jpg'),
-        ('Hamburguesa de Frijoles Negros', 'Frijoles negros cocidos (200g), pan rallado (30g), especias (comino, ajo en polvo, cilantro), pan de hamburguesa (1 unidad), lechuga, tomate', 'Formar las hamburguesas con los frijoles negros triturados y el pan rallado, añadir especias al gusto. Cocinar y servir en pan de hamburguesa con lechuga y tomate.', 20, 250, 'imagen26.jpg'),
-        ('Curry de Garbanzos', 'Garbanzos cocidos (200g), leche de coco (200ml), pasta de curry (30g), cebolla (1 unidad), espinacas (100g)', 'Cocer los garbanzos con la cebolla picada, añadir leche de coco y pasta de curry. Cocinar hasta que espese, luego añadir las espinacas y mezclar.', 20, 350, 'imagen27.jpg'),
-        ('Stir-Fry de Tofu', 'Tofu firme (200g), brócoli (100g), zanahorias (1 unidad), salsa de soya (30ml), aceite de sésamo (10ml)', 'Saltear el tofu en trozos con las verduras, añadir salsa de soya y aceite de sésamo al gusto, cocinar hasta que todo esté dorado y bien mezclado.', 15, 280, 'imagen28.jpg'),
-        ('Ensalada de Quinoa y Feta', 'Quinoa (100g), queso feta (50g), pepino (1 unidad), tomate (1 unidad), aceite de oliva (15ml), limón (1 unidad)', 'Cocer la quinoa y mezclar con el pepino y tomate picados, agregar queso feta desmenuzado, aderezar con aceite de oliva y jugo de limón.', 10, 220, 'imagen29.jpg'),
-        ('Pasta al Pesto', 'Pasta (100g), albahaca fresca (20g), piñones (20g), ajo (1 diente), queso parmesano (30g), aceite de oliva (30ml)', 'Cocer la pasta y mezclar con pesto preparado a base de albahaca, piñones, ajo y aceite de oliva. Añadir queso parmesano rallado.', 15, 400, 'imagen30.jpg'),
-        ('Wrap de Verduras y Hummus', 'Tortilla integral (1 unidad), hummus (50g), zanahoria (1 unidad), pepino (1 unidad), lechuga (2 hojas)', 'Rellenar la tortilla con hummus, zanahoria rallada, pepino en tiras y hojas de lechuga. Enrollar el wrap.', 10, 250, 'imagen31.jpg'),
-        ('Pizza Vegetariana', 'Masa de pizza (200g), tomate (1 unidad), queso mozzarella (100g), vegetales variados (pimientos, cebolla, champiñones, 150g)', 'Preparar la masa de pizza, cubrir con tomate picado, queso mozzarella y vegetales. Hornear hasta dorar.', 20, 500, 'imagen32.jpg'),
-        ('Tortilla de Espinacas', 'Espinacas (150g), huevos (3 unidades), queso rallado (30g)', 'Cocinar las espinacas en una sartén y añadir los huevos batidos, luego espolvorear con queso rallado y cocinar hasta que cuaje.', 10, 220, 'imagen33.jpg'),
-        ('Risotto de Champiñones', 'Arroz arborio (100g), champiñones (150g), caldo de verduras (500ml), cebolla (1 unidad), queso parmesano (30g)', 'Sofreír la cebolla, añadir el arroz y poco a poco incorporar el caldo caliente. Cuando el arroz esté cocido, añadir los champiñones y queso parmesano rallado.', 20, 300, 'imagen34.jpg'),
-        ('Lasaña Vegetariana', 'Pasta para lasaña (200g), tomate (2 unidades), espinacas (200g), queso mozzarella (100g), queso ricotta (100g)', 'Preparar la lasaña alternando capas de pasta, tomate triturado, espinacas y quesos. Hornear hasta dorar.', 40, 500, 'imagen35.jpg'),
-        ('Pollo Asado con Verduras', 'Pollo (500g), papas (300g), zanahorias (200g), cebolla (1 unidad), aceite de oliva (20ml), hierbas aromáticas (romero, tomillo)', 'Asar el pollo con las papas, zanahorias y cebolla, aderezado con aceite de oliva y hierbas aromáticas, hasta que todo esté bien dorado.', 60, 600, 'imagen36.jpg'),
-        ('Tacos de Pollo', 'Pollo (200g), tortillas (2 unidades), especias (pimentón, comino, ajo en polvo)', 'Cocinar el pollo con las especias y desmenuzar. Rellenar las tortillas con el pollo y acompañar con los ingredientes deseados.', 15, 350, 'imagen37.jpg'),
-        ('Pasta con Salsa Boloñesa', 'Pasta (100g), carne molida (150g), tomate (2 unidades), cebolla (1 unidad), ajo (1 diente)', 'Cocer la pasta y preparar la salsa boloñesa con carne molida, tomate triturado, cebolla y ajo picado. Mezclar con la pasta.', 30, 450, 'imagen38.jpg'),
-        ('Ensalada César con Pollo', 'Lechuga romana (100g), pollo (150g), queso parmesano (30g), aderezo César (30ml)', 'Mezclar la lechuga con el pollo cocido y cortado en tiras, añadir queso parmesano rallado y aderezar con salsa César.', 15, 350, 'imagen39.jpg'),
-        ('Arroz Frito con Cerdo', 'Arroz (150g), cerdo (200g), verduras variadas (zanahoria, cebollín, pimientos, 150g en total), salsa de soya (20ml)', 'Freír el arroz con cerdo en trozos y verduras, añadir salsa de soya al gusto. Saltear hasta que todo esté bien mezclado.', 20, 450, 'imagen40.jpg'),
-        ('Sándwich de Pavo', 'Pavo (100g), pan integral (2 rebanadas), lechuga (2 hojas), tomate (1 unidad)', 'Armar el sándwich con el pavo, lechuga y tomate en el pan integral.', 5, 250, 'imagen41.jpg'),
-        ('Bowl de Pollo Teriyaki', 'Pollo (200g), arroz (100g), salsa teriyaki (30ml), brócoli (100g)', 'Cocer el pollo y servir sobre arroz cocido, añadir salsa teriyaki y brócoli al vapor como acompañante.', 15, 400, 'imagen42.jpg'),
-        ('Batido de Frutas', 'Frutas (200g), jugo natural (200ml)', 'Este batido es perfecto para un desayuno rápido o como snack. Se licúan las frutas de tu elección, como fresas, plátano y mango, con jugo natural de naranja o limón. Puedes añadir un poco de miel si prefieres un toque más dulce. Es una opción fresca y saludable.', 5, 150, 'imagen43.jpg'),
-        ('Galletas de Avena', 'Avena (100g), azúcar (50g), mantequilla (100g), pasas (50g)', 'Estas galletas son ideales para un snack lleno de energía. Se mezclan la avena, el azúcar, la mantequilla derretida y las pasas, y se hornean hasta que estén doradas. Son perfectas para acompañar con un té o café.', 15, 180, 'imagen44.jpg'),
-        ('Hummus con Verduras', 'Hummus (150g), zanahoria (50g), pepino (50g), apio (50g)', 'Este plato es ideal como entrada o para picar entre horas. El hummus se sirve junto a verduras frescas como zanahoria, pepino y apio, que puedes cortar en tiras o rodajas. Es una opción nutritiva y sabrosa.', 5, 100, 'imagen45.jpg'),
-        ('Frutos Secos Mixtos', 'Almendras (50g), nueces (50g), pistachos (50g)', 'Una mezcla perfecta de frutos secos para disfrutar en cualquier momento del día. Solo debes mezclar almendras, nueces y pistachos en una taza o recipiente. Son ideales como snack energético y saludable.', 5, 250, 'imagen46.jpg'),
-        ('Barra de Granola', 'Avena (100g), miel (50g), frutos secos (50g), semillas (30g)', 'Para preparar estas barras de granola, mezclar la avena, la miel, los frutos secos y las semillas. Hornear la mezcla hasta que quede crujiente y dorada. Es un excelente snack para llevar o disfrutar en el desayuno.', 20, 200, 'imagen47.jpg'),
-        ('Palomitas de Maíz', 'Maíz (50g), aceite (10ml)', 'Prepara palomitas frescas en casa con solo dos ingredientes. Calienta el aceite en una sartén y agrega los granos de maíz hasta que exploten. Es un snack ligero y bajo en calorías.', 10, 100, 'imagen48.jpg'),
-        ('Tortilla de Papas', 'Papas (200g), huevos (2), cebolla (50g)', 'Una receta clásica y deliciosa. Se fríen las papas con cebolla en aceite caliente, se mezclan con los huevos batidos y se cocina todo junto hasta que esté bien cocido. Ideal para una comida rápida y sustanciosa.', 15, 300, 'imagen49.jpg'),
-        ('Sopa de Tomate', 'Tomates (300g), caldo (200ml), cebolla (50g)', 'Esta sopa es reconfortante y fácil de preparar. Se cocinan los tomates con cebolla y caldo, luego se licúa todo hasta obtener una textura suave. Es ideal para un día frío o como entrada.', 20, 200, 'imagen50.jpg'),
-        ('Yogur con Granola', 'Yogur (150g), granola (50g)', 'Este es un desayuno rápido y saludable. Simplemente mezcla el yogur con la granola y disfruta. Puedes añadir frutas frescas para darle un toque extra de sabor y frescura.', 5, 180, 'imagen51.jpg'),
-        ('Tostadas con Mantequilla de Maní', 'Pan (2 rebanadas), mantequilla de maní (30g)', 'Tostar el pan hasta que esté crujiente y untar la mantequilla de maní por encima. Es un desayuno lleno de energía y grasas saludables.', 5, 220, 'imagen52.jpg'),
-        ('Frutas con Chocolate', 'Frutas (200g), chocolate oscuro (50g)', 'Para este delicioso postre, selecciona las frutas de tu preferencia, como fresas o plátano, y sumérgelas en chocolate oscuro derretido. Un bocado dulce y saludable para consentirse.', 10, 180, 'imagen53.jpg'),
-        ('Mini Quiches de Espinaca', 'Espinaca (100g), huevos (2), queso (50g), masa (100g)', 'Prepara estos mini quiches como un aperitivo o entrada. Mezcla la espinaca cocida, los huevos, el queso y coloca la mezcla sobre la masa, luego hornea hasta que esté dorado. Es una opción deliciosa y nutritiva.', 25, 280, 'imagen54.jpg'),
-        ('Cheesecake de Frutos Rojos', 'Queso crema (250g), galletas (100g), frutos rojos (100g)', 'Este cheesecake es ideal para ocasiones especiales. Se prepara una base con galletas trituradas, luego se cubre con una mezcla de queso crema y frutos rojos frescos. Un postre cremoso y delicioso.', 60, 450, 'imagen55.jpg'),
-        ('Smoothie de Fresa', 'Fresas (200g), leche (200ml), miel (10g)', 'Para este smoothie, solo debes licuar las fresas con la leche y un toque de miel. Es refrescante y saludable, perfecto para empezar el día o como merienda.', 5, 150, 'imagen56.jpg'),
-        ('Pudding de Chía', 'Chía (30g), leche de almendras (200ml), vainilla (5ml)', 'Mezcla las semillas de chía con leche de almendras y unas gotas de vainilla. Deja reposar la mezcla en la nevera hasta que se forme una consistencia de pudding. Un snack delicioso y nutritivo.', 10, 180, 'imagen57.jpg'),
-        ('Galletas de Chocolate Chip', 'Harina (150g), chocolate (100g), mantequilla (100g)', 'Estas galletas son perfectas para acompañar con un café o té. Mezcla los ingredientes y hornea hasta que estén doradas y crujientes. Un clásico que nunca falla.', 20, 220, 'imagen58.jpg'),
-        ('Sándwich de Jamón y Queso', 'Jamón (100g), queso (50g), pan (2 rebanadas)', 'Un sándwich sencillo y delicioso. Coloca el jamón y el queso entre dos rebanadas de pan, tuéstalo hasta que el queso se derrita y disfruta.', 10, 300, 'imagen59.jpg'),
-        ('Batido de Proteína con Plátano', 'Proteína en polvo (30g), plátano (1), leche vegetal (200ml)', 'Este batido es ideal para después del ejercicio. Se licúan la proteína en polvo, el plátano y la leche vegetal, formando una bebida energética y nutritiva.', 5, 250, 'imagen60.jpg'),
-        ('Nachos con Queso', 'Tortilla de maíz (100g), queso (100g)', 'Este snack es perfecto para ver una película. Calienta las tortillas de maíz y cúbrelas con queso fundido. Un aperitivo crujiente y sabroso.', 10, 350, 'imagen61.jpg'),
-        ('Tortas de Arroz con Mantequilla', 'Tortas de arroz (2), mantequilla (20g)', 'Simple y delicioso, unte mantequilla sobre las tortas de arroz. Es un snack ligero que puedes disfrutar en cualquier momento.', 5, 100, 'imagen62.jpg'),
-        ('Galletas de Avena con Pasas', 'Avena (100g), pasas (50g), azúcar (50g)', 'Estas galletas son una versión saludable y deliciosa de las tradicionales galletas. Se mezclan la avena, las pasas y el azúcar, y luego se hornean. Son perfectas para un snack lleno de energía.', 15, 200, 'imagen63.jpg'),
-         ('Smoothie de Mango', 'Mango (200g), leche (250ml), miel (1 cucharada)', 'Pelar el mango, cortarlo en trozos y colocarlo en una licuadora junto con la leche y la miel. Licuar todo hasta obtener una mezcla suave y homogénea.', 5, 150, 'imagen64.jpg'),
-            ('Ensalada de Espinaca', 'Espinaca (100g), tomate (1 mediano), pepino (1 pequeño), aderezo (2 cucharadas)', 'Lavar bien las hojas de espinaca, cortar el tomate y el pepino en rodajas. Mezclar todos los ingredientes en un tazón y añadir el aderezo al gusto.', 10, 150, 'imagen65.jpg'),
-            ('Sopa de Lentejas', 'Lentejas (200g), zanahorias (2 medianas), cebolla (1 mediana), ajo (2 dientes), caldo vegetal (1 litro)', 'Pelar y picar las zanahorias y la cebolla. Sofreír la cebolla y el ajo en un poco de aceite hasta que estén dorados. Agregar las lentejas y el caldo vegetal, cocinar por 30 minutos o hasta que las lentejas estén tiernas.', 30, 250, 'imagen66.jpg'),
-            ('Pasta con Salsa de Tomate', 'Pasta (200g), tomate (4 medianos), ajo (2 dientes), albahaca (1 ramita)', 'Cocer la pasta según las indicaciones del paquete. Mientras tanto, sofreír los ajos picados en aceite hasta dorarse. Añadir los tomates picados y cocinar hasta que suelten su jugo. Mezclar la pasta con la salsa de tomate y añadir albahaca fresca al gusto.', 20, 350, 'imagen67.jpg'),
-            ('Buddha Bowl', 'Quinoa (100g), garbanzos (100g), espinaca (50g), aguacate (1/2), vegetales (pimientos, zanahoria, pepino)', 'Cocer la quinoa según las instrucciones. Asar o saltear los garbanzos con especias. Colocar todos los ingredientes en un tazón, agregando aguacate y vegetales frescos. Aderezar con salsa al gusto.', 15, 400, 'buddha_bowl.jpg'),
-            ('Verduras Asadas', 'Zanahoria (2 medianas), brócoli (200g), pimientos (2 medianos), aceite de oliva (2 cucharadas)', 'Cortar las zanahorias, brócoli y pimientos en trozos. Colocar las verduras en una bandeja de horno, añadir el aceite de oliva y sazonar con sal y pimienta. Asar en el horno a 180°C por 30 minutos.', 30, 180, 'verduras_asadas.jpg'),
-            ('Curry de Verduras', 'Zanahoria (2 medianas), pimientos (2), papa (1 grande), leche de coco (250ml), curry en polvo (1 cucharadita)', 'Cortar las verduras en trozos. Sofreír las verduras en una sartén con un poco de aceite hasta dorar. Añadir la leche de coco y el curry en polvo, cocer todo a fuego lento hasta que las verduras estén tiernas.', 40, 350, 'curry_verduras.jpg'),
-            ('Tofu al Horno con Especias', 'Tofu (200g), pimentón (1 cucharadita), ajo en polvo (1/2 cucharadita), orégano (1/2 cucharadita)', 'Cortar el tofu en cubos. Marinar el tofu con pimentón, ajo en polvo y orégano. Colocar los cubos en una bandeja para horno y hornear a 200°C durante 25 minutos, hasta que estén dorados.', 25, 400, 'tofu_horno.jpg'),
-            ('Pasta con Salsa Alfredo', 'Pasta (200g), crema (200ml), queso parmesano (50g), ajo (2 dientes)', 'Cocer la pasta según las indicaciones. Mientras tanto, sofreír el ajo en crema, agregar el queso parmesano y cocinar a fuego bajo hasta que espese. Mezclar con la pasta cocida.', 20, 500, 'pasta_alfredo.jpg'),
-            ('Ensalada Caprese', 'Tomate (2 medianos), mozzarella (100g), albahaca (1 ramita), aceite de oliva (2 cucharadas)', 'Cortar el tomate y la mozzarella en rodajas. Alternar las rodajas de tomate y mozzarella en un plato, agregar hojas de albahaca y rociar con aceite de oliva.', 10, 300, 'ensalada_caprese.jpg'),
-            ('Tortilla de Papas', 'Papas (500g), huevos (4), cebolla (1 mediana), sal (al gusto)', 'Pelar y cortar las papas en rodajas finas. Freír las papas y la cebolla en una sartén con aceite hasta dorarse. Batir los huevos con sal y mezclar con las papas, luego cocinar a fuego bajo hasta cuajar.', 30, 400, 'tortilla_papas.jpg'),
-            ('Pizza Margherita', 'Masa (1 base), tomate (2 medianos), mozzarella (150g), albahaca (1 ramita)', 'Extender la masa de pizza y cubrir con rodajas de tomate y mozzarella. Hornear a 200°C por 15 minutos. Agregar hojas de albahaca fresca antes de servir.', 15, 600, 'pizza_margherita.jpg'),
-            ('Risotto de Espárragos', 'Arroz (200g), espárragos (100g), cebolla (1 mediana), caldo (500ml), queso parmesano (50g)', 'Cocer el arroz en caldo caliente, añadir la cebolla picada y los espárragos troceados. Cocinar a fuego lento, removiendo frecuentemente. Al final, añadir queso parmesano rallado.', 35, 500, 'risotto_esparragos.jpg'),
-            ('Tacos de Queso', 'Tortillas (4), queso (100g), lechuga (50g), salsa (al gusto)', 'Rellenar las tortillas con queso, lechuga y salsa. Servir caliente.', 10, 350, 'tacos_queso.jpg'),
-            ('Bowl de Quinoa y Espinaca', 'Quinoa (100g), espinaca (50g), zanahoria (1 mediana), tomate (1 pequeño)', 'Cocer la quinoa según las instrucciones. Colocar la quinoa cocida en un tazón junto con espinaca fresca, zanahoria rallada y rodajas de tomate. Mezclar todo y servir.', 15, 400, 'bowl_quinoa.jpg'),
-            ('Salmón a la Parrilla', 'Salmón (200g), limón (1/2), ajo (2 dientes), aceite de oliva (1 cucharada)', 'Marinar el salmón con ajo picado, limón y aceite de oliva. Cocinar en la parrilla por 20 minutos o hasta que esté dorado y bien cocido.', 20, 600, 'salmon_parrilla.jpg'),
-            ('Pollo al Limón', 'Pollo (300g), limón (1), ajo (2 dientes), hierbas (al gusto)', 'Marinar el pollo con ajo, jugo de limón y hierbas. Cocinar el pollo a la parrilla o al horno hasta que esté dorado y bien cocido.', 30, 500, 'pollo_limon.jpg'),
-            ('Carne Asada', 'Carne (300g), sal (al gusto), pimienta (al gusto)', 'Sazonar la carne con sal y pimienta. Asar la carne a fuego medio por 25 minutos o hasta que esté cocida al gusto.', 25, 700, 'carne_asada.jpg'),
-               ('Tacos de Carne', 'Tortillas, carne, lechuga, salsa', 'Rellenar las tortillas con carne y otros ingredientes', 15, 600, 'tacos_carne.jpg');
-
+       ('Omelette de Verduras', 'Huevos (2 unidades), espinacas (1/2 taza), pimientos (50g)',
+        'Batir los huevos y añadir media taza de espinacas frescas y 50 gramos de pimientos picados. Cocinar en una sartén hasta que el omelette esté cocido por completo.',
+        10, 250, 'images/plato_vacio.jpg'),
+       ('Ensalada de Garbanzos',
+        'Garbanzos cocidos (200g), tomate (1 unidad), pepino (1 unidad), cebolla morada (1/2 unidad), aceite de oliva (15ml), limón (1 unidad), sal y pimienta al gusto',
+        'Mezclar los garbanzos cocidos con el tomate picado, pepino en rodajas, cebolla morada en tiras finas, aderezar con aceite de oliva, jugo de limón, sal y pimienta al gusto.',
+        10, 180, 'images/plato_vacio.jpg'),
+       ('Bowl de Quinoa y Verduras',
+        'Quinoa (100g), brócoli (100g), zanahoria (1 unidad), aguacate (1 unidad), aceite de oliva (10ml), sal y pimienta al gusto',
+        'Cocer la quinoa, luego mezclar con el brócoli al vapor, zanahoria rallada y aguacate picado. Aderezar con aceite de oliva, sal y pimienta.',
+        15, 300, 'images/plato_vacio.jpg'),
+       ('Tacos de Lentejas',
+        'Lentejas cocidas (150g), tortillas (2 unidades), cebolla morada (1/4 unidad), pimientos (1 unidad), especias (comino, pimentón, cilantro)',
+        'Cocinar las lentejas con cebolla y pimientos picados, añadir especias al gusto, luego armar los tacos con las tortillas.',
+        20, 350, 'images/plato_vacio.jpg'),
+       ('Sopa de Verduras',
+        'Verduras variadas (zanahorias, papas, apio, cebolla, 300g en total), caldo de verduras (500ml), sal y pimienta al gusto',
+        'Cocer las verduras con el caldo de verduras hasta que estén tiernas, aderezar con sal y pimienta al gusto.',
+        30, 200, 'images/plato_vacio.jpg'),
+       ('Hamburguesa de Frijoles Negros',
+        'Frijoles negros cocidos (200g), pan rallado (30g), especias (comino, ajo en polvo, cilantro), pan de hamburguesa (1 unidad), lechuga, tomate',
+        'Formar las hamburguesas con los frijoles negros triturados y el pan rallado, añadir especias al gusto. Cocinar y servir en pan de hamburguesa con lechuga y tomate.',
+        20, 250, 'images/plato_vacio.jpg'),
+       ('Curry de Garbanzos',
+        'Garbanzos cocidos (200g), leche de coco (200ml), pasta de curry (30g), cebolla (1 unidad), espinacas (100g)',
+        'Cocer los garbanzos con la cebolla picada, añadir leche de coco y pasta de curry. Cocinar hasta que espese, luego añadir las espinacas y mezclar.',
+        20, 350, 'images/plato_vacio.jpg'),
+       ('Stir-Fry de Tofu',
+        'Tofu firme (200g), brócoli (100g), zanahorias (1 unidad), salsa de soya (30ml), aceite de sésamo (10ml)',
+        'Saltear el tofu en trozos con las verduras, añadir salsa de soya y aceite de sésamo al gusto, cocinar hasta que todo esté dorado y bien mezclado.',
+        15, 280, 'images/plato_vacio.jpg'),
+       ('Ensalada de Quinoa y Feta',
+        'Quinoa (100g), queso feta (50g), pepino (1 unidad), tomate (1 unidad), aceite de oliva (15ml), limón (1 unidad)',
+        'Cocer la quinoa y mezclar con el pepino y tomate picados, agregar queso feta desmenuzado, aderezar con aceite de oliva y jugo de limón.',
+        10, 220, 'images/plato_vacio.jpg'),
+       ('Pasta al Pesto',
+        'Pasta (100g), albahaca fresca (20g), piñones (20g), ajo (1 diente), queso parmesano (30g), aceite de oliva (30ml)',
+        'Cocer la pasta y mezclar con pesto preparado a base de albahaca, piñones, ajo y aceite de oliva. Añadir queso parmesano rallado.',
+        15, 400, 'images/plato_vacio.jpg'),
+       ('Wrap de Verduras y Hummus',
+        'Tortilla integral (1 unidad), hummus (50g), zanahoria (1 unidad), pepino (1 unidad), lechuga (2 hojas)',
+        'Rellenar la tortilla con hummus, zanahoria rallada, pepino en tiras y hojas de lechuga. Enrollar el wrap.', 10,
+        250, 'images/plato_vacio.jpg'),
+       ('Pizza Vegetariana',
+        'Masa de pizza (200g), tomate (1 unidad), queso mozzarella (100g), vegetales variados (pimientos, cebolla, champiñones, 150g)',
+        'Preparar la masa de pizza, cubrir con tomate picado, queso mozzarella y vegetales. Hornear hasta dorar.', 20,
+        500, 'images/plato_vacio.jpg'),
+       ('Tortilla de Espinacas', 'Espinacas (150g), huevos (3 unidades), queso rallado (30g)',
+        'Cocinar las espinacas en una sartén y añadir los huevos batidos, luego espolvorear con queso rallado y cocinar hasta que cuaje.',
+        10, 220, 'images/plato_vacio.jpg'),
+       ('Risotto de Champiñones',
+        'Arroz arborio (100g), champiñones (150g), caldo de verduras (500ml), cebolla (1 unidad), queso parmesano (30g)',
+        'Sofreír la cebolla, añadir el arroz y poco a poco incorporar el caldo caliente. Cuando el arroz esté cocido, añadir los champiñones y queso parmesano rallado.',
+        20, 300, 'images/plato_vacio.jpg'),
+       ('Lasaña Vegetariana',
+        'Pasta para lasaña (200g), tomate (2 unidades), espinacas (200g), queso mozzarella (100g), queso ricotta (100g)',
+        'Preparar la lasaña alternando capas de pasta, tomate triturado, espinacas y quesos. Hornear hasta dorar.', 40,
+        500, 'images/plato_vacio.jpg'),
+       ('Pollo Asado con Verduras',
+        'Pollo (500g), papas (300g), zanahorias (200g), cebolla (1 unidad), aceite de oliva (20ml), hierbas aromáticas (romero, tomillo)',
+        'Asar el pollo con las papas, zanahorias y cebolla, aderezado con aceite de oliva y hierbas aromáticas, hasta que todo esté bien dorado.',
+        60, 600, 'images/plato_vacio.jpg'),
+       ('Tacos de Pollo', 'Pollo (200g), tortillas (2 unidades), especias (pimentón, comino, ajo en polvo)',
+        'Cocinar el pollo con las especias y desmenuzar. Rellenar las tortillas con el pollo y acompañar con los ingredientes deseados.',
+        15, 350, 'images/plato_vacio.jpg'),
+       ('Pasta con Salsa Boloñesa',
+        'Pasta (100g), carne molida (150g), tomate (2 unidades), cebolla (1 unidad), ajo (1 diente)',
+        'Cocer la pasta y preparar la salsa boloñesa con carne molida, tomate triturado, cebolla y ajo picado. Mezclar con la pasta.',
+        30, 450, 'images/plato_vacio.jpg'),
+       ('Ensalada César con Pollo', 'Lechuga romana (100g), pollo (150g), queso parmesano (30g), aderezo César (30ml)',
+        'Mezclar la lechuga con el pollo cocido y cortado en tiras, añadir queso parmesano rallado y aderezar con salsa César.',
+        15, 350, 'images/plato_vacio.jpg'),
+       ('Arroz Frito con Cerdo',
+        'Arroz (150g), cerdo (200g), verduras variadas (zanahoria, cebollín, pimientos, 150g en total), salsa de soya (20ml)',
+        'Freír el arroz con cerdo en trozos y verduras, añadir salsa de soya al gusto. Saltear hasta que todo esté bien mezclado.',
+        20, 450, 'images/plato_vacio.jpg'),
+       ('Sándwich de Pavo', 'Pavo (100g), pan integral (2 rebanadas), lechuga (2 hojas), tomate (1 unidad)',
+        'Armar el sándwich con el pavo, lechuga y tomate en el pan integral.', 5, 250, 'images/plato_vacio.jpg'),
+       ('Bowl de Pollo Teriyaki', 'Pollo (200g), arroz (100g), salsa teriyaki (30ml), brócoli (100g)',
+        'Cocer el pollo y servir sobre arroz cocido, añadir salsa teriyaki y brócoli al vapor como acompañante.', 15,
+        400, 'images/plato_vacio.jpg'),
+       ('Batido de Frutas', 'Frutas (200g), jugo natural (200ml)',
+        'Este batido es perfecto para un desayuno rápido o como snack. Se licúan las frutas de tu elección, como fresas, plátano y mango, con jugo natural de naranja o limón. Puedes añadir un poco de miel si prefieres un toque más dulce. Es una opción fresca y saludable.',
+        5, 150, 'images/plato_vacio.jpg'),
+       ('Galletas de Avena', 'Avena (100g), azúcar (50g), mantequilla (100g), pasas (50g)',
+        'Estas galletas son ideales para un snack lleno de energía. Se mezclan la avena, el azúcar, la mantequilla derretida y las pasas, y se hornean hasta que estén doradas. Son perfectas para acompañar con un té o café.',
+        15, 180, 'images/plato_vacio.jpg'),
+       ('Hummus con Verduras', 'Hummus (150g), zanahoria (50g), pepino (50g), apio (50g)',
+        'Este plato es ideal como entrada o para picar entre horas. El hummus se sirve junto a verduras frescas como zanahoria, pepino y apio, que puedes cortar en tiras o rodajas. Es una opción nutritiva y sabrosa.',
+        5, 100, 'images/plato_vacio.jpg'),
+       ('Frutos Secos Mixtos', 'Almendras (50g), nueces (50g), pistachos (50g)',
+        'Una mezcla perfecta de frutos secos para disfrutar en cualquier momento del día. Solo debes mezclar almendras, nueces y pistachos en una taza o recipiente. Son ideales como snack energético y saludable.',
+        5, 250, 'images/plato_vacio.jpg'),
+       ('Barra de Granola', 'Avena (100g), miel (50g), frutos secos (50g), semillas (30g)',
+        'Para preparar estas barras de granola, mezclar la avena, la miel, los frutos secos y las semillas. Hornear la mezcla hasta que quede crujiente y dorada. Es un excelente snack para llevar o disfrutar en el desayuno.',
+        20, 200, 'images/plato_vacio.jpg'),
+       ('Palomitas de Maíz', 'Maíz (50g), aceite (10ml)',
+        'Prepara palomitas frescas en casa con solo dos ingredientes. Calienta el aceite en una sartén y agrega los granos de maíz hasta que exploten. Es un snack ligero y bajo en calorías.',
+        10, 100, 'images/plato_vacio.jpg'),
+       ('Tortilla de Papas', 'Papas (200g), huevos (2), cebolla (50g)',
+        'Una receta clásica y deliciosa. Se fríen las papas con cebolla en aceite caliente, se mezclan con los huevos batidos y se cocina todo junto hasta que esté bien cocido. Ideal para una comida rápida y sustanciosa.',
+        15, 300, 'images/plato_vacio.jpg'),
+       ('Sopa de Tomate', 'Tomates (300g), caldo (200ml), cebolla (50g)',
+        'Esta sopa es reconfortante y fácil de preparar. Se cocinan los tomates con cebolla y caldo, luego se licúa todo hasta obtener una textura suave. Es ideal para un día frío o como entrada.',
+        20, 200, 'images/plato_vacio.jpg'),
+       ('Yogur con Granola', 'Yogur (150g), granola (50g)',
+        'Este es un desayuno rápido y saludable. Simplemente mezcla el yogur con la granola y disfruta. Puedes añadir frutas frescas para darle un toque extra de sabor y frescura.',
+        5, 180, 'images/plato_vacio.jpg'),
+       ('Tostadas con Mantequilla de Maní', 'Pan (2 rebanadas), mantequilla de maní (30g)',
+        'Tostar el pan hasta que esté crujiente y untar la mantequilla de maní por encima. Es un desayuno lleno de energía y grasas saludables.',
+        5, 220, 'images/plato_vacio.jpg'),
+       ('Frutas con Chocolate', 'Frutas (200g), chocolate oscuro (50g)',
+        'Para este delicioso postre, selecciona las frutas de tu preferencia, como fresas o plátano, y sumérgelas en chocolate oscuro derretido. Un bocado dulce y saludable para consentirse.',
+        10, 180, 'images/plato_vacio.jpg'),
+       ('Mini Quiches de Espinaca', 'Espinaca (100g), huevos (2), queso (50g), masa (100g)',
+        'Prepara estos mini quiches como un aperitivo o entrada. Mezcla la espinaca cocida, los huevos, el queso y coloca la mezcla sobre la masa, luego hornea hasta que esté dorado. Es una opción deliciosa y nutritiva.',
+        25, 280, 'images/plato_vacio.jpg'),
+       ('Cheesecake de Frutos Rojos', 'Queso crema (250g), galletas (100g), frutos rojos (100g)',
+        'Este cheesecake es ideal para ocasiones especiales. Se prepara una base con galletas trituradas, luego se cubre con una mezcla de queso crema y frutos rojos frescos. Un postre cremoso y delicioso.',
+        60, 450, 'images/plato_vacio.jpg'),
+       ('Smoothie de Fresa', 'Fresas (200g), leche (200ml), miel (10g)',
+        'Para este smoothie, solo debes licuar las fresas con la leche y un toque de miel. Es refrescante y saludable, perfecto para empezar el día o como merienda.',
+        5, 150, 'images/plato_vacio.jpg'),
+       ('Pudding de Chía', 'Chía (30g), leche de almendras (200ml), vainilla (5ml)',
+        'Mezcla las semillas de chía con leche de almendras y unas gotas de vainilla. Deja reposar la mezcla en la nevera hasta que se forme una consistencia de pudding. Un snack delicioso y nutritivo.',
+        10, 180, 'images/plato_vacio.jpg'),
+       ('Galletas de Chocolate Chip', 'Harina (150g), chocolate (100g), mantequilla (100g)',
+        'Estas galletas son perfectas para acompañar con un café o té. Mezcla los ingredientes y hornea hasta que estén doradas y crujientes. Un clásico que nunca falla.',
+        20, 220, 'images/plato_vacio.jpg'),
+       ('Sándwich de Jamón y Queso', 'Jamón (100g), queso (50g), pan (2 rebanadas)',
+        'Un sándwich sencillo y delicioso. Coloca el jamón y el queso entre dos rebanadas de pan, tuéstalo hasta que el queso se derrita y disfruta.',
+        10, 300, 'images/plato_vacio.jpg'),
+       ('Batido de Proteína con Plátano', 'Proteína en polvo (30g), plátano (1), leche vegetal (200ml)',
+        'Este batido es ideal para después del ejercicio. Se licúan la proteína en polvo, el plátano y la leche vegetal, formando una bebida energética y nutritiva.',
+        5, 250, 'images/plato_vacio.jpg'),
+       ('Nachos con Queso', 'Tortilla de maíz (100g), queso (100g)',
+        'Este snack es perfecto para ver una película. Calienta las tortillas de maíz y cúbrelas con queso fundido. Un aperitivo crujiente y sabroso.',
+        10, 350, 'images/plato_vacio.jpg'),
+       ('Tortas de Arroz con Mantequilla', 'Tortas de arroz (2), mantequilla (20g)',
+        'Simple y delicioso, unte mantequilla sobre las tortas de arroz. Es un snack ligero que puedes disfrutar en cualquier momento.',
+        5, 100, 'images/plato_vacio.jpg'),
+       ('Galletas de Avena con Pasas', 'Avena (100g), pasas (50g), azúcar (50g)',
+        'Estas galletas son una versión saludable y deliciosa de las tradicionales galletas. Se mezclan la avena, las pasas y el azúcar, y luego se hornean. Son perfectas para un snack lleno de energía.',
+        15, 200, 'images/plato_vacio.jpg'),
+       ('Smoothie de Mango', 'Mango (200g), leche (250ml), miel (1 cucharada)',
+        'Pelar el mango, cortarlo en trozos y colocarlo en una licuadora junto con la leche y la miel. Licuar todo hasta obtener una mezcla suave y homogénea.',
+        5, 150, 'images/plato_vacio.jpg'),
+       ('Ensalada de Espinaca', 'Espinaca (100g), tomate (1 mediano), pepino (1 pequeño), aderezo (2 cucharadas)',
+        'Lavar bien las hojas de espinaca, cortar el tomate y el pepino en rodajas. Mezclar todos los ingredientes en un tazón y añadir el aderezo al gusto.',
+        10, 150, 'images/plato_vacio.jpg'),
+       ('Sopa de Lentejas',
+        'Lentejas (200g), zanahorias (2 medianas), cebolla (1 mediana), ajo (2 dientes), caldo vegetal (1 litro)',
+        'Pelar y picar las zanahorias y la cebolla. Sofreír la cebolla y el ajo en un poco de aceite hasta que estén dorados. Agregar las lentejas y el caldo vegetal, cocinar por 30 minutos o hasta que las lentejas estén tiernas.',
+        30, 250, 'images/plato_vacio.jpg'),
+       ('Pasta con Salsa de Tomate', 'Pasta (200g), tomate (4 medianos), ajo (2 dientes), albahaca (1 ramita)',
+        'Cocer la pasta según las indicaciones del paquete. Mientras tanto, sofreír los ajos picados en aceite hasta dorarse. Añadir los tomates picados y cocinar hasta que suelten su jugo. Mezclar la pasta con la salsa de tomate y añadir albahaca fresca al gusto.',
+        20, 350, 'images/plato_vacio.jpg'),
+       ('Buddha Bowl',
+        'Quinoa (100g), garbanzos (100g), espinaca (50g), aguacate (1/2), vegetales (pimientos, zanahoria, pepino)',
+        'Cocer la quinoa según las instrucciones. Asar o saltear los garbanzos con especias. Colocar todos los ingredientes en un tazón, agregando aguacate y vegetales frescos. Aderezar con salsa al gusto.',
+        15, 400, 'images/plato_vacio.jpg'),
+       ('Verduras Asadas',
+        'Zanahoria (2 medianas), brócoli (200g), pimientos (2 medianos), aceite de oliva (2 cucharadas)',
+        'Cortar las zanahorias, brócoli y pimientos en trozos. Colocar las verduras en una bandeja de horno, añadir el aceite de oliva y sazonar con sal y pimienta. Asar en el horno a 180°C por 30 minutos.',
+        30, 180, 'images/plato_vacio.jpg'),
+       ('Curry de Verduras',
+        'Zanahoria (2 medianas), pimientos (2), papa (1 grande), leche de coco (250ml), curry en polvo (1 cucharadita)',
+        'Cortar las verduras en trozos. Sofreír las verduras en una sartén con un poco de aceite hasta dorar. Añadir la leche de coco y el curry en polvo, cocer todo a fuego lento hasta que las verduras estén tiernas.',
+        40, 350, 'images/plato_vacio.jpg'),
+       ('Tofu al Horno con Especias',
+        'Tofu (200g), pimentón (1 cucharadita), ajo en polvo (1/2 cucharadita), orégano (1/2 cucharadita)',
+        'Cortar el tofu en cubos. Marinar el tofu con pimentón, ajo en polvo y orégano. Colocar los cubos en una bandeja para horno y hornear a 200°C durante 25 minutos, hasta que estén dorados.',
+        25, 400, 'images/plato_vacio.jpg'),
+       ('Pasta con Salsa Alfredo', 'Pasta (200g), crema (200ml), queso parmesano (50g), ajo (2 dientes)',
+        'Cocer la pasta según las indicaciones. Mientras tanto, sofreír el ajo en crema, agregar el queso parmesano y cocinar a fuego bajo hasta que espese. Mezclar con la pasta cocida.',
+        20, 500, 'images/plato_vacio.jpg'),
+       ('Ensalada Caprese',
+        'Tomate (2 medianos), mozzarella (100g), albahaca (1 ramita), aceite de oliva (2 cucharadas)',
+        'Cortar el tomate y la mozzarella en rodajas. Alternar las rodajas de tomate y mozzarella en un plato, agregar hojas de albahaca y rociar con aceite de oliva.',
+        10, 300, 'images/plato_vacio.jpg'),
+       ('Tortilla de Papas', 'Papas (500g), huevos (4), cebolla (1 mediana), sal (al gusto)',
+        'Pelar y cortar las papas en rodajas finas. Freír las papas y la cebolla en una sartén con aceite hasta dorarse. Batir los huevos con sal y mezclar con las papas, luego cocinar a fuego bajo hasta cuajar.',
+        30, 400, 'images/plato_vacio.jpg'),
+       ('Pizza Margherita', 'Masa (1 base), tomate (2 medianos), mozzarella (150g), albahaca (1 ramita)',
+        'Extender la masa de pizza y cubrir con rodajas de tomate y mozzarella. Hornear a 200°C por 15 minutos. Agregar hojas de albahaca fresca antes de servir.',
+        15, 600, 'images/plato_vacio.jpg'),
+       ('Risotto de Espárragos',
+        'Arroz (200g), espárragos (100g), cebolla (1 mediana), caldo (500ml), queso parmesano (50g)',
+        'Cocer el arroz en caldo caliente, añadir la cebolla picada y los espárragos troceados. Cocinar a fuego lento, removiendo frecuentemente. Al final, añadir queso parmesano rallado.',
+        35, 500, 'images/plato_vacio.jpg'),
+       ('Tacos de Queso', 'Tortillas (4), queso (100g), lechuga (50g), salsa (al gusto)',
+        'Rellenar las tortillas con queso, lechuga y salsa. Servir caliente.', 10, 350, 'images/plato_vacio.jpg'),
+       ('Bowl de Quinoa y Espinaca', 'Quinoa (100g), espinaca (50g), zanahoria (1 mediana), tomate (1 pequeño)',
+        'Cocer la quinoa según las instrucciones. Colocar la quinoa cocida en un tazón junto con espinaca fresca, zanahoria rallada y rodajas de tomate. Mezclar todo y servir.',
+        15, 400, 'images/plato_vacio.jpg'),
+       ('Salmón a la Parrilla', 'Salmón (200g), limón (1/2), ajo (2 dientes), aceite de oliva (1 cucharada)',
+        'Marinar el salmón con ajo picado, limón y aceite de oliva. Cocinar en la parrilla por 20 minutos o hasta que esté dorado y bien cocido.',
+        20, 600, 'images/plato_vacio.jpg'),
+       ('Pollo al Limón', 'Pollo (300g), limón (1), ajo (2 dientes), hierbas (al gusto)',
+        'Marinar el pollo con ajo, jugo de limón y hierbas. Cocinar el pollo a la parrilla o al horno hasta que esté dorado y bien cocido.',
+        30, 500, 'images/plato_vacio.jpg'),
+       ('Carne Asada', 'Carne (300g), sal (al gusto), pimienta (al gusto)',
+        'Sazonar la carne con sal y pimienta. Asar la carne a fuego medio por 25 minutos o hasta que esté cocida al gusto.',
+        25, 700, 'images/plato_vacio.jpg'),
+       ('Tacos de Carne', 'Tortillas, carne, lechuga, salsa', 'Rellenar las tortillas con carne y otros ingredientes',
+        15, 600, 'images/plato_vacio.jpg');
 
 
 
@@ -452,131 +635,126 @@ VALUES ('Abdominales', 'Abdominales en Maquina', 'ejercicios/10004.png'),
        ('Pecho', 'Press Banca', 'ejercicios/press banca.jpg');
 
 INSERT INTO RegistroEjercicio (nombreRutina, descanso, dia, series, repeticiones, ejercicio_id, usuario_id)
-VALUES
-('Torso Pierna', 2.30, 'Viernes', 4, 10, 123, 1),
-('Torso Pierna', 2.30, 'Viernes', 4, 12, 101, 1),
-('Torso Pierna', 2.30, 'Viernes', 4, 15, 97, 1),
-('Torso Pierna', 2.30, 'Viernes', 4, 15, 104, 1),
-('Torso Pierna', 2.30, 'Viernes', 4, 10, 84, 1),
-('Torso Pierna', 2.30, 'Viernes', 3, 12, 86, 1),
-('Torso Pierna', 2.30, 'Jueves', 4, 10, 123, 1),
-('Torso Pierna', 2.30, 'Jueves', 4, 12, 101, 1),
-('Torso Pierna', 2.30, 'Jueves', 4, 10, 96, 1),
-('Torso Pierna', 2.30, 'Jueves', 4, 15, 50, 1),
-('Torso Pierna', 2.30, 'Jueves', 3, 15, 55, 1),
-('Torso Pierna', 2.30, 'Jueves', 3, 12, 59, 1),
-('Torso Pierna', 2.30, 'Martes', 4, 10, 123, 1),
-('Torso Pierna', 2.30, 'Martes', 4, 12, 101, 1),
-('Torso Pierna', 2.30, 'Martes', 4, 15, 90, 1),
-('Torso Pierna', 2.30, 'Martes', 4, 10, 104, 1),
-('Torso Pierna', 2.00, 'Martes', 3, 12, 100, 1),
-('Torso Pierna', 2.00, 'Martes', 3, 15, 110, 1),
-('Torso Pierna', 2.00, 'Lunes', 4, 10, 123, 1),
-('Torso Pierna', 2.30, 'Lunes', 4, 12, 101, 1),
-('Torso Pierna', 2.00, 'Lunes', 4, 10, 77, 1),
-('Torso Pierna', 1.30, 'Lunes', 4, 10, 104, 1),
-('Torso Pierna', 1.00, 'Lunes', 3, 15, 46, 1),
-('Torso Pierna', 1.30, 'Lunes', 3, 12, 109, 1);
-
-
-
-
+VALUES ('Torso Pierna', 2.30, 'Viernes', 4, 10, 123, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 4, 12, 101, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 4, 15, 97, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 4, 15, 104, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 4, 10, 84, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 3, 12, 86, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 4, 10, 123, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 4, 12, 101, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 4, 10, 96, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 4, 15, 50, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 3, 15, 55, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 3, 12, 59, 1),
+       ('Torso Pierna', 2.30, 'Martes', 4, 10, 123, 1),
+       ('Torso Pierna', 2.30, 'Martes', 4, 12, 101, 1),
+       ('Torso Pierna', 2.30, 'Martes', 4, 15, 90, 1),
+       ('Torso Pierna', 2.30, 'Martes', 4, 10, 104, 1),
+       ('Torso Pierna', 2.00, 'Martes', 3, 12, 100, 1),
+       ('Torso Pierna', 2.00, 'Martes', 3, 15, 110, 1),
+       ('Torso Pierna', 2.00, 'Lunes', 4, 10, 123, 1),
+       ('Torso Pierna', 2.30, 'Lunes', 4, 12, 101, 1),
+       ('Torso Pierna', 2.00, 'Lunes', 4, 10, 77, 1),
+       ('Torso Pierna', 1.30, 'Lunes', 4, 10, 104, 1),
+       ('Torso Pierna', 1.00, 'Lunes', 3, 15, 46, 1),
+       ('Torso Pierna', 1.30, 'Lunes', 3, 12, 109, 1);
 
 
 
 INSERT INTO RegistroEjercicio (nombreRutina, descanso, dia, series, repeticiones, ejercicio_id, usuario_id)
 VALUES
 -- Pecho y Biceps - Lunes
-('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 97, 1),  -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.30, 'Lunes', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Lunes', 3, 8, 101, 1),  -- Press Inclinado con Barra
-('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 88, 1),  -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 97, 1),        -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.30, 'Lunes', 4, 10, 89, 1),        -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Lunes', 3, 8, 101, 1),        -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 88, 1),        -- Curl de Biceps con Barra "W"
 -- Pecho y Biceps - Martes
-('Pecho y Biceps', 1.30, 'Martes', 3, 15, 97, 1),  -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.00, 'Martes', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Martes', 3, 12, 104, 1), -- Press Militar con Mancuernas
-('Pecho y Biceps', 1.30, 'Martes', 4, 10, 88, 1),  -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.30, 'Martes', 3, 15, 97, 1),       -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.00, 'Martes', 4, 10, 89, 1),       -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Martes', 3, 12, 104, 1),      -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Martes', 4, 10, 88, 1),       -- Curl de Biceps con Barra "W"
 -- Pecho y Biceps - Miércoles
-('Pecho y Biceps', 2.00, 'Miércoles', 4, 12, 97, 1), -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.30, 'Miércoles', 3, 8, 101, 1), -- Press Inclinado con Barra
-('Pecho y Biceps', 1.30, 'Miércoles', 3, 15, 88, 1), -- Curl de Biceps con Barra "W"
-('Pecho y Biceps', 1.00, 'Miércoles', 4, 10, 56, 1), -- Flexiones Comunes
+('Pecho y Biceps', 2.00, 'Miércoles', 4, 12, 97, 1),    -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.30, 'Miércoles', 3, 8, 101, 1),    -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Miércoles', 3, 15, 88, 1),    -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.00, 'Miércoles', 4, 10, 56, 1),    -- Flexiones Comunes
 -- Pecho y Biceps - Jueves
-('Pecho y Biceps', 1.30, 'Jueves', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1), -- Press Militar con Mancuernas
-('Pecho y Biceps', 1.30, 'Jueves', 3, 8, 101, 1),  -- Press Inclinado con Barra
-('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1), -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Jueves', 4, 10, 89, 1),       -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1),      -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Jueves', 3, 8, 101, 1),       -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1),      -- Press Militar con Mancuernas
 
 -- Pecho y Biceps - Viernes
-('Pecho y Biceps', 1.30, 'Viernes', 3, 15, 97, 1),  -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.00, 'Viernes', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Viernes', 3, 12, 104, 1), -- Press Militar con Mancuernas
-('Pecho y Biceps', 1.30, 'Viernes', 4, 10, 88, 1),  -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.30, 'Viernes', 3, 15, 97, 1),      -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.00, 'Viernes', 4, 10, 89, 1),      -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Viernes', 3, 12, 104, 1),     -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Viernes', 4, 10, 88, 1),      -- Curl de Biceps con Barra "W"
 -- Pecho y Biceps - Sábado
-('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 97, 1),  -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.30, 'Sábado', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Sábado', 3, 8, 101, 1),  -- Press Inclinado con Barra
-('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 88, 1),  -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 97, 1),       -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.30, 'Sábado', 4, 10, 89, 1),       -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Sábado', 3, 8, 101, 1),       -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 88, 1),       -- Curl de Biceps con Barra "W"
 
 
 -- Espalda y Triceps - Lunes
-('Espalda y Triceps', 2.00, 'Lunes', 4, 15, 74, 1),  -- Remo con Barra en Banco
-('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.15, 'Lunes', 4, 10, 61, 1),  -- Jalon al Pecho
+('Espalda y Triceps', 2.00, 'Lunes', 4, 15, 74, 1),     -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 67, 1),     -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 72, 1),     -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Lunes', 4, 10, 61, 1),     -- Jalon al Pecho
 -- Espalda y Triceps - Martes
-('Espalda y Triceps', 2.00, 'Martes', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.45, 'Martes', 3, 10, 61, 1),  -- Jalon al Pecho
-('Espalda y Triceps', 1.30, 'Martes', 4, 15, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Martes', 4, 12, 63, 1),  -- Jalon Unilateral
+('Espalda y Triceps', 2.00, 'Martes', 4, 12, 72, 1),    -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.45, 'Martes', 3, 10, 61, 1),    -- Jalon al Pecho
+('Espalda y Triceps', 1.30, 'Martes', 4, 15, 67, 1),    -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Martes', 4, 12, 63, 1),    -- Jalon Unilateral
 -- Espalda y Triceps - Miércoles
-('Espalda y Triceps', 2.00, 'Miércoles', 4, 15, 74, 1),  -- Remo con Barra en Banco
-('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.15, 'Miércoles', 4, 10, 61, 1),  -- Jalon al Pecho
+('Espalda y Triceps', 2.00, 'Miércoles', 4, 15, 74, 1), -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 67, 1), -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 72, 1), -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Miércoles', 4, 10, 61, 1), -- Jalon al Pecho
 -- Espalda y Triceps - Jueves
-('Espalda y Triceps', 1.30, 'Jueves', 4, 15, 72, 1), -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.30, 'Jueves', 4, 12, 63, 1), -- Jalon Unilateral
-('Espalda y Triceps', 1.00, 'Jueves', 3, 12, 75, 1), -- Remo con Barra Guiada
-('Espalda y Triceps', 1.15, 'Jueves', 4, 10, 68, 1), -- Patada de Triceps
+('Espalda y Triceps', 1.30, 'Jueves', 4, 15, 72, 1),    -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.30, 'Jueves', 4, 12, 63, 1),    -- Jalon Unilateral
+('Espalda y Triceps', 1.00, 'Jueves', 3, 12, 75, 1),    -- Remo con Barra Guiada
+('Espalda y Triceps', 1.15, 'Jueves', 4, 10, 68, 1),    -- Patada de Triceps
 -- Espalda y Triceps - Viernes
-('Espalda y Triceps', 2.00, 'Viernes', 4, 15, 74, 1),  -- Remo con Barra en Banco
-('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.15, 'Viernes', 4, 10, 61, 1),  -- Jalon al Pecho
+('Espalda y Triceps', 2.00, 'Viernes', 4, 15, 74, 1),   -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 67, 1),   -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 72, 1),   -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Viernes', 4, 10, 61, 1),   -- Jalon al Pecho
 -- Espalda y Triceps - Sábado
-('Espalda y Triceps', 2.00, 'Sábado', 4, 15, 74, 1),  -- Remo con Barra en Banco
-('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.15, 'Sábado', 4, 10, 61, 1),  -- Jalon al Pecho
+('Espalda y Triceps', 2.00, 'Sábado', 4, 15, 74, 1),    -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 67, 1),    -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 72, 1),    -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Sábado', 4, 10, 61, 1),    -- Jalon al Pecho
 
 -- Piernas y Abdomen - Lunes
-('Piernas y Abdomen', 2.00, 'Lunes', 4, 12, 84, 1),  -- Sentadilla con Barra
-('Piernas y Abdomen', 2.00, 'Lunes', 4, 10, 94, 1),  -- Prensa de Pierna Horizontal
-('Piernas y Abdomen', 1.45, 'Lunes', 3, 15, 83, 1),  -- Rueda Abdominal
-('Piernas y Abdomen', 1.30, 'Lunes', 4, 10, 49, 1),  -- Extensión de Cadera en Maquina
+('Piernas y Abdomen', 2.00, 'Lunes', 4, 12, 84, 1),     -- Sentadilla con Barra
+('Piernas y Abdomen', 2.00, 'Lunes', 4, 10, 94, 1),     -- Prensa de Pierna Horizontal
+('Piernas y Abdomen', 1.45, 'Lunes', 3, 15, 83, 1),     -- Rueda Abdominal
+('Piernas y Abdomen', 1.30, 'Lunes', 4, 10, 49, 1),     -- Extensión de Cadera en Maquina
 -- Piernas y Abdomen - Martes
-('Piernas y Abdomen', 2.00, 'Martes', 3, 12, 36, 1),  -- Elevaciones Burro para Gemelo
-('Piernas y Abdomen', 1.15, 'Martes', 4, 15, 92, 1),  -- Plancha Abdominal
-('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),  -- Hip Thrust
-('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),  -- Rueda Abdominal
+('Piernas y Abdomen', 2.00, 'Martes', 3, 12, 36, 1),    -- Elevaciones Burro para Gemelo
+('Piernas y Abdomen', 1.15, 'Martes', 4, 15, 92, 1),    -- Plancha Abdominal
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),    -- Hip Thrust
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),    -- Rueda Abdominal
 -- Piernas y Abdomen - Miércoles
 ('Piernas y Abdomen', 2.00, 'Miércoles', 4, 10, 84, 1), -- Sentadilla con Barra
 ('Piernas y Abdomen', 1.45, 'Miércoles', 3, 15, 94, 1), -- Prensa de Pierna Horizontal
 ('Piernas y Abdomen', 1.30, 'Miércoles', 4, 12, 83, 1), -- Rueda Abdominal
 ('Piernas y Abdomen', 1.15, 'Miércoles', 4, 15, 49, 1), -- Extensión de Cadera en Maquina
 -- Piernas y Abdomen - Jueves
-('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),  -- Hip Thrust
-('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),  -- Rueda Abdominal
-('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),  -- Elevaciones Burro para Gemelo
-('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),  -- Plancha Abdominal
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),    -- Hip Thrust
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),    -- Rueda Abdominal
+('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),    -- Elevaciones Burro para Gemelo
+('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),    -- Plancha Abdominal
 -- Piernas y Abdomen - Viernes
-('Piernas y Abdomen', 2.00, 'Viernes', 4, 12, 84, 1),  -- Sentadilla con Barra
-('Piernas y Abdomen', 2.00, 'Viernes', 4, 10, 94, 1),  -- Prensa de Pierna Horizontal
-('Piernas y Abdomen', 1.45, 'Viernes', 3, 15, 83, 1),  -- Rueda Abdominal
-('Piernas y Abdomen', 1.30, 'Viernes', 4, 10, 49, 1),  -- Extensión de Cadera en Maquina
+('Piernas y Abdomen', 2.00, 'Viernes', 4, 12, 84, 1),   -- Sentadilla con Barra
+('Piernas y Abdomen', 2.00, 'Viernes', 4, 10, 94, 1),   -- Prensa de Pierna Horizontal
+('Piernas y Abdomen', 1.45, 'Viernes', 3, 15, 83, 1),   -- Rueda Abdominal
+('Piernas y Abdomen', 1.30, 'Viernes', 4, 10, 49, 1),   -- Extensión de Cadera en Maquina
 -- Piernas y Abdomen - Sábado
-('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),  -- Elevaciones Burro para Gemelo
-('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),  -- Plancha Abdominal
-('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 58, 1),  -- Hip Thrust
-('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 83, 1);  -- Rueda Abdominal
+('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),    -- Elevaciones Burro para Gemelo
+('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),    -- Plancha Abdominal
+('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 58, 1),    -- Hip Thrust
+('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 83, 1); -- Rueda Abdominal

@@ -14,4 +14,12 @@ public interface ServicioEjercicio {
     void eliminarRegistroEjercicio(Long id);
 
     List<RegistroEjercicio> traerRutina(String rutinaSelecionada, Usuario usuario);
+
+    List<Ejercicio> getEjercicios();
+
+    void actualizarEjercicio(Ejercicio ejercicio);
+
+    void guardarEjercicio(Ejercicio ejercicio);
+
+    void eliminarEjercicio(Long id);
 }

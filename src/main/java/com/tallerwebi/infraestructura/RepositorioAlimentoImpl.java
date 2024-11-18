@@ -42,5 +42,23 @@ public class RepositorioAlimentoImpl implements RepositorioAlimento {
         return (List<Alimento>) session.createCriteria(Alimento.class)
                 .list();
     }
+
+    @Override
+    public void actualizarAlimento(Alimento alimento) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.update(alimento);
+    }
+
+    @Override
+    public void eliminarAlimento(Long id) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.delete(session.load(Alimento.class, id));
+    }
+
+    @Override
+    public void guardar(Alimento alimento) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.save(alimento);
+    }
 }
 
