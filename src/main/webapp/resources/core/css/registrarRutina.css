@@ -6,17 +6,17 @@
 }
 
 body {
-    background-color: #f3f4f6;
+    background: url('https://img.freepik.com/vector-gratis/formulas-cientificas-dibujadas-mano-pizarra_23-2148496321.jpghttps://img.freepik.com/vector-premium/fondo-iconos-simbolos-ejercicios-deportivos_556049-215.jpg') no-repeat center center fixed;
+                  background-size: cover;
     display: flex;
     flex-direction: column;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     color: #333;
 }
 
 .container {
-    background-color: white;
+    background-color: #020b5da3;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -29,9 +29,11 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #fff;
 }
-
+h2{
+color:white
+}
 .days-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
