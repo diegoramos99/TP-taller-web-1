@@ -106,21 +106,24 @@ input:focus{
 }
   /* Estilos del botón de inicio de sesión */
   .login-form button {
-    width: 90%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50; /* Verde */
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: .5rem;
+
+               background-color: #000;
+               border:1px solid white;
+               color: #33b54b;
+               padding: 12px;
+               border-radius: 4px;
+               cursor: pointer;
+               font-size: 18px;
+               width: 50%;
+
   }
   
-  .login-form button:hover {
-    background-color: #3d8a41;
-  }
+ .login-form button:hover {
+                  background: linear-gradient(90deg, #7601eb, #1100cc); /* Cambia el gradiente al pasar el cursor */
+                  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Incrementa la sombra */
+                  transform: translateY(-2px); /* Mueve ligeramente hacia arriba */
+                  color:white;
+          }
   p{
     color: #ddd;
   }

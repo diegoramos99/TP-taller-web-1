@@ -4,13 +4,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f9;
+    background-color: #204917;
     color: #333;
 }
 
 /* About Section */
 .about-section {
-    background-color: #ffffff;
+    background-color: #204917;
 }
 
 .about-container {
@@ -20,7 +20,7 @@ body {
 }
 
 .about-container h1 {
-    color: #2b7a78;
+    color: #00fffd;
     font-size: 2.8rem;
     margin-bottom: 20px;
 }
@@ -28,20 +28,31 @@ body {
 .about-container p {
     font-size: 1.2rem;
     margin: 15px 0;
-    color: #555;
+    color: #fff;
 }
 
 .about-image {
     width: 100%;
     max-width: 400px;
     margin: 20px 0;
+    border:none
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  animation: girar 5s linear infinite; /* Nombre, duración, tipo de animación y repetición infinita */
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0)); /* Sombra más precisa */
 
+
+    }
+@keyframes girar {
+  from {
+    transform: rotatey(0deg); /* Comienza en 0 grados */
+  }
+  to {
+    transform: rotatey(360deg); /* Gira hasta 360 grados */
+  }
+}
 /* Features Section */
 .features h2 {
-    color: #3aafa9;
+    color: #00fffd;
     font-size: 2rem;
     margin: 30px 0 15px;
 }
@@ -72,12 +83,12 @@ body {
 }
 
 .features ul li strong {
-    color: #2b7a78;
+    color: #00fffd;
 }
 
 /* Team Section */
 .team h2 {
-    color: #3aafa9;
+    color: #00fffd;
     font-size: 2rem;
     margin: 30px 0;
 }
@@ -124,6 +135,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.call-to-action p {
+  color:#000
+}
 
 .call-to-action .btn {
     display: inline-block;
@@ -158,7 +172,13 @@ box-shadow: 10px ,10px ,2px;
 }
 ol{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
   font-size: larger;
+}
+.team p{
+color:#fff}
+
+.team-member p {
+   color:#000;
 }

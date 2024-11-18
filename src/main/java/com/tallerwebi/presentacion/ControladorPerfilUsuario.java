@@ -54,10 +54,17 @@ public class ControladorPerfilUsuario {
 
 
     @RequestMapping(path = "/mostrarFormulario", method = RequestMethod.GET)
-    public ModelAndView mostrarFormulario() {
+    public ModelAndView mostrarFormulario(HttpServletRequest request) {
+        String email = (String) request.getSession().getAttribute("EMAIL");
 
+        if (email == null) {
+            return new ModelAndView("redirect:/login");
+        }
+        Usuario usuarioBuscado = servicioPerfilUsuario.buscarUsuarioPoreEmail(email);
         ModelMap map = new ModelMap();
-        map.put("usuario", new Usuario());
+
+        map.put("usuario", usuarioBuscado);
+
         return new ModelAndView("formulario", map);
     }
 

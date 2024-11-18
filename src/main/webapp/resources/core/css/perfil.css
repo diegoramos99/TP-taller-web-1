@@ -1,0 +1,245 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #204917;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    flex-direction: row; /* Disposición horizontal */
+    align-items: center;
+    justify-content: space-around;
+    background: #204917;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    height: 100%;
+    gap: 20px; /* Espacio entre las secciones */
+  }
+  section{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    background-color: #204917;
+    justify-content: center;
+    align-items: center;
+  }
+  .section-foto-perfil{
+    display: flex;
+    flex-direction: column;
+  }
+  .section-info-personal{
+    display: flex;
+    align-items: center;
+  }
+  .container:first-child{
+    background-color: #204917;
+  }
+  .foto-perfil{
+    background-color: #204917;
+  }
+  /* Foto de perfil */
+  .foto-perfil img {
+    width: 100%;
+    height: auto;
+    border: 1px solid gray;
+    border-radius: 50%;
+    object-fit: contain;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #000;
+  }
+
+  /* Información personal */
+  .info-personal {
+    flex: 1; /* Ocupa el espacio restante */
+    background-color: #000;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius:20px ;
+  }
+
+  .info-personal h1 {
+    font-size: xx-large;
+    color: #de2525;
+    text-decoration: underline;
+    margin-bottom: 10px;
+  }
+
+  .info {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-item {
+    margin-bottom: 15px;
+  }
+
+  .info-item h3 {
+    margin: 0 0 5px;
+    font-size: x-large;
+    color: #677aff;
+  }
+
+  .info-item p {
+    margin: 0;
+    font-size: medium;
+    color: #fff;
+  }
+
+
+  nav {
+    background-color: #333;
+    padding: 10px;
+    width:100%
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
+    z-index: 10;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+nav ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 0;
+    min-width: 200px;
+    z-index: 999;
+}
+
+nav ul li .submenu li {
+    display: block;
+}
+
+nav ul li .submenu li a {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li .submenu li a:hover {
+    background-color: #555;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+.perfil-usuario {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+}
+
+.perfil-link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.perfil-usuario img.icono-usuario {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.perfil-usuario .submenu {
+    right: 0;
+    top: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+.premium-badge {
+    background-color: #ffd700;
+    color: #333;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.btn {
+                background-color: #000;
+                border:1px solid white;
+                color: #33b54b;
+                padding: 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 18px;
+                width: 100%;
+  }
+
+  .btn:hover {
+    background: linear-gradient(90deg, #7601eb, #1100cc); /* Cambia el gradiente al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Incrementa la sombra */
+    transform: translateY(-2px); /* Mueve ligeramente hacia arriba */
+    color:white;
+  }
+
+  .btn:active {
+    transform: translateY(1px); /* Retrocede un poco al hacer clic */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+  }
+  .proximamente-btn:before {
+    content: "Proximamente"; /* El texto que quieres agregar */
+    position: absolute; /* Posicionamos el pseudo-elemento */
+
+    font-size: xl-large;
+    color: #de2525; /* Color del texto "Próximamente" */
+    font-weight: bold;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease;
+
+  }
+
+  .proximamente-btn:hover:before {
+    opacity: 1; /* Aparece el texto al hacer hover */
+    position:relative;
+  }

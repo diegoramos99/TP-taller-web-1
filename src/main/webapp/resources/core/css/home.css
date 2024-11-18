@@ -8,7 +8,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #204917;
     color: #333;
 }
 
@@ -16,7 +16,6 @@ body {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 20px auto;
 }
 
 .banner-section {
@@ -404,7 +403,7 @@ font-size: 1.7rem;
  }
   .navSinLogin ol{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style: none;
     font-size: larger;
     width :80%;

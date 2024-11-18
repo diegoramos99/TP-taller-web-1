@@ -79,7 +79,7 @@ public class ControladorPerfilTest {
 
     @Test
     public void queAlHacerClickAlEditarPerfilMeLleveAlFormulario() {
-        when(controladorPerfilUsuarioMock.mostrarFormulario()).thenReturn(new ModelAndView("formulario"));
+        when(controladorPerfilUsuarioMock.mostrarFormulario(requestMock)).thenReturn(new ModelAndView("formulario"));
         givenExistePerfil();
 
         ModelAndView mav = whenRecibaLaVista();
@@ -93,7 +93,7 @@ public class ControladorPerfilTest {
     }
 
     private ModelAndView whenRecibaLaVista() {
-        return controladorPerfilUsuarioMock.mostrarFormulario();
+        return controladorPerfilUsuarioMock.mostrarFormulario(requestMock);
     }
 
     private void givenExistePerfil() {
