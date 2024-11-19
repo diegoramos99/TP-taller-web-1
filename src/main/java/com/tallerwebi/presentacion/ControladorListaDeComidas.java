@@ -58,10 +58,12 @@ public class ControladorListaDeComidas {
         String nombre=receta1.get(0).getNombre();
         String preparacion=receta1.get(0).getPreparacion();
         Long tiempo=receta1.get(0).getTiempo();
+        String image=receta1.get(0).getImagen();
         Long calorias=receta1.get(0).getCalorias();
         String ingredientes=receta1.get(0).getIngredientes();
         List listaIngredientes= Arrays.asList(ingredientes.split("\\s*,\\s*"));
         ModelMap map = new ModelMap();
+        map.put("image",image);
         map.put("nombre", nombre);
         map.put("preparacion", preparacion);
         map.put("tiempo", tiempo);

@@ -26,13 +26,21 @@ body {
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    display:flex;
+    flex-direction:column;
+
 }
 
 .recipe-image img {
     width: 100%;
     height: auto;
 }
-
+.recipe-image  {
+    width: 60%;
+    height: auto;
+    justify-self:center;
+    align-self:center;
+}
 .recipe-details {
     padding: 20px;
 }

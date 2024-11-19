@@ -14,7 +14,7 @@
 
     <div class="recipe-container">
         <div class="recipe-image">
-            <img src="https://cdn0.recetasgratis.net/es/posts/1/7/7/ensalada_de_apio_tomate_y_aguacate_60771_600.webp">
+            <img th:src="${image}">
         </div>
 
         <div class="recipe-details">
@@ -25,7 +25,6 @@
             <h2 th:text= "ingredientes" ></h2>
             <ul  th:each="ingrediente, iterStat : ${listaIngredientes}">
                 <li th:text="${ingrediente}"></li>
-
             </ul>
 
             <h2 th:text="Preparacion"></h2>
