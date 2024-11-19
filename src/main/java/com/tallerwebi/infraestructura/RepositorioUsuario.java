@@ -10,5 +10,7 @@ public interface RepositorioUsuario {
     void modificar(Usuario usuario);
 
     void actualizarEstadoPremium(boolean b, Long id);
+
+    void actualizar(Usuario usuarioActivo);
 }
 

@@ -9,7 +9,7 @@ import java.util.List;
 public interface RepositorioEjercicio {
     List<Ejercicio> traerTodosLosEjerciciosPorNombreYCategoria(String nombre);
 
-        Ejercicio traerEjercicioPorId(Long idEjercicio);
+    Ejercicio traerEjercicioPorId(Long idEjercicio);
 
     void registrarRutina(RegistroEjercicio registroEjercicio);
 
@@ -18,4 +18,12 @@ public interface RepositorioEjercicio {
     void eliminarRegistroEjercicio(Long id);
 
     List<RegistroEjercicio> traerTodosLosEjercicios(String rutinaSelecionada, Usuario usuario);
+
+    List<Ejercicio> getEjercicios();
+
+    void actualizarEjercicio(Ejercicio ejercicio);
+
+    void guardarEjercicio(Ejercicio ejercicio);
+
+    void eliminarEjercicio(Long id);
 }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" th:href="@{/css/nav.css}"/>
+    <link rel="stylesheet" th:href="@{/css/gestionListaEstilos.css}"/>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a th:href="@{/ver-admin}">Lista de Ejercicios</a></li>
+        <li><a th:href="@{/ver-lista-comidas}">Lista de Comidas</a></li>
+        <li><a th:href="@{/ver-lista-recetas}">Lista de Recetas</a></li>
+        <li class="perfil-usuario">
+            <a href="#" class="perfil-link">
+                <img th:src="@{${#httpSession.getAttribute('FOTOPERFIL')}}" alt="Usuario" class="icono-usuario"/>
+                <span th:text="${#httpSession.getAttribute('NOMBRE')} + ' ' + ${#httpSession.getAttribute('APELLIDO')}"></span>
+            </a>
+            <ul class="submenu">
+                <li><a th:href="@{/logout}">Cerrar sesión</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="premium-info">
+    <h1>Gestión de Alimentos</h1>
+    <div class="contentSearch">
+        <div class="search-bar">
+            <form th:action="@{/ver-lista-comidas}" method="get">
+                <input type="text" id="search" name="search" placeholder="Buscar por nombre o categoría..."
+                       th:value="${param.search}">
+                <button type="submit" class="button-link">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="contentAdd">
+        <a class="button-link" th:href="@{/agregarAlimento}">Agregar Alimento</a>
+    </div>
+
+       <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <p>¿Estás seguro de que deseas eliminar este ejercicio?</p>
+            <div class="modal-actions">
+                <button id="confirmDelete" class="modal-button eliminar">Eliminar</button>
+                <button id="cancelDelete" class="modal-button cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre del Alimento</th>
+            <th>ID</th>
+            <th>Calorías</th>
+            <th>Proteínas</th>
+            <th>Grasas</th>
+            <th>Carbohidratos</th>
+            <th>Categoría</th>
+            <th>Cantidad</th>
+            <th>Dieta</th>
+            <th>Opciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="alimento : ${alimentos}">
+            <td th:text="${alimento.nombre}"></td>
+            <td th:text="${alimento.id}"></td>
+            <td th:text="${alimento.calorias}"></td>
+            <td th:text="${alimento.proteinas}"></td>
+            <td th:text="${alimento.grasas}"></td>
+            <td th:text="${alimento.carbohidratos}"></td>
+            <td th:text="${alimento.categoria}"></td>
+            <td th:text="${alimento.cantidad}"></td>
+            <td th:text="${alimento.dieta}"></td>
+            <td>
+                <form th:action="@{/modificarAlimento}" method="post">
+                    <input type="hidden" name="id" th:value="${alimento.id}"/>
+                    <button class="button-link modificar">Modificar</button>
+                </form>
+                <form th:action="@{/eliminarAlimento}" method="post">
+                    <input type="hidden" name="id" th:value="${alimento.id}"/>
+                    <button class="button-link eliminar">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+<script th:src="@{/js/modalEliminar.js}"></script>
+</html>

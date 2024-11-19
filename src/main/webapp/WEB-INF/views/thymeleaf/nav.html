@@ -32,7 +32,7 @@
                 <th:block th:if="${#httpSession.getAttribute('TIPO') == 'PREMIUM'}">
                     <span class="premium-badge">Premium</span>
                 </th:block>
-                <img th:src="@{images/foto_perfil.jpg}" alt="Usuario" class="icono-usuario"/>
+                <img th:src="@{${#httpSession.getAttribute('FOTOPERFIL')}}" alt="Usuario" class="icono-usuario"/>
                 <span th:text="${#httpSession.getAttribute('NOMBRE')} + ' ' + ${#httpSession.getAttribute('APELLIDO')}">
                 </span>
                 <!-- Mostrar icono o texto si es usuario premium -->

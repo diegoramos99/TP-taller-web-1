@@ -24,6 +24,8 @@ public class ServicioEjercicioImpl implements ServicioEjercicio{
         return repoEjercicios.traerTodosLosEjerciciosPorNombreYCategoria(termino);
     }
 
+
+
     @Override
         public Ejercicio ontenerEjecicioPorId(Long idEjercicio) {
         return repoEjercicios.traerEjercicioPorId(idEjercicio);
@@ -47,6 +49,26 @@ public class ServicioEjercicioImpl implements ServicioEjercicio{
     @Override
     public List<RegistroEjercicio> traerRutina(String rutinaSelecionada, Usuario usuario) {
         return repoEjercicios.traerTodosLosEjercicios(rutinaSelecionada, usuario);
+    }
+
+    @Override
+    public List<Ejercicio> getEjercicios() {
+        return repoEjercicios.getEjercicios();
+    }
+
+    @Override
+    public void actualizarEjercicio(Ejercicio ejercicio) {
+        repoEjercicios.actualizarEjercicio(ejercicio);
+    }
+
+    @Override
+    public void guardarEjercicio(Ejercicio ejercicio) {
+        repoEjercicios.guardarEjercicio(ejercicio);
+    }
+
+    @Override
+    public void eliminarEjercicio(Long id) {
+        repoEjercicios.eliminarEjercicio(id);
     }
 
 }

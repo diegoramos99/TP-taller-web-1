@@ -1,112 +1,113 @@
-INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, tipo, dieta)
-VALUES ('Avena con Frutas', 250, 10, 5, 45, 'Desayuno', '1 taza', 'Desayuno', 'Vegano'),
-       ('Smoothie Verde', 200, 5, 2, 40, 'Desayuno', '1 vaso', 'Desayuno', 'Vegano'),
-       ('Tofu Revuelto', 220, 15, 12, 6, 'Desayuno', '1 taza', 'Desayuno', 'Vegano'),
-       ('Yogur de Soja con Granola', 180, 8, 4, 30, 'Desayuno', '1 taza', 'Desayuno', 'Vegano'),
-       ('Pan Integral con Aguacate', 300, 8, 15, 35, 'Desayuno', '2 rebanadas', 'Desayuno', 'Vegano'),
-       ('Batido de Plátano y Espinaca', 210, 6, 1, 45, 'Desayuno', '1 vaso', 'Desayuno', 'Vegano'),
-       ('Chía Pudding', 180, 5, 7, 30, 'Desayuno', '1 taza', 'Desayuno', 'Vegano'),
+INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, dieta)
+VALUES ('Avena con Frutas', 250, 10, 5, 45, 'Desayuno', '1 taza', 'Vegano'),
+       ('Smoothie Verde', 200, 5, 2, 40, 'Desayuno', '1 vaso', 'Vegano'),
+       ('Tofu Revuelto', 220, 15, 12, 6, 'Desayuno', '1 taza', 'Vegano'),
+       ('Yogur de Soja con Granola', 180, 8, 4, 30, 'Desayuno', '1 taza', 'Vegano'),
+       ('Pan Integral con Aguacate', 300, 8, 15, 35, 'Desayuno', '2 rebanadas', 'Vegano'),
+       ('Batido de Plátano y Espinaca', 210, 6, 1, 45, 'Desayuno', '1 vaso', 'Vegano'),
+       ('Chía Pudding', 180, 5, 7, 30, 'Desayuno', '1 taza', 'Vegano'),
 
-       ('Tostadas Francesas', 350, 10, 15, 50, 'Desayuno', '2 rebanadas', 'Desayuno', 'Vegetariano'),
-       ('Yogur con Frutas y Miel', 250, 9, 4, 40, 'Desayuno', '1 taza', 'Desayuno', 'Vegetariano'),
-       ('Huevos Revueltos', 300, 20, 25, 2, 'Desayuno', '2 huevos', 'Desayuno', 'Vegetariano'),
-       ('Quesadilla de Espinaca', 320, 15, 15, 35, 'Desayuno', '1 porción', 'Desayuno', 'Vegetariano'),
-       ('Tortilla Española', 350, 12, 20, 30, 'Desayuno', '1 porción', 'Desayuno', 'Vegetariano'),
-       ('Pancakes con Miel', 400, 8, 10, 60, 'Desayuno', '3 pancakes', 'Desayuno', 'Vegetariano'),
-       ('Muffin de Arándano', 220, 4, 9, 35, 'Desayuno', '1 muffin', 'Desayuno', 'Vegetariano'),
+       ('Tostadas Francesas', 350, 10, 15, 50, 'Desayuno', '2 rebanadas', 'Vegetariano'),
+       ('Yogur con Frutas y Miel', 250, 9, 4, 40, 'Desayuno', '1 taza', 'Vegetariano'),
+       ('Huevos Revueltos', 300, 20, 25, 2, 'Desayuno', '2 huevos', 'Vegetariano'),
+       ('Quesadilla de Espinaca', 320, 15, 15, 35, 'Desayuno', '1 porción', 'Vegetariano'),
+       ('Tortilla Española', 350, 12, 20, 30, 'Desayuno', '1 porción', 'Vegetariano'),
+       ('Pancakes con Miel', 400, 8, 10, 60, 'Desayuno', '3 pancakes', 'Vegetariano'),
+       ('Muffin de Arándano', 220, 4, 9, 35, 'Desayuno', '1 muffin', 'Vegetariano'),
 
-       ('Huevos Benedictinos', 400, 22, 30, 18, 'Desayuno', '2 huevos', 'Desayuno', 'omnivoro'),
-       ('Bacon y Huevos', 450, 30, 35, 1, 'Desayuno', '2 huevos y 2 tiras', 'Desayuno', 'omnivoro'),
-       ('Tostada de Aguacate con Huevo', 300, 12, 14, 30, 'Desayuno', '1 tostada', 'Desayuno', 'omnivoro'),
-       ('Batido de Proteína', 250, 25, 5, 20, 'Desayuno', '1 vaso', 'Desayuno', 'omnivoro'),
-       ('Sándwich de Huevo y Tocino', 500, 20, 25, 40, 'Desayuno', '1 sándwich', 'Desayuno', 'omnivoro'),
-       ('Crepas con Jamón y Queso', 400, 15, 20, 30, 'Desayuno', '2 crepas', 'Desayuno', 'omnivoro'),
-       ('Omelette de Verduras', 300, 20, 22, 5, 'Desayuno', '1 porción', 'Desayuno', 'omnivoro');
+       ('Huevos Benedictinos', 400, 22, 30, 18, 'Desayuno', '2 huevos', 'omnivoro'),
+       ('Bacon y Huevos', 450, 30, 35, 1, 'Desayuno', '2 huevos y 2 tiras',  'omnivoro'),
+       ('Tostada de Aguacate con Huevo', 300, 12, 14, 30, 'Desayuno', '1 tostada', 'omnivoro'),
+       ('Batido de Proteína', 250, 25, 5, 20, 'Desayuno', '1 vaso',  'omnivoro'),
+       ('Sándwich de Huevo y Tocino', 500, 20, 25, 40, 'Desayuno', '1 sándwich',  'omnivoro'),
+       ('Crepas con Jamón y Queso', 400, 15, 20, 30, 'Desayuno', '2 crepas',  'omnivoro'),
+       ('Omelette de Verduras', 300, 20, 22, 5, 'Desayuno', '1 porción',  'omnivoro');
 
 -- Insertar Almuerzos
-INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, tipo, dieta)
-VALUES ('Ensalada de Garbanzos', 350, 15, 10, 50, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegano'),
-       ('Bowl de Quinoa y Verduras', 400, 14, 8, 60, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegano'),
-       ('Tacos de Lentejas', 450, 18, 12, 70, 'Almuerzo', '3 tacos', 'Almuerzo', 'Vegano'),
-       ('Sopa de Verduras', 200, 5, 1, 40, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegano'),
-       ('Hamburguesa de Frijoles Negros', 350, 20, 5, 55, 'Almuerzo', '1 hamburguesa', 'Almuerzo', 'Vegano'),
-       ('Curry de Garbanzos', 380, 15, 10, 55, 'Almuerzo', '1 porción', 'Almuerzo', 'Vegano'),
-       ('Stir-Fry de Tofu', 420, 20, 15, 40, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegano'),
+INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, dieta)
+VALUES ('Ensalada de Garbanzos', 350, 15, 10, 50, 'Almuerzo', '1 taza', 'Vegano'),
+       ('Bowl de Quinoa y Verduras', 400, 14, 8, 60, 'Almuerzo', '1 taza', 'Vegano'),
+       ('Tacos de Lentejas', 450, 18, 12, 70, 'Almuerzo', '3 tacos', 'Vegano'),
+       ('Sopa de Verduras', 200, 5, 1, 40, 'Almuerzo', '1 taza', 'Vegano'),
+       ('Hamburguesa de Frijoles Negros', 350, 20, 5, 55, 'Almuerzo', '1 hamburguesa', 'Vegano'),
+       ('Curry de Garbanzos', 380, 15, 10, 55, 'Almuerzo', '1 porción', 'Vegano'),
+       ('Stir-Fry de Tofu', 420, 20, 15, 40, 'Almuerzo', '1 taza', 'Vegano'),
 
-       ('Ensalada de Quinoa y Feta', 400, 15, 10, 50, 'Almuerzo', '1 taza', 'Almuerzo', 'Vegetariano'),
-       ('Pasta al Pesto', 500, 15, 20, 60, 'Almuerzo', '1 plato', 'Almuerzo', 'Vegetariano'),
-       ('Wrap de Verduras y Hummus', 350, 10, 8, 50, 'Almuerzo', '1 wrap', 'Almuerzo', 'Vegetariano'),
-       ('Pizza Vegetariana', 600, 25, 25, 70, 'Almuerzo', '1 porción', 'Almuerzo', 'Vegetariano'),
-       ('Tortilla de Espinacas', 300, 15, 12, 30, 'Almuerzo', '1 porción', 'Almuerzo', 'Vegetariano'),
-       ('Risotto de Champiñones', 450, 18, 10, 60, 'Almuerzo', '1 plato', 'Almuerzo', 'Vegetariano'),
-       ('Lasaña Vegetariana', 600, 20, 25, 80, 'Almuerzo', '1 porción', 'Almuerzo', 'Vegetariano'),
+       ('Ensalada de Quinoa y Feta', 400, 15, 10, 50, 'Almuerzo', '1 taza', 'Vegetariano'),
+       ('Pasta al Pesto', 500, 15, 20, 60, 'Almuerzo', '1 plato', 'Vegetariano'),
+       ('Wrap de Verduras y Hummus', 350, 10, 8, 50, 'Almuerzo', '1 wrap', 'Vegetariano'),
+       ('Pizza Vegetariana', 600, 25, 25, 70, 'Almuerzo', '1 porción', 'Vegetariano'),
+       ('Tortilla de Espinacas', 300, 15, 12, 30, 'Almuerzo', '1 porción', 'Vegetariano'),
+       ('Risotto de Champiñones', 450, 18, 10, 60, 'Almuerzo', '1 plato', 'Vegetariano'),
+       ('Lasaña Vegetariana', 600, 20, 25, 80, 'Almuerzo', '1 porción', 'Vegetariano'),
 
-       ('Pollo Asado con Verduras', 600, 40, 30, 20, 'Almuerzo', '1 porción', 'Almuerzo', 'omnivoro'),
-       ('Tacos de Pollo', 500, 35, 20, 50, 'Almuerzo', '3 tacos', 'Almuerzo', 'omnivoro'),
-       ('Pasta con Salsa Boloñesa', 700, 25, 15, 90, 'Almuerzo', '1 plato', 'Almuerzo', 'omnivoro'),
-       ('Ensalada César con Pollo', 550, 30, 25, 20, 'Almuerzo', '1 porción', 'Almuerzo', 'omnivoro'),
-       ('Arroz Frito con Cerdo', 600, 20, 30, 70, 'Almuerzo', '1 taza', 'Almuerzo', 'omnivoro'),
-       ('Sándwich de Pavo', 450, 30, 10, 40, 'Almuerzo', '1 sándwich', 'Almuerzo', 'omnivoro'),
-       ('Bowl de Pollo Teriyaki', 650, 35, 25, 80, 'Almuerzo', '1 taza', 'Almuerzo', 'omnivoro');
+       ('Pollo Asado con Verduras', 600, 40, 30, 20, 'Almuerzo', '1 porción', 'omnivoro'),
+       ('Tacos de Pollo', 500, 35, 20, 50, 'Almuerzo', '3 tacos', 'omnivoro'),
+       ('Pasta con Salsa Boloñesa', 700, 25, 15, 90, 'Almuerzo', '1 plato', 'omnivoro'),
+       ('Ensalada César con Pollo', 550, 30, 25, 20, 'Almuerzo', '1 porción', 'omnivoro'),
+       ('Arroz Frito con Cerdo', 600, 20, 30, 70, 'Almuerzo', '1 taza', 'omnivoro'),
+       ('Sándwich de Pavo', 450, 30, 10, 40, 'Almuerzo', '1 sándwich', 'omnivoro'),
+       ('Bowl de Pollo Teriyaki', 650, 35, 25, 80, 'Almuerzo', '1 taza', 'omnivoro');
 
 -- Insertar Meriendas
-INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, tipo, dieta)
-VALUES ('Batido de Frutas', 150, 3, 1, 35, 'Merienda', '1 vaso', 'Merienda', 'Vegano'),
-       ('Galletas de Avena', 200, 5, 7, 30, 'Merienda', '3 galletas', 'Merienda', 'Vegano'),
-       ('Hummus con Verduras', 250, 10, 12, 20, 'Merienda', '1 taza', 'Merienda', 'Vegano'),
-       ('Frutos Secos Mixtos', 300, 10, 20, 20, 'Merienda', '1/2 taza', 'Merienda', 'Vegano'),
-       ('Barra de Granola', 200, 5, 5, 35, 'Merienda', '1 barra', 'Merienda', 'Vegano'),
-       ('Palomitas de Maíz', 100, 3, 1, 20, 'Merienda', '1 taza', 'Merienda', 'Vegano'),
-       ('Gelatina de Frutas', 80, 2, 0, 20, 'Merienda', '1 porción', 'Merienda', 'Vegano'),
+INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, dieta)
+VALUES ('Batido de Frutas', 150, 3, 1, 35, 'Merienda', '1 vaso', 'Vegano'),
+       ('Galletas de Avena', 200, 5, 7, 30, 'Merienda', '3 galletas', 'Vegano'),
+       ('Hummus con Verduras', 250, 10, 12, 20, 'Merienda', '1 taza', 'Vegano'),
+       ('Frutos Secos Mixtos', 300, 10, 20, 20, 'Merienda', '1/2 taza', 'Vegano'),
+       ('Barra de Granola', 200, 5, 5, 35, 'Merienda', '1 barra', 'Vegano'),
+       ('Palomitas de Maíz', 100, 3, 1, 20, 'Merienda', '1 taza', 'Vegano'),
+       ('Gelatina de Frutas', 80, 2, 0, 20, 'Merienda', '1 porción', 'Vegano'),
 
-       ('Yogur con Granola', 250, 9, 4, 40, 'Merienda', '1 taza', 'Merienda', 'Vegetariano'),
-       ('Tostadas con Mantequilla de Maní', 300, 12, 18, 30, 'Merienda', '2 rebanadas', 'Merienda', 'Vegetariano'),
-       ('Frutas con Chocolate', 180, 2, 7, 30, 'Merienda', '1 porción', 'Merienda', 'Vegetariano'),
-       ('Mini Quiches de Espinaca', 220, 10, 15, 15, 'Merienda', '2 mini quiches', 'Merienda', 'Vegetariano'),
-       ('Cheesecake de Frutos Rojos', 400, 8, 25, 30, 'Merienda', '1 porción', 'Merienda', 'Vegetariano'),
-       ('Smoothie de Fresa', 200, 4, 1, 40, 'Merienda', '1 vaso', 'Merienda', 'Vegetariano'),
-       ('Pudding de Chía', 180, 5, 9, 30, 'Merienda', '1 taza', 'Merienda', 'Vegetariano'),
+       ('Yogur con Granola', 250, 9, 4, 40, 'Merienda', '1 taza', 'Vegetariano'),
+       ('Tostadas con Mantequilla de Maní', 300, 12, 18, 30, 'Merienda', '2 rebanadas', 'Vegetariano'),
+       ('Frutas con Chocolate', 180, 2, 7, 30, 'Merienda', '1 porción', 'Vegetariano'),
+       ('Mini Quiches de Espinaca', 220, 10, 15, 15, 'Merienda', '2 mini quiches', 'Vegetariano'),
+       ('Cheesecake de Frutos Rojos', 400, 8, 25, 30, 'Merienda', '1 porción', 'Vegetariano'),
+       ('Smoothie de Fresa', 200, 4, 1, 40, 'Merienda', '1 vaso', 'Vegetariano'),
+       ('Pudding de Chía', 180, 5, 9, 30, 'Merienda', '1 taza', 'Vegetariano'),
 
-       ('Galletas de Chocolate Chip', 250, 3, 12, 35, 'Merienda', '3 galletas', 'Merienda', 'omnivoro'),
-       ('Sándwich de Jamón y Queso', 400, 20, 20, 30, 'Merienda', '1 sándwich', 'Merienda', 'omnivoro'),
-       ('Batido de Proteína con Plátano', 300, 25, 5, 40, 'Merienda', '1 vaso', 'Merienda', 'omnivoro'),
-       ('Nachos con Queso', 400, 10, 25, 30, 'Merienda', '1 porción', 'Merienda', 'omnivoro'),
-       ('Tortas de Arroz con Mantequilla', 200, 5, 10, 25, 'Merienda', '3 tortas', 'Merienda', 'omnivoro'),
-       ('Galletas de Avena con Pasas', 220, 4, 7, 35, 'Merienda', '2 galletas', 'Merienda', 'omnivoro'),
-       ('Smoothie de Mango', 250, 4, 1, 55, 'Merienda', '1 vaso', 'Merienda', 'omnivoro');
+       ('Galletas de Chocolate Chip', 250, 3, 12, 35, 'Merienda', '3 galletas', 'omnivoro'),
+       ('Sándwich de Jamón y Queso', 400, 20, 20, 30, 'Merienda', '1 sándwich', 'omnivoro'),
+       ('Batido de Proteína con Plátano', 300, 25, 5, 40, 'Merienda', '1 vaso', 'omnivoro'),
+       ('Nachos con Queso', 400, 10, 25, 30, 'Merienda', '1 porción', 'omnivoro'),
+       ('Tortas de Arroz con Mantequilla', 200, 5, 10, 25, 'Merienda', '3 tortas', 'omnivoro'),
+       ('Galletas de Avena con Pasas', 220, 4, 7, 35, 'Merienda', '2 galletas', 'omnivoro'),
+       ('Smoothie de Mango', 250, 4, 1, 55, 'Merienda', '1 vaso', 'omnivoro');
 
 -- Insertar Cenas
-INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, tipo, dieta)
-VALUES ('Ensalada de Espinaca', 200, 5, 1, 40, 'Cena', '1 porción', 'Cena', 'Vegano'),
-       ('Sopa de Lentejas', 250, 13, 2, 40, 'Cena', '1 taza', 'Cena', 'Vegano'),
-       ('Pasta con Salsa de Tomate', 300, 10, 5, 60, 'Cena', '1 plato', 'Cena', 'Vegano'),
-       ('Buddha Bowl', 400, 12, 8, 70, 'Cena', '1 tazón', 'Cena', 'Vegano'),
-       ('Verduras Asadas', 180, 4, 8, 25, 'Cena', '1 porción', 'Cena', 'Vegano'),
-       ('Curry de Verduras', 350, 10, 15, 40, 'Cena', '1 porción', 'Cena', 'Vegano'),
-       ('Tofu al Horno con Especias', 400, 20, 20, 30, 'Cena', '1 porción', 'Cena', 'Vegano'),
+INSERT INTO Alimento (nombre, calorias, proteinas, grasas, carbohidratos, categoria, cantidad, dieta)
+VALUES ('Ensalada de Espinaca', 200, 5, 1, 40, 'Cena', '1 porción', 'Vegano'),
+       ('Sopa de Lentejas', 250, 13, 2, 40, 'Cena', '1 taza', 'Vegano'),
+       ('Pasta con Salsa de Tomate', 300, 10, 5, 60, 'Cena', '1 plato', 'Vegano'),
+       ('Buddha Bowl', 400, 12, 8, 70, 'Cena', '1 tazón', 'Vegano'),
+       ('Verduras Asadas', 180, 4, 8, 25, 'Cena', '1 porción', 'Vegano'),
+       ('Curry de Verduras', 350, 10, 15, 40, 'Cena', '1 porción', 'Vegano'),
+       ('Tofu al Horno con Especias', 400, 20, 20, 30, 'Cena', '1 porción', 'Vegano'),
 
-       ('Pasta con Salsa Alfredo', 500, 15, 30, 60, 'Cena', '1 plato', 'Cena', 'Vegetariano'),
-       ('Ensalada Caprese', 300, 12, 18, 20, 'Cena', '1 porción', 'Cena', 'Vegetariano'),
-       ('Tortilla de Papas', 400, 10, 25, 40, 'Cena', '1 porción', 'Cena', 'Vegetariano'),
-       ('Pizza Margherita', 600, 25, 30, 70, 'Cena', '1 porción', 'Cena', 'Vegetariano'),
-       ('Risotto de Espárragos', 500, 12, 15, 80, 'Cena', '1 plato', 'Cena', 'Vegetariano'),
-       ('Tacos de Queso', 350, 18, 22, 30, 'Cena', '2 tacos', 'Cena', 'Vegetariano'),
-       ('Bowl de Quinoa y Espinaca', 400, 15, 8, 60, 'Cena', '1 tazón', 'Cena', 'Vegetariano'),
+       ('Pasta con Salsa Alfredo', 500, 15, 30, 60, 'Cena', '1 plato', 'Vegetariano'),
+       ('Ensalada Caprese', 300, 12, 18, 20, 'Cena', '1 porción', 'Vegetariano'),
+       ('Tortilla de Papas', 400, 10, 25, 40, 'Cena', '1 porción', 'Vegetariano'),
+       ('Pizza Margherita', 600, 25, 30, 70, 'Cena', '1 porción', 'Vegetariano'),
+       ('Risotto de Espárragos', 500, 12, 15, 80, 'Cena', '1 plato', 'Vegetariano'),
+       ('Tacos de Queso', 350, 18, 22, 30, 'Cena', '2 tacos', 'Vegetariano'),
+       ('Bowl de Quinoa y Espinaca', 400, 15, 8, 60, 'Cena', '1 tazón', 'Vegetariano'),
 
-       ('Salmón a la Parrilla', 600, 40, 30, 20, 'Cena', '1 porción', 'Cena', 'omnivoro'),
-       ('Pollo al Limón', 500, 35, 20, 30, 'Cena', '1 porción', 'Cena', 'omnivoro'),
-       ('Carne Asada', 700, 40, 35, 0, 'Cena', '1 porción', 'Cena', 'omnivoro'),
-       ('Tacos de Carne', 600, 30, 25, 40, 'Cena', '3 tacos', 'Cena', 'omnivoro'),
-       ('Sopa de Pollo', 350, 20, 10, 30, 'Cena', '1 taza', 'Cena', 'omnivoro'),
-       ('Ensalada de Atún', 400, 25, 15, 20, 'Cena', '1 porción', 'Cena', 'omnivoro');
+       ('Salmón a la Parrilla', 600, 40, 30, 20, 'Cena', '1 porción', 'omnivoro'),
+       ('Pollo al Limón', 500, 35, 20, 30, 'Cena', '1 porción', 'omnivoro'),
+       ('Carne Asada', 700, 40, 35, 0, 'Cena', '1 porción', 'omnivoro'),
+       ('Tacos de Carne', 600, 30, 25, 40, 'Cena', '3 tacos', 'omnivoro'),
+       ('Sopa de Pollo', 350, 20, 10, 30, 'Cena', '1 taza', 'omnivoro'),
+       ('Pasta con Pollo y Espinacas', 550, 30, 25, 40, 'Cena', '1 plato', 'omnivoro'),
+       ('Ensalada de Atún', 400, 25, 15, 20, 'Cena', '1 porción', 'omnivoro');
 
 
 INSERT INTO Usuario (actividad, activo, altura, apellido, edad, email, formula, informacionAdicional, nombre,
-                     objetivoSalud, password, peso, preferenciaAlimenticia, restrincionesAlimentarias, rol, sexo)
+                     objetivoSalud, password, peso, preferenciaAlimenticia, restrincionesAlimentarias, rol, sexo,fotoPerfil)
 VALUES ('moderado', true, 175.0, 'Pérez', 25, '123@gmail.com', 'Fórmula de ejemplo', 'Ninguna', 'Juan', 'mantener',
-        '123', 70.0, 'vegetariano', 'lácteos', 'USER', 'masculino'),
-       ('sedentario', true, 170.0, 'Generico', 30, 'default_user@example.com', 'N/A', 'Usuario por defecto', 'Invitado',
-        'mantener', 'default123', 68.0, 'ninguna', 'ninguna', 'USER', 'no especificado');
+        '123', 70.0, 'vegetariano', 'lácteos', 'USER', 'masculino','images/logoLogin.png'),
+       ('sedentario', true, 170.0, '1', 30, 'admin@gmail.com', 'N/A', 'Usuario por defecto', 'admin',
+        'mantener', '1234', 68.0, 'ninguna', 'ninguna', 'ADMIN', 'no especificado','images/foto_perfil.jpg');
 
 
 INSERT INTO Receta (nombre, ingredientes, preparacion, tiempo, calorias, imagen)
@@ -451,131 +452,126 @@ VALUES ('Abdominales', 'Abdominales en Maquina', 'ejercicios/10004.png'),
        ('Pecho', 'Press Banca', 'ejercicios/press banca.jpg');
 
 INSERT INTO RegistroEjercicio (nombreRutina, descanso, dia, series, repeticiones, ejercicio_id, usuario_id)
-VALUES
-('Torso Pierna', 2.30, 'Viernes', 4, 10, 123, 1),
-('Torso Pierna', 2.30, 'Viernes', 4, 12, 101, 1),
-('Torso Pierna', 2.30, 'Viernes', 4, 15, 97, 1),
-('Torso Pierna', 2.30, 'Viernes', 4, 15, 104, 1),
-('Torso Pierna', 2.30, 'Viernes', 4, 10, 84, 1),
-('Torso Pierna', 2.30, 'Viernes', 3, 12, 86, 1),
-('Torso Pierna', 2.30, 'Jueves', 4, 10, 123, 1),
-('Torso Pierna', 2.30, 'Jueves', 4, 12, 101, 1),
-('Torso Pierna', 2.30, 'Jueves', 4, 10, 96, 1),
-('Torso Pierna', 2.30, 'Jueves', 4, 15, 50, 1),
-('Torso Pierna', 2.30, 'Jueves', 3, 15, 55, 1),
-('Torso Pierna', 2.30, 'Jueves', 3, 12, 59, 1),
-('Torso Pierna', 2.30, 'Martes', 4, 10, 123, 1),
-('Torso Pierna', 2.30, 'Martes', 4, 12, 101, 1),
-('Torso Pierna', 2.30, 'Martes', 4, 15, 90, 1),
-('Torso Pierna', 2.30, 'Martes', 4, 10, 104, 1),
-('Torso Pierna', 2.00, 'Martes', 3, 12, 100, 1),
-('Torso Pierna', 2.00, 'Martes', 3, 15, 110, 1),
-('Torso Pierna', 2.00, 'Lunes', 4, 10, 123, 1),
-('Torso Pierna', 2.30, 'Lunes', 4, 12, 101, 1),
-('Torso Pierna', 2.00, 'Lunes', 4, 10, 77, 1),
-('Torso Pierna', 1.30, 'Lunes', 4, 10, 104, 1),
-('Torso Pierna', 1.00, 'Lunes', 3, 15, 46, 1),
-('Torso Pierna', 1.30, 'Lunes', 3, 12, 109, 1);
-
-
-
-
+VALUES ('Torso Pierna', 2.30, 'Viernes', 4, 10, 123, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 4, 12, 101, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 4, 15, 97, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 4, 15, 104, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 4, 10, 84, 1),
+       ('Torso Pierna', 2.30, 'Viernes', 3, 12, 86, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 4, 10, 123, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 4, 12, 101, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 4, 10, 96, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 4, 15, 50, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 3, 15, 55, 1),
+       ('Torso Pierna', 2.30, 'Jueves', 3, 12, 59, 1),
+       ('Torso Pierna', 2.30, 'Martes', 4, 10, 123, 1),
+       ('Torso Pierna', 2.30, 'Martes', 4, 12, 101, 1),
+       ('Torso Pierna', 2.30, 'Martes', 4, 15, 90, 1),
+       ('Torso Pierna', 2.30, 'Martes', 4, 10, 104, 1),
+       ('Torso Pierna', 2.00, 'Martes', 3, 12, 100, 1),
+       ('Torso Pierna', 2.00, 'Martes', 3, 15, 110, 1),
+       ('Torso Pierna', 2.00, 'Lunes', 4, 10, 123, 1),
+       ('Torso Pierna', 2.30, 'Lunes', 4, 12, 101, 1),
+       ('Torso Pierna', 2.00, 'Lunes', 4, 10, 77, 1),
+       ('Torso Pierna', 1.30, 'Lunes', 4, 10, 104, 1),
+       ('Torso Pierna', 1.00, 'Lunes', 3, 15, 46, 1),
+       ('Torso Pierna', 1.30, 'Lunes', 3, 12, 109, 1);
 
 
 
 INSERT INTO RegistroEjercicio (nombreRutina, descanso, dia, series, repeticiones, ejercicio_id, usuario_id)
 VALUES
 -- Pecho y Biceps - Lunes
-('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 97, 1),  -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.30, 'Lunes', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Lunes', 3, 8, 101, 1),  -- Press Inclinado con Barra
-('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 88, 1),  -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 97, 1),        -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.30, 'Lunes', 4, 10, 89, 1),        -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Lunes', 3, 8, 101, 1),        -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Lunes', 4, 12, 88, 1),        -- Curl de Biceps con Barra "W"
 -- Pecho y Biceps - Martes
-('Pecho y Biceps', 1.30, 'Martes', 3, 15, 97, 1),  -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.00, 'Martes', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Martes', 3, 12, 104, 1), -- Press Militar con Mancuernas
-('Pecho y Biceps', 1.30, 'Martes', 4, 10, 88, 1),  -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.30, 'Martes', 3, 15, 97, 1),       -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.00, 'Martes', 4, 10, 89, 1),       -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Martes', 3, 12, 104, 1),      -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Martes', 4, 10, 88, 1),       -- Curl de Biceps con Barra "W"
 -- Pecho y Biceps - Miércoles
-('Pecho y Biceps', 2.00, 'Miércoles', 4, 12, 97, 1), -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.30, 'Miércoles', 3, 8, 101, 1), -- Press Inclinado con Barra
-('Pecho y Biceps', 1.30, 'Miércoles', 3, 15, 88, 1), -- Curl de Biceps con Barra "W"
-('Pecho y Biceps', 1.00, 'Miércoles', 4, 10, 56, 1), -- Flexiones Comunes
+('Pecho y Biceps', 2.00, 'Miércoles', 4, 12, 97, 1),    -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.30, 'Miércoles', 3, 8, 101, 1),    -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Miércoles', 3, 15, 88, 1),    -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.00, 'Miércoles', 4, 10, 56, 1),    -- Flexiones Comunes
 -- Pecho y Biceps - Jueves
-('Pecho y Biceps', 1.30, 'Jueves', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1), -- Press Militar con Mancuernas
-('Pecho y Biceps', 1.30, 'Jueves', 3, 8, 101, 1),  -- Press Inclinado con Barra
-('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1), -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Jueves', 4, 10, 89, 1),       -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1),      -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Jueves', 3, 8, 101, 1),       -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Jueves', 3, 12, 104, 1),      -- Press Militar con Mancuernas
 
 -- Pecho y Biceps - Viernes
-('Pecho y Biceps', 1.30, 'Viernes', 3, 15, 97, 1),  -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.00, 'Viernes', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Viernes', 3, 12, 104, 1), -- Press Militar con Mancuernas
-('Pecho y Biceps', 1.30, 'Viernes', 4, 10, 88, 1),  -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.30, 'Viernes', 3, 15, 97, 1),      -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.00, 'Viernes', 4, 10, 89, 1),      -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Viernes', 3, 12, 104, 1),     -- Press Militar con Mancuernas
+('Pecho y Biceps', 1.30, 'Viernes', 4, 10, 88, 1),      -- Curl de Biceps con Barra "W"
 -- Pecho y Biceps - Sábado
-('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 97, 1),  -- Press de Pecho en Maquina
-('Pecho y Biceps', 1.30, 'Sábado', 4, 10, 89, 1),  -- Curl de Biceps con Mancuernas
-('Pecho y Biceps', 1.30, 'Sábado', 3, 8, 101, 1),  -- Press Inclinado con Barra
-('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 88, 1),  -- Curl de Biceps con Barra "W"
+('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 97, 1),       -- Press de Pecho en Maquina
+('Pecho y Biceps', 1.30, 'Sábado', 4, 10, 89, 1),       -- Curl de Biceps con Mancuernas
+('Pecho y Biceps', 1.30, 'Sábado', 3, 8, 101, 1),       -- Press Inclinado con Barra
+('Pecho y Biceps', 1.30, 'Sábado', 4, 12, 88, 1),       -- Curl de Biceps con Barra "W"
 
 
 -- Espalda y Triceps - Lunes
-('Espalda y Triceps', 2.00, 'Lunes', 4, 15, 74, 1),  -- Remo con Barra en Banco
-('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.15, 'Lunes', 4, 10, 61, 1),  -- Jalon al Pecho
+('Espalda y Triceps', 2.00, 'Lunes', 4, 15, 74, 1),     -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 67, 1),     -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Lunes', 4, 12, 72, 1),     -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Lunes', 4, 10, 61, 1),     -- Jalon al Pecho
 -- Espalda y Triceps - Martes
-('Espalda y Triceps', 2.00, 'Martes', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.45, 'Martes', 3, 10, 61, 1),  -- Jalon al Pecho
-('Espalda y Triceps', 1.30, 'Martes', 4, 15, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Martes', 4, 12, 63, 1),  -- Jalon Unilateral
+('Espalda y Triceps', 2.00, 'Martes', 4, 12, 72, 1),    -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.45, 'Martes', 3, 10, 61, 1),    -- Jalon al Pecho
+('Espalda y Triceps', 1.30, 'Martes', 4, 15, 67, 1),    -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Martes', 4, 12, 63, 1),    -- Jalon Unilateral
 -- Espalda y Triceps - Miércoles
-('Espalda y Triceps', 2.00, 'Miércoles', 4, 15, 74, 1),  -- Remo con Barra en Banco
-('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.15, 'Miércoles', 4, 10, 61, 1),  -- Jalon al Pecho
+('Espalda y Triceps', 2.00, 'Miércoles', 4, 15, 74, 1), -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 67, 1), -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Miércoles', 4, 12, 72, 1), -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Miércoles', 4, 10, 61, 1), -- Jalon al Pecho
 -- Espalda y Triceps - Jueves
-('Espalda y Triceps', 1.30, 'Jueves', 4, 15, 72, 1), -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.30, 'Jueves', 4, 12, 63, 1), -- Jalon Unilateral
-('Espalda y Triceps', 1.00, 'Jueves', 3, 12, 75, 1), -- Remo con Barra Guiada
-('Espalda y Triceps', 1.15, 'Jueves', 4, 10, 68, 1), -- Patada de Triceps
+('Espalda y Triceps', 1.30, 'Jueves', 4, 15, 72, 1),    -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.30, 'Jueves', 4, 12, 63, 1),    -- Jalon Unilateral
+('Espalda y Triceps', 1.00, 'Jueves', 3, 12, 75, 1),    -- Remo con Barra Guiada
+('Espalda y Triceps', 1.15, 'Jueves', 4, 10, 68, 1),    -- Patada de Triceps
 -- Espalda y Triceps - Viernes
-('Espalda y Triceps', 2.00, 'Viernes', 4, 15, 74, 1),  -- Remo con Barra en Banco
-('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.15, 'Viernes', 4, 10, 61, 1),  -- Jalon al Pecho
+('Espalda y Triceps', 2.00, 'Viernes', 4, 15, 74, 1),   -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 67, 1),   -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Viernes', 4, 12, 72, 1),   -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Viernes', 4, 10, 61, 1),   -- Jalon al Pecho
 -- Espalda y Triceps - Sábado
-('Espalda y Triceps', 2.00, 'Sábado', 4, 15, 74, 1),  -- Remo con Barra en Banco
-('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 67, 1),  -- Patada de Triceps en Polea
-('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 72, 1),  -- Remo Cerrado en Maquina
-('Espalda y Triceps', 1.15, 'Sábado', 4, 10, 61, 1),  -- Jalon al Pecho
+('Espalda y Triceps', 2.00, 'Sábado', 4, 15, 74, 1),    -- Remo con Barra en Banco
+('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 67, 1),    -- Patada de Triceps en Polea
+('Espalda y Triceps', 1.30, 'Sábado', 4, 12, 72, 1),    -- Remo Cerrado en Maquina
+('Espalda y Triceps', 1.15, 'Sábado', 4, 10, 61, 1),    -- Jalon al Pecho
 
 -- Piernas y Abdomen - Lunes
-('Piernas y Abdomen', 2.00, 'Lunes', 4, 12, 84, 1),  -- Sentadilla con Barra
-('Piernas y Abdomen', 2.00, 'Lunes', 4, 10, 94, 1),  -- Prensa de Pierna Horizontal
-('Piernas y Abdomen', 1.45, 'Lunes', 3, 15, 83, 1),  -- Rueda Abdominal
-('Piernas y Abdomen', 1.30, 'Lunes', 4, 10, 49, 1),  -- Extensión de Cadera en Maquina
+('Piernas y Abdomen', 2.00, 'Lunes', 4, 12, 84, 1),     -- Sentadilla con Barra
+('Piernas y Abdomen', 2.00, 'Lunes', 4, 10, 94, 1),     -- Prensa de Pierna Horizontal
+('Piernas y Abdomen', 1.45, 'Lunes', 3, 15, 83, 1),     -- Rueda Abdominal
+('Piernas y Abdomen', 1.30, 'Lunes', 4, 10, 49, 1),     -- Extensión de Cadera en Maquina
 -- Piernas y Abdomen - Martes
-('Piernas y Abdomen', 2.00, 'Martes', 3, 12, 36, 1),  -- Elevaciones Burro para Gemelo
-('Piernas y Abdomen', 1.15, 'Martes', 4, 15, 92, 1),  -- Plancha Abdominal
-('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),  -- Hip Thrust
-('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),  -- Rueda Abdominal
+('Piernas y Abdomen', 2.00, 'Martes', 3, 12, 36, 1),    -- Elevaciones Burro para Gemelo
+('Piernas y Abdomen', 1.15, 'Martes', 4, 15, 92, 1),    -- Plancha Abdominal
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),    -- Hip Thrust
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),    -- Rueda Abdominal
 -- Piernas y Abdomen - Miércoles
 ('Piernas y Abdomen', 2.00, 'Miércoles', 4, 10, 84, 1), -- Sentadilla con Barra
 ('Piernas y Abdomen', 1.45, 'Miércoles', 3, 15, 94, 1), -- Prensa de Pierna Horizontal
 ('Piernas y Abdomen', 1.30, 'Miércoles', 4, 12, 83, 1), -- Rueda Abdominal
 ('Piernas y Abdomen', 1.15, 'Miércoles', 4, 15, 49, 1), -- Extensión de Cadera en Maquina
 -- Piernas y Abdomen - Jueves
-('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),  -- Hip Thrust
-('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),  -- Rueda Abdominal
-('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),  -- Elevaciones Burro para Gemelo
-('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),  -- Plancha Abdominal
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 58, 1),    -- Hip Thrust
+('Piernas y Abdomen', 1.30, 'Martes', 4, 10, 83, 1),    -- Rueda Abdominal
+('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),    -- Elevaciones Burro para Gemelo
+('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),    -- Plancha Abdominal
 -- Piernas y Abdomen - Viernes
-('Piernas y Abdomen', 2.00, 'Viernes', 4, 12, 84, 1),  -- Sentadilla con Barra
-('Piernas y Abdomen', 2.00, 'Viernes', 4, 10, 94, 1),  -- Prensa de Pierna Horizontal
-('Piernas y Abdomen', 1.45, 'Viernes', 3, 15, 83, 1),  -- Rueda Abdominal
-('Piernas y Abdomen', 1.30, 'Viernes', 4, 10, 49, 1),  -- Extensión de Cadera en Maquina
+('Piernas y Abdomen', 2.00, 'Viernes', 4, 12, 84, 1),   -- Sentadilla con Barra
+('Piernas y Abdomen', 2.00, 'Viernes', 4, 10, 94, 1),   -- Prensa de Pierna Horizontal
+('Piernas y Abdomen', 1.45, 'Viernes', 3, 15, 83, 1),   -- Rueda Abdominal
+('Piernas y Abdomen', 1.30, 'Viernes', 4, 10, 49, 1),   -- Extensión de Cadera en Maquina
 -- Piernas y Abdomen - Sábado
-('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),  -- Elevaciones Burro para Gemelo
-('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),  -- Plancha Abdominal
-('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 58, 1),  -- Hip Thrust
-('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 83, 1);  -- Rueda Abdominal
+('Piernas y Abdomen', 2.00, 'Sábado', 3, 12, 36, 1),    -- Elevaciones Burro para Gemelo
+('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),    -- Plancha Abdominal
+('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 58, 1),    -- Hip Thrust
+('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 83, 1); -- Rueda Abdominal

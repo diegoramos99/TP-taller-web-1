@@ -89,4 +89,28 @@ public class RepositorioEjercicioImpl implements RepositorioEjercicio {
 
         return registros;
     }
+
+    @Override
+    public List<Ejercicio> getEjercicios() {
+        final Session session = sessionFactory.getCurrentSession();
+        return session.createCriteria(Ejercicio.class).list();
+    }
+
+    @Override
+    public void actualizarEjercicio(Ejercicio ejercicio) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.update(ejercicio);
+    }
+
+    @Override
+    public void guardarEjercicio(Ejercicio ejercicio) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.save(ejercicio);
+    }
+
+    @Override
+    public void eliminarEjercicio(Long id) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.delete(session.load(Ejercicio.class, id));
+    }
 }

@@ -38,7 +38,7 @@ public class ServicioListaDeComidasImpl implements ServicioListaDeComidas {
         List<Alimento> cenas = new ArrayList<>();
 
         for (Alimento alimento : alimentosList) {
-            switch (alimento.getTipo().toLowerCase()) {
+            switch (alimento.getCategoria().toLowerCase()) {
                 case "desayuno":
                     desayunos.add(alimento);
                     break;

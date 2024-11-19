@@ -1,6 +1,7 @@
 package com.tallerwebi.integracion;
 
 import com.tallerwebi.dominio.Receta;
+import com.tallerwebi.dominio.ServicioImagen;
 import com.tallerwebi.dominio.ServicioRecetaImpl;
 import com.tallerwebi.infraestructura.RepositorioReceta;
 import com.tallerwebi.integracion.config.HibernateTestConfig;
@@ -42,6 +43,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ControladorRecetaTest {
     @Mock
     private ServicioReceta servicioRecetaMock;
+
+    @Mock
+    private ServicioImagen servicioImagenMock;
     private RepositorioReceta repositorioReceta;
 
     @InjectMocks
@@ -55,7 +59,8 @@ public class ControladorRecetaTest {
     @BeforeEach
     public void init() {
         servicioRecetaMock = mock(ServicioReceta.class);
-        ControladorReceta controladorReceta = new ControladorReceta(servicioRecetaMock);
+        servicioImagenMock = mock(ServicioImagen.class);
+        ControladorReceta controladorReceta = new ControladorReceta(servicioRecetaMock, servicioImagenMock);
         this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
         MockitoAnnotations.openMocks(this);
         this.mockMvc = MockMvcBuilders.standaloneSetup(controladorReceta).build();

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Ejercicio</title>
+    <link rel="stylesheet" th:href="@{/css/modificarEstilos.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Modificar Ejercicio</h1>
+    <div class="instructions">
+        <p>Modifica los campos que desees y guarda los cambios.</p>
+    </div>
+
+    <form th:action="@{/guardarEjercicio}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nombre">Nombre del Ejercicio:</label>
+            <input type="text" id="nombre" name="nombre" th:value="${ejerciciosSeleccionado.nombre}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <input type="text" id="categoria" name="categoria" th:value="${ejerciciosSeleccionado.categoria}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Imagen </label>
+
+            <div>
+                <img th:src="@{/images/{img}(img=${ejerciciosSeleccionado.ubicacion})}" alt="Imagen del ejercicio"
+                     class="exercise-image" th:if="${ejerciciosSeleccionado.ubicacion != null}"/>
+            </div>
+
+            <div>
+                <input type="file" id="imagen" name="imagen">
+                <input type="hidden" id="imagenOriginal" name="imagenOriginal"
+                       th:value="${ejerciciosSeleccionado.ubicacion}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="id" th:value="${ejerciciosSeleccionado.id}">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

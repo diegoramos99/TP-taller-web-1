@@ -34,9 +34,26 @@ public class RepositorioRecetaImpl implements RepositorioReceta{
     }
 
     @Override
-    public Receta guardarReceta(Receta receta) {
+    public void guardarReceta(Receta receta) {
         final Session session = sessionFactory.getCurrentSession();
         session.save(receta);
-        return null;
+    }
+
+    @Override
+    public List<Receta> buscarReceta() {
+        final Session session = sessionFactory.getCurrentSession();
+        return session.createCriteria(Receta.class).list();
+    }
+
+    @Override
+    public void actualizarReceta(Receta receta) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.update(receta);
+    }
+
+    @Override
+    public void eliminarReceta(Long id) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.delete(session.load(Receta.class, id));
     }
 }

@@ -28,4 +28,24 @@ public class ServicioRecetaImpl implements ServicioReceta {
     public Receta obtenerRecetaPorId(Long id) {
         return repositorioReceta.obtenerReceta(id);
     }
+
+    @Override
+    public List<Receta> getRecetas() {
+        return repositorioReceta.buscarReceta();
+    }
+
+    @Override
+    public void actualizarReceta(Receta receta) {
+        repositorioReceta.actualizarReceta(receta);
+    }
+
+    @Override
+    public void gurdarReceta(Receta nuevaReceta) {
+        repositorioReceta.guardarReceta(nuevaReceta);
+    }
+
+    @Override
+    public void eliminarReceta(Long id) {
+        repositorioReceta.eliminarReceta(id);
+    }
 }

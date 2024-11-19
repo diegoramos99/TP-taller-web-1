@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Recetas</title>
+    <link rel="stylesheet" th:href="@{/css/nav.css}"/>
+    <link rel="stylesheet" th:href="@{/css/gestionListaEstilos.css}"/>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a th:href="@{/ver-admin}">Lista de Ejercicios</a></li>
+        <li><a th:href="@{/ver-lista-comidas}">Lista de Comidas</a></li>
+        <li><a th:href="@{/ver-lista-recetas}">Lista de Recetas</a></li>
+        <li class="perfil-usuario">
+            <a href="#" class="perfil-link">
+                <img th:src="@{${#httpSession.getAttribute('FOTOPERFIL')}}" alt="Usuario" class="icono-usuario"/>
+                <span th:text="${#httpSession.getAttribute('NOMBRE')} + ' ' + ${#httpSession.getAttribute('APELLIDO')}"></span>
+            </a>
+            <ul class="submenu">
+                <li><a th:href="@{/logout}">Cerrar sesión</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+
+<div class="premium-info">
+    <h1>Gestión de Recetas</h1>
+    <div class="contentSearch">
+        <div class="search-bar">
+            <form th:action="@{/ver-lista-recetas}" method="get">
+                <input type="text" id="search" name="search" placeholder="Buscar por nombre o ingredientes..."
+                       th:value="${param.search}">
+                <button type="submit" class="button-link">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="contentAdd">
+        <a class="button-link" th:href="@{/agregarReceta}">Agregar Receta</a>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <p>¿Estás seguro de que deseas eliminar este ejercicio?</p>
+            <div class="modal-actions">
+                <button id="confirmDelete" class="modal-button eliminar">Eliminar</button>
+                <button id="cancelDelete" class="modal-button cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Ingredientes</th>
+            <th>Preparación</th>
+            <th>Tiempo (min)</th>
+            <th>Calorías</th>
+            <th>Opciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="receta : ${recetas}">
+            <td>
+                <img th:src="@{${receta.imagen}}" alt="Imagen de la receta" class="exercise-image"
+                     th:if="${receta.imagen != null}"/>
+                <img th:src="@{/images/placeholder.png}" alt="Imagen no disponible" class="exercise-image"
+                     th:if="${receta.imagen == null}"/>
+            </td>
+            <td th:text="${receta.nombre}"></td>
+            <td th:text="${receta.ingredientes}"></td>
+            <td th:text="${receta.preparacion}"></td>
+            <td th:text="${receta.tiempo}"></td>
+            <td th:text="${receta.calorias}"></td>
+            <td>
+                <form th:action="@{/modificarReceta}" method="post">
+                    <input type="hidden" name="id" th:value="${receta.id}"/>
+                    <button class="button-link modificar">Modificar</button>
+                </form>
+                <form th:action="@{/eliminarReceta}" method="post">
+                    <input type="hidden" name="id" th:value="${receta.id}"/>
+                    <button class="button-link eliminar">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+<script th:src="@{/js/modalEliminar.js}"></script>
+
+</html>

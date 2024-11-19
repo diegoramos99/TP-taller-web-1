@@ -57,10 +57,5 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 
     }
 
-    @Override
-    public void actualizar(Usuario usuarioActivo) {
-        sessionFactory.getCurrentSession().update(usuarioActivo);
-    }
-
 
 }

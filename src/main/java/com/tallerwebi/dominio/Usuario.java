@@ -28,6 +28,7 @@ public class Usuario {
     private String preferenciaAlimenticia;
     private String restrincionesAlimentarias;
     private String informacionAdicional;
+    private String fotoPerfil;
 
     public Long getId() {
         return id;
@@ -171,5 +172,13 @@ public class Usuario {
 
     public void setPeso(Float peso) {
         this.peso = peso;
+    }
+
+    public String getFotoPerfil() {
+        return fotoPerfil;
+    }
+
+    public void setFotoPerfil(String fotoPerfil) {
+        this.fotoPerfil = fotoPerfil;
     }
 }

@@ -77,10 +77,10 @@ public class ServicioListaDeComidasTest {
         Alimento alimento3=new Alimento();
         Alimento alimento4=new Alimento();
 
-        alimento1.setTipo("desayuno");
-        alimento2.setTipo("almuerzo");
-        alimento3.setTipo("merienda");
-        alimento4.setTipo("cena");
+        alimento1.setCategoria("desayuno");
+        alimento2.setCategoria("almuerzo");
+        alimento3.setCategoria("merienda");
+        alimento4.setCategoria("cena");
 
 
         alimentos1.add(alimento1);
@@ -117,10 +117,10 @@ public class ServicioListaDeComidasTest {
         String tipoMerienda="merienda";
         String tipoCena="cena";
 
-        assertThat(alimentos.get(0).get(0).getTipo().toString(),equalToIgnoringCase(tipoDesayuno));
-        assertThat(alimentos.get(1).get(0).getTipo().toString(),equalToIgnoringCase(tipoAlmuerzo));
-        assertThat(alimentos.get(2).get(0).getTipo().toString(),equalToIgnoringCase(tipoMerienda));
-        assertThat(alimentos.get(3).get(0).getTipo().toString(),equalToIgnoringCase(tipoCena));
+        assertThat(alimentos.get(0).get(0).getCategoria().toString(),equalToIgnoringCase(tipoDesayuno));
+        assertThat(alimentos.get(1).get(0).getCategoria().toString(),equalToIgnoringCase(tipoAlmuerzo));
+        assertThat(alimentos.get(2).get(0).getCategoria().toString(),equalToIgnoringCase(tipoMerienda));
+        assertThat(alimentos.get(3).get(0).getCategoria().toString(),equalToIgnoringCase(tipoCena));
 
     }
 
@@ -140,10 +140,10 @@ public class ServicioListaDeComidasTest {
     Alimento alimento3=new Alimento();
     Alimento alimento4=new Alimento();
 
-    alimento1.setTipo("desayuno");
-    alimento2.setTipo("almuerzo");
-    alimento3.setTipo("merienda");
-    alimento4.setTipo("cena");
+    alimento1.setCategoria("desayuno");
+    alimento2.setCategoria("almuerzo");
+    alimento3.setCategoria("merienda");
+    alimento4.setCategoria("cena");
 
     alimento1.setDieta("vegano");
     alimento2.setDieta("vegano");
@@ -177,10 +177,10 @@ when(servicioListaDeComidasMock.buscarAlimentosParaLaSemana(usuarioMock)).thenRe
         assertThat(alimentos.get(0).get(2).getDieta().toString(),equalToIgnoringCase(dieta));
         assertThat(alimentos.get(0).get(3).getDieta().toString(),equalToIgnoringCase(dieta));
 
-        assertThat(alimentos.get(0).get(0).getTipo().toString(),equalToIgnoringCase(desayuno));
-        assertThat(alimentos.get(0).get(1).getTipo().toString(),equalToIgnoringCase(almuerzo));
-        assertThat(alimentos.get(0).get(2).getTipo().toString(),equalToIgnoringCase(merienda));
-        assertThat(alimentos.get(0).get(3).getTipo().toString(),equalToIgnoringCase(cena));
+        assertThat(alimentos.get(0).get(0).getCategoria().toString(),equalToIgnoringCase(desayuno));
+        assertThat(alimentos.get(0).get(1).getCategoria().toString(),equalToIgnoringCase(almuerzo));
+        assertThat(alimentos.get(0).get(2).getCategoria().toString(),equalToIgnoringCase(merienda));
+        assertThat(alimentos.get(0).get(3).getCategoria().toString(),equalToIgnoringCase(cena));
     }
 
     private List<List<Alimento>> whenBusqueAlimentosPAraLaSemana() {

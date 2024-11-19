@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Receta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="file"],
+        .form-group input[type="number"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="file"]:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Agregar Receta</h1>
+
+    <form th:action="@{/guardarNuevaReceta}" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="nombre">Nombre de la Receta:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ejemplo: Ensalada César" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="ingredientes">Ingredientes:</label>
+            <textarea id="ingredientes" name="ingredientes" placeholder="Lista de ingredientes separados por coma" required></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label for="preparacion">Preparación:</label>
+            <textarea id="preparacion" name="preparacion" placeholder="Instrucciones paso a paso" required></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label for="tiempo">Tiempo (minutos):</label>
+            <input type="number" id="tiempo" name="tiempo" placeholder="Ejemplo: 30" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="calorias">Calorías:</label>
+            <input type="number" id="calorias" name="calorias" placeholder="Ejemplo: 250" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="imagen">Imagen de la receta:</label>
+            <input type="file" id="imagen" name="imagen" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Guardar Receta</button>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

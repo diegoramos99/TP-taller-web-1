@@ -1,0 +1,89 @@
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+           .exercise-image {
+            width: 100px;
+            height: 100px;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="file"],
+        .form-group input[type="number"],
+        .form-group textarea{
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="file"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+         .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group input[type="hidden"] {
+            display: none;
+        }
+
+        .instructions {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+        }
