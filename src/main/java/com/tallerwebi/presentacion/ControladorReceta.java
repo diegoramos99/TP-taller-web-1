@@ -37,18 +37,18 @@ public class ControladorReceta {
     }
 
 
-    @RequestMapping(path = "/buscar")
-    public ModelAndView buscarRecetas(@RequestParam String nombre) {
-        ModelMap model = new ModelMap();
-        model.addAttribute("nombre", nombre);
-        if (nombre != null && !nombre.isEmpty()) {
-            List<Receta> resultados = servicioReceta.BuscarRecetaPorNombre(nombre);
-            model.addAttribute("recetas", resultados);
+        @RequestMapping(path = "/buscar")
+        public ModelAndView buscarRecetas(@RequestParam String nombre) {
+            ModelMap model = new ModelMap();
+            model.addAttribute("nombre", nombre);
+            if (nombre != null && !nombre.isEmpty()) {
+                List<Receta> resultados = servicioReceta.BuscarRecetaPorNombre(nombre);
+                model.addAttribute("recetas", resultados);
 
+            }
+
+            return new ModelAndView("recetas", model);
         }
-
-        return new ModelAndView("recetas", model);
-    }
 
     @GetMapping("/buscar/{id}")
     public ModelAndView obtenerRecetaPorId(@PathVariable Long id) {
