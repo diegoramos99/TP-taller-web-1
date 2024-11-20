@@ -23,7 +23,6 @@ public class RepositorioRecetaImpl implements RepositorioReceta{
     public List<Receta> buscarReceta(String nombre) {
         final Session session = sessionFactory.getCurrentSession();
         List<Receta> recetas = session.createCriteria(Receta.class).add(Restrictions.ilike("nombre","%" + nombre + "%")).list();
-        System.out.println("Buscando recetas con el nombre: " + nombre + ", Resultados: " + recetas.size());
         return recetas;
     }
 
