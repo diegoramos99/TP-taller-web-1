@@ -1,4 +1,5 @@
 package com.tallerwebi.presentacion;
+
 import com.tallerwebi.dominio.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,19 +31,29 @@ public class ControladorRecetaTest {
 
     @BeforeEach
     public void init() {
-        datosLoginMock = new DatosLogin("dami@unlam.com", "123");
-        usuarioMock = mock(Usuario.class);
-        when(usuarioMock.getEmail()).thenReturn("dami@unlam.com");
-        requestMock = mock(HttpServletRequest.class);
-        sessionMock = mock(HttpSession.class);
-        servicioRecetaMock = mock(ServicioReceta.class);
-        servicioImagenMock = mock(ServicioImagen.class);
-        controladorRecetaMock = new ControladorReceta(servicioRecetaMock,servicioImagenMock);
-    }
+    // Preparación de datos de login
+    datosLoginMock = new DatosLogin("dami@unlam.com", "123");
+    usuarioMock = mock(Usuario.class);
+    when(usuarioMock.getEmail()).thenReturn("dami@unlam.com");
+
+    requestMock = mock(HttpServletRequest.class);
+    sessionMock = mock(HttpSession.class);
+
+    when(requestMock.getSession()).thenReturn(sessionMock);
+    when(sessionMock.getAttribute("EMAIL")).thenReturn("dami@unlam.com");
+    when(sessionMock.getAttribute("ROL")).thenReturn("ADMIN");
+
+    // Mock de los servicios
+    servicioRecetaMock = mock(ServicioReceta.class);
+    servicioImagenMock = mock(ServicioImagen.class);
+
+    // Controlador a probar
+    controladorRecetaMock = new ControladorReceta(servicioRecetaMock, servicioImagenMock);
+}
     @Test
     public void irALaVistaRecetaCuandoClickeaEnElNavLaSolapaReceta() {
         // preparacion
-        ModelAndView mav=new ModelAndView("recetas.html");
+        ModelAndView mav = new ModelAndView("recetas.html");
         when(requestMock.getSession()).thenReturn(sessionMock);
         when(sessionMock.getAttribute("EMAIL")).thenReturn("123@gmail.com");
         when(controladorRecetaMock.mostrarRecetas(requestMock)).thenReturn(mav);
@@ -57,24 +68,24 @@ public class ControladorRecetaTest {
     @Test
     public void queAlBuscarRecetasTraigaLasRecetasYVayaALaVistaRecetas() {
         // preparacion
-        ModelMap map=new ModelMap();
-        List<Receta> receta=new ArrayList<>();
-        Receta receta1=new Receta("arroz Con Pollo");
-        Receta receta2=new Receta("arroz");
+        ModelMap map = new ModelMap();
+        List<Receta> receta = new ArrayList<>();
+        Receta receta1 = new Receta("arroz Con Pollo");
+        Receta receta2 = new Receta("arroz");
         receta.add(receta1);
         receta.add(receta2);
 
-        map.put("recetas",receta);
-        ModelAndView mav=new ModelAndView("recetas.html",map);
-      // when(controladorRecetaMock.buscarRecetas("arroz")).thenReturn(mav);
-       when(servicioRecetaMock.BuscarRecetaPorNombre("arroz")).thenReturn(receta);
+        map.put("recetas", receta);
+        ModelAndView mav = new ModelAndView("recetas.html", map);
+        // when(controladorRecetaMock.buscarRecetas("arroz")).thenReturn(mav);
+        when(servicioRecetaMock.BuscarRecetaPorNombre("arroz")).thenReturn(receta);
         when(requestMock.getSession()).thenReturn(sessionMock);
         when(sessionMock.getAttribute("EMAIL")).thenReturn("123@gmail.com");
 
         // ejecucion
-        String nombreReceta="arroz";
+        String nombreReceta = "arroz";
         ModelAndView modelAndView = controladorRecetaMock.buscarRecetas(nombreReceta);
-        List <Receta> receta3=(List<Receta>) modelAndView.getModel().get("recetas");
+        List<Receta> receta3 = (List<Receta>) modelAndView.getModel().get("recetas");
 
         // validacion
         assertTrue(receta3.get(0) instanceof Receta);
@@ -82,37 +93,39 @@ public class ControladorRecetaTest {
         assertThat(modelAndView.getViewName(), equalToIgnoringCase("recetas"));
 
     }
+
     @Test
     public void queAlBuscarRecetasPorIDTraigaLasRecetasDelIdCorrespondiente() {
         // preparacion
-        ModelMap map=new ModelMap();
-        List<Receta> receta=new ArrayList<>();
-        Receta receta1=new Receta("arroz Con Pollo");
+        ModelMap map = new ModelMap();
+        List<Receta> receta = new ArrayList<>();
+        Receta receta1 = new Receta("arroz Con Pollo");
         receta1.setId(1L);
-        Receta receta2=new Receta("arroz");
+        Receta receta2 = new Receta("arroz");
         receta2.setId(2L);
         receta.add(receta1);
         receta.add(receta2);
 
-        map.put("recetas",receta);
+        map.put("recetas", receta);
         when(servicioRecetaMock.obtenerRecetaPorId(1L)).thenReturn(receta1);
         when(requestMock.getSession()).thenReturn(sessionMock);
         when(sessionMock.getAttribute("EMAIL")).thenReturn("123@gmail.com");
 
         // ejecucion
-        Long ID=1L;
+        Long ID = 1L;
         ModelAndView modelAndView = controladorRecetaMock.obtenerRecetaPorId(ID);
-        Receta receta3=(Receta) modelAndView.getModel().get("receta");
+        Receta receta3 = (Receta) modelAndView.getModel().get("receta");
 
         // validacion
 
         assertThat(receta3.getId().toString(), equalToIgnoringCase("1"));
 
     }
+
     @Test
     public void queAlmodificarRecetameLLeveALaVIstaModificarReceta() {
         // preparacion
-        Receta receta1=new Receta("arroz Con Pollo");
+        Receta receta1 = new Receta("arroz Con Pollo");
         receta1.setId(1L);
 
         when(servicioRecetaMock.obtenerRecetaPorId(1L)).thenReturn(receta1);
@@ -120,29 +133,31 @@ public class ControladorRecetaTest {
         when(sessionMock.getAttribute("EMAIL")).thenReturn("123@gmail.com");
 
         // ejecucion
-        Long ID=1L;
-        ModelAndView modelAndView = controladorRecetaMock.modificarEjercicio(ID,requestMock);
+        Long ID = 1L;
+        ModelAndView modelAndView = controladorRecetaMock.modificarReceta(ID, requestMock);
         // validacion
 
         assertThat(modelAndView.getViewName(), equalToIgnoringCase("modificarReceta"));
 
     }
+
     @Test
     public void queAlmodificarRecetaElModelTengaLosDatosCorrectos() {
         // preparacion
-        Receta receta1=new Receta("arroz Con Pollo");
+        Receta receta1 = new Receta("arroz Con Pollo");
         receta1.setId(1L);
         receta1.setNombre("arroz");
         receta1.setCalorias(100L);
+
 
         when(servicioRecetaMock.obtenerRecetaPorId(1L)).thenReturn(receta1);
         when(requestMock.getSession()).thenReturn(sessionMock);
         when(sessionMock.getAttribute("EMAIL")).thenReturn("123@gmail.com");
 
         // ejecucion
-        Long ID=1L;
-        ModelAndView modelAndView = controladorRecetaMock.modificarEjercicio(ID,requestMock);
-        Receta receta3=(Receta) modelAndView.getModel().get("recetaSeleccionada");
+        Long ID = 1L;
+        ModelAndView modelAndView = controladorRecetaMock.modificarReceta(ID, requestMock);
+        Receta receta3 = (Receta) modelAndView.getModel().get("recetaSeleccionada");
 
         // validacion
 
@@ -152,9 +167,10 @@ public class ControladorRecetaTest {
 
 
     }
+
     @Test
     public void queAlagregarRecetameLleveALaVistaCorrecta() {
-        ModelAndView mav=new ModelAndView("recetas.html");
+        ModelAndView mav = new ModelAndView("recetas.html");
         when(requestMock.getSession()).thenReturn(sessionMock);
         when(sessionMock.getAttribute("EMAIL")).thenReturn("123@gmail.com");
         when(controladorRecetaMock.agregarReceta(requestMock)).thenReturn(mav);
@@ -165,22 +181,25 @@ public class ControladorRecetaTest {
         // validacion
         assertThat(modelAndView.getViewName(), equalToIgnoringCase("agregarReceta"));
     }
+
     @Test
     public void queAlGuardarRecetaNosLleveAverListaRecetas() throws IOException {
         // preparacion
-        Receta receta1=new Receta("arroz Con Pollo");
+        Receta receta1 = new Receta("arroz Con Pollo");
         receta1.setId(1L);
         receta1.setNombre("arroz");
         receta1.setCalorias(100L);
+
 
         when(servicioRecetaMock.obtenerRecetaPorId(1L)).thenReturn(receta1);
 
         when(requestMock.getSession()).thenReturn(sessionMock);
         when(sessionMock.getAttribute("EMAIL")).thenReturn("123@gmail.com");
-        MultipartFile imagen=null;
+
+        MultipartFile imagen = null;
         // ejecucion
 
-        ModelAndView modelAndView = controladorRecetaMock.guardarReceta(receta1.getId(),receta1.getNombre(),receta1.getIngredientes(),receta1.getPreparacion(),receta1.getTiempo(),receta1.getCalorias(),imagen,"nombreDeUnaImagen",requestMock);
+        ModelAndView modelAndView = controladorRecetaMock.guardarReceta(receta1, imagen, requestMock);
 
         // validacion
 
@@ -188,10 +207,11 @@ public class ControladorRecetaTest {
 
 
     }
+
     @Test
     public void queAlGuardarnuevaRecetaNosLleveAListaDeREcetas() throws IOException {
         // preparacion
-        Receta receta1=new Receta("arroz Con Pollo");
+        Receta receta1 = new Receta("arroz Con Pollo");
         receta1.setId(1L);
         receta1.setNombre("arroz");
         receta1.setCalorias(100L);
@@ -200,10 +220,10 @@ public class ControladorRecetaTest {
 
         when(requestMock.getSession()).thenReturn(sessionMock);
         when(sessionMock.getAttribute("EMAIL")).thenReturn("123@gmail.com");
-        MultipartFile imagen=null;
+        MultipartFile imagen = null;
         // ejecucion
 
-        ModelAndView modelAndView = controladorRecetaMock.guardarNuevaReceta(receta1.getNombre(),receta1.getIngredientes(),receta1.getPreparacion(),receta1.getTiempo(),receta1.getCalorias(),imagen,requestMock);
+        ModelAndView modelAndView = controladorRecetaMock.guardarNuevaReceta(receta1.getNombre(), receta1.getIngredientes(), receta1.getPreparacion(), receta1.getTiempo(), receta1.getCalorias(), imagen, requestMock);
 
         // validacion
 
@@ -211,10 +231,11 @@ public class ControladorRecetaTest {
 
 
     }
+
     @Test
     public void queAlEliminarRecetaNosLleveAListaDeRecetas() throws IOException {
         // preparacion
-        Receta receta1=new Receta("arroz Con Pollo");
+        Receta receta1 = new Receta("arroz Con Pollo");
         receta1.setId(1L);
         receta1.setNombre("arroz");
         receta1.setCalorias(100L);
@@ -223,7 +244,7 @@ public class ControladorRecetaTest {
 
         when(requestMock.getSession()).thenReturn(sessionMock);
         when(sessionMock.getAttribute("EMAIL")).thenReturn("123@gmail.com");
-        MultipartFile imagen=null;
+        MultipartFile imagen = null;
         // ejecucion
 
         ModelAndView modelAndView = controladorRecetaMock.eliminarReceta(receta1.getId());

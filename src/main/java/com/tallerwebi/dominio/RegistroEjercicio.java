@@ -17,7 +17,6 @@ public class RegistroEjercicio {
 
     @ManyToOne
     private Ejercicio ejercicio;
-
     private String nombreRutina;
     private Integer series;
     private Integer repeticiones;
