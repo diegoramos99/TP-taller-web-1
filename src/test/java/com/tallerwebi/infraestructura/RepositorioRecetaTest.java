@@ -118,6 +118,8 @@ public class RepositorioRecetaTest {
         assertThat(recetas.size(), is(4));
         assertThat(recetas.get(0).getNombre(), equalToIgnoringCase("arroz"));
     }
+
+
     @Test
     @Transactional
     @Rollback
@@ -133,6 +135,8 @@ public class RepositorioRecetaTest {
         Receta recetaBuscada= session.get(Receta.class,1L);
 assertThat(recetaBuscada.getNombre().toString(),equalToIgnoringCase("arroz con pollo"));
     }
+
+
     @Test
     @Transactional
     @Rollback

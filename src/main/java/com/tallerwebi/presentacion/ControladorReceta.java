@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.tallerwebi.dominio.ServicioReceta;
 import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
@@ -37,18 +38,18 @@ public class ControladorReceta {
     }
 
 
-        @RequestMapping(path = "/buscar")
-        public ModelAndView buscarRecetas(@RequestParam String nombre) {
-            ModelMap model = new ModelMap();
-            model.addAttribute("nombre", nombre);
-            if (nombre != null && !nombre.isEmpty()) {
-                List<Receta> resultados = servicioReceta.BuscarRecetaPorNombre(nombre);
-                model.addAttribute("recetas", resultados);
+    @RequestMapping(path = "/buscar")
+    public ModelAndView buscarRecetas(@RequestParam String nombre) {
+        ModelMap model = new ModelMap();
+        model.addAttribute("nombre", nombre);
+        if (nombre != null && !nombre.isEmpty()) {
+            List<Receta> resultados = servicioReceta.BuscarRecetaPorNombre(nombre);
+            model.addAttribute("recetas", resultados);
 
-            }
-
-            return new ModelAndView("recetas", model);
         }
+
+        return new ModelAndView("recetas", model);
+    }
 
     @GetMapping("/buscar/{id}")
     public ModelAndView obtenerRecetaPorId(@PathVariable Long id) {
@@ -59,7 +60,7 @@ public class ControladorReceta {
     }
 
     @RequestMapping(value = "/modificarReceta", method = RequestMethod.POST)
-    public ModelAndView modificarEjercicio(@RequestParam("id") Long id, HttpServletRequest request) {
+    public ModelAndView modificarReceta(@RequestParam("id") Long id, HttpServletRequest request) {
         if (request.getSession().getAttribute("EMAIL") == null && request.getSession().getAttribute("ROL") != "ADMIN") {
             return new ModelAndView("redirect:/login");
         }
@@ -84,40 +85,39 @@ public class ControladorReceta {
 
     @RequestMapping(value = "/guardarReceta", method = RequestMethod.POST)
     public ModelAndView guardarReceta(
-            @RequestParam("id") Long id,
-            @RequestParam("nombre") String nombre,
-            @RequestParam("ingredientes") String ingredientes,
-            @RequestParam("preparacion") String preparacion,
-            @RequestParam("tiempo") Long tiempo,
-            @RequestParam("calorias") Long calorias,
+            @ModelAttribute("recetaSeleccionada") Receta receta,
             @RequestParam(value = "imagenNueva", required = false) MultipartFile imagenNueva,
-            @RequestParam("imagenOriginal") String imagenOriginal,
             HttpServletRequest request
     ) throws IOException {
-        if (request.getSession().getAttribute("EMAIL") == null && request.getSession().getAttribute("ROL") != "ADMIN") {
+        if (request.getSession().getAttribute("EMAIL") == null || !"ADMIN".equals(request.getSession().getAttribute("ROL"))) {
             return new ModelAndView("redirect:/login");
         }
 
-        Receta receta = servicioReceta.obtenerRecetaPorId(id);
-        receta.setNombre(nombre);
-        receta.setIngredientes(ingredientes);
-        receta.setPreparacion(preparacion);
-        receta.setTiempo(tiempo);
-        receta.setCalorias(calorias);
+        if (receta.getId() != null) {
+            Receta recetaExistente = servicioReceta.obtenerRecetaPorId(receta.getId());
 
-        if (imagenNueva != null && !imagenNueva.isEmpty()) {
-            String rutaImagen = servicioImagen.guardarImagenReceta(imagenNueva);
-            String imagenbien = "images/" + rutaImagen;
-            receta.setImagen(imagenbien);
-        } else {
-            receta.setImagen(imagenOriginal);
+            if (recetaExistente != null) {
+                recetaExistente.setNombre(receta.getNombre());
+                recetaExistente.setIngredientes(receta.getIngredientes());
+                recetaExistente.setPreparacion(receta.getPreparacion());
+                recetaExistente.setTiempo(receta.getTiempo());
+                recetaExistente.setCalorias(receta.getCalorias());
+
+                if (imagenNueva != null && !imagenNueva.isEmpty()) {
+                    String rutaImagen = servicioImagen.guardarImagenReceta(imagenNueva);
+                    String imagenBien = "images/" + rutaImagen;
+                    recetaExistente.setImagen(imagenBien);
+                } else {
+                    recetaExistente.setImagen(receta.getImagen());
+                }
+
+                servicioReceta.actualizarReceta(recetaExistente);
+            }
         }
-
-        servicioReceta.actualizarReceta(receta);
-
 
         return new ModelAndView("redirect:/ver-lista-recetas");
     }
+
 
     @RequestMapping(value = "/guardarNuevaReceta", method = RequestMethod.POST)
     public ModelAndView guardarNuevaReceta(

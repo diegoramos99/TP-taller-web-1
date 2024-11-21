@@ -4,7 +4,6 @@ import com.tallerwebi.dominio.Alimento;
 import com.tallerwebi.dominio.ServicioAlimento;
 import com.tallerwebi.integracion.config.HibernateTestConfig;
 import com.tallerwebi.integracion.config.SpringWebTestConfig;
-import com.tallerwebi.presentacion.ControladorAlimento;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -44,7 +43,7 @@ public class ControladorAlimentoTest {
     @BeforeEach
     public void init() {
         servicioAlimentoMock = mock(ServicioAlimento.class);
-        ControladorAlimento controladorAlimento = new ControladorAlimento(servicioAlimentoMock);
+        com.tallerwebi.presentacion.ControladorAlimentoTest controladorAlimento = new com.tallerwebi.presentacion.ControladorAlimentoTest();
         this.mockMvc = MockMvcBuilders.standaloneSetup(controladorAlimento).build();
     }
 

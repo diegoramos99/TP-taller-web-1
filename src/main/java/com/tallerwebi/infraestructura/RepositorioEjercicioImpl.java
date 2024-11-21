@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import com.tallerwebi.dominio.Ejercicio;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -78,13 +79,12 @@ public class RepositorioEjercicioImpl implements RepositorioEjercicio {
 
         if (registros.isEmpty()) {
             return registros;
-        }else {
-             for (RegistroEjercicio registro : registros) {
-            registro.setUsuario(usuario);
-            session.update(registro);
-         }
+        } else {
+            for (RegistroEjercicio registro : registros) {
+                registro.setUsuario(usuario);
+                session.update(registro);
+            }
         }
-
 
 
         return registros;
@@ -111,6 +111,18 @@ public class RepositorioEjercicioImpl implements RepositorioEjercicio {
     @Override
     public void eliminarEjercicio(Long id) {
         final Session session = sessionFactory.getCurrentSession();
-        session.delete(session.load(Ejercicio.class, id));
+
+        List<RegistroEjercicio> registrosEjercicios = session.createCriteria(RegistroEjercicio.class)
+                .add(Restrictions.eq("ejercicio.id", id))
+                .list();
+
+        for (RegistroEjercicio registro : registrosEjercicios) {
+            session.delete(registro);
+        }
+
+        Ejercicio ejercicio = session.load(Ejercicio.class, id);
+        session.delete(ejercicio);
     }
+
+
 }

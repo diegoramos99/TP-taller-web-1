@@ -117,7 +117,7 @@ public class ControladorAlimento {
     }
 
     @GetMapping("/agregarAlimento")
-    public ModelAndView mostrarFormulario(HttpServletRequest request) {
+    public ModelAndView mostrarFormularioAgregarAlimento(HttpServletRequest request) {
         ModelMap model = new ModelMap();
 
         if (request.getSession().getAttribute("EMAIL") == null && request.getSession().getAttribute("ROL") != "ADMIN") {
