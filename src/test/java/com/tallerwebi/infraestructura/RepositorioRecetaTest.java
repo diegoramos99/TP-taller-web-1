@@ -70,11 +70,11 @@ public class RepositorioRecetaTest {
     public void quetraigaUnaREcetaCorrectaDependiendoDelId(){
         //given
         Receta receta1 = new Receta();
-        receta1.setId(1l);
-        sessionFactory.getCurrentSession().save(receta1);
 
-        Receta recetas=repositorioReceta.obtenerReceta(1L);
-        assertThat(recetas.getId().toString(),equalToIgnoringCase("1"));
+        sessionFactory.getCurrentSession().save(receta1);
+        Long Id=receta1.getId();
+        Receta recetas=repositorioReceta.obtenerReceta(Id);
+        assertThat(recetas.getId().toString(),equalToIgnoringCase(Id.toString()));
 
     }
     @Test
@@ -125,13 +125,13 @@ public class RepositorioRecetaTest {
         //given
         final Session session = sessionFactory.getCurrentSession();
         Receta receta1 = new Receta();
-        receta1.setId(1l);
+
         receta1.setNombre("arroz");
         sessionFactory.getCurrentSession().save(receta1);
         receta1.setNombre("arroz con pollo");
-
-        Receta recetaBuscada= session.get(Receta.class,1L);
-assertThat(recetaBuscada.getNombre().toString(),equalToIgnoringCase("arroz con pollo"));
+        Long id=receta1.getId();
+        Receta recetaBuscada= session.get(Receta.class,id);
+        assertThat(recetaBuscada.getNombre().toString(),equalToIgnoringCase("arroz con pollo"));
     }
     @Test
     @Transactional
@@ -140,13 +140,13 @@ assertThat(recetaBuscada.getNombre().toString(),equalToIgnoringCase("arroz con p
         //given
         final Session session = sessionFactory.getCurrentSession();
         Receta receta1 = new Receta();
-        receta1.setId(1l);
         receta1.setNombre("arroz");
         sessionFactory.getCurrentSession().save(receta1);
+        Long id=  receta1.getId();
 
-        Receta recetaBuscada1= session.get(Receta.class,1L);
-        repositorioReceta.eliminarReceta(1L);
-        Receta recetaBuscada2= session.get(Receta.class,1L);
+        Receta recetaBuscada1= session.get(Receta.class,id);
+        repositorioReceta.eliminarReceta(id);
+        Receta recetaBuscada2= session.get(Receta.class,id);
         assertNotNull(recetaBuscada1, "El objeto no debería ser null");
         assertNull(recetaBuscada2, "El objeto debería ser null");
     }
