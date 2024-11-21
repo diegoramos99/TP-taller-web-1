@@ -43,7 +43,7 @@ public class ControladorAlimentoTest {
     @BeforeEach
     public void init() {
         servicioAlimentoMock = mock(ServicioAlimento.class);
-        com.tallerwebi.presentacion.ControladorAlimentoTest controladorAlimento = new com.tallerwebi.presentacion.ControladorAlimentoTest();
+        com.tallerwebi.presentacion.ControladorAlimento controladorAlimento = new com.tallerwebi.presentacion.ControladorAlimento(servicioAlimentoMock);
         this.mockMvc = MockMvcBuilders.standaloneSetup(controladorAlimento).build();
     }
 
