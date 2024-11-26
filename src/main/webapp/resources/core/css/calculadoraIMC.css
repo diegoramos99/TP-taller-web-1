@@ -7,11 +7,11 @@
 
     body {
         font-family: Arial, sans-serif;
-             background: url('https://img.freepik.com/vector-gratis/formulas-cientificas-dibujadas-mano-pizarra_23-2148496321.jpg') no-repeat center center fixed;
-              background-size: cover;
+        background: url('https://img.freepik.com/vector-gratis/formulas-cientificas-dibujadas-mano-pizarra_23-2148496321.jpg') no-repeat center center fixed;
+        background-size: cover;
+        backdrop-filter: blur(2px);
         color: #333;
         height:100vh;
-
     }
     .container {
     height:70%;

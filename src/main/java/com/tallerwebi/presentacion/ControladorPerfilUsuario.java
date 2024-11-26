@@ -92,6 +92,7 @@ public class ControladorPerfilUsuario {
         model.put("preferenciaAlimenticia", usuarioActualizado.getPreferenciaAlimenticia());
         model.put("restrincionesAlimentarias", usuarioActualizado.getRestrincionesAlimentarias());
         model.put("informacionAdicional", usuarioActualizado.getInformacionAdicional());
+        model.put("fotoPerfil",usuarioActualizado.getFotoPerfil());
 
         return new ModelAndView("perfilusuario", model);
 

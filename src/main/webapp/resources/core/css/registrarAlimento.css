@@ -7,8 +7,15 @@
 
 
         body {
+         background: url('https://media.istockphoto.com/id/1147560405/vector/set-of-food-icons-such-as-pizza-noodle-rice-pie-steak-fried-chicken-sushi-dumpling.jpg?s=612x612&w=0&k=20&c=hnJhiO8jcFbPu0sskF-91cj2uHTsumQIcrIca5nMoVc=') ;
+                          background-repeat: repeat; /* Controla la repetición de la imagen */
+
+                           background-position: center center; /* Posiciona la imagen */
+
+                           background-origin: padding-box; /* Define desde dónde inicia el fondo */
+                           background-clip: border-box; /* Determina dónde se recorta el fondo */
+                           background-color: #f0f0f0; /* Color de fondo de respaldo */
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             color: #333;
         }
 
@@ -21,6 +28,8 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background:transparent;
+              backdrop-filter: blur(2.5px);
         }
 
         .date-picker {
@@ -85,10 +94,12 @@
             padding: 10px;
             border: 1px solid #ddd;
             text-align: center;
+                background: cornsilk;
         }
 
         table th {
-            background-color: #f8f8f8;
+            background-color: #0a0a0ab5;
+            color:white;
         }
 
         .totals {
@@ -108,7 +119,8 @@
         }
 
         .totals table th {
-            background-color: #f8f8f8;
+                  background-color: #0a0a0ab5;
+                        color:white;
         }
 
         .totals table td.green {

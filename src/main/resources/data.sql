@@ -105,7 +105,7 @@ VALUES ('Ensalada de Espinaca', 200, 5, 1, 40, 'Cena', '1 porción', 'Vegano'),
 INSERT INTO Usuario (actividad, activo, altura, apellido, edad, email, formula, informacionAdicional, nombre,
                      objetivoSalud, password, peso, preferenciaAlimenticia, restrincionesAlimentarias, rol, sexo,fotoPerfil)
 VALUES ('moderado', true, 175.0, 'Pérez', 25, '123@gmail.com', 'Fórmula de ejemplo', 'Ninguna', 'Juan', 'mantener',
-        '123', 70.0, 'vegetariano', 'lácteos', 'USER', 'masculino','images/logoLogin.png'),
+        '123', 70.0, 'vegetariano', 'lacteos', 'USER', 'masculino','images/logoLogin.png'),
        ('sedentario', true, 170.0, '1', 30, 'admin@gmail.com', 'N/A', 'Usuario por defecto', 'admin',
         'mantener', '1234', 68.0, 'ninguna', 'ninguna', 'ADMIN', 'no especificado','images/foto_perfil.jpg');
 
