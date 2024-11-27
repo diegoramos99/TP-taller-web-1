@@ -5,7 +5,7 @@ public class DatosIMC {
     private String genero;
     private double altura;
     private double peso;
-    private double edad;
+    private Integer edad;
     private double imc;
 
     // Constructor vacío
@@ -13,7 +13,7 @@ public class DatosIMC {
     }
 
     // Constructor con parámetros
-    public DatosIMC(String clasificacion, String genero, double altura, double peso, double edad, double imc) {
+    public DatosIMC(String clasificacion, String genero, double altura, double peso, Integer edad, double imc) {
         this.clasificacion = clasificacion;
         this.genero = genero;
         this.altura = altura;
@@ -59,7 +59,7 @@ public class DatosIMC {
         return edad;
     }
 
-    public void setEdad(double edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
