@@ -9,14 +9,16 @@ import org.springframework.stereotype.Service;
 public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutricional {
 
     private Double calcularTasaMetabolicaBasal(Usuario usuario) {
+        double alturaEnCm = usuario.getAltura() * 100; // Conversión de metros a centímetros
         if (usuario.getSexo().equals("masculino")) {
-            return 88.36 + (13.4 * usuario.getPeso()) + (4.8 * usuario.getAltura()) - (5.7 * usuario.getEdad());
+            return 88.36 + (13.4 * usuario.getPeso()) + (4.8 * alturaEnCm) - (5.7 * usuario.getEdad());
         } else {
-            return 447.6 + (9.2 * usuario.getPeso()) + (3.1 * usuario.getAltura()) - (4.3 * usuario.getEdad());
+            return 447.6 + (9.2 * usuario.getPeso()) + (3.1 * alturaEnCm) - (4.3 * usuario.getEdad());
         }
     }
 
-    private Double obtenerMultiplicadorActividad(String actividad) {
+
+    public Double obtenerMultiplicadorActividad(String actividad) {
         switch (actividad) {
             case "sedentario":
                 return 1.2;
