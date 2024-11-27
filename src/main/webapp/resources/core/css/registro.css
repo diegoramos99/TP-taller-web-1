@@ -8,17 +8,35 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+     background: url('https://img.freepik.com/fotos-premium/concepto-plan-dieta-comidas-bloc-notas-alimentos-saludables-frutas-verduras-tabletas-cuadernos-accesorios-adelgazar-sobre-fondo-mesa-verde-brillante_136595-20255.jpg') ;
+     background-repeat: no-repeat; /* Controla la repetición de la imagen */
+     background-position: center center; /* Posiciona la imagen */
+     background-size: cover;
+     background-clip: border-box; /* Determina dónde se recorta el fondo */
+     background-color: #f0f0f0; /* Color de fondo de respaldo */
     padding: 20px;
-}
+    height:100vh;
+    display:flex;
+    justify-content:end;
+    width:100vw;
 
-.container {
+}
+main{
     max-width: 700px;
-    margin: 0 auto;
-    background-color: white;
+
+    background-color: #ffffff66;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    height:90%;
+    display:flex;
+    align-items:center;
+}
+.container {
+    max-width: 700px;
+    margin:auto;
+    padding: 30px;
+
 }
 
 h1 {
@@ -51,7 +69,7 @@ h1 {
     content: '';
     position: absolute;
     right: -50%;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     width: 100%;
     height: 2px;
@@ -90,14 +108,34 @@ input[type="number"],
 input[type="text"],
 input[type="email"],
 input[type="password"],
+
 select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
+
     font-size: 16px;
 }
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
 
+select:focus {
+    background:green;
+    outline:none;
+    color:white;
+}
+input[type="number"]::placeholder,
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+
+select::placeholder {
+
+    color:gray;
+}
 .wpcc-formula-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -157,12 +195,12 @@ button {
 }
 
 .next-button {
-    background-color: #007bff;
+    background-color: #127a36;
     color: white;
 }
 
 .next-button:hover {
-    background-color: #0056b3;
+    background-color: #199f47;
 }
 
 .prev-button {
