@@ -155,7 +155,7 @@ public class ControladorPerfilTest {
 
     @Test
     public void queAlHacerClickEnCalcuLarMacroTeLleveALaVistaCalcularMacro() {
-        when(controladorPerfilUsuarioMock.mostrarVistaCorrecta()).thenReturn(new ModelAndView("calcularMacro"));
+        when(controladorPerfilUsuarioMock.mostrarVistaCorrecta(requestMock)).thenReturn(new ModelAndView("calcularMacro"));
         givenExistePerfil();
 
         ModelAndView mav = whenRecibaLaVistaCalcularMacro();
@@ -167,7 +167,7 @@ public class ControladorPerfilTest {
     }
 
     private ModelAndView whenRecibaLaVistaCalcularMacro() {
-        return controladorPerfilUsuarioMock.mostrarVistaCorrecta();
+        return controladorPerfilUsuarioMock.mostrarVistaCorrecta(requestMock);
     }
 
 

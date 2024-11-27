@@ -91,6 +91,7 @@
     <h1>Perfil de Salud</h1>
     <img th:src="@{images/logoLogin.png}">
     <form action="" th:action="@{/enviarDatos}" method="POST" th:object="${usuario}">
+
         <input type="hidden" value="*{fotoPerfil}" th:field="*{fotoPerfil}"/>
         <input type="hidden" th:field="*{id}"/>
         <label for="objetivos">Objetivos de Salud</label>

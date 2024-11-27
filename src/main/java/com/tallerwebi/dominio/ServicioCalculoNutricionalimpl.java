@@ -71,5 +71,41 @@ public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutriciona
         return macros;
     }
 
+    @Override
+    public DatosIMC calcularIMC(String genero,double altura, double peso, Integer edad) {
+        //calculo el IMC
+        double imc = peso / (altura * altura);
+
+        //Clasifico en hombre o mujer
+        String clasificacion;
+
+        if (genero.equalsIgnoreCase("hombre")) {
+            // clasificacion especifica para hombres
+            if (imc < 20) {
+                clasificacion = "Bajo peso";
+            } else if (imc < 25) {
+                clasificacion = "Normal";
+            } else if (imc < 30) {
+                clasificacion = "Sobrepeso";
+            } else {
+                clasificacion = "Obesidad";
+            }
+        } else {
+            // clasificacion especifica para mujeres
+            if (imc < 19) {
+                clasificacion = "Bajo peso";
+            } else if (imc < 24) {
+                clasificacion = "Normal";
+            } else if (imc < 29) {
+                clasificacion = "Sobrepeso";
+            } else {
+                clasificacion = "Obesidad";
+            }
+        }
+
+    DatosIMC datosIMC=new DatosIMC(clasificacion,genero,altura,peso,edad,imc);
+    return datosIMC;
+    }
+
 
 }
