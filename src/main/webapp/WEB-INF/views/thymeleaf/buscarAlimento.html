@@ -2,33 +2,118 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <title>Buscar Alimentos</title>
     <link rel="stylesheet" th:href="@{/css/nav.css}"/>
-    <link rel="stylesheet" th:href="@{/css/buscarAlimento.css}"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Lista de resultados */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .list-group-item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .list-group-item.active {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .list-group-item a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+        }
+
+        .list-group-item a:hover {
+            color: #0056b3;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        .list-group-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
 
 <div th:replace="nav :: nav"></div>
 
-
-<div class="container mt-5">
+<div class="container">
     <h2>Buscar Alimentos</h2>
 
     <form th:action="@{/buscarAlimentos}" method="get">
         <input type="hidden" name="comida" th:value="${comida}"/>
         <input type="hidden" name="fecha" th:value="${fecha}"/>
-        <div class="input-group">
-            <input type="text" name="termino" class="form-control" placeholder="Buscar alimentos..."
-                   th:value="${termino}"/>
-            <button type="submit" class="btn btn-primary">Buscar</button>
-        </div>
+        <input type="text" name="termino" placeholder="Buscar alimentos..." th:value="${termino}"/>
+        <button type="submit">Buscar</button>
     </form>
 </div>
 
-<ul class="container list-group mt-3">
-    <li class="list-group-item-title">Resultados de búsqueda</li>
+<ul class="container">
+    <li class="list-group-item active">Resultados de búsqueda</li>
     <th:block th:if="${alimentos != null and #lists.isEmpty(alimentos) == false}">
         <th:block th:each="alimento : ${alimentos}">
             <li class="list-group-item">
@@ -45,4 +130,5 @@
 
 <script th:src="@{/js/nav-link.js}"></script>
 </body>
+
 </html>

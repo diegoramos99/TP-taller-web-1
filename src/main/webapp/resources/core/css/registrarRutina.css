@@ -17,24 +17,62 @@ body {
 }
 
 .container {
-    background-color: #020b5da3;
+    background: rgba(255, 255, 255, 0.85);
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
     max-width: 800px;
-    margin: 0 auto;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    color: #222;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #fff;
+    color: #2c3e50;
+    font-size: 2rem;
 }
-h2{
-color:white
+
+.premium-info {
+    background-color: rgba(76, 175, 80, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
 }
+
+.premium-info h3 {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.button-link {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.button-link:hover {
+    background-color: #45a049;
+}
+
+.exercise-table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.exercise-table th {
+    background-color: rgba(76, 175, 80, 0.9);
+    color: white;
+}
+
 .days-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -43,7 +81,7 @@ color:white
 }
 
 .day-card {
-    background-color: #e7e7e7;
+    background-color: gray;
     border-radius: 8px;
     padding: 1rem;
     text-align: center;

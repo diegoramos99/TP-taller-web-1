@@ -136,6 +136,8 @@
                 <option value="Torso Pierna" th:selected="${rutinaSelecionada == 'Torso Pierna'}">Torso Pierna (4
                     días)
                 </option>
+                <option value="Full Body" th:selected="${rutinaSelecionada == 'Full Body'}">Full Body (3 días)
+                </option>
                 <option value="Pecho y Biceps" th:selected="${rutinaSelecionada == 'Pecho y Biceps'}">Pecho y Bíceps (4
                     días)
                 </option>
@@ -145,6 +147,7 @@
                 <option value="Piernas y Abdomen" th:selected="${rutinaSelecionada == 'Piernas y Abdomen'}">Piernas y
                     Abdomen (4 días)
                 </option>
+
             </select>
             <button type="submit" class="button-link">Cargar Rutina</button>
         </form>
@@ -177,8 +180,7 @@
                 <form th:action="@{/eliminar-RegistroEjercicio}" method="post" style="display: inline;">
                     <input type="hidden" th:name="id" th:value="${registro.getId()}"/>
                     <input type="hidden" th:name="dia" th:value="${registro.getDia()}"/>
-                    <input type="submit" value="Eliminar" class="delete-button"
-                           onclick="return confirm('¿Estás seguro de que deseas eliminar este ejercicio?');"/>
+                    <input type="submit" value="Eliminar" class="delete-button"/>
                 </form>
             </td>
         </tr>
@@ -190,6 +192,9 @@
         <button type="submit" class="add-exercise button-link">Agregar Ejercicio</button>
     </form>
 </div>
+
+
+
 </body>
 
 <script>

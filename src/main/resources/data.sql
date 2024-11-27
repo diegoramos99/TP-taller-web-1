@@ -338,7 +338,7 @@ VALUES ('Abdominales', 'Abdominales en Maquina', 'ejercicios/10004.png'),
        ('Pecho', 'Aperturas en Maquina (Abiertas)', 'ejercicios/10019.png'),
        ('Pecho', 'Aperturas en Maquina (Cerradas)', 'ejercicios/10020.png'),
        ('Abdominales', 'Bicicleta Abdominal', 'ejercicios/10021.png'),
-       ('Espalda', 'Buenos Dias', 'ejercicios/10022.png'),
+       ('Piernas', 'Buenos Dias', 'ejercicios/10022.png'),
        ('Espalda', 'Colgarse de la Barra', 'ejercicios/10023.png'),
        ('Biceps', 'Curl Bayesian', 'ejercicios/10024.png'),
        ('Biceps', 'Curl de Biceps en Polea Unilateral', 'ejercicios/10030.png'),
@@ -575,3 +575,32 @@ VALUES
 ('Piernas y Abdomen', 1.15, 'Sábado', 4, 15, 92, 1),    -- Plancha Abdominal
 ('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 58, 1),    -- Hip Thrust
 ('Piernas y Abdomen', 1.30, 'Sábado', 4, 10, 83, 1); -- Rueda Abdominal
+
+INSERT INTO RegistroEjercicio (nombreRutina, descanso, dia, series, repeticiones, ejercicio_id, usuario_id)
+VALUES
+-- Lunes: Enfoque en fuerza general con prioridad en el pecho
+('Full Body', 2.00, 'Lunes', 4, 8, 123, 1), -- Press Banca
+('Full Body', 2.00, 'Lunes', 4, 10, 84, 1), -- Sentadilla con Barra
+('Full Body', 2.00, 'Lunes', 4, 8, 102, 1), -- Press Inclinado con Mancuernas
+('Full Body', 2.00, 'Lunes', 4, 8, 76, 1), -- Remo con Barra
+('Full Body', 1.30, 'Lunes', 3, 15, 92, 1), -- Plancha Abdominal
+('Full Body', 1.30, 'Lunes', 3, 12, 37, 1), -- Elevaciones de Gemelo en Máquina
+('Full Body', 1.30, 'Lunes', 3, 12, 25, 1), -- Curl Martillo en Polea
+
+-- Miércoles: Variación en planos de empuje y tirón
+('Full Body', 2.00, 'Miercoles', 4, 8, 101, 1), -- Press Inclinado con Barra
+('Full Body', 2.00, 'Miercoles', 4, 10, 94, 1), -- Prensa de Pierna Horizontal
+('Full Body', 2.00, 'Miercoles', 4, 8, 79, 1), -- Remo en Barra "T"
+('Full Body', 2.00, 'Miercoles', 4, 10, 103, 1), -- Press Militar con Barra
+('Full Body', 1.30, 'Miercoles', 3, 12, 83, 1), -- Rueda Abdominal
+('Full Body', 1.30, 'Miercoles', 3, 12, 68, 1), -- Patada de Triceps
+('Full Body', 1.30, 'Miercoles', 3, 15, 46, 1), -- Elevaciones Laterales
+
+-- Jueves: Complemento y accesorios
+('Full Body', 2.00, 'Viernes', 4, 10, 114, 1), -- Sentadilla en Barra Guiada
+('Full Body', 2.00, 'Viernes', 4, 10, 97, 1), -- Press de Pecho en Maquina
+('Full Body', 2.00, 'Viernes', 4, 10, 69, 1), -- Peso Muerto con Barra Hexagonal
+('Full Body', 2.00, 'Viernes', 4, 8, 72, 1), -- Remo Cerrado en Maquina
+('Full Body', 1.30, 'Viernes', 3, 12, 11, 1), -- Bicicleta Abdominal
+('Full Body', 1.30, 'Viernes', 3, 12, 52, 1), -- Extension de Triceps Lateral
+('Full Body', 1.30, 'Viernes', 3, 15, 35, 1); -- Elevacion de Talones Sentado
