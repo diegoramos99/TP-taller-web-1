@@ -9,14 +9,16 @@ import org.springframework.stereotype.Service;
 public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutricional {
 
     private Double calcularTasaMetabolicaBasal(Usuario usuario) {
+        double alturaEnCm = usuario.getAltura() * 100; // Conversión de metros a centímetros
         if (usuario.getSexo().equals("masculino")) {
-            return 88.36 + (13.4 * usuario.getPeso()) + (4.8 * usuario.getAltura()) - (5.7 * usuario.getEdad());
+            return 88.36 + (13.4 * usuario.getPeso()) + (4.8 * alturaEnCm) - (5.7 * usuario.getEdad());
         } else {
-            return 447.6 + (9.2 * usuario.getPeso()) + (3.1 * usuario.getAltura()) - (4.3 * usuario.getEdad());
+            return 447.6 + (9.2 * usuario.getPeso()) + (3.1 * alturaEnCm) - (4.3 * usuario.getEdad());
         }
     }
 
-    private Double obtenerMultiplicadorActividad(String actividad) {
+
+    public Double obtenerMultiplicadorActividad(String actividad) {
         switch (actividad) {
             case "sedentario":
                 return 1.2;
@@ -69,6 +71,42 @@ public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutriciona
         macros.setProteinas(calorias * 0.30 / 4);
         macros.setGrasas(calorias * 0.20 / 9);
         return macros;
+    }
+
+    @Override
+    public DatosIMC calcularIMC(String genero,double altura, double peso, Integer edad) {
+        //calculo el IMC
+        double imc = peso / (altura * altura);
+
+        //Clasifico en hombre o mujer
+        String clasificacion;
+
+        if (genero.equalsIgnoreCase("hombre")) {
+            // clasificacion especifica para hombres
+            if (imc < 20) {
+                clasificacion = "Bajo peso";
+            } else if (imc < 25) {
+                clasificacion = "Normal";
+            } else if (imc < 30) {
+                clasificacion = "Sobrepeso";
+            } else {
+                clasificacion = "Obesidad";
+            }
+        } else {
+            // clasificacion especifica para mujeres
+            if (imc < 19) {
+                clasificacion = "Bajo peso";
+            } else if (imc < 24) {
+                clasificacion = "Normal";
+            } else if (imc < 29) {
+                clasificacion = "Sobrepeso";
+            } else {
+                clasificacion = "Obesidad";
+            }
+        }
+
+    DatosIMC datosIMC=new DatosIMC(clasificacion,genero,altura,peso,edad,imc);
+    return datosIMC;
     }
 
 

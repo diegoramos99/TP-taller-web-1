@@ -1,0 +1,38 @@
+
+ body{
+  background: url('https://media.istockphoto.com/id/1147560405/vector/set-of-food-icons-such-as-pizza-noodle-rice-pie-steak-fried-chicken-sushi-dumpling.jpg?s=612x612&w=0&k=20&c=hnJhiO8jcFbPu0sskF-91cj2uHTsumQIcrIca5nMoVc=') ;
+                           background-repeat: repeat; /* Controla la repetición de la imagen */
+
+                            background-position: center center; /* Posiciona la imagen */
+
+                            background-origin: padding-box; /* Define desde dónde inicia el fondo */
+                            background-clip: border-box; /* Determina dónde se recorta el fondo */
+                            background-color: #f0f0f0; /* Color de fondo de respaldo */
+ }
+        .list-group-item {
+            cursor: pointer;
+            transition: background-color 0.3s;
+                background: #ffffff99;
+                backdrop-filter: blur(3px);
+        }
+    .list-group-item-title{
+     background: cornsilk;
+     color:black;
+     font-size:xx-large;
+     padding-left:1rem;
+     list-style:none;
+    }
+        .list-group-item:hover {
+    background: cornsilk;        }
+
+
+        .list-group-item a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+            padding: 10px;
+        }
+
+        .list-group-item a:hover {
+            color: #000;
+    background: cornsilk;        }

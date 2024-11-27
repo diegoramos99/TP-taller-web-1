@@ -10,5 +10,7 @@ public interface ServicioPerfilUsuario {
     void actualizarEstadoPremium(boolean b, Long id);
 
     void actualizarUsuario(Usuario usuarioActivo);
+
+    void actualizarIMC(String email);
 }
 

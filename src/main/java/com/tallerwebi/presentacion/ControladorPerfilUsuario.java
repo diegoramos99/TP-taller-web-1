@@ -1,5 +1,6 @@
 package com.tallerwebi.presentacion;
 
+import com.tallerwebi.dominio.ServicioCalculoNutricional;
 import com.tallerwebi.dominio.ServicioImagen;
 import com.tallerwebi.dominio.ServicioPerfilUsuario;
 import com.tallerwebi.dominio.Usuario;
@@ -25,12 +26,14 @@ public class ControladorPerfilUsuario {
 
     private ServicioPerfilUsuario servicioPerfilUsuario;
     private ServicioImagen servicioImagen;
+    private ServicioCalculoNutricional servicioCalculoNutricional;
 
     @Autowired
 
-    public void ControladorPerfilUsuario(ServicioPerfilUsuario servicioPerfilUsuario, ServicioImagen servicioImagen) {
+    public void ControladorPerfilUsuario(ServicioPerfilUsuario servicioPerfilUsuario, ServicioImagen servicioImagen,ServicioCalculoNutricional servicioCalculoNutricional) {
         this.servicioPerfilUsuario = servicioPerfilUsuario;
         this.servicioImagen = servicioImagen;
+        this.servicioCalculoNutricional=servicioCalculoNutricional;
     }
 
     @RequestMapping(path = "/perfilusuario", method = RequestMethod.GET)
@@ -42,6 +45,10 @@ public class ControladorPerfilUsuario {
             return new ModelAndView("redirect:/login");
         }
         Usuario usuarioBuscado = servicioPerfilUsuario.buscarUsuarioPoreEmail(email);
+        double imcLargo=servicioCalculoNutricional.calcularIMC(usuarioBuscado.getSexo(), usuarioBuscado.getAltura(), usuarioBuscado.getPeso(),usuarioBuscado.getEdad()).getImc();
+        double redondeado = Math.round(imcLargo * 100.0) / 100.0;
+
+        String clasificacion=servicioCalculoNutricional.calcularIMC(usuarioBuscado.getSexo(), usuarioBuscado.getAltura(), usuarioBuscado.getPeso(),usuarioBuscado.getEdad()).getClasificacion();
 
         ModelMap mavUsuario = new ModelMap();
 
@@ -58,6 +65,9 @@ public class ControladorPerfilUsuario {
         mavUsuario.put("restrincionesAlimentarias", usuarioBuscado.getRestrincionesAlimentarias());
         mavUsuario.put("informacionAdicional", usuarioBuscado.getInformacionAdicional());
         mavUsuario.put("fotoPerfil", usuarioBuscado.getFotoPerfil());
+        mavUsuario.put("IMC", redondeado);
+        mavUsuario.put("clasificacion", clasificacion);
+
 
         return new ModelAndView("perfilusuario", mavUsuario);
     }
@@ -71,6 +81,7 @@ public class ControladorPerfilUsuario {
             return new ModelAndView("redirect:/login");
         }
         Usuario usuarioBuscado = servicioPerfilUsuario.buscarUsuarioPoreEmail(email);
+
         ModelMap map = new ModelMap();
 
         map.put("usuario", usuarioBuscado);
@@ -85,6 +96,10 @@ public class ControladorPerfilUsuario {
         Usuario usuarioActivo = servicioPerfilUsuario.buscarUsuarioPoreEmail(email);
 
         Usuario usuarioActualizado = servicioPerfilUsuario.modificarUsuario(usuarioActivo, usuario);
+
+        double imcLargo=servicioCalculoNutricional.calcularIMC(usuarioActivo.getSexo(), usuarioActivo.getAltura(), usuarioActivo.getPeso(),usuarioActivo.getEdad()).getImc();
+        double redondeado = Math.round(imcLargo * 100.0) / 100.0;
+        String clasificacion=servicioCalculoNutricional.calcularIMC(usuarioActivo.getSexo(), usuarioActivo.getAltura(), usuarioActivo.getPeso(),usuarioActivo.getEdad()).getClasificacion();
         ModelMap model = new ModelMap();
         model.put("nombre", usuarioActualizado.getNombre());
         model.put("apellido", usuarioActualizado.getApellido());
@@ -93,14 +108,23 @@ public class ControladorPerfilUsuario {
         model.put("restrincionesAlimentarias", usuarioActualizado.getRestrincionesAlimentarias());
         model.put("informacionAdicional", usuarioActualizado.getInformacionAdicional());
         model.put("fotoPerfil",usuarioActualizado.getFotoPerfil());
+        model.put("IMC",redondeado);
+        model.put("clasificacion",clasificacion);
+
 
         return new ModelAndView("perfilusuario", model);
 
     }
 
     @RequestMapping(path = "/calcularMacro", method = RequestMethod.GET)
-    public ModelAndView mostrarVistaCorrecta() {
+    public ModelAndView mostrarVistaCorrecta(HttpServletRequest request) {
+        String email = (String) request.getSession().getAttribute("EMAIL");
+
+        if (email == null) {
+            return new ModelAndView("redirect:/login");
+        }
         ModelAndView model = new ModelAndView("calculadoraIMC");
+
         return model;
     }
 

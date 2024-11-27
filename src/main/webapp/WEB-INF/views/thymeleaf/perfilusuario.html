@@ -56,6 +56,10 @@
                     <h3>Información Adicional:</h3>
                     <p th:text="${informacionAdicional}"></p>
                 </div>
+                <div class="info-item">
+                    <h3>Mi indice de Masa Corporal </h3>
+                    <p th:text="${IMC + ' (' + clasificacion + ')'}"></p>
+                </div>
             </div>
             <a href="mostrarFormulario" class="edit-btn">
                 <button class="btn" type="submit">Editar Perfil</button>

@@ -53,5 +53,11 @@ public class ServicioPerfilUsuarioImpl implements ServicioPerfilUsuario {
         repositorioUsuario.actualizar(usuarioActivo);
     }
 
+    @Override
+    public void actualizarIMC(String email) {
+    Usuario usuarioBuscado= repositorioUsuario.buscar(email);
+    repositorioUsuario.actualizar(usuarioBuscado);
+    }
+
 
 }
