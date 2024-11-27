@@ -50,7 +50,7 @@ public class VistaLoginE2E {
         vistaLogin.escribirClave("unlam");
         vistaLogin.darClickEnIniciarSesion();
         String texto = vistaLogin.obtenerMensajeDeError();
-        assertThat("Error Usuario o clave incorrecta", equalToIgnoringCase(texto));
+        assertThat("Error: Usuario o clave incorrecta", equalToIgnoringCase(texto));
     }
 
     @Test
@@ -59,6 +59,6 @@ public class VistaLoginE2E {
         vistaLogin.escribirClave("test");
         vistaLogin.darClickEnIniciarSesion();
         String url = vistaLogin.obtenerURLActual();
-        assertThat(url, containsStringIgnoringCase("/spring/home"));
+        assertThat(url, containsStringIgnoringCase("/spring/validar-login"));
     }
 }
