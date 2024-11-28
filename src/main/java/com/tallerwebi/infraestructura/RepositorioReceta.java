@@ -19,5 +19,7 @@ public interface RepositorioReceta {
     void actualizarReceta(Receta receta);
 
     void eliminarReceta(Long id);
+
+    List<Receta> buscarRecetaPorNombreYingrediente(String search);
 }
 

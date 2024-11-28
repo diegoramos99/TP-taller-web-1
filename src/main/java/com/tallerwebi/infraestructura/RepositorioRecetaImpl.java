@@ -1,6 +1,7 @@
 package com.tallerwebi.infraestructura;
 
 import com.tallerwebi.dominio.Receta;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -54,5 +55,22 @@ public class RepositorioRecetaImpl implements RepositorioReceta{
     public void eliminarReceta(Long id) {
         final Session session = sessionFactory.getCurrentSession();
         session.delete(session.load(Receta.class, id));
+    }
+
+    @Override
+    public List<Receta> buscarRecetaPorNombreYingrediente(String search) {
+        final Session session = sessionFactory.getCurrentSession();
+
+        Criteria criteria = session.createCriteria(Receta.class);
+
+        if (search != null && !search.isEmpty()) {
+            criteria.add(
+                    Restrictions.or(
+                            Restrictions.ilike("nombre", "%" + search + "%"),
+                            Restrictions.ilike("ingredientes", "%" + search + "%")
+                    )
+            );
+        }
+        return (List<Receta>) criteria.list();
     }
 }

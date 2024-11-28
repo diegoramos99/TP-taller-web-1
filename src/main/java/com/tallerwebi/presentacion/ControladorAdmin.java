@@ -58,7 +58,7 @@ public class ControladorAdmin {
         List<Receta> recetas;
 
         if (search != null && !search.trim().isEmpty()) {
-            recetas = servicioReceta.BuscarRecetaPorNombre(search);
+            recetas = servicioReceta.BuscarRecetaPorNombreYingrediente(search);
         } else {
             recetas = servicioReceta.getRecetas();
         }
@@ -80,7 +80,7 @@ public class ControladorAdmin {
         List<Alimento> alimentos;
 
         if (search != null && !search.trim().isEmpty()) {
-            alimentos = servicioAlimento.BuscarAlimentoPorNombre(search);
+            alimentos = servicioAlimento.BuscarAlimentoPorNombreYCategoria(search);
         } else {
             alimentos = servicioAlimento.getAlimentos();
         }

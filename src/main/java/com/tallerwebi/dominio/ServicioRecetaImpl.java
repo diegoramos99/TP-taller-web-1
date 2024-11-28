@@ -48,4 +48,9 @@ public class ServicioRecetaImpl implements ServicioReceta {
     public void eliminarReceta(Long id) {
         repositorioReceta.eliminarReceta(id);
     }
+
+    @Override
+    public List<Receta> BuscarRecetaPorNombreYingrediente(String search) {
+        return repositorioReceta.buscarRecetaPorNombreYingrediente(search);
+    }
 }

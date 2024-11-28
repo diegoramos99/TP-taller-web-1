@@ -66,5 +66,10 @@ public class ServicioAlimentoImpl implements ServicioAlimento {
         repositorioAlimento.guardar(alimento);
     }
 
+    @Override
+    public List<Alimento> BuscarAlimentoPorNombreYCategoria(String search) {
+        return repositorioAlimento.buscarAlimentoPorNombreYCategoria(search);
+    }
+
 
 }

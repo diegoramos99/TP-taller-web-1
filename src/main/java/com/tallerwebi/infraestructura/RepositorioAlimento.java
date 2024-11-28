@@ -16,4 +16,6 @@ public interface RepositorioAlimento {
     void eliminarAlimento(Long id);
 
     void guardar(Alimento alimento);
+
+    List<Alimento> buscarAlimentoPorNombreYCategoria(String search);
 }

@@ -12,4 +12,6 @@ public interface ServicioReceta {
     void gurdarReceta(Receta nuevaReceta);
 
     void eliminarReceta(Long id);
+
+    List<Receta> BuscarRecetaPorNombreYingrediente(String search);
 }

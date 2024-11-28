@@ -2,6 +2,7 @@ package com.tallerwebi.infraestructura;
 
 
 import com.tallerwebi.dominio.Alimento;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -16,7 +17,7 @@ public class RepositorioAlimentoImpl implements RepositorioAlimento {
     private SessionFactory sessionFactory;
 
     @Autowired
-    public RepositorioAlimentoImpl(SessionFactory sessionFactory){
+    public RepositorioAlimentoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -59,6 +60,24 @@ public class RepositorioAlimentoImpl implements RepositorioAlimento {
     public void guardar(Alimento alimento) {
         final Session session = sessionFactory.getCurrentSession();
         session.save(alimento);
+    }
+
+    @Override
+    public List<Alimento> buscarAlimentoPorNombreYCategoria(String search) {
+        final Session session = sessionFactory.getCurrentSession();
+
+        // Crear el criterio de búsqueda
+        Criteria criteria = session.createCriteria(Alimento.class);
+
+        if (search != null && !search.isEmpty()) {
+            criteria.add(
+                    Restrictions.or(
+                            Restrictions.ilike("nombre", "%" + search + "%"),
+                            Restrictions.ilike("categoria", "%" + search + "%")
+                    )
+            );
+        }
+        return (List<Alimento>) criteria.list();
     }
 }
 

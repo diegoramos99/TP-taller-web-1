@@ -17,4 +17,6 @@ public interface ServicioAlimento {
     void eliminarAlimento(Long id);
 
     void guardar(Alimento alimento);
+
+    List<Alimento> BuscarAlimentoPorNombreYCategoria(String search);
 }
