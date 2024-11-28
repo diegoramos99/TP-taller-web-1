@@ -140,6 +140,7 @@ public class ControladorPerfilUsuario {
             String imagenbien = "images/" + rutaImagen;
             usuarioActivo.setFotoPerfil(imagenbien);
             servicioPerfilUsuario.actualizarUsuario(usuarioActivo);
+            request.getSession().setAttribute("FOTOPERFIL", imagenbien);
             model.put("success", "foto subida exitosamente");
             return new ModelAndView("redirect:/perfilusuario",model);
         } else {

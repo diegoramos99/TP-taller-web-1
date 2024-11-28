@@ -7,10 +7,9 @@ import org.springframework.stereotype.Service;
 
 @Service("servicioCalculoNutricional")
 public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutricional {
-
     private Double calcularTasaMetabolicaBasal(Usuario usuario) {
-        double alturaEnCm = usuario.getAltura() * 100; // Conversión de metros a centímetros
-        if (usuario.getSexo().equals("masculino")) {
+        double alturaEnCm = usuario.getAltura() > 3 ? usuario.getAltura() : usuario.getAltura() * 100;
+        if (usuario.getSexo().equalsIgnoreCase("masculino")) {
             return 88.36 + (13.4 * usuario.getPeso()) + (4.8 * alturaEnCm) - (5.7 * usuario.getEdad());
         } else {
             return 447.6 + (9.2 * usuario.getPeso()) + (3.1 * alturaEnCm) - (4.3 * usuario.getEdad());
@@ -19,7 +18,7 @@ public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutriciona
 
 
     public Double obtenerMultiplicadorActividad(String actividad) {
-        switch (actividad) {
+        switch (actividad.toLowerCase()) {
             case "sedentario":
                 return 1.2;
             case "ligero":
@@ -38,7 +37,7 @@ public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutriciona
     }
 
     private Double ajustarPorObjetivoSalud(Double calorias, String objetivoSalud) {
-        switch (objetivoSalud) {
+        switch (objetivoSalud.toLowerCase()) {
             case "mantener":
                 return calorias;
             case "perder":
@@ -56,16 +55,29 @@ public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutriciona
 
     @Override
     public Double calcularCaloriasDiarias(Usuario usuario) {
-        // Fórmula de Harris-Benedict o similar
+        if (usuario.getPeso() <= 0 || usuario.getAltura() <= 0 || usuario.getEdad() <= 0) {
+            throw new IllegalArgumentException("Datos del usuario inválidos para el cálculo.");
+        }
+
         Double caloriasBase = calcularTasaMetabolicaBasal(usuario);
         Double multiplicadorActividad = obtenerMultiplicadorActividad(usuario.getActividad());
         Double caloriasTotales = caloriasBase * multiplicadorActividad;
+        caloriasTotales = ajustarPorObjetivoSalud(caloriasTotales, usuario.getObjetivoSalud());
 
-        return ajustarPorObjetivoSalud(caloriasTotales, usuario.getObjetivoSalud());
+        if (caloriasTotales < 1000 || caloriasTotales > 5000) {
+            throw new IllegalArgumentException("El cálculo resultó en calorías fuera del rango lógico.");
+        }
+
+        return caloriasTotales;
     }
+
 
     @Override
     public Macronutrientes calcularMacronutrientes(Double calorias) {
+        if (calorias <= 0) {
+            throw new IllegalArgumentException("Calorías inválidas para calcular macronutrientes.");
+        }
+
         Macronutrientes macros = new Macronutrientes();
         macros.setCarbohidratos(calorias * 0.50 / 4);
         macros.setProteinas(calorias * 0.30 / 4);
@@ -74,15 +86,15 @@ public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutriciona
     }
 
     @Override
-    public DatosIMC calcularIMC(String genero,double altura, double peso, Integer edad) {
-        //calculo el IMC
-        double imc = peso / (altura * altura);
+    public DatosIMC calcularIMC(String genero, double altura, double peso, Integer edad) {
+        if (peso <= 0 || altura <= 0) {
+            throw new IllegalArgumentException("Peso o altura inválidos para calcular el IMC.");
+        }
 
-        //Clasifico en hombre o mujer
+        double imc = peso / (altura * altura);
         String clasificacion;
 
         if (genero.equalsIgnoreCase("hombre")) {
-            // clasificacion especifica para hombres
             if (imc < 20) {
                 clasificacion = "Bajo peso";
             } else if (imc < 25) {
@@ -93,7 +105,6 @@ public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutriciona
                 clasificacion = "Obesidad";
             }
         } else {
-            // clasificacion especifica para mujeres
             if (imc < 19) {
                 clasificacion = "Bajo peso";
             } else if (imc < 24) {
@@ -105,8 +116,7 @@ public class ServicioCalculoNutricionalimpl implements ServicioCalculoNutriciona
             }
         }
 
-    DatosIMC datosIMC=new DatosIMC(clasificacion,genero,altura,peso,edad,imc);
-    return datosIMC;
+        return new DatosIMC(clasificacion, genero, altura, peso, edad, imc);
     }
 
 
